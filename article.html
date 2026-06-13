@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Article</title>
+    <meta name="description" content="HavenIntel football insights article.">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #efe4d3;
+        --paper: rgba(255, 250, 243, 0.92);
+        --ink: #1c1713;
+        --muted: #6f655d;
+        --line: rgba(118, 98, 81, 0.18);
+        --accent: #b44c21;
+        --accent-2: #184f47;
+        --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 214, 168, 0.95) 0, transparent 32%),
+          radial-gradient(circle at top right, rgba(173, 219, 208, 0.85) 0, transparent 28%),
+          linear-gradient(180deg, #f8f1e7 0%, var(--bg) 48%, #eadcc9 100%);
+      }
+      main { max-width: 980px; margin: 0 auto; padding: 24px 18px 80px; }
+      .panel, .articleShell { background: var(--paper); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow); }
+      .articleShell { padding: 28px 24px; }
+      .eyebrow { display:inline-flex; padding:7px 12px; border-radius:999px; background:rgba(180,76,33,0.1); color:var(--accent); font-size:.83rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+      h1 { margin:16px 0 12px; font-size:clamp(2.5rem, 6vw, 4.6rem); line-height:.94; }
+      p { color:var(--muted); line-height:1.75; font-size:1.05rem; }
+      .metaRow { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; color:var(--muted); font-size:.92rem; }
+      .venuePanel {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0 0 22px;
+      }
+      .venueCard {
+        padding: 14px 16px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .venueLabel {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .venueValue {
+        color: var(--ink);
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .lede { font-size:1.18rem; color:var(--ink); line-height:1.65; }
+      .section { margin-top: 28px; }
+      .section h2 { margin:0 0 10px; font-size:1.55rem; }
+      .tagRow { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+      .tag { display:inline-flex; padding:5px 10px; border-radius:999px; background:rgba(24,79,71,0.1); color:var(--accent-2); font-size:.82rem; font-weight:700; }
+      .footerCta { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+      .relatedGrid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; margin-top:16px; }
+      .relatedCard { padding:14px 16px; border-radius:18px; border:1px solid var(--line); background:rgba(255,255,255,0.7); }
+      .relatedCard strong { display:block; margin-bottom:6px; }
+      .relatedCard p { margin:0 0 12px; font-size:.98rem; line-height:1.55; }
+      .buttonRow { display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+      .button { display:inline-flex; align-items:center; justify-content:center; padding:13px 18px; border-radius:999px; border:1px solid transparent; text-decoration:none; font-weight:700; background:var(--ink); color:#fff9f2; }
+      .button.secondary { background:rgba(255,255,255,0.7); color:var(--ink); border-color:var(--line); }
+      @media (max-width: 720px) {
+        .venuePanel { grid-template-columns: 1fr; }
+        .relatedGrid { grid-template-columns:1fr; }
+      }
+    </style>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="topbar"></div>
+
+      <article class="articleShell" id="articleShell">
+        <div class="eyebrow">Loading</div>
+        <h1>Loading article...</h1>
+      </article>
+    </main>
+
+    <script>
+      function displayCategory(article) {
+        const category = String(article.category || "");
+        if (category === "Post-Match Review") return "Archive Review";
+        if (category === "Evergreen") return "Method Notes";
+        if (category === "Daily Insight") return "Method Notes";
+        return category;
+      }
+
+      async function main() {
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get("slug");
+        const response = await fetch("./data/insights/articles.json");
+        const data = await response.json();
+        const article = (data.articles || []).find((item) => item.slug === slug) || data.articles?.[0];
+
+        if (!article) {
+          document.getElementById("articleShell").innerHTML = `<h1>Article not found.</h1>`;
+          return;
+        }
+
+        document.title = `HavenIntel | ${article.title}`;
+        const descriptionMeta = document.querySelector('meta[name="description"]');
+        if (descriptionMeta) {
+          descriptionMeta.setAttribute("content", article.excerpt);
+        }
+
+        document.getElementById("articleShell").innerHTML = `
+          <div class="eyebrow">${displayCategory(article)}</div>
+          <h1>${article.title}</h1>
+          <div class="metaRow">
+            <span>${article.competition}</span>
+            <span>Published Date: ${article.publishedAt}</span>
+            <span>${article.readingTime}</span>
+            <span>${article.author}</span>
+          </div>
+          ${(article.venue?.country || article.venue?.state || article.venue?.stadium) ? `
+            <div class="venuePanel">
+              ${article.venue?.country ? `
+                <div class="venueCard">
+                  <span class="venueLabel">Country</span>
+                  <span class="venueValue">${article.venue.country}</span>
+                </div>
+              ` : ""}
+              ${article.venue?.state ? `
+                <div class="venueCard">
+                  <span class="venueLabel">State / Region</span>
+                  <span class="venueValue">${article.venue.state}</span>
+                </div>
+              ` : ""}
+              ${article.venue?.stadium ? `
+                <div class="venueCard">
+                  <span class="venueLabel">Stadium</span>
+                  <span class="venueValue">${article.venue.stadium}</span>
+                </div>
+              ` : ""}
+            </div>
+          ` : ""}
+          <p class="lede">${article.hero}</p>
+          ${(article.sections || []).map((section) => `
+            <section class="section">
+              <h2>${section.heading}</h2>
+              ${(section.paragraphs || []).map((paragraph) => `<p>${paragraph}</p>`).join("")}
+            </section>
+          `).join("")}
+          <div class="tagRow">
+            ${(article.tags || []).map((tag) => `<span class="tag">${tag}</span>`).join("")}
+          </div>
+          <div class="footerCta">
+            <div class="eyebrow">Related Links</div>
+            <div class="relatedGrid">
+              <div class="relatedCard">
+                <strong>Related archived matches</strong>
+                <p>Review finished matches, actual scores, and post-match archive notes.</p>
+                <a class="button secondary" href="./past.html">Open Past Matches</a>
+              </div>
+              <div class="relatedCard">
+                <strong>Related live board</strong>
+                <p>Follow the current watchlist, release status, and today’s public workflow.</p>
+                <a class="button secondary" href="./index.html#board">Open Live Board</a>
+              </div>
+              <div class="relatedCard">
+                <strong>Related package</strong>
+                <p>View HavenIntel access options for match briefs, score-range briefs, and bundles.</p>
+                <a class="button secondary" href="./checkout.html">View Packages</a>
+              </div>
+            </div>
+            <div class="buttonRow">
+              <a class="button" href="./insights.html">Back to Insights</a>
+            </div>
+          </div>
+        `;
+      }
+
+      main().catch(() => {
+        document.getElementById("articleShell").innerHTML = `<h1>Unable to load article.</h1>`;
+      });
+    </script>
+  </body>
+</html>

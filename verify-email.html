@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Verify Email</title>
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f0e4d7;
+        --panel: rgba(255, 250, 243, 0.92);
+        --ink: #1c1713;
+        --muted: #6f655d;
+        --line: rgba(118, 98, 81, 0.18);
+        --accent: #b44c21;
+        --accent-2: #184f47;
+        --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 220, 179, 0.95) 0, transparent 30%),
+          radial-gradient(circle at top right, rgba(188, 226, 214, 0.8) 0, transparent 28%),
+          linear-gradient(180deg, #f9f1e7 0%, var(--bg) 100%);
+      }
+
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 28px 18px 72px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 28px 24px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(24, 79, 71, 0.1);
+        color: var(--accent-2);
+        font-size: 0.83rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(2.3rem, 6vw, 4rem);
+        line-height: 0.96;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .statusBox {
+        margin: 18px 0;
+        padding: 16px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.7);
+      }
+
+      .buttonRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: #fff9f2;
+      }
+
+      .button.secondary {
+        background: rgba(255,255,255,0.62);
+        color: var(--ink);
+        border-color: var(--line);
+      }
+    </style>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="panel">
+        <div class="eyebrow">Email Confirmation</div>
+        <h1 id="verifyTitle">Checking your HavenIntel activation link.</h1>
+        <p id="verifyCopy">This page confirms the welcome-email link and unlocks member sign-in once the token matches your saved account.</p>
+        <div class="statusBox" id="verifyStatus"></div>
+        <div class="buttonRow">
+          <a class="button primary" href="./account.html" id="primaryLink">Return to Account</a>
+          <a class="button secondary" href="./dashboard.html">Open Dashboard</a>
+        </div>
+      </section>
+    </main>
+    <script>
+      const MEMBER_STATE_KEY = "havenintel-member-state-v1";
+      const DEFAULT_STATE = {
+        signedIn: false,
+        accountCreated: false,
+        name: "",
+        email: "",
+        password: "",
+        passwordSet: false,
+        emailVerified: false,
+        welcomeEmailQueuedAt: "",
+        activationToken: "",
+        packages: {},
+        deliveries: {},
+        releaseContent: {}
+      };
+
+      function readState() {
+        try {
+          const parsedState = JSON.parse(localStorage.getItem(MEMBER_STATE_KEY) || "{}");
+          const legacyVerified = parsedState.accountCreated && typeof parsedState.emailVerified === "undefined";
+          return {
+            ...DEFAULT_STATE,
+            ...parsedState,
+            emailVerified: legacyVerified ? true : Boolean(parsedState.emailVerified)
+          };
+        } catch {
+          return structuredClone(DEFAULT_STATE);
+        }
+      }
+
+      function writeState(state) {
+        localStorage.setItem(MEMBER_STATE_KEY, JSON.stringify(state));
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get("token");
+      const state = readState();
+      const title = document.getElementById("verifyTitle");
+      const copy = document.getElementById("verifyCopy");
+      const status = document.getElementById("verifyStatus");
+      const primaryLink = document.getElementById("primaryLink");
+
+      if (!state.accountCreated) {
+        title.textContent = "No HavenIntel account found yet.";
+        copy.textContent = "Create your account first, then open the welcome-email activation link to confirm your email address.";
+        status.textContent = "No member account is stored in this browser yet.";
+      } else if (state.emailVerified) {
+        title.textContent = "Your HavenIntel email is already confirmed.";
+        copy.textContent = "This account is already verified. You can sign in and continue to your private member dashboard.";
+        status.textContent = `Verified member email: ${state.email || "No email saved yet"}`;
+        primaryLink.href = "./dashboard.html";
+        primaryLink.textContent = "Open Dashboard";
+      } else if (!token || token !== state.activationToken) {
+        title.textContent = "This activation link is not valid.";
+        copy.textContent = "Open the latest welcome-email link from your account page, or refresh the confirmation link and try again.";
+        status.textContent = "The activation token does not match the current saved HavenIntel account.";
+      } else {
+        const nextState = {
+          ...state,
+          emailVerified: true,
+          signedIn: true,
+          activationToken: ""
+        };
+        writeState(nextState);
+        title.textContent = "Your HavenIntel account is now confirmed.";
+        copy.textContent = "Welcome in. Your email is verified, your member session is active, and private account access is now unlocked in this browser.";
+        status.textContent = `Confirmed member email: ${nextState.email || "No email saved yet"}`;
+        primaryLink.href = "./dashboard.html";
+        primaryLink.textContent = "Continue to Dashboard";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-06-10T09:10:53.825Z",
+  "source": {
+    "provider": "7M",
+    "mode": "unofficial",
+    "method": "odds-consensus"
+  },
+  "match": {
+    "id": 5071515,
+    "competitionName": "Friendly Internationals",
+    "homeTeam": {
+      "id": 186,
+      "name": "Portugal"
+    },
+    "awayTeam": {
+      "id": 204,
+      "name": "Nigeria"
+    },
+    "kickoffAt": "2026-06-10T19:45:00.000Z"
+  },
+  "summary": {
+    "likelyWinner": "Portugal",
+    "likelyOutcome": "home",
+    "confidence": "high",
+    "handicapLean": "Portugal -1.5",
+    "totalLean": "Under 3",
+    "correctScoreLean": "2-0",
+    "correctScoreLeans": ["2-0", "1-0"]
+  },
+  "1x2": {
+    "probabilities": {
+      "home": 72.82,
+      "draw": 17.08,
+      "away": 10.1
+    },
+    "prices": {
+      "home": 1.28,
+      "draw": 5.45,
+      "away": 9
+    },
+    "likelyOutcome": "home",
+    "confidenceGap": 55.74,
+    "confidence": "high"
+  },
+  "handicap": {
+    "line": -1.5,
+    "favoriteOdds": 1.86,
+    "otherOdds": 1.94,
+    "lean": "home",
+    "edge": 0.08
+  },
+  "overUnder": {
+    "line": 3,
+    "overOdds": 1.95,
+    "underOdds": 1.87,
+    "lean": "under",
+    "edge": 0.07
+  },
+  "correctScore": {
+    "topScores": [
+      {
+        "score": "2-0",
+        "averageOdds": 5.3,
+        "books": 1
+      },
+      {
+        "score": "1-0",
+        "averageOdds": 6.4,
+        "books": 1
+      },
+      {
+        "score": "3-0",
+        "averageOdds": 6.9,
+        "books": 1
+      },
+      {
+        "score": "2-1",
+        "averageOdds": 7.5,
+        "books": 1
+      },
+      {
+        "score": "1-1",
+        "averageOdds": 9,
+        "books": 1
+      }
+    ],
+    "primaryScore": {
+      "score": "2-0",
+      "averageOdds": 5.3,
+      "books": 1
+    }
+  },
+  "notes": [
+    "This is an odds-based market summary, not a guaranteed prediction.",
+    "Confidence reflects market separation, not match certainty."
+  ]
+}

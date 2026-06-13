@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Past Matches</title>
+    <meta name="description" content="Review finished HavenIntel matches, public result tracking, and archive notes on what held, what missed, and what changed after full time.">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #ebe6df;
+        --panel: rgba(255, 251, 246, 0.9);
+        --ink: #1b1f1c;
+        --muted: #6d716c;
+        --line: #d8cfbf;
+        --accent: #0d7a5f;
+        --accent-soft: rgba(13, 122, 95, 0.12);
+        --danger: #a13b33;
+        --shadow: 0 18px 40px rgba(26, 31, 28, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top right, rgba(255, 231, 214, 0.9) 0, transparent 28%),
+          linear-gradient(180deg, #f7f3ed 0%, var(--bg) 100%);
+      }
+
+      main {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 18px 72px;
+      }
+
+      .hero,
+      .matchCard {
+        background: var(--panel);
+        border: 1px solid rgba(216, 207, 191, 0.9);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        display: grid;
+        gap: 18px;
+        padding: 22px 22px;
+        margin-bottom: 14px;
+      }
+
+      .heroMain {
+        max-width: 56rem;
+      }
+
+      .heroBottom {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.75fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .heroStats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .heroStat {
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(216, 207, 191, 0.85);
+        text-align: right;
+      }
+
+      .heroStat strong {
+        display: block;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 0.95;
+      }
+
+      .heroStat span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .heroFeature {
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        padding: 22px 24px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(216, 207, 191, 0.85);
+        text-align: center;
+      }
+
+      .heroFeature strong {
+        display: block;
+        font-size: clamp(3.4rem, 7vw, 6rem);
+        line-height: 0.92;
+      }
+
+      .heroFeatureTitle {
+        margin-top: 10px;
+        color: var(--ink);
+        font-size: 1.18rem;
+        font-weight: 700;
+      }
+
+      .heroFeatureCopy {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.96rem;
+        line-height: 1.55;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 8px;
+        font-size: clamp(2.1rem, 5vw, 4rem);
+        line-height: 0.95;
+      }
+
+      .heroCopy,
+      .metaText {
+        color: var(--muted);
+      }
+
+      .sampleNote {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .archiveTabs {
+        display: inline-flex;
+        gap: 8px;
+        padding: 6px;
+        margin: 0 0 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid rgba(216, 207, 191, 0.8);
+      }
+
+      .archiveTabs a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 138px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .archiveTabs a.active {
+        background: var(--ink);
+        color: #fff8ef;
+      }
+
+      .summaryGrid,
+      .predictionGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .summaryGrid {
+        margin: 0 0 14px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .summaryStat,
+      .predictionItem {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.66);
+        border: 1px solid rgba(216, 207, 191, 0.75);
+      }
+
+      .summaryStat strong,
+      .predictionItem strong {
+        display: block;
+      }
+
+      .matches {
+        display: grid;
+        gap: 12px;
+      }
+
+      .matchCard {
+        padding: 14px;
+      }
+
+      .matchCardHeader {
+        display: grid;
+        gap: 10px;
+      }
+
+      .matchToggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(216, 207, 191, 0.85);
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font: inherit;
+        font-size: 0.82rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .matchToggle:hover {
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .topLine,
+      .teamsRow {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .datePill,
+      .statusPill,
+      .resultPill {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.76);
+        font-size: 0.83rem;
+      }
+
+      .resultPill {
+        border-color: rgba(13, 122, 95, 0.26);
+        background: rgba(13, 122, 95, 0.1);
+        color: var(--accent);
+      }
+
+      .resultPill.miss {
+        border-color: rgba(161, 59, 51, 0.28);
+        background: rgba(161, 59, 51, 0.12);
+        color: var(--danger);
+      }
+
+      .resultPill.pending {
+        border-color: rgba(109, 113, 108, 0.24);
+        background: rgba(109, 113, 108, 0.1);
+        color: var(--muted);
+      }
+
+      .resultPill.push {
+        border-color: rgba(43, 92, 168, 0.28);
+        background: rgba(43, 92, 168, 0.12);
+        color: #2b5ca8;
+      }
+
+      .teamNames {
+        font-size: 1.18rem;
+        line-height: 1.15;
+      }
+
+      .finalScore {
+        padding: 10px 14px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, #1f2925 0%, #121714 100%);
+        color: #fff9ef;
+        font-size: 1.55rem;
+        font-weight: 700;
+      }
+
+      .notesBox,
+      .reviewBox,
+      .emptyState {
+        margin-top: 10px;
+        padding: 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(216, 207, 191, 0.75);
+      }
+
+      .reviewGrid {
+        display: grid;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .reviewItem strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .compactMeta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .compactNote {
+        margin-top: 6px;
+        font-size: 0.88rem;
+      }
+
+      .quickResultRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 6px;
+      }
+
+      .quickResultRow .resultPill {
+        margin: 0;
+      }
+
+      .matchBody {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .matchCard.expanded .matchBody {
+        display: block;
+      }
+
+      .mobileOnly {
+        display: none;
+      }
+
+      @media (max-width: 820px) {
+        .heroBottom {
+          grid-template-columns: 1fr;
+        }
+
+        .summaryGrid,
+        .predictionGrid {
+          grid-template-columns: 1fr;
+        }
+
+        .summaryGrid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .heroStats {
+          width: 100%;
+          min-width: 0;
+          grid-template-columns: 1fr;
+        }
+
+        .heroStat {
+          width: 100%;
+          text-align: left;
+        }
+
+        .mobileOnly {
+          display: inline;
+        }
+
+        .teamsRow {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="heroMain">
+          <div class="eyebrow">ProjectHaven Archive</div>
+          <h1>Past Matches</h1>
+          <p class="heroCopy">Finished matches move here after full time, with public result tracking and notes on what held, what missed, and what changed.</p>
+          <p class="heroCopy"><strong>No fake certainty.</strong> Every match carries uncertainty. HavenIntel reads structure, pressure, and score range, then reviews the result after full time.</p>
+          <p class="sampleNote">Records are shown with sample size. Larger archives give a clearer picture over time.</p>
+        </div>
+        <div class="heroBottom">
+          <div class="heroStats" id="heroStats">
+            <div class="heroStat" id="heroWinnerRate">
+              <strong>0</strong>
+              <span>Early Archive Record</span>
+              <span>0 finished matches tracked</span>
+            </div>
+            <div class="heroStat" id="heroOutcomeRate">
+              <strong>0/0</strong>
+              <span>Outcome Reads</span>
+              <span>Winner reads landed</span>
+            </div>
+            <div class="heroStat" id="heroHandicapRate">
+              <strong>0/0</strong>
+              <span>Margin Reads</span>
+              <span>Handicap reads landed</span>
+            </div>
+            <div class="heroStat" id="heroTotalRate">
+              <strong>0/0</strong>
+              <span>Goal-Range Reads</span>
+              <span>Over/under reads landed</span>
+            </div>
+            <div class="heroStat" id="heroScoreRate">
+              <strong>0/0</strong>
+              <span>Score-Range Reads</span>
+              <span>Matches where at least 1 score pick landed</span>
+            </div>
+          </div>
+          <aside class="heroFeature" id="heroFeatureRate">
+            <strong>0%</strong>
+            <div class="heroFeatureTitle">Winning Team Analysis Percentage</div>
+            <div class="heroFeatureCopy">Based on the archive outcome read record.</div>
+          </aside>
+        </div>
+      </section>
+
+      <nav class="archiveTabs" aria-label="Archive navigation">
+        <a href="./index.html">Active Matches</a>
+        <a class="active" href="./past.html">Past Matches</a>
+      </nav>
+
+      <section class="summaryGrid" id="summaryGrid"></section>
+      <section id="matches" class="matches"></section>
+    </main>
+
+    <script>
+      const STORAGE_KEY = "projecthaven-match-tracker-v1";
+      let runtimeState = {};
+
+      function readStoredState() {
+        try {
+          return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+        } catch {
+          return {};
+        }
+      }
+
+      async function readRuntimeState() {
+        try {
+          const response = await fetch("./data/runtime-state.json");
+          if (!response.ok) {
+            return {};
+          }
+          return await response.json();
+        } catch {
+          return {};
+        }
+      }
+
+      async function loadWatchlistSchedule() {
+        try {
+          const response = await fetch("./data/watchlist-schedule.json");
+          if (!response.ok) {
+            return {};
+          }
+          return await response.json();
+        } catch {
+          return {};
+        }
+      }
+
+      function userTimeZone() {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone || "Local Time";
+      }
+
+      function toLocalKickoff(value) {
+        if (!value) {
+          return "Unknown";
+        }
+
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return value;
+        }
+
+        return new Intl.DateTimeFormat(undefined, {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+          timeZoneName: "short"
+        }).format(date);
+      }
+
+      function toMatchDate(value) {
+        if (!value) {
+          return "Unknown Date";
+        }
+
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return value;
+        }
+
+        return new Intl.DateTimeFormat(undefined, {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        }).format(date);
+      }
+
+      function defaultState() {
+        return {
+          status: "Not Started",
+          minute: "",
+          homeScore: "",
+          awayScore: "",
+          notes: ""
+        };
+      }
+
+      function mergeScheduledDetail(detail, scheduleMap) {
+        const schedule = scheduleMap?.[String(detail?.match?.id)] || null;
+        if (!schedule) {
+          return detail;
+        }
+
+        return {
+          ...detail,
+          match: {
+            ...detail.match,
+            competitionName: schedule.competitionName || detail.match.competitionName,
+            kickoffAt: schedule.kickoffAt || detail.match.kickoffAt
+          }
+        };
+      }
+
+      function matchResultLabel(homeScore, awayScore, homeTeam, awayTeam) {
+        if (homeScore === "" || awayScore === "") {
+          return "Pending";
+        }
+
+        const home = Number(homeScore);
+        const away = Number(awayScore);
+        if (home > away) return homeTeam;
+        if (home < away) return awayTeam;
+        return "Draw";
+      }
+
+      function topCorrectScores(detail) {
+        return scoreRangeOptions(detail).join(" or ");
+      }
+
+      function scoreRangeOptions(detail) {
+        if (Array.isArray(detail.summary?.correctScoreLeans) && detail.summary.correctScoreLeans.length) {
+          return detail.summary.correctScoreLeans.slice(0, 2).filter(Boolean);
+        }
+
+        const topScores = (detail.correctScore?.topScores || [])
+          .slice(0, 2)
+          .map((item) => item.score)
+          .filter(Boolean);
+
+        if (topScores.length) {
+          return topScores;
+        }
+
+        return detail.summary?.correctScoreLean ? [detail.summary.correctScoreLean] : [];
+      }
+
+      function hasPrediction(detail) {
+        return Boolean(detail.summary?.likelyWinner);
+      }
+
+      function predictionText(value, fallback = "Analysis pending") {
+        return value || fallback;
+      }
+
+      function resultClass(value) {
+        if (!value) {
+          return "pending";
+        }
+
+        const normalized = value.toLowerCase();
+        if (normalized === "miss") {
+          return "miss";
+        }
+        if (normalized === "push") {
+          return "push";
+        }
+        if (normalized === "pending") {
+          return "pending";
+        }
+        return "hit";
+      }
+
+      function settleAsianHandicap(lean, homeScore, awayScore, homeTeam, awayTeam) {
+        if (homeScore === "" || awayScore === "" || !lean) {
+          return "Pending";
+        }
+
+        const match = lean.match(/^(.+)\s([+-]?\d+(?:\.\d+)?)$/);
+        if (!match) {
+          return "Pending";
+        }
+
+        const side = match[1];
+        const line = Number(match[2]);
+        const scoreDiff = Number(homeScore) - Number(awayScore);
+        const sideDiff = side === homeTeam ? scoreDiff : side === awayTeam ? -scoreDiff : null;
+        if (sideDiff == null) {
+          return "Pending";
+        }
+
+        const normalized = sideDiff + line;
+        if (normalized > 0) {
+          return "Hit";
+        }
+        if (normalized < 0) {
+          return "Miss";
+        }
+        return "Push";
+      }
+
+      function settleTotalLean(lean, homeScore, awayScore) {
+        if (homeScore === "" || awayScore === "" || !lean) {
+          return "Pending";
+        }
+
+        const match = lean.match(/^(Over|Under)\s(\d+(?:\.\d+)?)$/i);
+        if (!match) {
+          return "Pending";
+        }
+
+        const direction = match[1].toLowerCase();
+        const line = Number(match[2]);
+        const total = Number(homeScore) + Number(awayScore);
+
+        if (direction === "over") {
+          if (total > line) return "Hit";
+          if (total < line) return "Miss";
+          return "Push";
+        }
+
+        if (total < line) return "Hit";
+        if (total > line) return "Miss";
+        return "Push";
+      }
+
+      function predictionCheck(detail, state) {
+        const actualResult = matchResultLabel(state.homeScore, state.awayScore, detail.match.homeTeam.name, detail.match.awayTeam.name);
+        const actualScore = state.homeScore === "" || state.awayScore === "" ? null : `${state.homeScore}-${state.awayScore}`;
+        if (!hasPrediction(detail)) {
+          return {
+            actualResult,
+            actualScore,
+            winnerHit: "Pending",
+            scoreHit: "Pending",
+            handicapHit: "Pending",
+            totalHit: "Pending"
+          };
+        }
+
+        const scoreOptions = scoreRangeOptions(detail);
+
+        return {
+          actualResult,
+          actualScore,
+          winnerHit: actualResult === "Pending" ? "Pending" : actualResult === detail.summary.likelyWinner ? "Hit" : "Miss",
+          scoreHit: actualScore == null || scoreOptions.length === 0 ? "Pending" : scoreOptions.includes(actualScore) ? "Hit" : "Miss",
+          handicapHit: settleAsianHandicap(
+            detail.summary.handicapLean,
+            state.homeScore,
+            state.awayScore,
+            detail.match.homeTeam.name,
+            detail.match.awayTeam.name
+          ),
+          totalHit: settleTotalLean(detail.summary.totalLean, state.homeScore, state.awayScore)
+        };
+      }
+
+      const REVIEW_OVERRIDES = {
+        "5001993": {
+          held: "Mexico controlled the match shape and protected the scoreline once they moved in front.",
+          missed: "The margin layer asked for a wider win than the final score delivered, so the broad result was stronger than the handicap angle.",
+          lesson: "The outcome read was stronger than the margin layer in a game that stayed controlled rather than explosive."
+        },
+        "5058661": {
+          held: "Korea Republic still found the stronger finish once the game opened up late, so the main winner read held.",
+          missed: "The score-range view stayed too narrow after the second-half pressure swing created a more open finish.",
+          lesson: "When momentum changes sharply, the broad side read can hold while the tighter score layer loses accuracy."
+        },
+        "5071515": {
+          held: "Portugal still had the stronger match control and converted the winner read cleanly.",
+          missed: "The handicap layer pushed for a bigger gap than the final result produced, so the margin read ran ahead of the real game state.",
+          lesson: "A superior side can land the winner read without clearing an aggressive margin line."
+        },
+        "5071516": {
+          held: "England owned the game state early and never let Costa Rica grow into the match, so the main read carried through clearly.",
+          missed: "The total layer did not stretch with the match tempo once England kept pressing after the break.",
+          lesson: "A controlled favorite can still produce a wider scoreline than the lower-goal layer expects."
+        }
+      };
+
+      function buildReview(detail, prediction) {
+        const override = REVIEW_OVERRIDES[String(detail.match.id)];
+        if (override) {
+          return override;
+        }
+
+        const held = prediction.winnerHit === "Hit"
+          ? `The main outcome read held, with ${detail.summary?.likelyWinner || "the stronger side"} matching the final result.`
+          : "The broader pre-match structure did not land cleanly, so the main outcome read needs a stricter review."
+        ;
+
+        const missedParts = [];
+        if (prediction.scoreHit === "Miss") {
+          missedParts.push("the score-range layer stayed too narrow for the final match state");
+        }
+        if (prediction.handicapHit === "Miss") {
+          missedParts.push("the margin read asked for a different winning gap than the one the match produced");
+        }
+        if (prediction.totalHit === "Miss") {
+          missedParts.push("the goal-range view did not fully match the tempo and finishing pattern");
+        }
+
+        const missed = missedParts.length
+          ? `${missedParts[0].charAt(0).toUpperCase()}${missedParts[0].slice(1)}${missedParts.length > 1 ? ", and other sharper layers also lost accuracy." : "."}`
+          : "The sharper layers did not show a major miss in this archive sample."
+        ;
+
+        const lesson = prediction.winnerHit === "Hit" && (prediction.scoreHit === "Miss" || prediction.handicapHit === "Miss" || prediction.totalHit === "Miss")
+          ? "The broader match read was stronger than the tighter specialist layers."
+          : prediction.winnerHit === "Miss"
+            ? "When the outcome read misses, the archive should focus on where the pre-match structure failed rather than forcing confidence after the fact."
+            : "When multiple layers land together, it usually means the match held close to the expected shape from kickoff to full time."
+        ;
+
+        return { held, missed, lesson };
+      }
+
+      function renderSummary(items) {
+        const summaryGrid = document.getElementById("summaryGrid");
+        const winnerHits = items.filter((item) => item.prediction.winnerHit === "Hit").length;
+        const scoreHits = items.filter((item) => item.prediction.scoreHit === "Hit").length;
+        summaryGrid.innerHTML = `
+          <div class="summaryStat"><strong>${items.length}</strong><span>Finished Matches</span></div>
+          <div class="summaryStat"><strong>${winnerHits}</strong><span>Outcome Reads Landed</span></div>
+          <div class="summaryStat"><strong>${scoreHits}</strong><span>Score-Range Reads Landed</span></div>
+          <div class="summaryStat"><strong>${items.filter((item) => item.state.notes).length}</strong><span>Matches With Notes</span></div>
+        `;
+      }
+
+      function renderHeroRates(items) {
+        const heroWinnerRate = document.getElementById("heroWinnerRate");
+        const heroOutcomeRate = document.getElementById("heroOutcomeRate");
+        const heroHandicapRate = document.getElementById("heroHandicapRate");
+        const heroTotalRate = document.getElementById("heroTotalRate");
+        const heroScoreRate = document.getElementById("heroScoreRate");
+        const heroFeatureRate = document.getElementById("heroFeatureRate");
+
+        const gradedWinnerPredictions = items.filter((item) => ["Hit", "Miss"].includes(item.prediction.winnerHit));
+        const winnerHits = gradedWinnerPredictions.filter((item) => item.prediction.winnerHit === "Hit").length;
+        const winnerPercentage = gradedWinnerPredictions.length
+          ? Math.round((winnerHits / gradedWinnerPredictions.length) * 100)
+          : 0;
+
+        const gradedHandicapPredictions = items.filter((item) => ["Hit", "Miss"].includes(item.prediction.handicapHit));
+        const handicapHits = gradedHandicapPredictions.filter((item) => item.prediction.handicapHit === "Hit").length;
+
+        const gradedTotalPredictions = items.filter((item) => ["Hit", "Miss"].includes(item.prediction.totalHit));
+        const totalHits = gradedTotalPredictions.filter((item) => item.prediction.totalHit === "Hit").length;
+
+        const gradedScorePredictions = items.filter((item) => ["Hit", "Miss"].includes(item.prediction.scoreHit));
+        const scoreHits = gradedScorePredictions.filter((item) => item.prediction.scoreHit === "Hit").length;
+
+        heroWinnerRate.innerHTML = `
+          <strong>${items.length}</strong>
+          <span>Early Archive Record</span>
+          <span>${items.length} finished matches tracked</span>
+        `;
+
+        heroOutcomeRate.innerHTML = `
+          <strong>${winnerHits}/${gradedWinnerPredictions.length || 0}</strong>
+          <span>Outcome Reads</span>
+          <span>Winner reads landed</span>
+        `;
+
+        heroHandicapRate.innerHTML = `
+          <strong>${handicapHits}/${gradedHandicapPredictions.length || 0}</strong>
+          <span>Margin Reads</span>
+          <span>Handicap reads landed</span>
+        `;
+
+        heroTotalRate.innerHTML = `
+          <strong>${totalHits}/${gradedTotalPredictions.length || 0}</strong>
+          <span>Goal-Range Reads</span>
+          <span>Over/under reads landed</span>
+        `;
+
+        heroScoreRate.innerHTML = `
+          <strong>${scoreHits}/${gradedScorePredictions.length || 0}</strong>
+          <span>Score-Range Reads</span>
+          <span>Matches where at least 1 score pick landed</span>
+        `;
+
+        heroFeatureRate.innerHTML = `
+          <strong>${winnerPercentage}%</strong>
+          <div class="heroFeatureTitle">Winning Team Analysis Percentage</div>
+          <div class="heroFeatureCopy">${winnerHits}/${gradedWinnerPredictions.length || 0} outcome reads landed in the archive sample.</div>
+        `;
+      }
+
+      function createPastCard(detail, state, prediction) {
+        const article = document.createElement("article");
+        article.className = "matchCard";
+        const review = buildReview(detail, prediction);
+        article.innerHTML = `
+          <div class="matchCardHeader">
+            <div class="topLine">
+              <div class="eyebrow">${detail.match.competitionName}</div>
+              <div class="compactMeta">
+                <div class="datePill">${toMatchDate(detail.match.kickoffAt)}</div>
+                <div class="statusPill">Full Time</div>
+                <button class="matchToggle" type="button" aria-expanded="false">Expand</button>
+              </div>
+            </div>
+            <div class="teamsRow">
+              <div>
+                <div class="teamNames">${detail.match.homeTeam.name} vs ${detail.match.awayTeam.name}</div>
+                <div class="metaText compactNote">Kickoff: ${toLocalKickoff(detail.match.kickoffAt)}<span class="mobileOnly"> · ${userTimeZone()}</span></div>
+              </div>
+              <div class="finalScore">${state.homeScore === "" ? "-" : state.homeScore} : ${state.awayScore === "" ? "-" : state.awayScore}</div>
+            </div>
+            <div class="quickResultRow">
+              <div class="resultPill ${resultClass(prediction.winnerHit)}">Winner: ${prediction.winnerHit}</div>
+              <div class="resultPill ${resultClass(prediction.scoreHit)}">Score: ${prediction.scoreHit}</div>
+              <div class="resultPill ${resultClass(prediction.handicapHit)}">Handicap: ${prediction.handicapHit}</div>
+              <div class="resultPill ${resultClass(prediction.totalHit)}">Total: ${prediction.totalHit}</div>
+            </div>
+          </div>
+          <div class="matchBody">
+            <div class="predictionGrid">
+              <div class="predictionItem">
+                <strong>Outcome Read</strong>
+                <div>${predictionText(detail.summary?.likelyWinner)}</div>
+                <div class="metaText">Actual result: ${prediction.actualResult}</div>
+                <div class="resultPill ${resultClass(prediction.winnerHit)}" style="margin-top:6px;">Outcome: ${prediction.winnerHit}</div>
+              </div>
+              <div class="predictionItem">
+                <strong>Score-Range Read</strong>
+                <div>${predictionText(topCorrectScores(detail) || detail.summary?.correctScoreLean)}</div>
+                <div class="metaText">Actual score: ${prediction.actualScore ?? "-"}</div>
+                <div class="resultPill ${resultClass(prediction.scoreHit)}" style="margin-top:6px;">Score Range: ${prediction.scoreHit}</div>
+              </div>
+              <div class="predictionItem">
+                <strong>Margin Read</strong>
+                <div>${predictionText(detail.summary?.handicapLean)}</div>
+                <div class="resultPill ${resultClass(prediction.handicapHit)}" style="margin-top:6px;">Margin: ${prediction.handicapHit}</div>
+              </div>
+              <div class="predictionItem">
+                <strong>Goal-Range Read</strong>
+                <div>${predictionText(detail.summary?.totalLean)}</div>
+                <div class="resultPill ${resultClass(prediction.totalHit)}" style="margin-top:6px;">Goal Range: ${prediction.totalHit}</div>
+              </div>
+            </div>
+            <div class="reviewBox">
+              <strong>Post-Match Review</strong>
+              <div class="reviewGrid">
+                <div class="reviewItem">
+                  <strong>What held</strong>
+                  <div class="metaText">${review.held}</div>
+                </div>
+                <div class="reviewItem">
+                  <strong>What missed</strong>
+                  <div class="metaText">${review.missed}</div>
+                </div>
+                <div class="reviewItem">
+                  <strong>Lesson</strong>
+                  <div class="metaText">${review.lesson}</div>
+                </div>
+              </div>
+            </div>
+            ${state.notes ? `<div class="notesBox"><strong>Match Notes</strong><div class="metaText" style="margin-top:8px;">${state.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div></div>` : ""}
+          </div>
+        `;
+        return article;
+      }
+
+      async function loadMatchDetails() {
+        const response = await fetch("./data/analysis/all-analysis.slate.json");
+        const slate = await response.json();
+        const scheduleMap = await loadWatchlistSchedule();
+        return Promise.all(
+          slate.matches.map(async (match) => {
+            if (match.inlineDetail) {
+              return mergeScheduledDetail(match.inlineDetail, scheduleMap);
+            }
+            const path = match.outputPath.replace("/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/", "./");
+            const detailResponse = await fetch(path);
+            const detail = await detailResponse.json();
+            return mergeScheduledDetail(detail, scheduleMap);
+          })
+        );
+      }
+
+      async function main() {
+        const details = await loadMatchDetails();
+        runtimeState = await readRuntimeState();
+        const stored = readStoredState();
+        const items = details
+          .map((detail) => {
+            const runtimeMatchState = runtimeState[String(detail.match.id)] || {};
+            const localMatchState = stored[String(detail.match.id)] || {};
+            const resolvedState =
+              runtimeMatchState.status === "Full Time" && localMatchState.status !== "Full Time"
+                ? { ...localMatchState, ...runtimeMatchState }
+                : localMatchState;
+            const state = { ...defaultState(), ...resolvedState };
+            return { detail, state, prediction: predictionCheck(detail, state) };
+          })
+          .filter((item) => item.state.status === "Full Time")
+          .sort((a, b) => {
+            const aTime = new Date(a.detail.match.kickoffAt || 0).getTime();
+            const bTime = new Date(b.detail.match.kickoffAt || 0).getTime();
+            return bTime - aTime;
+          });
+
+        renderSummary(items);
+        renderHeroRates(items);
+
+        const matches = document.getElementById("matches");
+        if (items.length === 0) {
+          matches.innerHTML = `
+            <article class="emptyState">
+              No finished matches yet. Once a match is marked <strong>Full Time</strong> on <a href="./index.html">Active Matches</a>, it will move here automatically.
+            </article>
+          `;
+          return;
+        }
+
+        for (const item of items) {
+          matches.appendChild(createPastCard(item.detail, item.state, item.prediction));
+        }
+
+        matches.querySelectorAll(".matchToggle").forEach((button) => {
+          button.addEventListener("click", () => {
+            const card = button.closest(".matchCard");
+            const expanded = card.classList.toggle("expanded");
+            button.textContent = expanded ? "Collapse" : "Expand";
+            button.setAttribute("aria-expanded", expanded ? "true" : "false");
+          });
+        });
+      }
+
+      main().catch((error) => {
+        document.getElementById("matches").innerHTML = `<article class="emptyState">${error.message}</article>`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-06-11T12:33:21.053Z",
+  "label": "rerun-compare",
+  "matchIds": [
+    5001993,
+    5058661
+  ],
+  "matches": [
+    {
+      "matchId": 5001993,
+      "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/analysis/5001993.json",
+      "summary": {
+        "likelyWinner": "Mexico",
+        "likelyOutcome": "home",
+        "confidence": "high",
+        "handicapLean": "South Africa +1.25",
+        "totalLean": "Under 2.25",
+        "correctScoreLean": "1-0"
+      }
+    },
+    {
+      "matchId": 5058661,
+      "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/analysis/5058661.json",
+      "summary": {
+        "likelyWinner": "Korea Republic",
+        "likelyOutcome": "home",
+        "confidence": "low",
+        "handicapLean": "Korea Republic 0",
+        "totalLean": "Under 2.25",
+        "correctScoreLean": "1-1"
+      }
+    }
+  ]
+}

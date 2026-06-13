@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Release Admin</title>
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #efe4d3;
+        --panel: rgba(255, 250, 243, 0.92);
+        --ink: #1c1713;
+        --muted: #6f655d;
+        --line: rgba(118, 98, 81, 0.18);
+        --accent: #b44c21;
+        --accent-2: #184f47;
+        --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 220, 179, 0.95) 0, transparent 30%),
+          radial-gradient(circle at top right, rgba(188, 226, 214, 0.8) 0, transparent 28%),
+          linear-gradient(180deg, #f9f1e7 0%, var(--bg) 100%);
+      }
+
+      main {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 24px 18px 72px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero,
+      .adminCard {
+        padding: 24px;
+      }
+
+      .hero {
+        margin-bottom: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(180, 76, 33, 0.1);
+        color: var(--accent);
+        font-size: 0.83rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        line-height: 0.98;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .stack,
+      .matchStack,
+      .statusStack {
+        display: grid;
+        gap: 16px;
+      }
+
+      .summaryGrid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .summaryStat {
+        padding: 18px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.62);
+        border: 1px solid var(--line);
+      }
+
+      .summaryStat strong {
+        display: block;
+        font-size: 1.9rem;
+        margin-bottom: 6px;
+      }
+
+      .matchHeader,
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .adminCard {
+        margin-bottom: 18px;
+      }
+
+      .adminMeta {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .pill.pending {
+        background: rgba(109, 113, 108, 0.12);
+        color: var(--muted);
+      }
+
+      .pill.ready {
+        background: rgba(180, 76, 33, 0.12);
+        color: var(--accent);
+      }
+
+      .pill.sent {
+        background: rgba(24, 79, 71, 0.12);
+        color: var(--accent-2);
+      }
+
+      .statusStack {
+        margin-top: 14px;
+      }
+
+      .statusItem {
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.62);
+        border: 1px solid var(--line);
+      }
+
+      .fieldGrid {
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+        font-weight: 700;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.78);
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 94px;
+        resize: vertical;
+      }
+
+      .buttonRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 700;
+        background: rgba(255,255,255,0.62);
+        color: var(--ink);
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: #fff9f2;
+      }
+
+      .watchlistCard {
+        padding: 24px;
+        margin-bottom: 18px;
+      }
+
+      .workflowGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .workflowCard {
+        padding: 20px;
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .workflowCard.intake {
+        background: linear-gradient(180deg, rgba(255, 249, 242, 0.92) 0%, rgba(255, 244, 235, 0.88) 100%);
+      }
+
+      .workflowCard.release {
+        background: linear-gradient(180deg, rgba(241, 249, 246, 0.96) 0%, rgba(232, 244, 239, 0.9) 100%);
+      }
+
+      .sectionEyebrow {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .sectionEyebrow.intake {
+        background: rgba(180, 76, 33, 0.1);
+        color: var(--accent);
+      }
+
+      .sectionEyebrow.release {
+        background: rgba(24, 79, 71, 0.12);
+        color: var(--accent-2);
+      }
+
+      .workflowCard h2,
+      .zoneHeader h2 {
+        margin: 0 0 8px;
+        font-size: 1.6rem;
+        line-height: 1.05;
+      }
+
+      .workflowCard p,
+      .zoneHeader p {
+        margin: 0;
+      }
+
+      .releaseZone {
+        padding: 24px;
+        margin-bottom: 18px;
+        background: linear-gradient(180deg, rgba(239, 248, 244, 0.9) 0%, rgba(255, 250, 243, 0.92) 100%);
+      }
+
+      .zoneHeader {
+        margin-bottom: 16px;
+      }
+
+      .watchlistGrid {
+        display: grid;
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .watchlistActions {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+      }
+
+      .toggleButton {
+        cursor: pointer;
+        transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+      }
+
+      .toggleButton:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(45, 29, 15, 0.08);
+        background: rgba(255,255,255,0.82);
+      }
+
+      .watchlistItem {
+        padding: 16px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.62);
+        border: 1px solid var(--line);
+      }
+
+      .watchlistTop {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .pill.tentative {
+        background: rgba(180, 76, 33, 0.12);
+        color: var(--accent);
+      }
+
+      .pill.confirmed {
+        background: rgba(28, 23, 19, 0.08);
+        color: var(--ink);
+      }
+
+      .pill.released {
+        background: rgba(24, 79, 71, 0.12);
+        color: var(--accent-2);
+      }
+
+      .pill.finished {
+        background: rgba(109, 113, 108, 0.12);
+        color: var(--muted);
+      }
+
+      .checklist {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .checklistItem {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.62);
+      }
+
+      .checklistLabel {
+        font-weight: 700;
+      }
+
+      .checkBadge {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .checkBadge.done {
+        background: rgba(24, 79, 71, 0.12);
+        color: var(--accent-2);
+      }
+
+      .checkBadge.todo {
+        background: rgba(180, 76, 33, 0.12);
+        color: var(--accent);
+      }
+
+      @media (max-width: 900px) {
+        .summaryGrid {
+          grid-template-columns: 1fr;
+        }
+
+        .workflowGrid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script defer src="./admin-auth.js"></script>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="panel hero">
+        <div class="eyebrow">Release Admin</div>
+        <h1>Internal release control for watchlist status, match brief content, and send readiness.</h1>
+        <p>
+          This is an admin-only operating page. Use it to manage the watchlist, save member-facing match brief content, and confirm what is ready before distribution.
+        </p>
+      </section>
+
+      <section class="summaryGrid" id="summaryGrid"></section>
+      <section class="workflowGrid">
+        <article class="workflowCard intake">
+          <div class="sectionEyebrow intake">Intake Queue</div>
+          <h2>Watchlist first, release later.</h2>
+          <p>
+            Keep tentative and confirmed matches in one place so the public board reflects what is still under review before release.
+          </p>
+        </article>
+        <article class="workflowCard release">
+          <div class="sectionEyebrow release">Active Release Queue</div>
+          <h2>Only the live release matches should sit here.</h2>
+          <p>
+            This is the execution layer: match brief wording, delivery status, send-copy preview, and final readiness before member distribution.
+          </p>
+        </article>
+      </section>
+
+      <section class="panel releaseZone">
+        <div class="zoneHeader">
+          <div class="sectionEyebrow release">Release Workspace</div>
+          <h2>Today’s active release matches</h2>
+          <p class="adminMeta">These are the focused internal release blocks for matches still in the private cycle: locked, ready to send, or already sent before full time.</p>
+        </div>
+        <section class="matchStack" id="matchStack"></section>
+      </section>
+
+      <section class="panel watchlistCard">
+        <div class="row">
+          <div>
+            <strong>Watchlist lifecycle</strong>
+            <div class="adminMeta">Set each match to Tentative, Confirmed, or Released so the public board reflects the real daily workflow.</div>
+          </div>
+        </div>
+        <div class="watchlistGrid" id="watchlistGrid"></div>
+        <div class="watchlistActions" id="watchlistActions"></div>
+      </section>
+
+      <section class="panel adminCard">
+        <div class="row">
+          <div>
+            <strong>Internal tools</strong>
+            <div class="adminMeta">Quick actions for daily reset, release staging, and content workflow.</div>
+          </div>
+        </div>
+        <div class="buttonRow">
+          <button class="button primary" type="button" id="markAllPending">Mark All Pending</button>
+          <button class="button" type="button" id="markAllReady">Mark All Ready</button>
+          <button class="button" type="button" id="markAllSent">Mark All Sent</button>
+          <a class="button" href="./article-studio.html">Open Article Studio</a>
+          <a class="button" href="./history.html">Open Delivery History</a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const MEMBER_STATE_KEY = "havenintel-member-state-v1";
+      const WATCHLIST_PREVIEW_LIMIT = 4;
+      let watchlistExpanded = false;
+      const RELEASES = [
+        {
+          key: "canadaBosnia",
+          matchId: "manual-canada-bosnia",
+          title: "Canada vs Bosnia",
+          competition: "World Cup",
+          kickoff: "Sat, Jun 13, 3:00 AM GMT+8",
+          confidence: "medium",
+          totalLean: "Under 2.5",
+          handicapLean: "Canada -0.5"
+        },
+        {
+          key: "mexicoSouthAfrica",
+          matchId: "5001993",
+          title: "Mexico vs South Africa",
+          competition: "World Cup",
+          kickoff: "Tomorrow",
+          confidence: "high",
+          totalLean: "Under 2.25",
+          handicapLean: "South Africa +1.25"
+        },
+        {
+          key: "koreaCzech",
+          matchId: "5058661",
+          title: "Korea Republic vs Czech Republic",
+          competition: "World Cup",
+          kickoff: "Tomorrow",
+          confidence: "low",
+          totalLean: "Under 2.25",
+          handicapLean: "Korea Republic 0"
+        }
+      ];
+
+      const RELEASE_DEFAULTS = {
+        canadaBosnia: {
+          edgePick: "Canada",
+          scorePick: "1-0 or 2-0",
+          notes: "Outcome read favors Canada. Goal-range read stays compact. Margin read prefers Canada by a controlled one-step edge rather than a wide breakaway."
+        },
+        mexicoSouthAfrica: {
+          edgePick: "Mexico",
+          scorePick: "1-0 or 2-0",
+          notes: "Rerun confirmed. Keep public board locked until full time."
+        },
+        koreaCzech: {
+          edgePick: "Korea Republic",
+          scorePick: "1-1 or 0-0",
+          notes: "Rerun confirmed. Keep public board locked until full time."
+        }
+      };
+
+      const DEFAULT_MEMBER_STATE = {
+        signedIn: false,
+        accountCreated: false,
+        name: "",
+        email: "",
+        packages: {
+          edgePack: false,
+          scorePack: false,
+          edgeMultiples: false,
+          scoreMultiples: false
+        },
+        deliveries: {},
+        releaseContent: {},
+        watchStatuses: {
+          "manual-canada-bosnia": "Confirmed"
+        }
+      };
+
+      function readState() {
+        try {
+          const parsedState = JSON.parse(localStorage.getItem(MEMBER_STATE_KEY) || "{}");
+          const mergedReleaseContent = {
+            ...DEFAULT_MEMBER_STATE.releaseContent,
+            ...(parsedState.releaseContent || {})
+          };
+
+          for (const [key, defaults] of Object.entries(RELEASE_DEFAULTS)) {
+            mergedReleaseContent[key] = {
+              ...defaults,
+              ...(mergedReleaseContent[key] || {})
+            };
+          }
+
+          return {
+            ...DEFAULT_MEMBER_STATE,
+            ...parsedState,
+            packages: {
+              ...DEFAULT_MEMBER_STATE.packages,
+              ...(parsedState.packages || {})
+            },
+            deliveries: {
+              ...DEFAULT_MEMBER_STATE.deliveries,
+              ...(parsedState.deliveries || {})
+            },
+            releaseContent: mergedReleaseContent,
+            watchStatuses: {
+              ...DEFAULT_MEMBER_STATE.watchStatuses,
+              ...(parsedState.watchStatuses || {})
+            }
+          };
+        } catch {
+          return structuredClone(DEFAULT_MEMBER_STATE);
+        }
+      }
+
+      function writeState(state) {
+        localStorage.setItem(MEMBER_STATE_KEY, JSON.stringify(state));
+      }
+
+      function normalizeStatus(value) {
+        if (["Pending", "Ready", "Sent"].includes(value)) {
+          return value;
+        }
+        return "Pending";
+      }
+
+      function normalizeWatchStatus(value) {
+        if (["Tentative", "Confirmed", "Released"].includes(value)) {
+          return value;
+        }
+        return "Tentative";
+      }
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function releaseContentFor(state, key) {
+        return {
+          edgePick: "",
+          scorePick: "",
+          notes: "",
+          readyAt: "",
+          sentAt: "",
+          ...(state.releaseContent[key] || {})
+        };
+      }
+
+      function stampNow() {
+        return new Date().toLocaleString();
+      }
+
+      async function loadRuntimeState() {
+        try {
+          const response = await fetch("./data/runtime-state.json");
+          if (!response.ok) {
+            return {};
+          }
+          return await response.json();
+        } catch {
+          return {};
+        }
+      }
+
+      async function loadWatchlistSchedule() {
+        try {
+          const response = await fetch("./data/watchlist-schedule.json");
+          if (!response.ok) {
+            return {};
+          }
+          return await response.json();
+        } catch {
+          return {};
+        }
+      }
+
+      function emailPreviewFor(release, content) {
+        return {
+          edgeSubject: `HavenIntel Match Brief | ${release.title}`,
+          edgeBody: `Your HavenIntel Match Brief for ${release.title} is ready. Match outcome read: ${content.edgePick || "Analysis pending"}. Intelligence note: ${release.totalLean}. Handicap read: ${release.handicapLean}. Read strength: ${release.confidence}. Kickoff window: ${release.kickoff}.`,
+          scoreSubject: `HavenIntel Score-Range Brief | ${release.title}`,
+          scoreBody: `Your HavenIntel Score-Range Brief for ${release.title} is ready. Score-range read: ${content.scorePick || "Analysis pending"}. This is the specialist score-focused layer for this match. Kickoff window: ${release.kickoff}.`
+        };
+      }
+
+      function releaseRuntimeStatus(release, runtimeState) {
+        return runtimeState?.[release.matchId]?.status || "";
+      }
+
+      function linkedWatchStatus(state, release) {
+        return normalizeWatchStatus(state.watchStatuses?.[release.matchId]);
+      }
+
+      function isReleaseActive(state, release, runtimeState) {
+        if (releaseRuntimeStatus(release, runtimeState) === "Full Time") {
+          return false;
+        }
+
+        const watchStatus = linkedWatchStatus(state, release);
+        return watchStatus === "Confirmed" || watchStatus === "Released";
+      }
+
+      function activeReleases(state, runtimeState) {
+        return RELEASES.filter((release) => isReleaseActive(state, release, runtimeState));
+      }
+
+      async function loadWatchlistMatches() {
+        try {
+          const response = await fetch("./data/analysis/all-analysis.slate.json");
+          if (!response.ok) {
+            return [];
+          }
+
+          const slate = await response.json();
+          const scheduleMap = await loadWatchlistSchedule();
+          const resolvedMatches = await Promise.all((slate.matches || []).map(async (entry) => {
+            if (entry.inlineDetail?.match) {
+              const match = entry.inlineDetail.match;
+              const schedule = scheduleMap[String(match.id || entry.matchId || "")] || {};
+              return {
+                id: String(match.id || entry.matchId || ""),
+                homeTeam: match.homeTeam?.name || "Home",
+                awayTeam: match.awayTeam?.name || "Away",
+                competition: schedule.competitionName || match.competitionName || "Watchlist",
+                kickoff: schedule.kickoffAt || match.kickoffAt || ""
+              };
+            }
+
+            const outputPath = String(entry.outputPath || "");
+            const fileName = outputPath.split("/").pop();
+            if (fileName) {
+              try {
+                const detailResponse = await fetch(`./data/analysis/${fileName}`);
+                if (detailResponse.ok) {
+                  const detail = await detailResponse.json();
+                  const match = detail.match || {};
+                  const schedule = scheduleMap[String(match.id || entry.matchId || "")] || {};
+                  return {
+                    id: String(match.id || entry.matchId || ""),
+                    homeTeam: match.homeTeam?.name || "Home",
+                    awayTeam: match.awayTeam?.name || "Away",
+                    competition: schedule.competitionName || match.competitionName || "Watchlist",
+                    kickoff: schedule.kickoffAt || match.kickoffAt || ""
+                  };
+                }
+              } catch {
+                // Ignore per-match load errors and fall back below.
+              }
+            }
+
+            return {
+              id: String(entry.matchId || ""),
+              homeTeam: "Home",
+              awayTeam: "Away",
+              competition: "Watchlist",
+              kickoff: ""
+            };
+          }));
+
+          return resolvedMatches.filter((match) => match.id);
+        } catch {
+          return [];
+        }
+      }
+
+      function toKickoffLabel(value) {
+        if (!value) {
+          return "Kickoff pending";
+        }
+
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return value;
+        }
+
+        return new Intl.DateTimeFormat(undefined, {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit"
+        }).format(date);
+      }
+
+      function renderSummary(state, watchlistMatches, runtimeState) {
+        const summaryGrid = document.getElementById("summaryGrid");
+        const statuses = RELEASES.map((release) => normalizeStatus(state.deliveries[release.key]));
+        const pending = statuses.filter((status) => status === "Pending").length;
+        const ready = statuses.filter((status) => status === "Ready").length;
+        const sent = statuses.filter((status) => status === "Sent").length;
+        const watchStatuses = watchlistMatches.map((match) => normalizeWatchStatus(state.watchStatuses[match.id]));
+        const tentative = watchStatuses.filter((status) => status === "Tentative").length;
+        const confirmed = watchStatuses.filter((status) => status === "Confirmed").length;
+        const released = watchStatuses.filter((status) => status === "Released").length;
+        const activeCount = activeReleases(state, runtimeState).length;
+
+        summaryGrid.innerHTML = `
+          <article class="panel summaryStat">
+            <strong>${tentative}</strong>
+            <span>Tentative matches</span>
+          </article>
+          <article class="panel summaryStat">
+            <strong>${confirmed}</strong>
+            <span>Confirmed matches</span>
+          </article>
+          <article class="panel summaryStat">
+            <strong>${released}</strong>
+            <span>Released matches</span>
+          </article>
+          <article class="panel summaryStat">
+            <strong>${activeCount}</strong>
+            <span>Active release queue</span>
+          </article>
+          <article class="panel summaryStat">
+            <strong>${ready}</strong>
+            <span>Ready for send</span>
+          </article>
+          <article class="panel summaryStat">
+            <strong>${sent}</strong>
+            <span>Sent to members</span>
+          </article>
+        `;
+      }
+
+      function renderWatchlist(state, watchlistMatches) {
+        const watchlistGrid = document.getElementById("watchlistGrid");
+        const watchlistActions = document.getElementById("watchlistActions");
+        const visibleMatches = watchlistExpanded
+          ? watchlistMatches
+          : watchlistMatches.slice(0, WATCHLIST_PREVIEW_LIMIT);
+
+        watchlistGrid.innerHTML = visibleMatches.map((match) => {
+          const watchStatus = normalizeWatchStatus(state.watchStatuses[match.id]);
+          return `
+            <article class="watchlistItem">
+              <div class="watchlistTop">
+                <div>
+                  <strong>${match.homeTeam} vs ${match.awayTeam}</strong>
+                  <div class="adminMeta">${match.competition} • ${toKickoffLabel(match.kickoff)}</div>
+                </div>
+                <span class="pill ${watchStatus.toLowerCase()}">${watchStatus}</span>
+              </div>
+              <div class="fieldGrid">
+                <label>
+                  Watchlist status
+                  <select data-watch-status="${match.id}">
+                    <option value="Tentative"${watchStatus === "Tentative" ? " selected" : ""}>Tentative</option>
+                    <option value="Confirmed"${watchStatus === "Confirmed" ? " selected" : ""}>Confirmed</option>
+                    <option value="Released"${watchStatus === "Released" ? " selected" : ""}>Released</option>
+                  </select>
+                </label>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        if (watchlistMatches.length > WATCHLIST_PREVIEW_LIMIT) {
+          watchlistActions.innerHTML = `
+            <button class="button toggleButton" type="button" id="toggleWatchlistMatches">
+              ${watchlistExpanded ? "Show Less" : "More"}
+            </button>
+          `;
+
+          document.getElementById("toggleWatchlistMatches")?.addEventListener("click", () => {
+            watchlistExpanded = !watchlistExpanded;
+            renderWatchlist(readState(), watchlistMatches);
+          });
+        } else {
+          watchlistActions.innerHTML = "";
+        }
+
+        document.querySelectorAll("[data-watch-status]").forEach((select) => {
+          select.addEventListener("change", (event) => {
+            const matchId = event.target.getAttribute("data-watch-status");
+            const nextState = readState();
+            nextState.watchStatuses = nextState.watchStatuses || {};
+            nextState.watchStatuses[matchId] = event.target.value;
+            writeState(nextState);
+            renderAdmin();
+          });
+        });
+      }
+
+      function renderMatches(state, runtimeState) {
+        const matchStack = document.getElementById("matchStack");
+        const releases = activeReleases(state, runtimeState);
+
+        if (!releases.length) {
+          matchStack.innerHTML = `
+            <article class="panel adminCard">
+              <div class="matchHeader">
+                <div>
+                  <strong>No active release matches right now</strong>
+                  <div class="adminMeta">Move a linked watchlist match to Confirmed or Released to bring it into the release workspace. Full-time matches automatically leave this queue.</div>
+                </div>
+                <span class="pill pending">Waiting</span>
+              </div>
+            </article>
+          `;
+          return;
+        }
+
+        matchStack.innerHTML = releases.map((release) => {
+          const status = normalizeStatus(state.deliveries[release.key]);
+          const content = releaseContentFor(state, release.key);
+          const emailPreview = emailPreviewFor(release, content);
+          const watchStatus = linkedWatchStatus(state, release) || "Tentative";
+          const runtimeStatus = releaseRuntimeStatus(release, runtimeState) || "Not Started";
+          const checklist = [
+            {
+              label: "Watchlist set to Confirmed or Released",
+              done: watchStatus === "Confirmed" || watchStatus === "Released"
+            },
+            {
+              label: "Match Brief entered",
+              done: Boolean(content.edgePick.trim())
+            },
+            {
+              label: "Score-Range Brief entered",
+              done: Boolean(content.scorePick.trim())
+            },
+            {
+              label: "Internal note added",
+              done: Boolean(content.notes.trim())
+            },
+            {
+              label: "Member status set to Ready or Sent",
+              done: status === "Ready" || status === "Sent"
+            },
+            {
+              label: "Release marked as Sent",
+              done: status === "Sent"
+            }
+          ];
+          return `
+            <article class="panel adminCard">
+              <div class="matchHeader">
+                <div>
+                  <strong>${release.title}</strong>
+                  <div class="adminMeta">${release.competition} • ${release.kickoff} • Watchlist: ${watchStatus} • Match state: ${runtimeStatus}</div>
+                </div>
+                <span class="pill ${status.toLowerCase()}">${status}</span>
+              </div>
+              <div class="statusStack">
+                <div class="statusItem">
+                  <div class="row">
+                    <div>
+                      <strong>Member delivery status</strong>
+                  <div class="adminMeta">This controls the member journey: locked before release, visible when ready or sent, then removed from the private queue after full time.</div>
+                </div>
+                    <select data-release-status="${release.key}">
+                      <option value="Pending"${status === "Pending" ? " selected" : ""}>Pending</option>
+                      <option value="Ready"${status === "Ready" ? " selected" : ""}>Ready</option>
+                      <option value="Sent"${status === "Sent" ? " selected" : ""}>Sent</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="statusItem">
+                  <strong>Release checklist</strong>
+                  <div class="adminMeta">Use this to confirm the release is actually prepared before members receive it.</div>
+                  <div class="checklist">
+                    ${checklist.map((item) => `
+                      <div class="checklistItem">
+                        <span class="checklistLabel">${item.label}</span>
+                        <span class="checkBadge ${item.done ? "done" : "todo"}">${item.done ? "Done" : "To do"}</span>
+                      </div>
+                    `).join("")}
+                  </div>
+                </div>
+                <div class="statusItem">
+                  <strong>Released match brief content</strong>
+                  <div class="adminMeta">This is the member-facing release content that appears only during the active private window.</div>
+                  <div class="fieldGrid">
+                    <label>
+                      Match Brief
+                      <input type="text" value="${escapeHtml(content.edgePick)}" data-release-edge="${release.key}" placeholder="Mexico">
+                    </label>
+                    <label>
+                      Score-Range Brief
+                      <input type="text" value="${escapeHtml(content.scorePick)}" data-release-score="${release.key}" placeholder="1-0 or 2-0">
+                    </label>
+                    <label>
+                      Internal note
+                      <textarea data-release-notes="${release.key}" placeholder="Late injury note, market pressure, delivery remarks...">${escapeHtml(content.notes)}</textarea>
+                    </label>
+                    <div class="row">
+                      <div class="adminMeta">Ready at: ${content.readyAt || "-"}</div>
+                      <div class="adminMeta">Sent at: ${content.sentAt || "-"}</div>
+                    </div>
+                    <div class="buttonRow" style="margin-top:0;">
+                      <button class="button primary" type="button" data-save-release="${release.key}">Save Match Brief Content</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="statusItem">
+                  <strong>Email send-copy preview</strong>
+                  <div class="adminMeta">Short, release-ready internal template for member delivery and admin copy-checking.</div>
+                  <div class="checklist">
+                    <div class="checklistItem" style="display:block;">
+                      <span class="checklistLabel">Edge subject</span>
+                      <div class="adminMeta" style="margin-top:6px;">${escapeHtml(emailPreview.edgeSubject)}</div>
+                    </div>
+                    <div class="checklistItem" style="display:block;">
+                      <span class="checklistLabel">Edge body</span>
+                      <div class="adminMeta" style="margin-top:6px;">${escapeHtml(emailPreview.edgeBody)}</div>
+                    </div>
+                    <div class="checklistItem" style="display:block;">
+                      <span class="checklistLabel">Score subject</span>
+                      <div class="adminMeta" style="margin-top:6px;">${escapeHtml(emailPreview.scoreSubject)}</div>
+                    </div>
+                    <div class="checklistItem" style="display:block;">
+                      <span class="checklistLabel">Score body</span>
+                      <div class="adminMeta" style="margin-top:6px;">${escapeHtml(emailPreview.scoreBody)}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        document.querySelectorAll("[data-release-status]").forEach((select) => {
+          select.addEventListener("change", (event) => {
+            const releaseKey = event.target.getAttribute("data-release-status");
+            const nextState = readState();
+            const nextStatus = event.target.value;
+            const release = RELEASES.find((item) => item.key === releaseKey);
+            nextState.deliveries[releaseKey] = nextStatus;
+            nextState.releaseContent = nextState.releaseContent || {};
+            nextState.watchStatuses = nextState.watchStatuses || {};
+            nextState.releaseContent[releaseKey] = releaseContentFor(nextState, releaseKey);
+            if (release && (nextStatus === "Ready" || nextStatus === "Sent")) {
+              nextState.watchStatuses[release.matchId] = "Released";
+            }
+            if (nextStatus === "Ready" && !nextState.releaseContent[releaseKey].readyAt) {
+              nextState.releaseContent[releaseKey].readyAt = stampNow();
+            }
+            if (nextStatus === "Sent" && !nextState.releaseContent[releaseKey].sentAt) {
+              nextState.releaseContent[releaseKey].sentAt = stampNow();
+            }
+            writeState(nextState);
+            renderAdmin();
+          });
+        });
+
+        document.querySelectorAll("[data-save-release]").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const releaseKey = event.target.getAttribute("data-save-release");
+            const nextState = readState();
+            const release = RELEASES.find((item) => item.key === releaseKey);
+            nextState.releaseContent = nextState.releaseContent || {};
+            nextState.watchStatuses = nextState.watchStatuses || {};
+            nextState.releaseContent[releaseKey] = {
+              ...releaseContentFor(nextState, releaseKey),
+              edgePick: document.querySelector(`[data-release-edge="${releaseKey}"]`)?.value || "",
+              scorePick: document.querySelector(`[data-release-score="${releaseKey}"]`)?.value || "",
+              notes: document.querySelector(`[data-release-notes="${releaseKey}"]`)?.value || ""
+            };
+            if (release && !nextState.watchStatuses[release.matchId]) {
+              nextState.watchStatuses[release.matchId] = "Confirmed";
+            }
+            writeState(nextState);
+            renderAdmin();
+          });
+        });
+      }
+
+      async function renderAdmin() {
+        const state = readState();
+        const watchlistMatches = await loadWatchlistMatches();
+        const runtimeState = await loadRuntimeState();
+        renderSummary(state, watchlistMatches, runtimeState);
+        renderWatchlist(state, watchlistMatches);
+        renderMatches(state, runtimeState);
+      }
+
+      function setAllStatuses(status) {
+        const state = readState();
+        RELEASES.forEach((release) => {
+          state.deliveries[release.key] = status;
+          state.watchStatuses = state.watchStatuses || {};
+          if (status === "Ready" || status === "Sent") {
+            state.watchStatuses[release.matchId] = "Released";
+          }
+        });
+        writeState(state);
+        renderAdmin();
+      }
+
+      document.getElementById("markAllPending").addEventListener("click", () => setAllStatuses("Pending"));
+      document.getElementById("markAllReady").addEventListener("click", () => setAllStatuses("Ready"));
+      document.getElementById("markAllSent").addEventListener("click", () => setAllStatuses("Sent"));
+
+      renderAdmin();
+    </script>
+  </body>
+</html>

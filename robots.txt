@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Disallow: /account.html
+Disallow: /checkout.html
+Disallow: /dashboard.html
+Disallow: /admin.html
+Disallow: /admin-login.html
+Disallow: /history.html
+Disallow: /article-studio.html
+Disallow: /verify-email.html
+Disallow: /welcome-email.html
+
+Sitemap: https://haven-intel.com/sitemap.xml

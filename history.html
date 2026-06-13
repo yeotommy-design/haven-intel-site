@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Delivery History</title>
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #efe4d3;
+        --panel: rgba(255, 250, 243, 0.92);
+        --ink: #1c1713;
+        --muted: #6f655d;
+        --line: rgba(118, 98, 81, 0.18);
+        --accent: #b44c21;
+        --accent-2: #184f47;
+        --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 220, 179, 0.95) 0, transparent 30%),
+          radial-gradient(circle at top right, rgba(188, 226, 214, 0.8) 0, transparent 28%),
+          linear-gradient(180deg, #f9f1e7 0%, var(--bg) 100%);
+      }
+
+      main {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 24px 18px 72px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .topbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .navTabs {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 7px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.56);
+        border: 1px solid var(--line);
+      }
+
+      .navTabs a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 126px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .navTabs a.active {
+        background: var(--ink);
+        color: #fff8ef;
+      }
+
+      .hero,
+      .logCard {
+        padding: 24px;
+      }
+
+      .hero { margin-bottom: 18px; }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(180, 76, 33, 0.1);
+        color: var(--accent);
+        font-size: 0.83rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        line-height: 0.98;
+      }
+
+      p, .meta { color: var(--muted); line-height: 1.6; }
+
+      .summaryGrid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .summaryStat {
+        padding: 18px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.62);
+        border: 1px solid var(--line);
+      }
+
+      .summaryStat strong {
+        display: block;
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .pill.pending { background: rgba(109, 113, 108, 0.12); color: var(--muted); }
+      .pill.ready { background: rgba(180, 76, 33, 0.12); color: var(--accent); }
+      .pill.sent { background: rgba(24, 79, 71, 0.12); color: var(--accent-2); }
+
+      .historyTableWrap {
+        overflow-x: auto;
+      }
+
+      .historyTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 8px;
+      }
+
+      .historyTable th,
+      .historyTable td {
+        padding: 14px 12px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .historyTable th {
+        font-size: 0.82rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .historyTable tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .tableMain {
+        font-weight: 700;
+      }
+
+      .tableSub {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .compactNote {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: var(--muted);
+        max-width: 280px;
+      }
+
+      @media (max-width: 900px) {
+        .summaryGrid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script defer src="./admin-auth.js"></script>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="panel hero">
+        <div class="eyebrow">Delivery History</div>
+        <h1>Internal delivery log for release status, content save time, and send time.</h1>
+        <p>
+          This is an admin-only audit page. Keep it compact: use it to confirm what was prepared, what status each release is in, and whether it has already been sent.
+        </p>
+      </section>
+
+      <section class="summaryGrid" id="summaryGrid"></section>
+      <section class="panel logCard">
+        <div class="row">
+          <div>
+            <strong>Release audit log</strong>
+            <div class="meta">Compact internal record of the current release state.</div>
+          </div>
+        </div>
+        <div class="historyTableWrap" id="historyStack"></div>
+      </section>
+    </main>
+
+    <script>
+      const MEMBER_STATE_KEY = "havenintel-member-state-v1";
+      const RELEASES = [
+        { key: "canadaBosnia", title: "Canada vs Bosnia", competition: "World Cup" },
+        { key: "mexicoSouthAfrica", title: "Mexico vs South Africa", competition: "World Cup" },
+        { key: "koreaCzech", title: "Korea Republic vs Czech Republic", competition: "World Cup" }
+      ];
+
+      const RELEASE_DEFAULTS = {
+        canadaBosnia: {
+          edgePick: "Canada",
+          scorePick: "1-0 or 2-0",
+          notes: "Edge support: Under 2.5. Handicap support: Canada -0.5. Confidence: medium."
+        },
+        mexicoSouthAfrica: {
+          edgePick: "Mexico",
+          scorePick: "1-0 or 2-0",
+          notes: "Edge support: Under 2.25. Handicap support: South Africa +1.25. Confidence: high."
+        },
+        koreaCzech: {
+          edgePick: "Korea Republic",
+          scorePick: "1-1 or 0-0",
+          notes: "Edge support: Under 2.25. Handicap support: Korea Republic 0. Confidence: low."
+        }
+      };
+
+      const DEFAULT_STATE = {
+        deliveries: {},
+        releaseContent: {}
+      };
+
+      function readState() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(MEMBER_STATE_KEY) || "{}");
+          const mergedReleaseContent = {
+            ...DEFAULT_STATE.releaseContent,
+            ...(parsed.releaseContent || {})
+          };
+
+          for (const [key, defaults] of Object.entries(RELEASE_DEFAULTS)) {
+            mergedReleaseContent[key] = {
+              ...defaults,
+              ...(mergedReleaseContent[key] || {})
+            };
+          }
+
+          return {
+            ...DEFAULT_STATE,
+            ...parsed,
+            deliveries: {
+              ...DEFAULT_STATE.deliveries,
+              ...(parsed.deliveries || {})
+            },
+            releaseContent: mergedReleaseContent
+          };
+        } catch {
+          return structuredClone(DEFAULT_STATE);
+        }
+      }
+
+      function normalizeStatus(value) {
+        return ["Pending", "Ready", "Sent"].includes(value) ? value : "Pending";
+      }
+
+      function contentFor(state, key) {
+        return {
+          edgePick: "",
+          scorePick: "",
+          notes: "",
+          readyAt: "",
+          sentAt: "",
+          ...(state.releaseContent?.[key] || {})
+        };
+      }
+
+      function renderSummary(state) {
+        const statuses = RELEASES.map((release) => normalizeStatus(state.deliveries[release.key]));
+        const readyCount = statuses.filter((status) => status === "Ready").length;
+        const sentCount = statuses.filter((status) => status === "Sent").length;
+        const contentCount = RELEASES.filter((release) => {
+          const content = contentFor(state, release.key);
+          return content.edgePick || content.scorePick || content.notes;
+        }).length;
+
+        document.getElementById("summaryGrid").innerHTML = `
+          <article class="panel summaryStat">
+            <strong>${RELEASES.length}</strong>
+            <span>Tracked releases</span>
+          </article>
+          <article class="panel summaryStat">
+            <strong>${contentCount}</strong>
+            <span>Releases with saved content</span>
+          </article>
+          <article class="panel summaryStat">
+            <strong>${readyCount}</strong>
+            <span>Currently ready</span>
+          </article>
+          <article class="panel summaryStat">
+            <strong>${sentCount}</strong>
+            <span>Marked sent</span>
+          </article>
+        `;
+      }
+
+      function renderHistory(state) {
+        const stack = document.getElementById("historyStack");
+        stack.innerHTML = `
+          <table class="historyTable">
+            <thead>
+              <tr>
+                <th>Match</th>
+                <th>Status</th>
+                <th>Edge</th>
+                <th>Score</th>
+                <th>Ready At</th>
+                <th>Sent At</th>
+                <th>Internal Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${RELEASES.map((release) => {
+          const status = normalizeStatus(state.deliveries[release.key]);
+          const content = contentFor(state, release.key);
+          return `
+            <tr>
+              <td>
+                <div class="tableMain">${release.title}</div>
+                <div class="tableSub">${release.competition}</div>
+              </td>
+              <td><span class="pill ${status.toLowerCase()}">${status}</span></td>
+              <td>${content.edgePick || "-"}</td>
+              <td>${content.scorePick || "-"}</td>
+              <td>${content.readyAt || "-"}</td>
+              <td>${content.sentAt || "-"}</td>
+              <td><div class="compactNote">${(content.notes || "-").replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div></td>
+            </tr>
+          `;
+        }).join("")}
+            </tbody>
+          </table>
+        `;
+      }
+
+      function main() {
+        const state = readState();
+        renderSummary(state);
+        renderHistory(state);
+      }
+
+      main();
+    </script>
+  </body>
+</html>

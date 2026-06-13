@@ -1,0 +1,489 @@
+{
+  "generatedAt": "2026-06-11T04:00:00.000Z",
+  "label": "all-analysis",
+  "matchIds": [
+    5071515,
+    5071516,
+    5001993,
+    5058661,
+    "manual-canada-bosnia",
+    "manual-audax-italiano-la-serena",
+    "manual-coquimbo-unido-ohiggins",
+    "manual-colo-colo-cobresal",
+    "manual-usa-paraguay",
+    "manual-qatar-switzerland",
+    "manual-brazil-morocco",
+    "manual-haiti-scotland",
+    "manual-australia-turkey",
+    "manual-germany-curacao",
+    "manual-holland-japan",
+    "manual-ivory-coast-ecuador",
+    "manual-sweden-tunisia",
+    "manual-spain-cape-verde",
+    "manual-belgium-egypt",
+    "manual-saudi-arabia-uruguay",
+    "manual-iran-new-zealand",
+    "manual-france-senegal",
+    "manual-iraq-norway",
+    "manual-argentina-algeria",
+    "manual-austria-jordan",
+    "manual-portugal-congo-dr",
+    "manual-england-croatia",
+    "manual-ghana-panama",
+    "manual-uzbekistan-colombia"
+  ],
+  "matches": [
+    {
+      "matchId": 5071515,
+      "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/analysis/5071515.json",
+      "summary": {
+        "likelyWinner": "Portugal",
+        "likelyOutcome": "home",
+        "confidence": "high",
+        "handicapLean": "Portugal -1.5",
+        "totalLean": "Under 3",
+        "correctScoreLean": "2-0",
+        "correctScoreLeans": ["2-0", "1-0"]
+      }
+    },
+    {
+      "matchId": 5071516,
+      "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/analysis/5071516.json",
+      "summary": {
+        "likelyWinner": "England",
+        "likelyOutcome": "home",
+        "confidence": "high",
+        "handicapLean": "England -2",
+        "totalLean": "Under 3",
+        "correctScoreLean": "2-0",
+        "correctScoreLeans": ["2-0", "3-0"]
+      }
+    },
+    {
+      "matchId": 5001993,
+      "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/analysis/5001993.json",
+      "summary": {
+        "likelyWinner": "Mexico",
+        "likelyOutcome": "home",
+        "confidence": "high",
+        "handicapLean": "South Africa +1.25",
+        "totalLean": "Under 2.25",
+        "correctScoreLean": "1-0",
+        "correctScoreLeans": ["1-0", "2-0"]
+      }
+    },
+    {
+      "matchId": 5058661,
+      "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/analysis/5058661.json",
+      "summary": {
+        "likelyWinner": "Korea Republic",
+        "likelyOutcome": "home",
+        "confidence": "low",
+        "handicapLean": "Korea Republic 0",
+        "totalLean": "Under 2.25",
+        "correctScoreLean": "1-1",
+        "correctScoreLeans": ["1-1", "0-0"]
+      }
+    },
+    {
+      "matchId": "manual-canada-bosnia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-canada-bosnia",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "canada", "name": "Canada" },
+          "awayTeam": { "id": "bosnia", "name": "Bosnia" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": "Canada", "likelyOutcome": "home", "confidence": "medium", "handicapLean": "Canada -0.5", "totalLean": "Under 2.5", "correctScoreLean": "1-0", "correctScoreLeans": ["1-0", "2-0"] },
+        "notes": ["Current market shape favors Canada without projecting a runaway margin.", "Goal-range read stays on the lower side, pointing more toward control than chaos.", "Top score-range view: 1-0 or 2-0."]
+      }
+    },
+    {
+      "matchId": "manual-audax-italiano-la-serena",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-audax-italiano-la-serena",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "audax-italiano", "name": "Audax Italiano" },
+          "awayTeam": { "id": "la-serena", "name": "La Serena" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": "Audax Italiano", "likelyOutcome": "home", "confidence": "medium", "handicapLean": "Audax Italiano -0.5", "totalLean": "Over 2.5", "correctScoreLean": "2-1", "correctScoreLeans": ["2-1", "2-0"] },
+        "notes": ["Current market shape puts Audax Italiano on top without pricing the match as a complete one-sided breakaway.", "The matchup profile still looks more open than compact, with both recent form and market framing leaning toward a higher-event game.", "Top score-range view: 2-1 or 2-0 to Audax Italiano."]
+      }
+    },
+    {
+      "matchId": "manual-coquimbo-unido-ohiggins",
+      "inlineDetail": {
+        "generatedAt": "2026-06-13T09:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-coquimbo-unido-ohiggins",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "coquimbo-unido", "name": "Coquimbo Unido" },
+          "awayTeam": { "id": "ohiggins", "name": "O'Higgins" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": "Coquimbo Unido", "likelyOutcome": "home", "confidence": "low", "handicapLean": "Coquimbo Unido 0", "totalLean": "Under 2.25", "correctScoreLean": "1-0", "correctScoreLeans": ["1-0", "1-1"] },
+        "notes": ["The latest shape gives Coquimbo Unido a slight edge, but the margin still looks narrow enough to keep the match in the balance for long spells.", "Goal-range pressure still points lower, with the game reading more like a controlled domestic contest than a wide-open exchange.", "Top score-range view: 1-0 or 1-1, with the home side still holding the stronger overall lean."]
+      }
+    },
+    {
+      "matchId": "manual-colo-colo-cobresal",
+      "inlineDetail": {
+        "generatedAt": "2026-06-13T13:20:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-colo-colo-cobresal",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "colo-colo", "name": "Colo Colo" },
+          "awayTeam": { "id": "cobresal", "name": "Cobresal" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": "Colo Colo", "likelyOutcome": "home", "confidence": "high", "handicapLean": "Colo Colo -1.25", "totalLean": "Over 2.5", "correctScoreLean": "2-0", "correctScoreLeans": ["2-0", "3-0"] },
+        "notes": ["This is the strongest side separation on the current slate, with Colo Colo priced like the clearest favorite of the group.", "The matchup profile still supports a home team that should spend longer stretches in control and create the better attacking flow.", "Top score-range view: 2-0 or 3-0 to Colo Colo."]
+      }
+    },
+    {
+      "matchId": "manual-usa-paraguay",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-usa-paraguay",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "usa", "name": "USA" },
+          "awayTeam": { "id": "paraguay", "name": "Paraguay" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": "USA", "likelyOutcome": "home", "confidence": "low", "handicapLean": "USA -0.5", "totalLean": "Under 2.5", "correctScoreLean": "1-0", "correctScoreLeans": ["1-0", "2-0"] },
+        "notes": ["The latest World Cup board still makes USA the side to beat, but only by a narrow margin rather than a dominant pricing gap.", "Total pricing continues to lean lower, pointing more toward control and game-state management than a wide-open scoring pattern.", "Top score-range view: 1-0 or 2-0 to USA."]
+      }
+    },
+    {
+      "matchId": "manual-qatar-switzerland",
+      "inlineDetail": {
+        "generatedAt": "2026-06-13T09:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-qatar-switzerland",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "qatar", "name": "Qatar" },
+          "awayTeam": { "id": "switzerland", "name": "Switzerland" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": "Switzerland", "likelyOutcome": "away", "confidence": "high", "handicapLean": "Switzerland -1.75", "totalLean": "Under 2.5", "correctScoreLean": "0-2", "correctScoreLeans": ["0-2", "0-1"] },
+        "notes": ["Switzerland now sit in a firmer favorite position than the earlier softer read suggested, with the side edge looking more decisive.", "Even with that stronger side split, the totals picture still leans controlled rather than chaotic.", "Top score-range view: 0-2 or 0-1 to Switzerland."]
+      }
+    },
+    {
+      "matchId": "manual-brazil-morocco",
+      "inlineDetail": {
+        "generatedAt": "2026-06-13T09:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-brazil-morocco",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "brazil", "name": "Brazil" },
+          "awayTeam": { "id": "morocco", "name": "Morocco" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": "Brazil", "likelyOutcome": "home", "confidence": "medium", "handicapLean": "Brazil -0.75", "totalLean": "Under 2.5", "correctScoreLean": "1-0", "correctScoreLeans": ["1-0", "2-0"] },
+        "notes": ["Brazil still look like the stronger side, but the market read continues to frame the match as more controlled than explosive.", "Morocco remain competitive enough to keep the margin view measured rather than runaway.", "Top score-range view: 1-0 or 2-0 to Brazil."]
+      }
+    },
+    {
+      "matchId": "manual-haiti-scotland",
+      "inlineDetail": {
+        "generatedAt": "2026-06-13T09:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-haiti-scotland",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "haiti", "name": "Haiti" },
+          "awayTeam": { "id": "scotland", "name": "Scotland" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": "Scotland", "likelyOutcome": "away", "confidence": "medium", "handicapLean": "Scotland -1", "totalLean": "Over 2.5", "correctScoreLean": "1-2", "correctScoreLeans": ["1-2", "0-2"] },
+        "notes": ["Scotland still bring the stronger read into the fixture and now look slightly more aggressive on the margin line than the earlier softer version.", "The total picture has opened a touch, pointing toward more scoring potential than the first controlled read suggested.", "Top score-range view: 1-2 or 0-2 to Scotland."]
+      }
+    },
+    {
+      "matchId": "manual-australia-turkey",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-australia-turkey",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "australia", "name": "Australia" },
+          "awayTeam": { "id": "turkey", "name": "Turkey" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-germany-curacao",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-germany-curacao",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "germany", "name": "Germany" },
+          "awayTeam": { "id": "curacao", "name": "Curacao" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-holland-japan",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-holland-japan",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "holland", "name": "Holland" },
+          "awayTeam": { "id": "japan", "name": "Japan" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-ivory-coast-ecuador",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-ivory-coast-ecuador",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "ivory-coast", "name": "Ivory Coast" },
+          "awayTeam": { "id": "ecuador", "name": "Ecuador" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-sweden-tunisia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-sweden-tunisia",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "sweden", "name": "Sweden" },
+          "awayTeam": { "id": "tunisia", "name": "Tunisia" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-spain-cape-verde",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-spain-cape-verde",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "spain", "name": "Spain" },
+          "awayTeam": { "id": "cape-verde", "name": "Cape Verde" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-belgium-egypt",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-belgium-egypt",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "belgium", "name": "Belgium" },
+          "awayTeam": { "id": "egypt", "name": "Egypt" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-saudi-arabia-uruguay",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-saudi-arabia-uruguay",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "saudi-arabia", "name": "Saudi Arabia" },
+          "awayTeam": { "id": "uruguay", "name": "Uruguay" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-iran-new-zealand",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-iran-new-zealand",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "iran", "name": "Iran" },
+          "awayTeam": { "id": "new-zealand", "name": "New Zealand" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-france-senegal",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-france-senegal",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "france", "name": "France" },
+          "awayTeam": { "id": "senegal", "name": "Senegal" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-iraq-norway",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-iraq-norway",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "iraq", "name": "Iraq" },
+          "awayTeam": { "id": "norway", "name": "Norway" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-argentina-algeria",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-argentina-algeria",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "argentina", "name": "Argentina" },
+          "awayTeam": { "id": "algeria", "name": "Algeria" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-austria-jordan",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-austria-jordan",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "austria", "name": "Austria" },
+          "awayTeam": { "id": "jordan", "name": "Jordan" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-portugal-congo-dr",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-portugal-congo-dr",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "portugal", "name": "Portugal" },
+          "awayTeam": { "id": "congo-dr", "name": "Congo DR" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-england-croatia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-england-croatia",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "england", "name": "England" },
+          "awayTeam": { "id": "croatia", "name": "Croatia" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-ghana-panama",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-ghana-panama",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "ghana", "name": "Ghana" },
+          "awayTeam": { "id": "panama", "name": "Panama" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-uzbekistan-colombia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-11T04:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-uzbekistan-colombia",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "uzbekistan", "name": "Uzbekistan" },
+          "awayTeam": { "id": "colombia", "name": "Colombia" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    }
+  ]
+}

@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Article Studio</title>
+    <meta name="description" content="Local HavenIntel article publishing workflow for faster editorial drafts.">
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #efe4d3;
+        --paper: rgba(255, 250, 243, 0.92);
+        --ink: #1c1713;
+        --muted: #6f655d;
+        --line: rgba(118, 98, 81, 0.18);
+        --accent: #b44c21;
+        --accent-2: #184f47;
+        --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 214, 168, 0.95) 0, transparent 32%),
+          radial-gradient(circle at top right, rgba(173, 219, 208, 0.85) 0, transparent 28%),
+          linear-gradient(180deg, #f8f1e7 0%, var(--bg) 48%, #eadcc9 100%);
+      }
+
+      main {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 24px 18px 80px;
+      }
+
+      .panel {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero,
+      .studioCard,
+      .previewCard {
+        padding: 24px;
+      }
+
+      .hero {
+        margin-bottom: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(180, 76, 33, 0.1);
+        color: var(--accent);
+        font-size: 0.83rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        line-height: 0.98;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      .fieldGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .fieldGrid .full {
+        grid-column: 1 / -1;
+      }
+
+      .sectionGrid {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+        font-weight: 700;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.78);
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 112px;
+        resize: vertical;
+      }
+
+      .buttonRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: #fff9f2;
+      }
+
+      .button.secondary {
+        border-color: var(--line);
+      }
+
+      .miniTitle {
+        margin: 0 0 12px;
+        font-size: 1.25rem;
+      }
+
+      .helper {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .targetCard {
+        margin-top: 14px;
+        padding: 16px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .targetCard strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .wordMeter {
+        margin-top: 10px;
+        height: 12px;
+        border-radius: 999px;
+        background: rgba(28, 23, 19, 0.08);
+        overflow: hidden;
+      }
+
+      .wordMeterFill {
+        height: 100%;
+        width: 0;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #b44c21 0%, #184f47 100%);
+        transition: width 180ms ease;
+      }
+
+      .meterMeta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .meterBadge {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .meterBadge.low {
+        background: rgba(161, 59, 51, 0.12);
+        color: #a13b33;
+      }
+
+      .meterBadge.good {
+        background: rgba(24, 79, 71, 0.12);
+        color: var(--accent-2);
+      }
+
+      .meterBadge.high {
+        background: rgba(180, 76, 33, 0.12);
+        color: var(--accent);
+      }
+
+      .presetGrid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .presetButton {
+        display: grid;
+        gap: 6px;
+        width: 100%;
+        text-align: left;
+        padding: 14px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        cursor: pointer;
+        font: inherit;
+      }
+
+      .presetButton strong {
+        font-size: 1rem;
+      }
+
+      .presetButton span {
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .presetButton.active {
+        border-color: rgba(24, 79, 71, 0.28);
+        background: rgba(24, 79, 71, 0.08);
+        box-shadow: inset 0 0 0 1px rgba(24, 79, 71, 0.12);
+      }
+
+      .codeBlock {
+        margin-top: 14px;
+        padding: 16px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(28, 23, 19, 0.95);
+        color: #fff9f2;
+        font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 0.88rem;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .previewMeta,
+      .chipRow,
+      .tagRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .previewMeta {
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin-bottom: 14px;
+      }
+
+      .chip,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .chip {
+        background: rgba(180, 76, 33, 0.1);
+        color: var(--accent);
+      }
+
+      .tag {
+        background: rgba(24, 79, 71, 0.1);
+        color: var(--accent-2);
+      }
+
+      .previewCard h2 {
+        margin: 10px 0 12px;
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .previewSection {
+        margin-top: 20px;
+      }
+
+      .previewSection h3 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+      }
+
+      .statusLine {
+        margin-top: 14px;
+        color: var(--accent-2);
+        font-weight: 700;
+      }
+
+      @media (max-width: 960px) {
+        .layout,
+        .fieldGrid {
+          grid-template-columns: 1fr;
+        }
+
+        .presetGrid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script defer src="./admin-auth.js"></script>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="panel hero">
+        <div class="eyebrow">Article Studio</div>
+        <h1>Internal article drafting tool for match previews, reviews, and football news content.</h1>
+        <p>
+          This is an internal publishing workflow. Use it to prepare article structure, set metadata, preview the final layout, and copy the JSON or CLI command for the HavenIntel archive.
+        </p>
+      </section>
+
+      <section class="layout">
+        <article class="panel studioCard">
+          <h2 class="miniTitle">Draft builder</h2>
+          <p class="helper">Fill this once, then use the generated JSON or command to move the article into the HavenIntel content archive.</p>
+          <div class="targetCard">
+            <strong>Editorial target</strong>
+            <div class="helper">Aim for `700-900 words` minimum standard coverage, with enough room for team form, player news, injuries, performance, and match outlook.</div>
+            <div class="wordMeter" aria-hidden="true">
+              <div class="wordMeterFill" id="wordMeterFill"></div>
+            </div>
+            <div class="meterMeta">
+              <span id="wordCount">0 words</span>
+              <span id="readingEstimate">0 min read</span>
+              <span class="meterBadge low" id="rangeBadge">Below standard</span>
+            </div>
+          </div>
+
+          <div class="sectionGrid">
+            <strong>Editorial presets</strong>
+            <div class="helper">Choose a mode to instantly reshape the article flow for faster daily publishing.</div>
+            <div class="presetGrid">
+              <button class="presetButton active" type="button" data-preset="match-preview">
+                <strong>Match Preview</strong>
+                <span>Pre-match team setup, injuries, form, players, and expected match direction.</span>
+              </button>
+              <button class="presetButton" type="button" data-preset="post-match-review">
+                <strong>Post-Match Review</strong>
+                <span>Result breakdown, decisive moments, standout players, and what the performance means next.</span>
+              </button>
+              <button class="presetButton" type="button" data-preset="player-news">
+                <strong>Player News</strong>
+                <span>Focus on one player story, fitness update, form trend, transfer noise, or major availability change.</span>
+              </button>
+            </div>
+          </div>
+
+          <form id="articleForm" class="sectionGrid">
+            <div class="fieldGrid">
+              <label>
+                Title
+                <input id="title" name="title" type="text" placeholder="Mexico vs South Africa: where the match may tighten" required>
+              </label>
+              <label>
+                Slug
+                <input id="slug" name="slug" type="text" placeholder="auto-generated if empty">
+              </label>
+              <label>
+                Category
+                <input id="category" name="category" type="text" value="Match Analysis">
+              </label>
+              <label>
+                Competition
+                <input id="competition" name="competition" type="text" value="International Football">
+              </label>
+              <label>
+                Published Date
+                <input id="publishedAt" name="publishedAt" type="date" required>
+              </label>
+              <label>
+                Reading Time
+                <input id="readingTime" name="readingTime" type="text" value="5 min read">
+              </label>
+              <label>
+                Country
+                <input id="venueCountry" name="venueCountry" type="text" placeholder="Mexico">
+              </label>
+              <label class="full">
+                Author
+                <input id="author" name="author" type="text" value="HavenIntel Desk">
+              </label>
+              <label>
+                State / Region
+                <input id="venueState" name="venueState" type="text" placeholder="Jalisco">
+              </label>
+              <label>
+                Stadium
+                <input id="venueStadium" name="venueStadium" type="text" placeholder="Guadalajara Stadium">
+              </label>
+              <label class="full">
+                Excerpt
+                <textarea id="excerpt" name="excerpt" placeholder="Short listing summary covering the match angle, team situation, and why this game matters." required></textarea>
+              </label>
+              <label class="full">
+                Hero Intro
+                <textarea id="hero" name="hero" placeholder="Opening paragraph covering the overall match story, form, pressure points, and the central football question going into kickoff." required></textarea>
+              </label>
+              <label class="full">
+                Tags
+                <input id="tags" name="tags" type="text" placeholder="Mexico, South Africa, Match Preview, Score Range">
+              </label>
+            </div>
+
+            <div class="sectionGrid">
+              <strong>HavenIntel editorial structure</strong>
+              <div class="helper">Use this standard flow to cover team news, players, injuries, recent winning or losing form, and the main match outlook.</div>
+              <div class="fieldGrid">
+                <label>
+                  Section 1 Heading
+                  <input id="section1Heading" type="text" value="Team News">
+                </label>
+                <label>
+                  Section 2 Heading
+                  <input id="section2Heading" type="text" value="Injuries and Availability">
+                </label>
+                <label>
+                  Section 3 Heading
+                  <input id="section3Heading" type="text" value="Recent Form and Results">
+                </label>
+                <label>
+                  Section 4 Heading
+                  <input id="section4Heading" type="text" value="Player Focus">
+                </label>
+                <label class="full">
+                  Section 5 Heading
+                  <input id="section5Heading" type="text" value="Match Outlook">
+                </label>
+                <label class="full">
+                  Section 1 Paragraphs
+                  <textarea id="section1Paragraphs" placeholder="One paragraph per line. Cover team setup, likely approach, recent squad developments, and the broader match context."></textarea>
+                </label>
+                <label class="full">
+                  Section 2 Paragraphs
+                  <textarea id="section2Paragraphs" placeholder="One paragraph per line. Cover injuries, suspensions, fitness doubts, missing players, and what those absences may change."></textarea>
+                </label>
+                <label class="full">
+                  Section 3 Paragraphs
+                  <textarea id="section3Paragraphs" placeholder="One paragraph per line. Cover recent wins, losses, performance trends, scoring record, and current momentum."></textarea>
+                </label>
+                <label class="full">
+                  Section 4 Paragraphs
+                  <textarea id="section4Paragraphs" placeholder="One paragraph per line. Focus on key players, form leaders, creators, finishers, defenders, or major individual storylines."></textarea>
+                </label>
+                <label class="full">
+                  Section 5 Paragraphs
+                  <textarea id="section5Paragraphs" placeholder="One paragraph per line. Close with what to watch before kickoff and how the match may develop overall."></textarea>
+                </label>
+              </div>
+            </div>
+          </form>
+
+          <div class="buttonRow">
+            <button class="button primary" type="button" id="generateDraft">Generate Draft</button>
+            <button class="button secondary" type="button" id="copyJson">Copy JSON</button>
+            <button class="button secondary" type="button" id="copyCommand">Copy CLI Command</button>
+            <button class="button secondary" type="button" id="downloadJson">Download JSON</button>
+          </div>
+
+          <div class="statusLine" id="statusLine">Draft ready when you are.</div>
+
+          <div class="codeBlock" id="commandOutput">Command preview will appear here.</div>
+          <div class="codeBlock" id="jsonOutput">JSON preview will appear here.</div>
+        </article>
+
+        <aside class="panel previewCard">
+          <div class="eyebrow">Preview</div>
+          <h2 id="previewTitle">Your article title will appear here.</h2>
+          <div class="previewMeta" id="previewMeta"></div>
+          <p id="previewHero">Your hero intro will appear here.</p>
+          <div class="tagRow" id="previewTags"></div>
+          <div id="previewSections"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const DEFAULT_DATE = new Date().toISOString().slice(0, 10);
+      const form = document.getElementById("articleForm");
+      const titleInput = document.getElementById("title");
+      const slugInput = document.getElementById("slug");
+      const publishedAtInput = document.getElementById("publishedAt");
+      const statusLine = document.getElementById("statusLine");
+      const jsonOutput = document.getElementById("jsonOutput");
+      const commandOutput = document.getElementById("commandOutput");
+      const wordCountOutput = document.getElementById("wordCount");
+      const readingEstimateOutput = document.getElementById("readingEstimate");
+      const rangeBadge = document.getElementById("rangeBadge");
+      const wordMeterFill = document.getElementById("wordMeterFill");
+      const presetButtons = Array.from(document.querySelectorAll("[data-preset]"));
+      const presetConfigs = {
+        "match-preview": {
+          category: "Match Analysis",
+          tags: "Match Preview, Team News, Injuries, Form",
+          headings: [
+            "Team News",
+            "Injuries and Availability",
+            "Recent Form and Results",
+            "Player Focus",
+            "Match Outlook"
+          ],
+          placeholders: [
+            "One paragraph per line. Cover team setup, likely approach, recent squad developments, and the broader match context.",
+            "One paragraph per line. Cover injuries, suspensions, fitness doubts, missing players, and what those absences may change.",
+            "One paragraph per line. Cover recent wins, losses, performance trends, scoring record, and current momentum.",
+            "One paragraph per line. Focus on key players, form leaders, creators, finishers, defenders, or major individual storylines.",
+            "One paragraph per line. Close with what to watch before kickoff and how the match may develop overall."
+          ],
+          excerpt: "Short listing summary covering the match angle, team situation, and why this game matters.",
+          hero: "Opening paragraph covering the overall match story, form, pressure points, and the central football question going into kickoff."
+        },
+        "post-match-review": {
+          category: "Post-Match Review",
+          tags: "Post-Match Review, Result Analysis, Performance Review, Key Moments",
+          headings: [
+            "Result Snapshot",
+            "Turning Points",
+            "Performance and Momentum",
+            "Standout Players",
+            "What It Means Next"
+          ],
+          placeholders: [
+            "One paragraph per line. Open with the scoreline, match context, and the clearest reason the game broke the way it did.",
+            "One paragraph per line. Cover the goals, red cards, tactical shifts, substitutions, or moments that changed control of the match.",
+            "One paragraph per line. Assess the performance quality, winning or losing trend, defensive shape, and whether the result matched the display.",
+            "One paragraph per line. Focus on the players who decided the game, whether positively or negatively.",
+            "One paragraph per line. Close with what this result means for confidence, pressure, and the next fixture."
+          ],
+          excerpt: "Short listing summary covering the result, decisive match moments, and the bigger takeaway after full time.",
+          hero: "Opening paragraph covering how the match was decided, who took control, and what the performance told us after the final whistle."
+        },
+        "player-news": {
+          category: "Player News",
+          tags: "Player News, Injury Update, Form Watch, Squad Impact",
+          headings: [
+            "The Story",
+            "Availability and Fitness",
+            "Recent Performance",
+            "Team Impact",
+            "What Happens Next"
+          ],
+          placeholders: [
+            "One paragraph per line. Introduce the player situation clearly, whether it is form, injury, selection, leadership, or a wider club or national-team issue.",
+            "One paragraph per line. Cover the latest fitness, medical, suspension, or availability angle and what is confirmed versus uncertain.",
+            "One paragraph per line. Review recent performances, output, consistency, and whether the player is trending upward or downward.",
+            "One paragraph per line. Explain how the player's status changes the team, system, balance, or likely results.",
+            "One paragraph per line. Close with the next steps, expected timeline, and what readers should watch in the next match or camp."
+          ],
+          excerpt: "Short listing summary covering the main player update and why it matters to the wider team picture.",
+          hero: "Opening paragraph covering the player story, the competitive context, and why this development matters right now."
+        }
+      };
+
+      publishedAtInput.value = DEFAULT_DATE;
+
+      function slugify(value) {
+        return String(value || "")
+          .toLowerCase()
+          .replace(/&/g, "and")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "")
+          .replace(/-{2,}/g, "-");
+      }
+
+      function splitParagraphs(value) {
+        return String(value || "")
+          .split("\n")
+          .map((item) => item.trim())
+          .filter(Boolean);
+      }
+
+      function escapeShell(value) {
+        return String(value || "").replace(/"/g, '\\"');
+      }
+
+      function countWords(value) {
+        const words = String(value || "").trim().match(/\b[\w'-]+\b/g);
+        return words ? words.length : 0;
+      }
+
+      function setFieldValue(id, value) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.value = value;
+        }
+      }
+
+      function setFieldPlaceholder(id, value) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.placeholder = value;
+        }
+      }
+
+      function applyPreset(presetKey) {
+        const preset = presetConfigs[presetKey];
+        if (!preset) {
+          return;
+        }
+
+        presetButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.preset === presetKey);
+        });
+
+        setFieldValue("category", preset.category);
+        setFieldPlaceholder("excerpt", preset.excerpt);
+        setFieldPlaceholder("hero", preset.hero);
+
+        if (!document.getElementById("tags").value.trim()) {
+          setFieldValue("tags", preset.tags);
+        }
+
+        if (!document.getElementById("excerpt").value.trim()) {
+          setFieldValue("excerpt", preset.excerpt);
+        }
+
+        if (!document.getElementById("hero").value.trim()) {
+          setFieldValue("hero", preset.hero);
+        }
+
+        preset.headings.forEach((heading, index) => {
+          setFieldValue(`section${index + 1}Heading`, heading);
+        });
+
+        preset.placeholders.forEach((placeholder, index) => {
+          setFieldPlaceholder(`section${index + 1}Paragraphs`, placeholder);
+        });
+
+        statusLine.textContent = `${preset.category} preset applied.`;
+        renderDraft();
+      }
+
+      function getSectionsFromForm() {
+        return [
+          {
+            heading: document.getElementById("section1Heading").value.trim() || "Team News",
+            paragraphs: splitParagraphs(document.getElementById("section1Paragraphs").value)
+          },
+          {
+            heading: document.getElementById("section2Heading").value.trim() || "Injuries and Availability",
+            paragraphs: splitParagraphs(document.getElementById("section2Paragraphs").value)
+          },
+          {
+            heading: document.getElementById("section3Heading").value.trim() || "Recent Form and Results",
+            paragraphs: splitParagraphs(document.getElementById("section3Paragraphs").value)
+          },
+          {
+            heading: document.getElementById("section4Heading").value.trim() || "Player Focus",
+            paragraphs: splitParagraphs(document.getElementById("section4Paragraphs").value)
+          },
+          {
+            heading: document.getElementById("section5Heading").value.trim() || "Match Outlook",
+            paragraphs: splitParagraphs(document.getElementById("section5Paragraphs").value)
+          }
+        ].filter((section) => section.paragraphs.length > 0);
+      }
+
+      function buildDraft() {
+        const formData = new FormData(form);
+        const title = String(formData.get("title") || "").trim();
+        const slug = String(formData.get("slug") || "").trim() || slugify(title);
+        const tags = String(formData.get("tags") || "")
+          .split(",")
+          .map((item) => item.trim())
+          .filter(Boolean);
+
+        return {
+          slug,
+          title,
+          category: String(formData.get("category") || "").trim(),
+          competition: String(formData.get("competition") || "").trim(),
+          publishedAt: String(formData.get("publishedAt") || "").trim(),
+          excerpt: String(formData.get("excerpt") || "").trim(),
+          readingTime: String(formData.get("readingTime") || "").trim(),
+          author: String(formData.get("author") || "").trim(),
+          venue: {
+            country: String(formData.get("venueCountry") || "").trim(),
+            state: String(formData.get("venueState") || "").trim(),
+            stadium: String(formData.get("venueStadium") || "").trim()
+          },
+          hero: String(formData.get("hero") || "").trim(),
+          sections: getSectionsFromForm(),
+          tags
+        };
+      }
+
+      function getDraftAnalytics(draft) {
+        const wordCount =
+          countWords(draft.excerpt) +
+          countWords(draft.hero) +
+          draft.sections.reduce(
+            (total, section) =>
+              total +
+              countWords(section.heading) +
+              section.paragraphs.reduce((innerTotal, paragraph) => innerTotal + countWords(paragraph), 0),
+            0
+          );
+
+        return {
+          wordCount,
+          estimatedReadingTime: `${Math.max(1, Math.ceil(wordCount / 220))} min read`
+        };
+      }
+
+      function buildCommand(draft) {
+        return [
+          "npm run create:article -- \\",
+          `  --title "${escapeShell(draft.title)}" \\`,
+          `  --slug "${escapeShell(draft.slug)}" \\`,
+          `  --category "${escapeShell(draft.category)}" \\`,
+          `  --competition "${escapeShell(draft.competition)}" \\`,
+          `  --date "${escapeShell(draft.publishedAt)}" \\`,
+          `  --excerpt "${escapeShell(draft.excerpt)}" \\`,
+          `  --readingTime "${escapeShell(draft.readingTime)}" \\`,
+          `  --author "${escapeShell(draft.author)}" \\`,
+          `  --country "${escapeShell(draft.venue?.country || "")}" \\`,
+          `  --state "${escapeShell(draft.venue?.state || "")}" \\`,
+          `  --stadium "${escapeShell(draft.venue?.stadium || "")}" \\`,
+          `  --hero "${escapeShell(draft.hero)}" \\`,
+          `  --tags "${escapeShell(draft.tags.join(", "))}"`
+        ].join("\n");
+      }
+
+      function renderPreview(draft) {
+        const analytics = getDraftAnalytics(draft);
+        document.getElementById("previewTitle").textContent = draft.title || "Your article title will appear here.";
+        document.getElementById("previewMeta").innerHTML = [
+          draft.category || "Category",
+          draft.competition || "Competition",
+          draft.publishedAt ? `Published Date: ${draft.publishedAt}` : "Published Date",
+          draft.readingTime || analytics.estimatedReadingTime || "Reading time",
+          draft.author || "Author",
+          draft.venue?.country ? `Country: ${draft.venue.country}` : "",
+          draft.venue?.state ? `State: ${draft.venue.state}` : "",
+          draft.venue?.stadium ? `Stadium: ${draft.venue.stadium}` : ""
+        ].map((item) => `<span>${item}</span>`).join("");
+        document.getElementById("previewHero").textContent = draft.hero || "Your hero intro will appear here.";
+        document.getElementById("previewTags").innerHTML = (draft.tags || [])
+          .map((tag) => `<span class="tag">${tag}</span>`)
+          .join("");
+        document.getElementById("previewSections").innerHTML = (draft.sections || [])
+          .map((section) => `
+            <section class="previewSection">
+              <h3>${section.heading}</h3>
+              ${section.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+            </section>
+          `)
+          .join("");
+      }
+
+      function renderWordTarget(draft) {
+        const analytics = getDraftAnalytics(draft);
+        const words = analytics.wordCount;
+        const estimate = analytics.estimatedReadingTime;
+        const meterMax = 900;
+        const meterWidth = Math.min((words / meterMax) * 100, 100);
+        wordMeterFill.style.width = `${meterWidth}%`;
+        wordCountOutput.textContent = `${words} words`;
+        readingEstimateOutput.textContent = estimate;
+
+        if (words < 700) {
+          rangeBadge.className = "meterBadge low";
+          rangeBadge.textContent = "Below standard";
+        } else if (words <= 900) {
+          rangeBadge.className = "meterBadge good";
+          rangeBadge.textContent = "Within standard";
+        } else {
+          rangeBadge.className = "meterBadge high";
+          rangeBadge.textContent = "Above standard";
+        }
+      }
+
+      function renderDraft() {
+        const draft = buildDraft();
+        jsonOutput.textContent = JSON.stringify(draft, null, 2);
+        commandOutput.textContent = buildCommand(draft);
+        renderPreview(draft);
+        renderWordTarget(draft);
+        statusLine.textContent = draft.title
+          ? `Draft updated for "${draft.title}".`
+          : "Draft ready when you are.";
+        return draft;
+      }
+
+      async function copyText(text, message) {
+        try {
+          await navigator.clipboard.writeText(text);
+          statusLine.textContent = message;
+        } catch (error) {
+          statusLine.textContent = "Clipboard access was blocked in this browser.";
+        }
+      }
+
+      function downloadJsonFile(text, filename) {
+        const blob = new Blob([text], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(url);
+      }
+
+      titleInput.addEventListener("input", () => {
+        if (!slugInput.value.trim()) {
+          slugInput.placeholder = slugify(titleInput.value);
+        }
+      });
+
+      form.addEventListener("input", renderDraft);
+      presetButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          applyPreset(button.dataset.preset);
+        });
+      });
+
+      document.getElementById("generateDraft").addEventListener("click", renderDraft);
+      document.getElementById("copyJson").addEventListener("click", () => {
+        const draft = renderDraft();
+        copyText(JSON.stringify(draft, null, 2), "Article JSON copied.");
+      });
+      document.getElementById("copyCommand").addEventListener("click", () => {
+        const draft = renderDraft();
+        copyText(buildCommand(draft), "CLI command copied.");
+      });
+      document.getElementById("downloadJson").addEventListener("click", () => {
+        const draft = renderDraft();
+        downloadJsonFile(JSON.stringify(draft, null, 2), `${draft.slug || "havenintel-article-draft"}.json`);
+        statusLine.textContent = "Draft JSON downloaded.";
+      });
+
+      applyPreset("match-preview");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Admin Access</title>
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #efe4d3;
+        --panel: rgba(255, 250, 243, 0.92);
+        --ink: #1c1713;
+        --muted: #6f655d;
+        --line: rgba(118, 98, 81, 0.18);
+        --accent: #b44c21;
+        --accent-2: #184f47;
+        --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 214, 168, 0.95) 0, transparent 32%),
+          radial-gradient(circle at top right, rgba(173, 219, 208, 0.85) 0, transparent 28%),
+          linear-gradient(180deg, #f8f1e7 0%, var(--bg) 48%, #eadcc9 100%);
+      }
+
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 24px 18px 72px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero,
+      .loginCard {
+        padding: 28px 24px;
+      }
+
+      .hero {
+        margin-bottom: 18px;
+      }
+
+      .brandLockup {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .brandBall {
+        display: inline-grid;
+        place-items: center;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid var(--line);
+        font-size: 1.9rem;
+        box-shadow: 0 10px 24px rgba(45, 29, 15, 0.08);
+      }
+
+      .brandText strong {
+        display: block;
+        font-size: 1.9rem;
+        line-height: 1;
+      }
+
+      .brandText span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(180, 76, 33, 0.1);
+        color: var(--accent);
+        font-size: 0.83rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(2rem, 5vw, 3.3rem);
+        line-height: 0.98;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .featureGrid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .featureCard {
+        padding: 14px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.66);
+      }
+
+      .featureCard strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .featureCard span {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+
+      .cardTitle {
+        margin: 0 0 6px;
+        font-size: 1.4rem;
+      }
+
+      .helperRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .helperPill {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(24, 79, 71, 0.08);
+        color: var(--accent-2);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .formGrid {
+        display: grid;
+        gap: 14px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+        font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        padding: 14px 15px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.72);
+        font: inherit;
+        transition: border-color 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: rgba(24, 79, 71, 0.28);
+        box-shadow: 0 0 0 4px rgba(24, 79, 71, 0.08);
+        background: rgba(255,255,255,0.88);
+      }
+
+      .buttonRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: #fff9f2;
+      }
+
+      .button.secondary {
+        background: rgba(255,255,255,0.62);
+        color: var(--ink);
+        border-color: var(--line);
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(45, 29, 15, 0.08);
+      }
+
+      .securityNote {
+        margin-top: 18px;
+        padding: 14px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.66);
+      }
+
+      .securityNote strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .status {
+        margin-top: 14px;
+        font-weight: 700;
+      }
+
+      .status.error {
+        color: var(--accent);
+      }
+
+      .status.ok {
+        color: var(--accent-2);
+      }
+
+      @media (max-width: 760px) {
+        .featureGrid {
+          grid-template-columns: 1fr;
+        }
+
+        .brandText strong {
+          font-size: 1.65rem;
+        }
+      }
+    </style>
+    <script defer src="./admin-auth.js"></script>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="panel hero">
+        <div class="brandLockup">
+          <div class="brandBall" aria-hidden="true">⚽</div>
+          <div class="brandText">
+            <strong>HavenIntel</strong>
+            <span>Internal release and publishing controls</span>
+          </div>
+        </div>
+        <div class="eyebrow">Admin Access</div>
+        <h1>Sign in to the internal HavenIntel operating panel.</h1>
+        <p>
+          This page is only for internal release management, delivery history, and article workflow. It is not part of the public member journey.
+        </p>
+        <div class="featureGrid">
+          <div class="featureCard">
+            <strong>Release Admin</strong>
+            <span>Prepare signals, change status, and stage each match before send-out.</span>
+          </div>
+          <div class="featureCard">
+            <strong>Delivery History</strong>
+            <span>Review the compact audit log for readiness and sent timestamps.</span>
+          </div>
+          <div class="featureCard">
+            <strong>Article Studio</strong>
+            <span>Draft previews, reviews, and football news content for the insights archive.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel loginCard">
+        <h2 class="cardTitle">Internal sign-in</h2>
+        <p>
+          Use the admin login below to access HavenIntel’s protected operating pages.
+        </p>
+        <form class="formGrid" id="adminLoginForm">
+          <label>
+            Admin email
+            <input id="adminEmail" name="adminEmail" type="email" autocomplete="username" placeholder="yeo.tommy@gmail.com" required>
+          </label>
+          <label>
+            Admin password
+            <input id="adminPassword" name="adminPassword" type="password" autocomplete="current-password" placeholder="Enter admin password" required>
+          </label>
+          <div class="buttonRow">
+            <button class="button primary" type="submit">Open Admin</button>
+            <a class="button secondary" href="./index.html">Back to Home</a>
+          </div>
+        </form>
+        <div class="helperRow">
+          <span class="helperPill">Internal Only</span>
+          <span class="helperPill">Release Workflow</span>
+          <span class="helperPill">Audit Protected</span>
+        </div>
+        <div class="securityNote">
+          <strong>Current admin access note</strong>
+          <p style="margin:0;">
+            This admin gate is currently browser-based for internal setup. Replace it with proper backend authentication before opening live operating access beyond the initial launch team.
+          </p>
+          <p style="margin:10px 0 0;">
+            Current admin email: <strong>yeo.tommy@gmail.com</strong><br>
+            Current password: <strong>HavenIntel2026!</strong>
+          </p>
+        </div>
+        <div class="status" id="loginStatus"></div>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const next = params.get("next") || "admin.html";
+      const form = document.getElementById("adminLoginForm");
+      const status = document.getElementById("loginStatus");
+      const emailInput = document.getElementById("adminEmail");
+
+      emailInput.value = "yeo.tommy@gmail.com";
+
+      if (window.HavenIntelAdminAuth?.isAuthenticated()) {
+        status.className = "status ok";
+        status.textContent = "Admin session already active.";
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const email = emailInput.value.trim().toLowerCase();
+        const password = document.getElementById("adminPassword").value;
+        const account = window.HavenIntelAdminAuth?.validateCredentials?.(email, password);
+
+        if (!account) {
+          status.className = "status error";
+          status.textContent = "Incorrect admin email or password.";
+          return;
+        }
+
+        window.HavenIntelAdminAuth.signIn(account);
+        status.className = "status ok";
+        status.textContent = "Admin access granted. Redirecting...";
+        window.location.href = `./${next.replace(/^\.\//, "")}`;
+      });
+    </script>
+  </body>
+</html>

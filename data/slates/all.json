@@ -1,0 +1,102 @@
+{
+  "collectedAt": "2026-06-10T09:10:40.295Z",
+  "label": "all",
+  "markets": [
+    "1x2",
+    "ah",
+    "ou",
+    "cs"
+  ],
+  "matchIds": [
+    5071515,
+    5071516,
+    5001993,
+    5058661
+  ],
+  "matches": [
+    {
+      "matchId": 5071515,
+      "files": [
+        {
+          "market": "1x2",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/1x2/5071515.json"
+        },
+        {
+          "market": "ah",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/ah/5071515.all.json"
+        },
+        {
+          "market": "ou",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/ou/5071515.all.json"
+        },
+        {
+          "market": "cs",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/cs/5071515.all.json"
+        }
+      ]
+    },
+    {
+      "matchId": 5071516,
+      "files": [
+        {
+          "market": "1x2",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/1x2/5071516.json"
+        },
+        {
+          "market": "ah",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/ah/5071516.all.json"
+        },
+        {
+          "market": "ou",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/ou/5071516.all.json"
+        },
+        {
+          "market": "cs",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/cs/5071516.all.json"
+        }
+      ]
+    },
+    {
+      "matchId": 5001993,
+      "files": [
+        {
+          "market": "1x2",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/1x2/5001993.json"
+        },
+        {
+          "market": "ah",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/ah/5001993.all.json"
+        },
+        {
+          "market": "ou",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/ou/5001993.all.json"
+        },
+        {
+          "market": "cs",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/cs/5001993.all.json"
+        }
+      ]
+    },
+    {
+      "matchId": 5058661,
+      "files": [
+        {
+          "market": "1x2",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/1x2/5058661.json"
+        },
+        {
+          "market": "ah",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/ah/5058661.all.json"
+        },
+        {
+          "market": "ou",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/ou/5058661.all.json"
+        },
+        {
+          "market": "cs",
+          "outputPath": "/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/data/cs/5058661.all.json"
+        }
+      ]
+    }
+  ]
+}

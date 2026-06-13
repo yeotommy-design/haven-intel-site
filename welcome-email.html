@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Welcome Email Preview</title>
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f0e4d7;
+        --panel: rgba(255, 250, 243, 0.94);
+        --ink: #1c1713;
+        --muted: #6f655d;
+        --line: rgba(118, 98, 81, 0.18);
+        --accent: #b44c21;
+        --accent-2: #184f47;
+        --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 220, 179, 0.95) 0, transparent 30%),
+          radial-gradient(circle at top right, rgba(188, 226, 214, 0.8) 0, transparent 28%),
+          linear-gradient(180deg, #f9f1e7 0%, var(--bg) 100%);
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 18px 72px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .wrap {
+        display: grid;
+        gap: 18px;
+      }
+
+      .hero,
+      .emailCard {
+        padding: 28px 24px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(180, 76, 33, 0.1);
+        color: var(--accent);
+        font-size: 0.83rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(2.1rem, 5vw, 4rem);
+        line-height: 0.97;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .mailMeta {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .mailMetaRow,
+      .noteBox {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.68);
+        border: 1px solid var(--line);
+      }
+
+      .mailMetaLabel {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .emailBody {
+        display: grid;
+        gap: 14px;
+      }
+
+      .ctaRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: #fff9f2;
+      }
+
+      .button.secondary {
+        background: rgba(255,255,255,0.62);
+        color: var(--ink);
+        border-color: var(--line);
+      }
+    </style>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="panel hero">
+        <div class="eyebrow">Welcome Email Preview</div>
+        <h1 id="pageTitle">This is the HavenIntel welcome email your member would receive.</h1>
+        <p id="pageCopy">This page shows the HavenIntel welcome email format, including the confirmation step, account wording, and activation-link flow.</p>
+      </section>
+
+      <section class="panel emailCard">
+        <div class="mailMeta">
+          <div class="mailMetaRow">
+            <span class="mailMetaLabel">To</span>
+            <div id="emailTo">No member email saved yet</div>
+          </div>
+          <div class="mailMetaRow">
+            <span class="mailMetaLabel">Subject</span>
+            <div id="emailSubject">Welcome to HavenIntel | Confirm your account</div>
+          </div>
+        </div>
+
+        <div class="emailBody" id="emailBody"></div>
+
+        <div class="noteBox" id="activationNote"></div>
+
+        <div class="ctaRow">
+          <a class="button primary" href="./verify-email.html" id="confirmLink">Confirm Email</a>
+          <a class="button secondary" href="./account.html">Back to Account</a>
+          <a class="button secondary" href="./dashboard.html">Open Dashboard</a>
+        </div>
+      </section>
+    </main>
+    <script>
+      const MEMBER_STATE_KEY = "havenintel-member-state-v1";
+      const DEFAULT_STATE = {
+        signedIn: false,
+        accountCreated: false,
+        name: "",
+        email: "",
+        password: "",
+        passwordSet: false,
+        emailVerified: false,
+        welcomeEmailQueuedAt: "",
+        activationToken: "",
+        packages: {},
+        deliveries: {},
+        releaseContent: {}
+      };
+
+      function readState() {
+        try {
+          const parsedState = JSON.parse(localStorage.getItem(MEMBER_STATE_KEY) || "{}");
+          const legacyVerified = parsedState.accountCreated && typeof parsedState.emailVerified === "undefined";
+          return {
+            ...DEFAULT_STATE,
+            ...parsedState,
+            emailVerified: legacyVerified ? true : Boolean(parsedState.emailVerified)
+          };
+        } catch {
+          return structuredClone(DEFAULT_STATE);
+        }
+      }
+
+      function formatQueuedTime(value) {
+        if (!value) {
+          return "No welcome email has been queued yet.";
+        }
+
+        const stamp = new Date(value);
+        if (Number.isNaN(stamp.getTime())) {
+          return "Welcome email queued just now.";
+        }
+
+        return `Welcome email queued at ${stamp.toLocaleString()}.`;
+      }
+
+      const state = readState();
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get("token") || state.activationToken || "";
+      const memberName = state.name || "there";
+      const emailTo = document.getElementById("emailTo");
+      const emailSubject = document.getElementById("emailSubject");
+      const emailBody = document.getElementById("emailBody");
+      const activationNote = document.getElementById("activationNote");
+      const confirmLink = document.getElementById("confirmLink");
+      const pageTitle = document.getElementById("pageTitle");
+      const pageCopy = document.getElementById("pageCopy");
+
+      emailTo.textContent = state.email || "No member email saved yet";
+      emailSubject.textContent = "Welcome to HavenIntel | Confirm your account";
+
+      if (!state.accountCreated) {
+        pageTitle.textContent = "No welcome email can be previewed yet.";
+        pageCopy.textContent = "Create a HavenIntel account first so the system has a member name, email address, and activation link to place inside the welcome email.";
+        emailBody.innerHTML = `
+          <p>No saved HavenIntel account was found in this browser.</p>
+        `;
+        activationNote.textContent = "Create your account on the account page first, then return here to preview the welcome email.";
+        confirmLink.href = "./account.html";
+        confirmLink.textContent = "Create Account";
+      } else {
+        const activationHref = token ? `./verify-email.html?token=${encodeURIComponent(token)}` : "./verify-email.html";
+        confirmLink.href = activationHref;
+        emailBody.innerHTML = `
+          <p>Hello ${memberName},</p>
+          <p>Welcome to HavenIntel.</p>
+          <p>Your member account has been created for private pre-match football intelligence and public post-match accountability.</p>
+          <p>Before you can sign in and unlock your private dashboard, please confirm your email address using the activation link below.</p>
+          <p><strong>What happens next:</strong></p>
+          <p>1. Confirm your email address.<br>2. Sign in to your HavenIntel account.<br>3. Unlock your selected match brief package.<br>4. Receive your release during the final pre-kickoff window.</p>
+          <p>If you did not create this account, you can ignore this email.</p>
+          <p>HavenIntel</p>
+        `;
+        activationNote.textContent = `${formatQueuedTime(state.welcomeEmailQueuedAt)} Activation link: ${activationHref}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HavenIntel | Football Insights</title>
+    <meta name="description" content="Daily football insights, match analysis, previews, archive reviews, and method notes from HavenIntel.">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #efe4d3;
+        --paper: rgba(255, 250, 243, 0.92);
+        --ink: #1c1713;
+        --muted: #6f655d;
+        --line: rgba(118, 98, 81, 0.18);
+        --accent: #b44c21;
+        --accent-2: #184f47;
+        --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 214, 168, 0.95) 0, transparent 32%),
+          radial-gradient(circle at top right, rgba(173, 219, 208, 0.85) 0, transparent 28%),
+          linear-gradient(180deg, #f8f1e7 0%, var(--bg) 48%, #eadcc9 100%);
+      }
+      main { max-width: 1240px; margin: 0 auto; padding: 24px 18px 80px; }
+      .panel, .articleCard, .heroCard { background: var(--paper); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow); }
+      .heroCard { padding: 28px 24px; margin-bottom: 18px; }
+      .eyebrow { display:inline-flex; padding:7px 12px; border-radius:999px; background:rgba(180,76,33,0.1); color:var(--accent); font-size:.83rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+      h1 { margin:16px 0 12px; font-size:clamp(2.7rem, 6vw, 5rem); line-height:.94; }
+      p { color: var(--muted); line-height: 1.6; }
+      .chipRow { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 22px; }
+      .chip { display:inline-flex; align-items:center; padding:8px 12px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,0.7); color:var(--ink); font-weight:700; text-decoration:none; }
+      .bucketGrid { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:12px; margin:0 0 18px; }
+      .bucketCard { padding:14px; border-radius:18px; background:rgba(255,255,255,0.66); border:1px solid var(--line); }
+      .bucketCard strong { display:block; margin-bottom:6px; }
+      .bucketCard span { color:var(--muted); font-size:.92rem; line-height:1.45; }
+      .growthRow { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; align-items:start; }
+      .growthCard { padding:16px; border-radius:18px; background:rgba(255,255,255,0.66); border:1px solid var(--line); }
+      .growthCard strong { display:block; margin-bottom:6px; }
+      .growthCard p { margin:0 0 12px; font-size:.95rem; }
+      .growthCard:nth-child(2),
+      .growthCard:nth-child(3) { margin-top:28px; }
+      .layout { display:grid; grid-template-columns:minmax(0,1fr); gap:18px; }
+      .articleGrid { display:grid; gap:18px; }
+      .articleCard { padding:22px; }
+      .articleMeta { display:flex; flex-wrap:wrap; gap:10px; color:var(--muted); font-size:.92rem; margin-bottom:12px; }
+      .articleCard h2 { margin:0 0 10px; font-size:1.65rem; line-height:1.1; }
+      .tagRow { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+      .tag { display:inline-flex; padding:5px 10px; border-radius:999px; background:rgba(24,79,71,0.1); color:var(--accent-2); font-size:.82rem; font-weight:700; }
+      .button { display:inline-flex; align-items:center; justify-content:center; padding:13px 18px; border-radius:999px; border:1px solid transparent; text-decoration:none; font-weight:700; background:var(--ink); color:#fff9f2; }
+      @media (max-width: 1100px) {
+        .bucketGrid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+        .growthRow { grid-template-columns:1fr; }
+        .growthCard:nth-child(2),
+        .growthCard:nth-child(3) { margin-top:0; }
+      }
+      @media (max-width: 640px) { .bucketGrid { grid-template-columns:1fr; } }
+    </style>
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="topbar"></div>
+
+      <section class="heroCard">
+        <div class="eyebrow">Football Insights</div>
+        <h1>Daily football analysis, match previews, archive reviews, and method notes.</h1>
+        <p>
+          HavenIntel’s editorial side is built for repeat publishing: daily recaps, match previews, archive reviews, method notes, and slate-watch coverage that keep the archive and product loop moving together.
+        </p>
+        <p>
+          Private pre-match football intelligence. Public post-match accountability.
+        </p>
+        <div class="chipRow" id="chipRow"></div>
+      </section>
+
+      <section class="layout">
+        <section class="panel articleCard">
+          <div class="eyebrow">Content Buckets</div>
+          <div class="bucketGrid">
+            <div class="bucketCard"><strong>Daily Recap</strong><span>Builds public trust after matches.</span></div>
+            <div class="bucketCard"><strong>Match Preview</strong><span>Shows thinking before kickoff.</span></div>
+            <div class="bucketCard"><strong>Archive Review</strong><span>Explains hits and misses.</span></div>
+            <div class="bucketCard"><strong>Method Notes</strong><span>Teaches how HavenIntel reads matches.</span></div>
+            <div class="bucketCard"><strong>Slate Watch</strong><span>Previews the upcoming match slate.</span></div>
+          </div>
+          <div class="growthRow">
+            <div class="growthCard">
+              <strong>Related archived matches</strong>
+              <p>Each recap can send readers straight into the finished match archive and public result trail.</p>
+              <a class="button" href="./past.html">Open Past Matches</a>
+            </div>
+            <div class="growthCard">
+              <strong>Related live board</strong>
+              <p>Preview pieces and slate-watch notes can point readers to the current board and daily match flow.</p>
+              <a class="button" href="./index.html#board">Open Live Board</a>
+            </div>
+            <div class="growthCard">
+              <strong>Related package</strong>
+              <p>Method notes and previews can connect naturally to the Match Brief and Score-Range Brief access path.</p>
+              <a class="button" href="./checkout.html">View Packages</a>
+            </div>
+          </div>
+        </section>
+        <div class="articleGrid" id="articleGrid"></div>
+      </section>
+    </main>
+
+    <script>
+      function displayCategory(article) {
+        const category = String(article.category || "");
+        if (category === "Post-Match Review") return "Archive Review";
+        if (category === "Evergreen") return "Method Notes";
+        if (category === "Daily Insight") return "Method Notes";
+        return category;
+      }
+
+      async function main() {
+        const response = await fetch("./data/insights/articles.json");
+        const data = await response.json();
+        const articles = [...(data.articles || [])].sort((a, b) => {
+          const dateDiff = new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0);
+          if (dateDiff !== 0) return dateDiff;
+          return String(b.title || "").localeCompare(String(a.title || ""));
+        });
+        const categories = [...new Set(articles.map((article) => displayCategory(article)))];
+
+        document.getElementById("chipRow").innerHTML = categories
+          .map((category) => `<span class="chip">${category}</span>`)
+          .join("");
+
+        document.getElementById("articleGrid").innerHTML = articles
+          .map((article) => `
+            <article class="articleCard">
+              <div class="articleMeta">
+                <span>${displayCategory(article)}</span>
+                <span>${article.competition}</span>
+                <span>Published Date: ${article.publishedAt}</span>
+                <span>${article.readingTime}</span>
+              </div>
+              <h2><a href="./article.html?slug=${encodeURIComponent(article.slug)}" style="text-decoration:none;">${article.title}</a></h2>
+              <p>${article.excerpt}</p>
+              <div class="tagRow">
+                ${(article.tags || []).slice(0, 4).map((tag) => `<span class="tag">${tag}</span>`).join("")}
+              </div>
+            </article>
+          `)
+          .join("");
+      }
+
+      main().catch(() => {
+        document.getElementById("articleGrid").innerHTML = `<article class="articleCard"><strong>Unable to load insights right now.</strong></article>`;
+      });
+    </script>
+  </body>
+</html>

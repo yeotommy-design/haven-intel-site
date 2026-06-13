@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-06-11T12:33:21.047Z",
+  "source": {
+    "provider": "7M",
+    "mode": "unofficial",
+    "method": "odds-consensus"
+  },
+  "match": {
+    "id": 5001993,
+    "competitionName": "World Cup",
+    "homeTeam": {
+      "id": 214,
+      "name": "Mexico"
+    },
+    "awayTeam": {
+      "id": 209,
+      "name": "South Africa"
+    },
+    "kickoffAt": "2026-06-11T19:00:00.000Z"
+  },
+  "summary": {
+    "likelyWinner": "Mexico",
+    "likelyOutcome": "home",
+    "confidence": "high",
+    "handicapLean": "South Africa +1.25",
+    "totalLean": "Under 2.25",
+    "correctScoreLean": "1-0",
+    "correctScoreLeans": ["1-0", "2-0"]
+  },
+  "1x2": {
+    "probabilities": {
+      "home": 66.95,
+      "draw": 21.56,
+      "away": 11.48
+    },
+    "prices": {
+      "home": 1.41,
+      "draw": 4.45,
+      "away": 8.55
+    },
+    "likelyOutcome": "home",
+    "confidenceGap": 45.39,
+    "confidence": "high"
+  },
+  "handicap": {
+    "line": -1.25,
+    "favoriteOdds": 2.01,
+    "otherOdds": 1.85,
+    "lean": "away",
+    "edge": 0.16
+  },
+  "overUnder": {
+    "line": 2.25,
+    "overOdds": 1.98,
+    "underOdds": 1.87,
+    "lean": "under",
+    "edge": 0.1
+  },
+  "correctScore": {
+    "topScores": [
+      {
+        "score": "1-0",
+        "averageOdds": 4.3,
+        "books": 1
+      },
+      {
+        "score": "2-0",
+        "averageOdds": 4.3,
+        "books": 1
+      },
+      {
+        "score": "1-1",
+        "averageOdds": 7.8,
+        "books": 1
+      },
+      {
+        "score": "2-1",
+        "averageOdds": 7.8,
+        "books": 1
+      },
+      {
+        "score": "3-0",
+        "averageOdds": 8,
+        "books": 1
+      }
+    ],
+    "primaryScore": {
+      "score": "1-0",
+      "averageOdds": 4.3,
+      "books": 1
+    }
+  },
+  "notes": [
+    "This is an odds-based market summary, not a guaranteed prediction.",
+    "Confidence reflects market separation, not match certainty."
+  ]
+}

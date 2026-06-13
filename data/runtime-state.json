@@ -1,0 +1,51 @@
+{
+  "5001993": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "0",
+    "notes": "Mexico beat South Africa 2-0."
+  },
+  "5058661": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "1",
+    "notes": "Korea Republic beat Czech Republic 2-1."
+  },
+  "5071515": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "1",
+    "notes": "Portugal beat Nigeria 2-1."
+  },
+  "5071516": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "0",
+    "notes": "England beat Costa Rica 3-0."
+  },
+  "manual-canada-bosnia": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "Canada drew Bosnia and Herzegovina 1-1."
+  },
+  "manual-audax-italiano-la-serena": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "Audax Italiano drew La Serena 1-1."
+  },
+  "manual-usa-paraguay": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "4",
+    "awayScore": "1",
+    "notes": "USA beat Paraguay 4-1."
+  }
+}

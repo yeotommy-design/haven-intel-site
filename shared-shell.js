@@ -1,0 +1,141 @@
+(function () {
+  const current = window.location.pathname.split("/").pop() || "index.html";
+  const hash = window.location.hash || "";
+  const main = document.querySelector("main");
+  if (!main) {
+    return;
+  }
+
+  let topbar = main.querySelector(".topbar");
+  if (!topbar) {
+    topbar = document.createElement("div");
+    topbar.className = "topbar";
+    main.prepend(topbar);
+  }
+
+  const navItems = [
+    { label: "Home", shortLabel: "Home", href: "./index.html", active: current === "index.html" && hash !== "#pricing" && hash !== "#board" },
+    { label: "Pricing", shortLabel: "Pricing", href: "./index.html#pricing", active: current === "index.html" && hash === "#pricing", hashLink: true },
+    { label: "Insights", shortLabel: "Insights", href: "./insights.html", active: current === "insights.html" || current === "article.html" },
+    { label: "Live Board", shortLabel: "Live", href: "./index.html#board", active: current === "index.html" && hash === "#board", hashLink: true },
+    { label: "Past Matches", shortLabel: "Archive", href: "./past.html", active: current === "past.html" },
+    { label: "Public View", shortLabel: "Public", href: "./public-view.html", active: current === "public-view.html" }
+  ];
+
+  const adminAuth = window.HavenIntelAdminAuth;
+  const adminSignedIn = Boolean(adminAuth?.isAuthenticated?.());
+
+  const footerLinkGroups = [
+    {
+      title: "Explore",
+      links: [
+        { label: "Home", href: "./index.html" },
+        { label: "Pricing", href: "./index.html#pricing" },
+        { label: "Insights", href: "./insights.html" },
+        { label: "Live Board", href: "./index.html#board" },
+        { label: "Past Matches", href: "./past.html" },
+        { label: "Public View", href: "./public-view.html" }
+      ]
+    },
+    {
+      title: "Policy",
+      links: [
+        { label: "Privacy", href: "./privacy.html" },
+        { label: "Payment Policy", href: "./payment-policy.html" },
+        { label: "Terms of Use", href: "./terms.html" },
+        { label: "Refund Policy", href: "./refund-policy.html" },
+        { label: "Disclaimer", href: "./disclaimer.html" },
+        { label: "Responsible Use", href: "./responsible-use.html" }
+      ]
+    }
+  ];
+
+  if (adminSignedIn) {
+    footerLinkGroups.push({
+      title: "Internal",
+      links: [
+        { label: "Release Admin", href: "./admin.html" },
+        { label: "Delivery History", href: "./history.html" },
+        { label: "Article Studio", href: "./article-studio.html" },
+        { label: "Admin Sign Out", href: "#admin-sign-out", adminSignOut: true }
+      ]
+    });
+  }
+
+  topbar.innerHTML = `
+    <div class="brand">
+      <div class="brandMark" aria-hidden="true">
+        <span class="brandBall" aria-hidden="true">⚽</span>
+      </div>
+      <div class="brandText">
+        <strong>HavenIntel</strong>
+        <span>Private pre-match football intelligence. Public post-match accountability.</span>
+      </div>
+    </div>
+    <nav class="navTabs" aria-label="Primary navigation">
+      ${navItems.map((item) => `
+        <a href="${item.href}" class="${[item.active ? "active" : "", item.hashLink ? "hash-link" : ""].filter(Boolean).join(" ")}">
+          <span class="navLabelLong">${item.label}</span>
+          <span class="navLabelShort">${item.shortLabel || item.label}</span>
+        </a>
+      `).join("")}
+    </nav>
+  `;
+
+  document.querySelectorAll(".navTabs").forEach((nav) => {
+    if (!topbar.contains(nav)) {
+      nav.remove();
+    }
+  });
+
+  const existingFooter = main.querySelector(".siteFooter");
+  if (existingFooter) {
+    existingFooter.remove();
+  }
+
+  const footer = document.createElement("footer");
+  footer.className = "siteFooter";
+  footer.innerHTML = `
+    <div class="siteFooterGrid">
+      <div class="siteFooterBrand">
+        <div class="siteFooterPill">HavenIntel</div>
+        <strong>Private football match briefs with public archive tracking.</strong>
+        <p class="siteFooterCopy">
+          Calm pre-match football analysis, followed by public post-match accountability.
+        </p>
+      </div>
+      ${footerLinkGroups.map((group) => `
+        <div class="siteFooterCol">
+          <h3>${group.title}</h3>
+          <div class="siteFooterLinks">
+            ${group.links.map((link) => `<a href="${link.href}"${link.adminSignOut ? ' data-admin-sign-out="true"' : ""}>${link.label}</a>`).join("")}
+          </div>
+        </div>
+      `).join("")}
+    </div>
+    <div class="siteFooterBottom">
+      <p class="siteFooterNote">
+        HavenIntel publishes football analysis and match tracking. It does not guarantee outcomes or certainty.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;">
+        <span class="siteFooterPill">Release window: 6 hours or less before kickoff</span>
+        <span class="siteFooterPill">Multiples may carry forward if the daily slate is short</span>
+      </div>
+    </div>
+  `;
+
+  const disclaimer = main.querySelector(".disclaimer");
+  if (disclaimer) {
+    disclaimer.remove();
+  }
+
+  main.appendChild(footer);
+
+  footer.querySelectorAll("[data-admin-sign-out]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      adminAuth?.signOut?.();
+      window.location.href = "./admin-login.html";
+    });
+  });
+})();

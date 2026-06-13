@@ -1,0 +1,857 @@
+{
+  "source": {
+    "provider": "7M",
+    "mode": "unofficial",
+    "market": "1X2"
+  },
+  "collectedAt": "2026-06-11T12:32:16.087Z",
+  "match": {
+    "id": 5058661,
+    "kickoffRaw": "2026,06,12,10,00,00",
+    "competitionCode": "WORLD CUP",
+    "competitionName": "World Cup",
+    "marketCode": "CC3366",
+    "homeTeam": {
+      "id": 208,
+      "name": "Korea Republic"
+    },
+    "awayTeam": {
+      "id": 331,
+      "name": "Czech Republic"
+    }
+  },
+  "bookmakers": [
+    {
+      "bookmaker": {
+        "id": 117,
+        "name": "12bet.com",
+        "country": null
+      },
+      "opening": {
+        "home": 2.52,
+        "draw": 3.05,
+        "away": 2.52,
+        "returnRate": 35.38,
+        "impliedProbabilityHome": 29.23,
+        "impliedProbabilityDraw": 35.38,
+        "impliedProbabilityAway": 89.16
+      },
+      "current": {
+        "home": 2.69,
+        "draw": 2.99,
+        "away": 2.91,
+        "returnRate": 35.41,
+        "impliedProbabilityHome": 31.86,
+        "impliedProbabilityDraw": 32.73,
+        "impliedProbabilityAway": 95.25
+      },
+      "updatedAt": "2026-06-11 20:25:11"
+    },
+    {
+      "bookmaker": {
+        "id": 17,
+        "name": "Bet 365",
+        "country": "England"
+      },
+      "opening": {
+        "home": 2.38,
+        "draw": 3.25,
+        "away": 2.75,
+        "returnRate": 38.49,
+        "impliedProbabilityHome": 28.19,
+        "impliedProbabilityDraw": 33.32,
+        "impliedProbabilityAway": 91.62
+      },
+      "current": {
+        "home": 2.75,
+        "draw": 3.1,
+        "away": 2.8,
+        "returnRate": 34.85,
+        "impliedProbabilityHome": 30.92,
+        "impliedProbabilityDraw": 34.23,
+        "impliedProbabilityAway": 95.84
+      },
+      "updatedAt": "2026-06-11 20:25:11"
+    },
+    {
+      "bookmaker": {
+        "id": 66,
+        "name": "bwin",
+        "country": null
+      },
+      "opening": {
+        "home": 2.65,
+        "draw": 3.1,
+        "away": 2.75,
+        "returnRate": 35.48,
+        "impliedProbabilityHome": 30.33,
+        "impliedProbabilityDraw": 34.19,
+        "impliedProbabilityAway": 94.02
+      },
+      "current": {
+        "home": 2.6,
+        "draw": 3,
+        "away": 2.85,
+        "returnRate": 35.98,
+        "impliedProbabilityHome": 31.19,
+        "impliedProbabilityDraw": 32.83,
+        "impliedProbabilityAway": 93.56
+      },
+      "updatedAt": "2026-06-11 20:07:18"
+    },
+    {
+      "bookmaker": {
+        "id": 250,
+        "name": "Macauslot",
+        "country": "Macao"
+      },
+      "opening": {
+        "home": 2.63,
+        "draw": 2.95,
+        "away": 2.53,
+        "returnRate": 34.12,
+        "impliedProbabilityHome": 30.42,
+        "impliedProbabilityDraw": 35.47,
+        "impliedProbabilityAway": 89.73
+      },
+      "current": {
+        "home": 2.55,
+        "draw": 3,
+        "away": 2.6,
+        "returnRate": 35.33,
+        "impliedProbabilityHome": 30.03,
+        "impliedProbabilityDraw": 34.65,
+        "impliedProbabilityAway": 90.08
+      },
+      "updatedAt": "2026-06-11 20:20:19"
+    },
+    {
+      "bookmaker": {
+        "id": 37,
+        "name": "Betfair",
+        "country": "England"
+      },
+      "opening": {
+        "home": 2.78,
+        "draw": 3.25,
+        "away": 2.88,
+        "returnRate": 35.45,
+        "impliedProbabilityHome": 30.33,
+        "impliedProbabilityDraw": 34.22,
+        "impliedProbabilityAway": 98.56
+      },
+      "current": {
+        "home": 2.8,
+        "draw": 3.15,
+        "away": 3,
+        "returnRate": 35.43,
+        "impliedProbabilityHome": 31.5,
+        "impliedProbabilityDraw": 33.07,
+        "impliedProbabilityAway": 99.21
+      },
+      "updatedAt": "2026-06-11 20:07:18"
+    },
+    {
+      "bookmaker": {
+        "id": 308,
+        "name": "Crown",
+        "country": null
+      },
+      "opening": {
+        "home": 2.88,
+        "draw": 3.2,
+        "away": 2.38,
+        "returnRate": 32.15,
+        "impliedProbabilityHome": 28.94,
+        "impliedProbabilityDraw": 38.91,
+        "impliedProbabilityAway": 92.6
+      },
+      "current": {
+        "home": 2.72,
+        "draw": 3.05,
+        "away": 2.88,
+        "returnRate": 35.26,
+        "impliedProbabilityHome": 31.44,
+        "impliedProbabilityDraw": 33.3,
+        "impliedProbabilityAway": 95.9
+      },
+      "updatedAt": "2026-06-11 20:20:19"
+    },
+    {
+      "bookmaker": {
+        "id": 253,
+        "name": "188bet",
+        "country": null
+      },
+      "opening": {
+        "home": 2.88,
+        "draw": 3.2,
+        "away": 2.38,
+        "returnRate": 32.15,
+        "impliedProbabilityHome": 28.94,
+        "impliedProbabilityDraw": 38.91,
+        "impliedProbabilityAway": 92.6
+      },
+      "current": {
+        "home": 2.72,
+        "draw": 3.05,
+        "away": 2.61,
+        "returnRate": 34.08,
+        "impliedProbabilityHome": 30.4,
+        "impliedProbabilityDraw": 35.52,
+        "impliedProbabilityAway": 92.71
+      },
+      "updatedAt": "2026-06-06 00:09:46"
+    },
+    {
+      "bookmaker": {
+        "id": 254,
+        "name": "Ladbrokes",
+        "country": "England"
+      },
+      "opening": {
+        "home": 2.62,
+        "draw": 3.1,
+        "away": 2.75,
+        "returnRate": 35.74,
+        "impliedProbabilityHome": 30.21,
+        "impliedProbabilityDraw": 34.05,
+        "impliedProbabilityAway": 93.64
+      },
+      "current": {
+        "home": 2.6,
+        "draw": 3,
+        "away": 2.87,
+        "returnRate": 36.07,
+        "impliedProbabilityHome": 31.26,
+        "impliedProbabilityDraw": 32.67,
+        "impliedProbabilityAway": 93.78
+      },
+      "updatedAt": "2026-06-11 20:07:18"
+    },
+    {
+      "bookmaker": {
+        "id": 255,
+        "name": "William Hill",
+        "country": null
+      },
+      "opening": {
+        "home": 2.5,
+        "draw": 3.25,
+        "away": 2.63,
+        "returnRate": 36.77,
+        "impliedProbabilityHome": 28.28,
+        "impliedProbabilityDraw": 34.95,
+        "impliedProbabilityAway": 91.92
+      },
+      "current": {
+        "home": 2.63,
+        "draw": 2.9,
+        "away": 2.8,
+        "returnRate": 35.13,
+        "impliedProbabilityHome": 31.86,
+        "impliedProbabilityDraw": 33,
+        "impliedProbabilityAway": 92.4
+      },
+      "updatedAt": "2026-06-11 18:17:30"
+    },
+    {
+      "bookmaker": {
+        "id": 256,
+        "name": "Vikingbet",
+        "country": "Gibraltar"
+      },
+      "opening": {
+        "home": 2.55,
+        "draw": 3.1,
+        "away": 2.63,
+        "returnRate": 35.81,
+        "impliedProbabilityHome": 29.46,
+        "impliedProbabilityDraw": 34.73,
+        "impliedProbabilityAway": 91.33
+      },
+      "current": {
+        "home": 2.6,
+        "draw": 3.13,
+        "away": 2.75,
+        "returnRate": 36.02,
+        "impliedProbabilityHome": 29.92,
+        "impliedProbabilityDraw": 34.06,
+        "impliedProbabilityAway": 93.66
+      },
+      "updatedAt": "2026-06-11 20:00:39"
+    },
+    {
+      "bookmaker": {
+        "id": 257,
+        "name": "Easybets",
+        "country": null
+      },
+      "opening": {
+        "home": 2.6,
+        "draw": 3.2,
+        "away": 2.7,
+        "returnRate": 36.03,
+        "impliedProbabilityHome": 29.27,
+        "impliedProbabilityDraw": 34.7,
+        "impliedProbabilityAway": 93.68
+      },
+      "current": {
+        "home": 2.8,
+        "draw": 3.1,
+        "away": 2.8,
+        "returnRate": 34.44,
+        "impliedProbabilityHome": 31.11,
+        "impliedProbabilityDraw": 34.44,
+        "impliedProbabilityAway": 96.44
+      },
+      "updatedAt": "2026-06-11 16:02:55"
+    },
+    {
+      "bookmaker": {
+        "id": 1,
+        "name": "10BET",
+        "country": "England"
+      },
+      "opening": {
+        "home": 2.75,
+        "draw": 3.2,
+        "away": 2.6,
+        "returnRate": 34.28,
+        "impliedProbabilityHome": 29.46,
+        "impliedProbabilityDraw": 36.26,
+        "impliedProbabilityAway": 94.27
+      },
+      "current": {
+        "home": 2.7,
+        "draw": 3.15,
+        "away": 2.85,
+        "returnRate": 35.66,
+        "impliedProbabilityHome": 30.56,
+        "impliedProbabilityDraw": 33.78,
+        "impliedProbabilityAway": 96.27
+      },
+      "updatedAt": "2026-06-11 17:49:59"
+    },
+    {
+      "bookmaker": {
+        "id": 680,
+        "name": "18Bet",
+        "country": null
+      },
+      "opening": {
+        "home": 2.7,
+        "draw": 3.15,
+        "away": 2.5,
+        "returnRate": 34.05,
+        "impliedProbabilityHome": 29.18,
+        "impliedProbabilityDraw": 36.77,
+        "impliedProbabilityAway": 91.93
+      },
+      "current": {
+        "home": 2.7,
+        "draw": 3.05,
+        "away": 2.8,
+        "returnRate": 35.09,
+        "impliedProbabilityHome": 31.07,
+        "impliedProbabilityDraw": 33.84,
+        "impliedProbabilityAway": 94.75
+      },
+      "updatedAt": "2026-06-11 20:25:11"
+    },
+    {
+      "bookmaker": {
+        "id": 500,
+        "name": "1Bet",
+        "country": null
+      },
+      "opening": {
+        "home": 2.65,
+        "draw": 3.05,
+        "away": 2.65,
+        "returnRate": 34.86,
+        "impliedProbabilityHome": 30.29,
+        "impliedProbabilityDraw": 34.86,
+        "impliedProbabilityAway": 92.37
+      },
+      "current": {
+        "home": 2.7,
+        "draw": 3.05,
+        "away": 2.8,
+        "returnRate": 35.09,
+        "impliedProbabilityHome": 31.07,
+        "impliedProbabilityDraw": 33.84,
+        "impliedProbabilityAway": 94.75
+      },
+      "updatedAt": "2026-06-11 12:11:17"
+    },
+    {
+      "bookmaker": {
+        "id": 740,
+        "name": "1xBet",
+        "country": null
+      },
+      "opening": {
+        "home": 2.8,
+        "draw": 3.25,
+        "away": 2.6,
+        "returnRate": 34.03,
+        "impliedProbabilityHome": 29.32,
+        "impliedProbabilityDraw": 36.65,
+        "impliedProbabilityAway": 95.29
+      },
+      "current": {
+        "home": 2.76,
+        "draw": 3.12,
+        "away": 2.93,
+        "returnRate": 35.38,
+        "impliedProbabilityHome": 31.3,
+        "impliedProbabilityDraw": 33.33,
+        "impliedProbabilityAway": 97.64
+      },
+      "updatedAt": "2026-06-11 20:00:40"
+    },
+    {
+      "bookmaker": {
+        "id": 27,
+        "name": "Bet-at-home.com",
+        "country": "Austria"
+      },
+      "opening": {
+        "home": 2.65,
+        "draw": 3.1,
+        "away": 2.7,
+        "returnRate": 35.26,
+        "impliedProbabilityHome": 30.14,
+        "impliedProbabilityDraw": 34.6,
+        "impliedProbabilityAway": 93.43
+      },
+      "current": {
+        "home": 2.75,
+        "draw": 3,
+        "away": 2.95,
+        "returnRate": 35.1,
+        "impliedProbabilityHome": 32.18,
+        "impliedProbabilityDraw": 32.72,
+        "impliedProbabilityAway": 96.53
+      },
+      "updatedAt": "2026-06-11 20:00:39"
+    },
+    {
+      "bookmaker": {
+        "id": 288,
+        "name": "Betsson",
+        "country": null
+      },
+      "opening": {
+        "home": 2.7,
+        "draw": 3.2,
+        "away": 2.85,
+        "returnRate": 35.83,
+        "impliedProbabilityHome": 30.23,
+        "impliedProbabilityDraw": 33.94,
+        "impliedProbabilityAway": 96.74
+      },
+      "current": {
+        "home": 2.75,
+        "draw": 3.1,
+        "away": 2.88,
+        "returnRate": 35.19,
+        "impliedProbabilityHome": 31.21,
+        "impliedProbabilityDraw": 33.6,
+        "impliedProbabilityAway": 96.76
+      },
+      "updatedAt": "2026-06-11 20:07:18"
+    },
+    {
+      "bookmaker": {
+        "id": 716,
+        "name": "BetVictor",
+        "country": null
+      },
+      "opening": {
+        "home": 2.6,
+        "draw": 3.1,
+        "away": 2.6,
+        "returnRate": 35.23,
+        "impliedProbabilityHome": 29.55,
+        "impliedProbabilityDraw": 35.23,
+        "impliedProbabilityAway": 91.59
+      },
+      "current": {
+        "home": 2.6,
+        "draw": 3.12,
+        "away": 2.75,
+        "returnRate": 35.99,
+        "impliedProbabilityHome": 29.99,
+        "impliedProbabilityDraw": 34.02,
+        "impliedProbabilityAway": 93.57
+      },
+      "updatedAt": "2026-06-11 20:07:18"
+    },
+    {
+      "bookmaker": {
+        "id": 78,
+        "name": "Coral",
+        "country": "England"
+      },
+      "opening": {
+        "home": 2.7,
+        "draw": 3.1,
+        "away": 2.75,
+        "returnRate": 35.05,
+        "impliedProbabilityHome": 30.53,
+        "impliedProbabilityDraw": 34.42,
+        "impliedProbabilityAway": 94.64
+      },
+      "current": {
+        "home": 2.62,
+        "draw": 3.2,
+        "away": 2.75,
+        "returnRate": 36.08,
+        "impliedProbabilityHome": 29.54,
+        "impliedProbabilityDraw": 34.38,
+        "impliedProbabilityAway": 94.53
+      },
+      "updatedAt": "2026-06-10 17:02:55"
+    },
+    {
+      "bookmaker": {
+        "id": 113,
+        "name": "HK Jockey Club",
+        "country": "Hong Kong"
+      },
+      "opening": {
+        "home": 2.63,
+        "draw": 2.88,
+        "away": 2.55,
+        "returnRate": 33.96,
+        "impliedProbabilityHome": 31.01,
+        "impliedProbabilityDraw": 35.03,
+        "impliedProbabilityAway": 89.32
+      },
+      "current": {
+        "home": 2.53,
+        "draw": 2.87,
+        "away": 2.67,
+        "returnRate": 35.35,
+        "impliedProbabilityHome": 31.16,
+        "impliedProbabilityDraw": 33.49,
+        "impliedProbabilityAway": 89.43
+      },
+      "updatedAt": "2026-06-11 17:15:42"
+    },
+    {
+      "bookmaker": {
+        "id": 490,
+        "name": "IBCBET",
+        "country": "Costa Rica"
+      },
+      "opening": {
+        "home": 2.54,
+        "draw": 3.05,
+        "away": 2.51,
+        "returnRate": 35.15,
+        "impliedProbabilityHome": 29.27,
+        "impliedProbabilityDraw": 35.57,
+        "impliedProbabilityAway": 89.29
+      },
+      "current": {
+        "home": 2.69,
+        "draw": 3,
+        "away": 2.9,
+        "returnRate": 35.41,
+        "impliedProbabilityHome": 31.75,
+        "impliedProbabilityDraw": 32.84,
+        "impliedProbabilityAway": 95.25
+      },
+      "updatedAt": "2026-06-11 20:14:44"
+    },
+    {
+      "bookmaker": {
+        "id": 123,
+        "name": "Interwetten",
+        "country": "Cyprus"
+      },
+      "opening": {
+        "home": 2.75,
+        "draw": 3.2,
+        "away": 2.6,
+        "returnRate": 34.28,
+        "impliedProbabilityHome": 29.46,
+        "impliedProbabilityDraw": 36.26,
+        "impliedProbabilityAway": 94.27
+      },
+      "current": {
+        "home": 2.7,
+        "draw": 3.05,
+        "away": 2.8,
+        "returnRate": 35.09,
+        "impliedProbabilityHome": 31.07,
+        "impliedProbabilityDraw": 33.84,
+        "impliedProbabilityAway": 94.75
+      },
+      "updatedAt": "2026-06-11 16:11:57"
+    },
+    {
+      "bookmaker": {
+        "id": 517,
+        "name": "Marathon",
+        "country": null
+      },
+      "opening": {
+        "home": 2.83,
+        "draw": 3.3,
+        "away": 2.67,
+        "returnRate": 34.28,
+        "impliedProbabilityHome": 29.39,
+        "impliedProbabilityDraw": 36.33,
+        "impliedProbabilityAway": 97
+      },
+      "current": {
+        "home": 2.74,
+        "draw": 3.1,
+        "away": 2.91,
+        "returnRate": 35.39,
+        "impliedProbabilityHome": 31.28,
+        "impliedProbabilityDraw": 33.32,
+        "impliedProbabilityAway": 96.98
+      },
+      "updatedAt": "2026-06-11 19:52:46"
+    },
+    {
+      "bookmaker": {
+        "id": 132,
+        "name": "matchbook",
+        "country": null
+      },
+      "opening": {
+        "home": 2.8,
+        "draw": 3.2,
+        "away": 2.86,
+        "returnRate": 35.04,
+        "impliedProbabilityHome": 30.66,
+        "impliedProbabilityDraw": 34.3,
+        "impliedProbabilityAway": 98.11
+      },
+      "current": {
+        "home": 2.82,
+        "draw": 3.15,
+        "away": 3,
+        "returnRate": 35.27,
+        "impliedProbabilityHome": 31.58,
+        "impliedProbabilityDraw": 33.15,
+        "impliedProbabilityAway": 99.46
+      },
+      "updatedAt": "2026-06-11 20:14:44"
+    },
+    {
+      "bookmaker": {
+        "id": 156,
+        "name": "Pinnacle Sports",
+        "country": "Holland"
+      },
+      "opening": {
+        "home": 2.54,
+        "draw": 3.09,
+        "away": 2.93,
+        "returnRate": 37.19,
+        "impliedProbabilityHome": 30.57,
+        "impliedProbabilityDraw": 32.24,
+        "impliedProbabilityAway": 94.46
+      },
+      "current": {
+        "home": 2.8,
+        "draw": 3.11,
+        "away": 2.92,
+        "returnRate": 34.97,
+        "impliedProbabilityHome": 31.49,
+        "impliedProbabilityDraw": 33.54,
+        "impliedProbabilityAway": 97.93
+      },
+      "updatedAt": "2026-06-11 20:25:11"
+    },
+    {
+      "bookmaker": {
+        "id": 182,
+        "name": "SNAI",
+        "country": "Italy"
+      },
+      "opening": {
+        "home": 2.6,
+        "draw": 3.1,
+        "away": 2.7,
+        "returnRate": 35.69,
+        "impliedProbabilityHome": 29.94,
+        "impliedProbabilityDraw": 34.37,
+        "impliedProbabilityAway": 92.8
+      },
+      "current": {
+        "home": 2.6,
+        "draw": 3.1,
+        "away": 2.7,
+        "returnRate": 35.69,
+        "impliedProbabilityHome": 29.94,
+        "impliedProbabilityDraw": 34.37,
+        "impliedProbabilityAway": 92.8
+      },
+      "updatedAt": "2026-06-06 00:09:47"
+    },
+    {
+      "bookmaker": {
+        "id": 251,
+        "name": "Sportingbet",
+        "country": null
+      },
+      "opening": {
+        "home": 2.6,
+        "draw": 3.25,
+        "away": 2.7,
+        "returnRate": 36.19,
+        "impliedProbabilityHome": 28.95,
+        "impliedProbabilityDraw": 34.85,
+        "impliedProbabilityAway": 94.1
+      },
+      "current": {
+        "home": 2.6,
+        "draw": 3,
+        "away": 2.85,
+        "returnRate": 35.98,
+        "impliedProbabilityHome": 31.19,
+        "impliedProbabilityDraw": 32.83,
+        "impliedProbabilityAway": 93.56
+      },
+      "updatedAt": "2026-06-11 20:14:44"
+    },
+    {
+      "bookmaker": {
+        "id": 814,
+        "name": "Lottery Official",
+        "country": null
+      },
+      "opening": {
+        "home": 2.43,
+        "draw": 2.84,
+        "away": 2.74,
+        "returnRate": 36.46,
+        "impliedProbabilityHome": 31.2,
+        "impliedProbabilityDraw": 32.34,
+        "impliedProbabilityAway": 88.61
+      },
+      "current": {
+        "home": 2.45,
+        "draw": 2.81,
+        "away": 2.75,
+        "returnRate": 36.2,
+        "impliedProbabilityHome": 31.56,
+        "impliedProbabilityDraw": 32.25,
+        "impliedProbabilityAway": 88.68
+      },
+      "updatedAt": "2026-06-11 20:14:44"
+    },
+    {
+      "bookmaker": {
+        "id": 172,
+        "name": "sbobet",
+        "country": null
+      },
+      "opening": {
+        "home": 2.6,
+        "draw": 2.94,
+        "away": 2.52,
+        "returnRate": 34.29,
+        "impliedProbabilityHome": 30.33,
+        "impliedProbabilityDraw": 35.38,
+        "impliedProbabilityAway": 89.16
+      },
+      "current": {
+        "home": 2.69,
+        "draw": 3.07,
+        "away": 2.75,
+        "returnRate": 35.03,
+        "impliedProbabilityHome": 30.7,
+        "impliedProbabilityDraw": 34.27,
+        "impliedProbabilityAway": 94.24
+      },
+      "updatedAt": "2026-06-11 20:20:19"
+    },
+    {
+      "bookmaker": {
+        "id": 837,
+        "name": "Mansion88",
+        "country": null
+      },
+      "opening": {
+        "home": 2.52,
+        "draw": 3.05,
+        "away": 2.52,
+        "returnRate": 35.38,
+        "impliedProbabilityHome": 29.23,
+        "impliedProbabilityDraw": 35.38,
+        "impliedProbabilityAway": 89.16
+      },
+      "current": {
+        "home": 2.69,
+        "draw": 2.99,
+        "away": 2.91,
+        "returnRate": 35.41,
+        "impliedProbabilityHome": 31.86,
+        "impliedProbabilityDraw": 32.73,
+        "impliedProbabilityAway": 95.25
+      },
+      "updatedAt": "2026-06-11 20:25:11"
+    },
+    {
+      "bookmaker": {
+        "id": 416,
+        "name": "wewbet",
+        "country": null
+      },
+      "opening": {
+        "home": 2.49,
+        "draw": 3.03,
+        "away": 2.69,
+        "returnRate": 36.4,
+        "impliedProbabilityHome": 29.91,
+        "impliedProbabilityDraw": 33.69,
+        "impliedProbabilityAway": 90.63
+      },
+      "current": {
+        "home": 2.54,
+        "draw": 3.25,
+        "away": 2.81,
+        "returnRate": 37.24,
+        "impliedProbabilityHome": 29.1,
+        "impliedProbabilityDraw": 33.66,
+        "impliedProbabilityAway": 94.58
+      },
+      "updatedAt": "2026-06-11 20:20:19"
+    },
+    {
+      "bookmaker": {
+        "id": 258,
+        "name": "Unibet",
+        "country": null
+      },
+      "opening": {
+        "home": 2.65,
+        "draw": 3.1,
+        "away": 2.7,
+        "returnRate": 35.26,
+        "impliedProbabilityHome": 30.14,
+        "impliedProbabilityDraw": 34.6,
+        "impliedProbabilityAway": 93.43
+      },
+      "current": {
+        "home": 2.7,
+        "draw": 3.05,
+        "away": 2.85,
+        "returnRate": 35.3,
+        "impliedProbabilityHome": 31.25,
+        "impliedProbabilityDraw": 33.45,
+        "impliedProbabilityAway": 95.32
+      },
+      "updatedAt": "2026-06-11 20:07:18"
+    }
+  ]
+}

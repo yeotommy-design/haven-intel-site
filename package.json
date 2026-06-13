@@ -1,0 +1,20 @@
+{
+  "name": "projecthaven",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone unofficial 7M odds ingestion experiments.",
+  "scripts": {
+    "collect:1x2": "node src/collect-1x2.js",
+    "collect:market": "node src/collect-market-history.js",
+    "collect:ah": "node src/collect-market-history.js --market ah",
+    "collect:ou": "node src/collect-market-history.js --market ou",
+    "collect:cs": "node src/collect-market-history.js --market cs",
+    "collect:slate": "node src/collect-slate.js",
+    "analyze:slate": "node src/analyze-slate.js",
+    "create:article": "node src/create-article.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
