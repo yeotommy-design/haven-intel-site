@@ -516,6 +516,7 @@
         accountCreated: false,
         name: "",
         email: "",
+        migrations: {},
         packages: {
           edgePack: false,
           scorePack: false,
@@ -525,9 +526,22 @@
         deliveries: {},
         releaseContent: {},
         watchStatuses: {
-          "manual-canada-bosnia": "Confirmed"
+          "manual-canada-bosnia": "Confirmed",
+          "manual-coquimbo-unido-ohiggins": "Confirmed",
+          "manual-qatar-switzerland": "Confirmed",
+          "manual-colo-colo-cobresal": "Confirmed",
+          "manual-brazil-morocco": "Confirmed"
         }
       };
+
+      const CONFIRMED_SLATE_MATCH_IDS = [
+        "manual-canada-bosnia",
+        "manual-coquimbo-unido-ohiggins",
+        "manual-qatar-switzerland",
+        "manual-colo-colo-cobresal",
+        "manual-brazil-morocco"
+      ];
+      const CONFIRMED_SLATE_MIGRATION_KEY = "confirmedSlate20260613";
 
       function readState() {
         try {
@@ -544,9 +558,13 @@
             };
           }
 
-          return {
+          const mergedState = {
             ...DEFAULT_MEMBER_STATE,
             ...parsedState,
+            migrations: {
+              ...DEFAULT_MEMBER_STATE.migrations,
+              ...(parsedState.migrations || {})
+            },
             packages: {
               ...DEFAULT_MEMBER_STATE.packages,
               ...(parsedState.packages || {})
@@ -561,6 +579,19 @@
               ...(parsedState.watchStatuses || {})
             }
           };
+
+          if (!mergedState.migrations[CONFIRMED_SLATE_MIGRATION_KEY]) {
+            mergedState.watchStatuses = mergedState.watchStatuses || {};
+            CONFIRMED_SLATE_MATCH_IDS.forEach((matchId) => {
+              if (mergedState.watchStatuses[matchId] === "Tentative" || !mergedState.watchStatuses[matchId]) {
+                mergedState.watchStatuses[matchId] = "Confirmed";
+              }
+            });
+            mergedState.migrations[CONFIRMED_SLATE_MIGRATION_KEY] = true;
+            writeState(mergedState);
+          }
+
+          return mergedState;
         } catch {
           return structuredClone(DEFAULT_MEMBER_STATE);
         }
