@@ -7,7 +7,7 @@
   const DEFAULT_ADMIN_ACCOUNTS = [
     {
       email: "yeo.tommy@gmail.com",
-      password: "HavenIntel2026!",
+      password: "HavenIntelTy661168!",
       name: "Tommy Yeo",
       role: "Owner"
     }
