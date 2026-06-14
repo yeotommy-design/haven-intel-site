@@ -1048,7 +1048,7 @@
       }
 
       .matchCard {
-        padding: 18px;
+        padding: 14px;
       }
 
       .matchTop {
@@ -1059,9 +1059,9 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         color: var(--muted);
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
 
       .livePill,
@@ -1070,20 +1070,20 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 5px 10px;
+        padding: 4px 9px;
         border-radius: 999px;
-        font-size: 0.83rem;
+        font-size: 0.76rem;
         font-weight: 700;
       }
 
       .datePill {
         display: inline-flex;
         align-items: center;
-        padding: 5px 10px;
+        padding: 4px 9px;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.76);
         border: 1px solid var(--line);
-        font-size: 0.83rem;
+        font-size: 0.76rem;
         color: var(--muted);
       }
 
@@ -1130,13 +1130,13 @@
       .teamsRow {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
-        gap: 14px;
+        gap: 10px;
         align-items: center;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
       }
 
       .teamName {
-        font-size: clamp(1.2rem, 2vw, 1.65rem);
+        font-size: clamp(1rem, 1.35vw, 1.24rem);
       }
 
       .teamName.right {
@@ -1144,97 +1144,132 @@
       }
 
       .scoreBlock {
-        min-width: 160px;
+        min-width: 108px;
         text-align: center;
-        padding: 14px 16px;
-        border-radius: 22px;
+        padding: 8px 10px;
+        border-radius: 16px;
         background: linear-gradient(180deg, #23302d 0%, #141916 100%);
         color: #fff9ef;
       }
 
       .scoreLine {
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(1.34rem, 2.15vw, 1.82rem);
         font-weight: 700;
         line-height: 1;
       }
 
       .minuteLine {
-        margin-top: 8px;
-        font-size: 0.9rem;
+        margin-top: 4px;
+        font-size: 0.72rem;
         color: rgba(255, 249, 239, 0.74);
       }
 
       .analysisPanel {
         background: rgba(255, 255, 255, 0.48);
         border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 14px;
+        border-radius: 14px;
+        padding: 8px;
       }
 
       .scanRow {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin: 10px 0 12px;
+        gap: 5px;
+        margin: 0 0 8px;
       }
 
       .scanPill {
         display: inline-flex;
         align-items: center;
-        padding: 6px 10px;
+        padding: 4px 7px;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.8);
         border: 1px solid var(--line);
         color: var(--ink);
-        font-size: 0.8rem;
+        font-size: 0.68rem;
         font-weight: 700;
       }
 
-      .layerBlock + .layerBlock {
-        margin-top: 14px;
+      .compactBlock {
+        margin-top: 0;
       }
 
-      .layerLabel {
+      .compactHeader {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .compactLabel {
         display: inline-flex;
         align-items: center;
-        margin-bottom: 10px;
-        padding: 6px 10px;
+        padding: 5px 9px;
         border-radius: 999px;
         background: rgba(28, 23, 19, 0.06);
         color: var(--ink);
-        font-size: 0.78rem;
+        font-size: 0.72rem;
         font-weight: 700;
         letter-spacing: 0.04em;
         text-transform: uppercase;
       }
 
+      .compactLead {
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
       .analysisGrid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 14px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 0;
       }
 
       .analysisItem {
-        padding: 12px;
-        border-radius: 16px;
+        padding: 7px 8px;
+        border-radius: 10px;
         background: rgba(255, 250, 241, 0.92);
         border: 1px solid var(--line);
       }
 
       .analysisItem strong {
         display: block;
-        margin-bottom: 6px;
+        margin-bottom: 3px;
+        font-size: 0.8rem;
       }
 
       .analysisMeta,
       .footerNote {
         color: var(--muted);
-        font-size: 0.92rem;
+        font-size: 0.84rem;
+      }
+
+      .analysisValue {
+        font-size: 0.84rem;
+        line-height: 1.28;
+      }
+
+      .analysisNote {
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        line-height: 1.28;
+      }
+
+      .boardHint {
+        margin-top: 7px;
+        padding-top: 7px;
+        border-top: 1px solid rgba(217, 207, 191, 0.72);
+        color: var(--muted);
+        font-size: 0.76rem;
+        line-height: 1.35;
       }
 
       .footerNote {
-        margin-top: 14px;
+        margin-top: 8px;
       }
 
       .mobileOnly {
@@ -1302,20 +1337,20 @@
         }
 
         .matchCard {
-          padding: 14px;
-        }
-
-        .competitionLine {
-          gap: 8px;
-          margin-bottom: 10px;
-        }
-
-        .analysisPanel {
           padding: 12px;
         }
 
+        .competitionLine {
+          gap: 6px;
+          margin-bottom: 8px;
+        }
+
+        .analysisPanel {
+          padding: 8px;
+        }
+
         .analysisItem {
-          padding: 10px;
+          padding: 7px 8px;
         }
 
         .priceCard::after {
@@ -2059,23 +2094,15 @@
         const isReleasedView = false;
         const statusMarkup = `<span class="${statusClass(state.status)}">${state.status}${isLive && state.minute ? ` • ${state.minute}'` : ""}</span>`;
         const watchMarkup = `<span class="watchPill ${lifecycle.toLowerCase()}">${lifecycle}</span>`;
-        const analysisHeading = lifecycle === "Released"
-          ? "Member release has been sent. Public proof appears after full time in Past Matches."
-          : lifecycle === "Confirmed"
-            ? "Confirmed match selected for possible release."
-            : "Tentative watchlist match still under review.";
         const releaseWindowText = lifecycle === "Released"
           ? "Member brief already released."
-          : "Available to members once the match enters final release window.";
+          : "Opens once the match enters final release window.";
         const matchBriefText = lifecycle === "Released"
-          ? "Private member brief opens after release."
-          : "Match brief locked";
+          ? "Visible to members"
+          : "Locked";
         const scoreBriefText = lifecycle === "Released"
-          ? "Score-range brief opens after release."
-          : "Score-range brief locked";
-        const bundleText = lifecycle === "Released"
-          ? "Bundle access follows member release status."
-          : "Bundle access locked";
+          ? "Visible to members"
+          : "Locked";
 
         article.innerHTML = `
           <div class="matchTop">
@@ -2095,56 +2122,33 @@
                 <div class="teamName right">${detail.match.awayTeam.name}</div>
               </div>
               <div class="analysisPanel">
-                <div class="analysisMeta">${analysisHeading}</div>
                 <div class="scanRow">
-                  <span class="scanPill">Public Status: ${lifecycle}</span>
-                  <span class="scanPill">Private Match Brief: ${lifecycle === "Released" ? "Visible to members" : "Locked"}</span>
-                  <span class="scanPill">${lifecycle === "Released" ? "Release Window Closed" : "Release Window Pending"}</span>
+                  <span class="scanPill">${lifecycle}</span>
+                  <span class="scanPill">${matchBriefText === "Visible to members" ? "Member Brief Open" : "Member Brief Locked"}</span>
+                  <span class="scanPill">${lifecycle === "Released" ? "Window Closed" : "Window Pending"}</span>
                 </div>
-                <div class="layerBlock">
-                  <div class="layerLabel">Public Layer</div>
+                <div class="compactBlock">
                   <div class="analysisGrid">
                     <div class="analysisItem">
-                      <strong>Match</strong>
-                      <div>${detail.match.homeTeam.name} vs ${detail.match.awayTeam.name}</div>
-                    </div>
-                    <div class="analysisItem">
-                      <strong>Competition</strong>
-                      <div>${detail.match.competitionName}</div>
-                    </div>
-                    <div class="analysisItem">
                       <strong>Kickoff Time</strong>
-                      <div>${detail.match.kickoffAt ? toLocalKickoff(detail.match.kickoffAt) : "Kickoff pending"}</div>
+                      <div class="analysisValue">${detail.match.kickoffAt ? toLocalKickoff(detail.match.kickoffAt) : "Kickoff pending"}</div>
                     </div>
                     <div class="analysisItem">
                       <strong>Status</strong>
-                      <div>${lifecycle}</div>
+                      <div class="analysisValue">${lifecycle}</div>
                     </div>
-                    <div class="analysisItem" style="grid-column: 1 / -1;">
-                      <strong>Release Window</strong>
-                      <div>${releaseWindowText}</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="layerBlock">
-                  <div class="layerLabel">Private Layer</div>
-                  <div class="analysisGrid">
                     <div class="analysisItem">
                       <strong>Match Brief</strong>
-                      <div>${matchBriefText}</div>
-                      <div class="analysisMeta">Private member brief opens after release.</div>
+                      <div class="analysisValue">${matchBriefText}</div>
+                      <div class="analysisNote">Private member access.</div>
                     </div>
                     <div class="analysisItem">
                       <strong>Score-Range Brief</strong>
-                      <div>${scoreBriefText}</div>
-                      <div class="analysisMeta">Available to members once the match enters final release window.</div>
-                    </div>
-                    <div class="analysisItem" style="grid-column: 1 / -1;">
-                      <strong>Bundle Access</strong>
-                      <div>${bundleText}</div>
-                      <div class="analysisMeta">3-match and score-range bundles follow the same release workflow.</div>
+                      <div class="analysisValue">${scoreBriefText}</div>
+                      <div class="analysisNote">Visible only in release window.</div>
                     </div>
                   </div>
+                  <div class="boardHint">Release window: ${releaseWindowText} Bundles follow the same release timing.</div>
                 </div>
               </div>
             </div>
