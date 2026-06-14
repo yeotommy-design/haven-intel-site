@@ -75,5 +75,19 @@
     "homeScore": "1",
     "awayScore": "1",
     "notes": "Brazil drew Morocco 1-1."
+  },
+  "manual-haiti-scotland": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "1",
+    "notes": "Scotland beat Haiti 1-0."
+  },
+  "manual-australia-turkey": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "0",
+    "notes": "Australia beat Turkey 2-0."
   }
 }
