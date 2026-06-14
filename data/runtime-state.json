@@ -47,5 +47,33 @@
     "homeScore": "4",
     "awayScore": "1",
     "notes": "USA beat Paraguay 4-1."
+  },
+  "manual-coquimbo-unido-ohiggins": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "0",
+    "notes": "Coquimbo Unido drew O'Higgins 0-0."
+  },
+  "manual-qatar-switzerland": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "Qatar drew Switzerland 1-1."
+  },
+  "manual-colo-colo-cobresal": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "0",
+    "notes": "Colo Colo beat Cobresal 3-0."
+  },
+  "manual-brazil-morocco": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "Brazil drew Morocco 1-1."
   }
 }
