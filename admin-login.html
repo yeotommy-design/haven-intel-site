@@ -174,7 +174,7 @@
         <form class="formGrid" id="adminLoginForm">
           <label>
             Admin email
-            <input id="adminEmail" name="adminEmail" type="email" autocomplete="username" placeholder="yeo.tommy@gmail.com" required>
+            <input id="adminEmail" name="adminEmail" type="email" autocomplete="username" placeholder="Enter admin email" required>
           </label>
           <label>
             Admin password
@@ -194,8 +194,6 @@
       const form = document.getElementById("adminLoginForm");
       const status = document.getElementById("loginStatus");
       const emailInput = document.getElementById("adminEmail");
-
-      emailInput.value = "yeo.tommy@gmail.com";
 
       if (window.HavenIntelAdminAuth?.isAuthenticated()) {
         status.className = "status ok";
