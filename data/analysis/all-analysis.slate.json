@@ -209,15 +209,15 @@
           "awayTeam": { "id": "scotland", "name": "Scotland" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Scotland", "likelyOutcome": "away", "confidence": "medium", "handicapLean": "Scotland -1", "totalLean": "Over 2.5", "correctScoreLean": "1-2", "correctScoreLeans": ["1-2", "0-2"] },
-        "notes": ["Scotland still bring the stronger read into the fixture and now look slightly more aggressive on the margin line than the earlier softer version.", "The total picture has opened a touch, pointing toward more scoring potential than the first controlled read suggested.", "Top score-range view: 1-2 or 0-2 to Scotland."]
+        "summary": { "likelyWinner": "Scotland", "likelyOutcome": "away", "confidence": "medium", "handicapLean": "Scotland -0.75", "totalLean": "Under 2.5", "correctScoreLean": "0-1", "correctScoreLeans": ["0-1", "0-2"] },
+        "notes": ["Scotland remain the stronger side on the overall pre-match read, but the margin still looks more controlled than runaway.", "The total picture now leans lower again, pointing more toward game management than a wide-open exchange.", "Top score-range view: 0-1 or 0-2 to Scotland."]
       }
     },
     {
       "matchId": "manual-australia-turkey",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-14T02:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
         "match": {
           "id": "manual-australia-turkey",
           "competitionName": "Manual Watchlist",
@@ -225,8 +225,8 @@
           "awayTeam": { "id": "turkey", "name": "Turkey" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": { "likelyWinner": "Turkey", "likelyOutcome": "away", "confidence": "medium", "handicapLean": "Turkey -0.25", "totalLean": "Under 2.5", "correctScoreLean": "0-1", "correctScoreLeans": ["0-1", "1-1"] },
+        "notes": ["Turkey hold the stronger overall side read, but the match still looks tight enough to avoid an overly aggressive margin stance.", "The total shape stays on the lower side, which fits a more tactical opener than a free-flowing game.", "Top score-range view: 0-1 or 1-1, with Turkey still holding the edge."]
       }
     },
     {
