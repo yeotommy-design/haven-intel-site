@@ -404,35 +404,35 @@
         <div class="heroBottom">
           <div class="heroStats" id="heroStats">
             <div class="heroStat" id="heroWinnerRate">
-              <strong>0</strong>
-              <span>Early Archive Record</span>
-              <span>0 finished matches tracked</span>
+              <strong>Archive building</strong>
+              <span>Proof starts after full time</span>
+              <span>Finished matches appear here once the first result is logged.</span>
             </div>
             <div class="heroStat" id="heroOutcomeRate">
-              <strong>0/0</strong>
-              <span>Outcome Reads</span>
-              <span>Winner reads landed</span>
+              <strong>Outcome review pending</strong>
+              <span>Winner reads</span>
+              <span>Outcome grading starts with the first archived match.</span>
             </div>
             <div class="heroStat" id="heroHandicapRate">
-              <strong>0/0</strong>
-              <span>Margin Reads</span>
-              <span>Handicap reads landed</span>
+              <strong>Margin review pending</strong>
+              <span>Margin reads</span>
+              <span>Margin grading is shown once a finished sample exists.</span>
             </div>
             <div class="heroStat" id="heroTotalRate">
-              <strong>0/0</strong>
-              <span>Goal-Range Reads</span>
-              <span>Over/under reads landed</span>
+              <strong>Goal-range review pending</strong>
+              <span>Goal-range reads</span>
+              <span>Goal-range grading appears after archived full-time results.</span>
             </div>
             <div class="heroStat" id="heroScoreRate">
-              <strong>0/0</strong>
-              <span>Score-Range Reads</span>
-              <span>Matches where at least 1 score pick landed</span>
+              <strong>Score-range review pending</strong>
+              <span>Score-range reads</span>
+              <span>Score-range grading appears after archived full-time results.</span>
             </div>
           </div>
           <aside class="heroFeature" id="heroFeatureRate">
-            <strong>0%</strong>
+            <strong>Proof builds match by match</strong>
             <div class="heroFeatureTitle">Winning Team Analysis Percentage</div>
-            <div class="heroFeatureCopy">Based on the archive outcome read record.</div>
+            <div class="heroFeatureCopy">The archive records outcome reads only after finished matches are reviewed. No empty percentage is shown before a real sample exists.</div>
           </aside>
         </div>
       </section>
@@ -756,6 +756,16 @@
 
       function renderSummary(items) {
         const summaryGrid = document.getElementById("summaryGrid");
+        if (items.length === 0) {
+          summaryGrid.innerHTML = `
+            <div class="summaryStat"><strong>Archive not graded yet</strong><span>First finished match pending</span></div>
+            <div class="summaryStat"><strong>Outcome review opens later</strong><span>Winner reads will be tracked after full time</span></div>
+            <div class="summaryStat"><strong>Specialist layers follow</strong><span>Margin, goal-range, and score-range reviews appear once results are archived</span></div>
+            <div class="summaryStat"><strong>Public proof stays visible</strong><span>Every finished match remains in the archive after review</span></div>
+          `;
+          return;
+        }
+
         const winnerHits = items.filter((item) => item.prediction.winnerHit === "Hit").length;
         const scoreHits = items.filter((item) => item.prediction.scoreHit === "Hit").length;
         summaryGrid.innerHTML = `
@@ -773,6 +783,45 @@
         const heroTotalRate = document.getElementById("heroTotalRate");
         const heroScoreRate = document.getElementById("heroScoreRate");
         const heroFeatureRate = document.getElementById("heroFeatureRate");
+
+        if (items.length === 0) {
+          heroWinnerRate.innerHTML = `
+            <strong>Archive building</strong>
+            <span>Proof starts after full time</span>
+            <span>Finished matches appear here once the first result is logged.</span>
+          `;
+
+          heroOutcomeRate.innerHTML = `
+            <strong>Outcome review pending</strong>
+            <span>Winner reads</span>
+            <span>Outcome grading starts with the first archived match.</span>
+          `;
+
+          heroHandicapRate.innerHTML = `
+            <strong>Margin review pending</strong>
+            <span>Margin reads</span>
+            <span>Margin grading is shown once a finished sample exists.</span>
+          `;
+
+          heroTotalRate.innerHTML = `
+            <strong>Goal-range review pending</strong>
+            <span>Goal-range reads</span>
+            <span>Goal-range grading appears after archived full-time results.</span>
+          `;
+
+          heroScoreRate.innerHTML = `
+            <strong>Score-range review pending</strong>
+            <span>Score-range reads</span>
+            <span>Score-range grading appears after archived full-time results.</span>
+          `;
+
+          heroFeatureRate.innerHTML = `
+            <strong>Proof builds match by match</strong>
+            <div class="heroFeatureTitle">Winning Team Analysis Percentage</div>
+            <div class="heroFeatureCopy">The archive records outcome reads only after finished matches are reviewed. No empty percentage is shown before a real sample exists.</div>
+          `;
+          return;
+        }
 
         const gradedWinnerPredictions = items.filter((item) => ["Hit", "Miss"].includes(item.prediction.winnerHit));
         const winnerHits = gradedWinnerPredictions.filter((item) => item.prediction.winnerHit === "Hit").length;
@@ -948,7 +997,7 @@
         if (items.length === 0) {
           matches.innerHTML = `
             <article class="emptyState">
-              No finished matches yet. Once a match is marked <strong>Full Time</strong> on <a href="./index.html">Active Matches</a>, it will move here automatically.
+              The public proof archive is building. Once a match is marked <strong>Full Time</strong> on <a href="./index.html">Active Matches</a>, it will move here automatically with outcome, margin, goal-range, and score-range review notes.
             </article>
           `;
           return;
