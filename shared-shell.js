@@ -25,6 +25,19 @@
   const adminAuth = window.HavenIntelAdminAuth;
   const adminSignedIn = Boolean(adminAuth?.isAuthenticated?.());
 
+  const internalLinks = [
+    { label: "Admin Login", href: "./admin-login.html" }
+  ];
+
+  if (adminSignedIn) {
+    internalLinks.push(
+      { label: "Release Admin", href: "./admin.html" },
+      { label: "Delivery History", href: "./history.html" },
+      { label: "Article Studio", href: "./article-studio.html" },
+      { label: "Admin Sign Out", href: "#admin-sign-out", adminSignOut: true }
+    );
+  }
+
   const footerLinkGroups = [
     {
       title: "Explore",
@@ -47,20 +60,12 @@
         { label: "Disclaimer", href: "./disclaimer.html" },
         { label: "Responsible Use", href: "./responsible-use.html" }
       ]
+    },
+    {
+      title: "Internal",
+      links: internalLinks
     }
   ];
-
-  if (adminSignedIn) {
-    footerLinkGroups.push({
-      title: "Internal",
-      links: [
-        { label: "Release Admin", href: "./admin.html" },
-        { label: "Delivery History", href: "./history.html" },
-        { label: "Article Studio", href: "./article-studio.html" },
-        { label: "Admin Sign Out", href: "#admin-sign-out", adminSignOut: true }
-      ]
-    });
-  }
 
   topbar.innerHTML = `
     <div class="brand">
