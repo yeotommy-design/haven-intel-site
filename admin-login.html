@@ -31,32 +31,26 @@
       }
 
       main {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 24px 18px 72px;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px 18px;
       }
 
       .panel {
+        width: min(100%, 520px);
         background: var(--panel);
         border: 1px solid var(--line);
         border-radius: 28px;
         box-shadow: var(--shadow);
-      }
-
-      .hero,
-      .loginCard {
         padding: 28px 24px;
-      }
-
-      .hero {
-        margin-bottom: 18px;
       }
 
       .brandLockup {
         display: flex;
         align-items: center;
         gap: 14px;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
       }
 
       .brandBall {
@@ -84,80 +78,15 @@
         font-size: 0.96rem;
       }
 
-      .eyebrow {
-        display: inline-flex;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: rgba(180, 76, 33, 0.1);
-        color: var(--accent);
-        font-size: 0.83rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        margin: 16px 0 10px;
-        font-size: clamp(2rem, 5vw, 3.3rem);
-        line-height: 0.98;
-      }
-
       p {
         color: var(--muted);
         line-height: 1.6;
       }
 
-      .featureGrid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 18px;
-      }
-
-      .featureCard {
-        padding: 14px;
-        border-radius: 18px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.66);
-      }
-
-      .featureCard strong {
-        display: block;
-        margin-bottom: 4px;
-      }
-
-      .featureCard span {
-        color: var(--muted);
-        font-size: 0.92rem;
-        line-height: 1.45;
-      }
-
-      .cardTitle {
-        margin: 0 0 6px;
-        font-size: 1.4rem;
-      }
-
-      .helperRow {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 16px;
-      }
-
-      .helperPill {
-        display: inline-flex;
-        align-items: center;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: rgba(24, 79, 71, 0.08);
-        color: var(--accent-2);
-        font-size: 0.82rem;
-        font-weight: 700;
-      }
-
       .formGrid {
         display: grid;
         gap: 14px;
+        margin-top: 8px;
       }
 
       label {
@@ -184,8 +113,7 @@
       }
 
       .buttonRow {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
         gap: 12px;
         margin-top: 8px;
       }
@@ -207,28 +135,9 @@
         color: #fff9f2;
       }
 
-      .button.secondary {
-        background: rgba(255,255,255,0.62);
-        color: var(--ink);
-        border-color: var(--line);
-      }
-
       .button:hover {
         transform: translateY(-1px);
         box-shadow: 0 10px 24px rgba(45, 29, 15, 0.08);
-      }
-
-      .securityNote {
-        margin-top: 18px;
-        padding: 14px;
-        border-radius: 18px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.66);
-      }
-
-      .securityNote strong {
-        display: block;
-        margin-bottom: 4px;
       }
 
       .status {
@@ -245,55 +154,23 @@
       }
 
       @media (max-width: 760px) {
-        .featureGrid {
-          grid-template-columns: 1fr;
-        }
-
         .brandText strong {
           font-size: 1.65rem;
         }
       }
     </style>
     <script defer src="./admin-auth.js"></script>
-    <link rel="stylesheet" href="./shared-shell.css">
-    <script defer src="./shared-shell.js"></script>
   </head>
   <body>
     <main>
-      <section class="panel hero">
+      <section class="panel">
         <div class="brandLockup">
           <div class="brandBall" aria-hidden="true">⚽</div>
           <div class="brandText">
             <strong>HavenIntel</strong>
-            <span>Internal release and publishing controls</span>
+            <span>Admin access</span>
           </div>
         </div>
-        <div class="eyebrow">Admin Access</div>
-        <h1>Sign in to the internal HavenIntel operating panel.</h1>
-        <p>
-          This page is only for internal release management, delivery history, and article workflow. It is not part of the public member journey.
-        </p>
-        <div class="featureGrid">
-          <div class="featureCard">
-            <strong>Release Admin</strong>
-            <span>Prepare signals, change status, and stage each match before send-out.</span>
-          </div>
-          <div class="featureCard">
-            <strong>Delivery History</strong>
-            <span>Review the compact audit log for readiness and sent timestamps.</span>
-          </div>
-          <div class="featureCard">
-            <strong>Article Studio</strong>
-            <span>Draft previews, reviews, and football news content for the insights archive.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel loginCard">
-        <h2 class="cardTitle">Internal sign-in</h2>
-        <p>
-          Use the admin login below to access HavenIntel’s protected operating pages.
-        </p>
         <form class="formGrid" id="adminLoginForm">
           <label>
             Admin email
@@ -305,24 +182,8 @@
           </label>
           <div class="buttonRow">
             <button class="button primary" type="submit">Open Admin</button>
-            <a class="button secondary" href="./index.html">Back to Home</a>
           </div>
         </form>
-        <div class="helperRow">
-          <span class="helperPill">Internal Only</span>
-          <span class="helperPill">Release Workflow</span>
-          <span class="helperPill">Audit Protected</span>
-        </div>
-        <div class="securityNote">
-          <strong>Current admin access note</strong>
-          <p style="margin:0;">
-            This admin gate is currently browser-based for internal setup. Replace it with proper backend authentication before opening live operating access beyond the initial launch team.
-          </p>
-          <p style="margin:10px 0 0;">
-            Current admin email: <strong>yeo.tommy@gmail.com</strong><br>
-            Current password: <strong>HavenIntel2026!</strong>
-          </p>
-        </div>
         <div class="status" id="loginStatus"></div>
       </section>
     </main>
