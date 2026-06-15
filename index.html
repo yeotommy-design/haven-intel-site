@@ -1447,7 +1447,7 @@
         <div class="boardHeader">
           <div class="metaBlock">
             <div class="eyebrow">Live Board</div>
-            <h2>Tentative Match Watchlist</h2>
+          <h2>Match Watchlist</h2>
             <p>
               The live board shows watched matches, confirmed selections, released member briefs, and finished results.
             </p>
@@ -1848,6 +1848,10 @@
         const explicitWatchStatus = normalizeWatchStatus(memberState?.watchStatuses?.[String(detail.match.id)] || "");
         if (explicitWatchStatus) {
           return explicitWatchStatus;
+        }
+
+        if (detail.summary?.likelyWinner) {
+          return "Confirmed";
         }
 
         const releaseKey = RELEASE_MATCH_KEY_BY_ID[String(detail.match.id)];
