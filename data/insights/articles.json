@@ -2,74 +2,74 @@
   "articles": [
     {
       "slug": "havenintel-public-sample-match-brief",
-      "title": "Public sample match brief: Brazil vs Morocco, from pre-match read to post-match review",
+      "title": "Public sample match brief: Haiti vs Scotland, from pre-match read to post-match review",
       "category": "Sample Brief",
       "competition": "World Cup",
       "publishedAt": "2026-06-15",
-      "excerpt": "A public sample of the HavenIntel product, showing the full brief texture: match context, team strength, pressure points, expected shape, goal range, score-range thinking, and the review after the final whistle.",
+      "excerpt": "A public sample of the HavenIntel product, showing the full brief texture through Haiti vs Scotland: match context, team strength, pressure points, expected shape, goal range, score-range thinking, and the review after the final whistle.",
       "readingTime": "9 min read",
       "author": "HavenIntel Desk",
       "featuredSample": true,
       "venue": {
-        "country": "United States",
-        "state": "New Jersey",
-        "stadium": "MetLife Stadium"
+        "country": "World Cup",
+        "state": "Sample Brief",
+        "stadium": "Public Example"
       },
-      "hero": "This public sample shows what a HavenIntel match brief is meant to feel like in practice. The fixture is Brazil vs Morocco, a finished World Cup match that ended 1-1. That gives us the useful combination of pre-match structure and post-match accountability. The point is not to pretend the read was perfect. The point is to let visitors see the actual product texture, the level of football detail, and the way the final review sits beside the original case once the match is done.",
+      "hero": "This public sample shows what a HavenIntel match brief is meant to feel like in practice. The fixture is Haiti vs Scotland, a finished World Cup match that ended 0-1 to Scotland. That gives us the useful combination of a real pre-match read and a clean post-match review. The point is not to make the product sound mysterious. The point is to let visitors see the actual texture, the football logic, and the way the final score is judged against the original brief once the match is done.",
       "sections": [
         {
           "heading": "Match context",
           "paragraphs": [
-            "Brazil came into this fixture carrying the louder badge, the broader tournament expectation, and the natural burden that follows every opening World Cup appearance. Morocco, though, were never decorative opposition. Their recent tournament history had already shown enough structure, emotional discipline, and defensive commitment to turn this into a proper examination rather than a staged favorite spot.",
-            "That made the match more interesting than a surface talent comparison. Brazil did not only have to prove they were better. They had to prove they could impose their own rhythm against an opponent with a very clear idea of how to keep the game compact and uncomfortable."
+            "Haiti vs Scotland was not one of the loudest fixtures on the board, but it was a good example of the kind of match where a cleaner team edge can still produce a narrow, workmanlike scoreline rather than a dramatic one. Scotland entered with the stronger overall profile, yet the setup still pointed more toward management and control than an easy blowout.",
+            "That matters because a useful match brief is not only about naming the stronger side. It is about describing the kind of game that is likely to emerge around that edge. In this case, the interesting question was whether Scotland's superiority would become a calm one-goal night or a more comfortable two-goal separation."
           ]
         },
         {
           "heading": "Team strength",
           "paragraphs": [
-            "Brazil still held the stronger overall talent base. Even with absences around the squad, they owned the deeper attacking pool, the greater one-versus-one quality, and the more natural route to controlling decisive moments if the match opened up. On pure ceiling, they remained the side more capable of turning a narrow game into a winning one.",
-            "Morocco's strength sat in a different place. They did not need to match Brazil player for player. Their edge came from organization, collective discipline, and a back line comfortable defending long stretches without panicking. That matters in tournament football because a well-drilled underdog often survives long enough to make the favorite solve a real tactical problem rather than simply wait for quality to arrive."
+            "Scotland held the stronger team-strength read through the broader spine of the side, the more stable defensive floor, and the better expectation of managing the match once they got in front. They looked like the side more likely to control the important moments even if the overall game stayed low-event.",
+            "Haiti's route did not depend on matching Scotland technically across the whole ninety minutes. It depended on discipline, resilience, and making the favorite work through enough repeated phases that the match stayed emotionally close. That is an important distinction because some underdogs are live only in chaos, while others are live because they can keep the game compact."
           ]
         },
         {
           "heading": "Pressure points",
           "paragraphs": [
-            "The main pressure point on Brazil was expectation. They were the side expected to own the ball, create the cleaner chances, and avoid emotional drift if the game stayed level longer than planned. When a favorite enters under that kind of pressure, the risk is not only defensive exposure. It is impatience. Forced attacks and rushed final passes can flatten an otherwise superior performance.",
-            "For Morocco, the pressure point was concentration. Their route into the match depended on protecting central spaces, staying honest against wide pressure, and keeping the game alive long enough for Brazil to feel the scoreboard weight. If that structure cracked too early, the entire underdog path could collapse quickly."
+            "The pressure point on Scotland was the same one that often sits on medium-confidence favorites: they had to avoid treating the edge as if it guaranteed margin. If they became impatient or overcommitted too early, they could flatten their own control and turn a manageable match into a more awkward one.",
+            "For Haiti, the pressure point was survival of structure. Their route required enough defensive concentration to keep Scotland from finding a clean second gear. If they could stay emotionally intact and avoid giving away easy transitions or repeated central entries, they had a believable path to keeping the scoreline tight for a long stretch."
           ]
         },
         {
           "heading": "Expected match shape",
           "paragraphs": [
-            "The pre-match expectation leaned toward a controlled Brazil territorial advantage against a Morocco side happy to defend in organized phases and choose transition moments carefully. That usually produces a game where the favorite has more of the ball and more field position, but not always the kind of free-running chance volume casual viewers expect.",
-            "The shape also suggested that the first goal would carry extra weight. If Brazil scored first, the evening could tilt into game management and gradually expanding pressure. If Morocco held the line deep enough into the match, the emotional burden would begin to shift back toward Brazil, and the underdog route would become more believable with every passing phase."
+            "The pre-match expectation leaned toward a measured Scotland edge in a game that could stay narrow on tempo and chances. That usually points toward one side having the more trustworthy control profile without necessarily creating the kind of open, high-volume attack that blows the match apart.",
+            "The first goal looked especially important here. If Scotland scored first, the game could settle into their preferred management pattern. If they failed to create early separation, Haiti's resistance would grow in value and the match would begin to feel more fragile from the favorite's side."
           ]
         },
         {
           "heading": "Goal range",
           "paragraphs": [
-            "The safer goal-range view sat in the lower-to-middle band rather than a track meet. Morocco's structure was strong enough to resist the idea of a casual Brazil runaway, and Brazil's own absences lowered the chance of a fully fluent attacking display from the first whistle.",
-            "That did not mean a dead game. It meant a match more likely to live in controlled tension, where two or three key sequences could define the whole scoring picture instead of a constant flood of open exchanges."
+            "The total lean sat under 2.5, which immediately told the reader the expected frame was not wide-open. The stronger side was still preferred, but within a score environment more likely to reward patience and control than attack-trading.",
+            "That is useful product texture because it shows how the brief separates winner confidence from match-temperature confidence. A side can be stronger and still project into a lower scoring shape if the game state, opponent behavior, and likely control pattern all push in that direction."
           ]
         },
         {
           "heading": "Score-range thinking",
           "paragraphs": [
-            "From a scoreline perspective, the pre-match logic pointed more naturally toward something like 1-0, 2-0, or 2-1 Brazil than toward a statement blowout. The favorite edge still belonged to Brazil, but the margin case looked weaker than the winner case because Morocco had enough structure to keep the game inside a manageable frame.",
-            "That kind of distinction matters in a real brief. A side can be the right team to prefer without automatically becoming the right team to trust for a wide margin. The sample is useful precisely because it shows the difference between side confidence and scoreboard confidence."
+            "The sharper score-range view pointed toward 0-1 or 0-2 to Scotland, with 0-1 carrying the cleaner feel. That aligns with the broader read: a stronger side, a controlled margin, and a total profile that stayed compressed rather than expansive.",
+            "This is where a real brief becomes more valuable than a generic preview. It is not only saying Scotland should win. It is narrowing the likely scoreboard paths and telling the reader what kind of finish would best fit the original football case."
           ]
         },
         {
           "heading": "Post-match review",
           "paragraphs": [
-            "The final score was 1-1, which means the side read on Brazil did not land, but the lower-volatility shape of the match held up better than a dramatic favorite script would have. Morocco succeeded in keeping the game emotionally alive and structurally compact enough to deny Brazil the kind of smooth control a stronger team usually wants.",
-            "That is the accountability layer visitors need to see. The review is not written to protect the original opinion. It is written to test it. In this case, the favorite call missed, but the reasons for caution around game texture were real. Morocco kept the match inside a narrow frame, and Brazil never turned superiority into a decisive scoreboard edge."
+            "The final score was Haiti 0-1 Scotland. That means the main side read landed, the under 2.5 landed, and the top score-range lean of 0-1 landed as well. Just as importantly, the match shape behaved the way the brief suggested: Scotland were stronger, but the margin stayed controlled rather than running away from Haiti.",
+            "That is exactly why Haiti vs Scotland works well as a public sample. Visitors can see the original football reasoning, the narrower scoreline logic, and the accountability layer all in one place. The review is not there to dress up the win afterward. It is there to show whether the original brief actually described the game that arrived."
           ]
         }
       ],
       "tags": [
-        "Brazil",
-        "Morocco",
+        "Haiti",
+        "Scotland",
         "World Cup",
         "Sample Brief",
         "Post-Match Review"
