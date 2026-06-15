@@ -124,6 +124,27 @@
         padding: 28px 24px;
       }
 
+      .launchBanner {
+        margin: 0 0 18px;
+        padding: 16px 18px;
+        border-radius: 22px;
+        border: 1px solid rgba(24, 79, 71, 0.18);
+        background: linear-gradient(135deg, rgba(255, 248, 239, 0.96), rgba(235, 244, 240, 0.92));
+        box-shadow: 0 18px 40px rgba(45, 29, 15, 0.08);
+      }
+
+      .launchBanner strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 1.02rem;
+      }
+
+      .launchBanner p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
       .eyebrow {
         display: inline-flex;
         align-items: center;
@@ -1368,6 +1389,11 @@
   <body>
     <main>
       <div class="topbar"></div>
+
+      <section class="launchBanner" aria-label="Launch status">
+        <strong>Public preview is live. Member access is not open yet.</strong>
+        <p>Account login, email delivery, and payment are still being tested. No payment is being collected during this preview.</p>
+      </section>
 
       <section class="hero">
         <article class="heroCard">
