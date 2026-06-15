@@ -50,6 +50,15 @@
       ]
     },
     {
+      title: "Trust",
+      links: [
+        { label: "About", href: "./about.html" },
+        { label: "Method", href: "./method.html" },
+        { label: "FAQ", href: "./faq.html" },
+        { label: "Contact", href: "./contact.html" }
+      ]
+    },
+    {
       title: "Policy",
       links: [
         { label: "Privacy", href: "./privacy.html" },
