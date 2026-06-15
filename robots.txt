@@ -10,5 +10,9 @@ Disallow: /history.html
 Disallow: /article-studio.html
 Disallow: /verify-email.html
 Disallow: /welcome-email.html
+Disallow: /admin-config.js
+Disallow: /src/
+Disallow: /*.md$
+Disallow: /*.zip$
 
 Sitemap: https://haven-intel.com/sitemap.xml

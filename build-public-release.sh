@@ -28,6 +28,8 @@ copy_data_file() {
 
 PUBLIC_PATHS=(
   "_headers"
+  "_redirects"
+  "404.html"
   "robots.txt"
   "sitemap.xml"
   "index.html"
