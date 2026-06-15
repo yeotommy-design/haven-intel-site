@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HavenIntel | Welcome Email Preview</title>
+    <title>HavenIntel | Delivery Preview</title>
     <meta name="robots" content="noindex,nofollow">
     <style>
       :root {
@@ -135,122 +135,42 @@
       }
     </style>
     <link rel="stylesheet" href="./shared-shell.css">
-    <script defer src="./shared-shell.js"></script>
+    <script defer src="./shared-shell.js?v=20260615-2"></script>
   </head>
   <body>
     <main class="wrap">
       <section class="panel hero">
-        <div class="eyebrow">Welcome Email Preview</div>
-        <h1 id="pageTitle">This is the HavenIntel welcome email your member would receive.</h1>
-        <p id="pageCopy">This page shows the HavenIntel welcome email format, including the confirmation step, account wording, and activation-link flow.</p>
+        <div class="eyebrow">Delivery Preview</div>
+        <h1>This page is an internal preview only.</h1>
+        <p>This soft-launch site is publicly open for the board, archive, insights, and public view. Private member onboarding and delivery are not publicly open yet.</p>
       </section>
 
       <section class="panel emailCard">
         <div class="mailMeta">
           <div class="mailMetaRow">
-            <span class="mailMetaLabel">To</span>
-            <div id="emailTo">No member email saved yet</div>
+            <span class="mailMetaLabel">State</span>
+            <div>Internal preview only</div>
           </div>
           <div class="mailMetaRow">
-            <span class="mailMetaLabel">Subject</span>
-            <div id="emailSubject">Welcome to HavenIntel | Confirm your account</div>
+            <span class="mailMetaLabel">Public Access</span>
+            <div>Private member delivery is not publicly open yet</div>
           </div>
         </div>
 
-        <div class="emailBody" id="emailBody"></div>
+        <div class="emailBody">
+          <p>HavenIntel publishes private football match briefs before kickoff, then tracks finished results publicly after full time.</p>
+          <p>During this public launch phase, visitors should use the live board, past matches archive, insights, and public view. Account activation and email-delivery flow remain closed on the public site.</p>
+          <p>When private member delivery opens, this area can later be restored as the real internal email template preview.</p>
+        </div>
 
-        <div class="noteBox" id="activationNote"></div>
+        <div class="noteBox">Public-facing routes should lead to board, archive, insights, and public-view pages only. No live activation flow should be exposed here.</div>
 
         <div class="ctaRow">
-          <a class="button primary" href="./verify-email.html" id="confirmLink">Confirm Email</a>
-          <a class="button secondary" href="./account.html">Back to Account</a>
-          <a class="button secondary" href="./dashboard.html">Open Dashboard</a>
+          <a class="button primary" href="./index.html#board">Open Live Board</a>
+          <a class="button secondary" href="./past.html">Review Past Matches</a>
+          <a class="button secondary" href="./insights.html">Read Insights</a>
         </div>
       </section>
     </main>
-    <script>
-      const MEMBER_STATE_KEY = "havenintel-member-state-v1";
-      const DEFAULT_STATE = {
-        signedIn: false,
-        accountCreated: false,
-        name: "",
-        email: "",
-        password: "",
-        passwordSet: false,
-        emailVerified: false,
-        welcomeEmailQueuedAt: "",
-        activationToken: "",
-        packages: {},
-        deliveries: {},
-        releaseContent: {}
-      };
-
-      function readState() {
-        try {
-          const parsedState = JSON.parse(localStorage.getItem(MEMBER_STATE_KEY) || "{}");
-          const legacyVerified = parsedState.accountCreated && typeof parsedState.emailVerified === "undefined";
-          return {
-            ...DEFAULT_STATE,
-            ...parsedState,
-            emailVerified: legacyVerified ? true : Boolean(parsedState.emailVerified)
-          };
-        } catch {
-          return structuredClone(DEFAULT_STATE);
-        }
-      }
-
-      function formatQueuedTime(value) {
-        if (!value) {
-          return "No welcome email has been queued yet.";
-        }
-
-        const stamp = new Date(value);
-        if (Number.isNaN(stamp.getTime())) {
-          return "Welcome email queued just now.";
-        }
-
-        return `Welcome email queued at ${stamp.toLocaleString()}.`;
-      }
-
-      const state = readState();
-      const params = new URLSearchParams(window.location.search);
-      const token = params.get("token") || state.activationToken || "";
-      const memberName = state.name || "there";
-      const emailTo = document.getElementById("emailTo");
-      const emailSubject = document.getElementById("emailSubject");
-      const emailBody = document.getElementById("emailBody");
-      const activationNote = document.getElementById("activationNote");
-      const confirmLink = document.getElementById("confirmLink");
-      const pageTitle = document.getElementById("pageTitle");
-      const pageCopy = document.getElementById("pageCopy");
-
-      emailTo.textContent = state.email || "No member email saved yet";
-      emailSubject.textContent = "Welcome to HavenIntel | Confirm your account";
-
-      if (!state.accountCreated) {
-        pageTitle.textContent = "No welcome email can be previewed yet.";
-        pageCopy.textContent = "Create a HavenIntel account first so the system has a member name, email address, and activation link to place inside the welcome email.";
-        emailBody.innerHTML = `
-          <p>No saved HavenIntel account was found in this browser.</p>
-        `;
-        activationNote.textContent = "Create your account on the account page first, then return here to preview the welcome email.";
-        confirmLink.href = "./account.html";
-        confirmLink.textContent = "Create Account";
-      } else {
-        const activationHref = token ? `./verify-email.html?token=${encodeURIComponent(token)}` : "./verify-email.html";
-        confirmLink.href = activationHref;
-        emailBody.innerHTML = `
-          <p>Hello ${memberName},</p>
-          <p>Welcome to HavenIntel.</p>
-          <p>Your member account has been created for private pre-match football intelligence and public post-match accountability.</p>
-          <p>Before you can sign in and unlock your private dashboard, please confirm your email address using the activation link below.</p>
-          <p><strong>What happens next:</strong></p>
-          <p>1. Confirm your email address.<br>2. Sign in to your HavenIntel account.<br>3. Unlock your selected match brief package.<br>4. Receive your release during the final pre-kickoff window.</p>
-          <p>If you did not create this account, you can ignore this email.</p>
-          <p>HavenIntel</p>
-        `;
-        activationNote.textContent = `${formatQueuedTime(state.welcomeEmailQueuedAt)} Activation link: ${activationHref}`;
-      }
-    </script>
   </body>
 </html>

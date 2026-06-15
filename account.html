@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HavenIntel | Account</title>
+    <title>HavenIntel | Account Preview</title>
     <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js?v=20260615-2"></script>
     <style>
       :root {
         color-scheme: light;
-        --bg: #f0e4d7;
-        --panel: rgba(255, 250, 243, 0.9);
+        --bg: #efe4d3;
+        --panel: rgba(255, 250, 243, 0.92);
         --ink: #1c1713;
         --muted: #6f655d;
         --line: rgba(118, 98, 81, 0.18);
@@ -43,81 +45,12 @@
         box-shadow: var(--shadow);
       }
 
-      .topbar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        margin-bottom: 18px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .brandMark {
-        width: 48px;
-        height: 48px;
-        display: grid;
-        place-items: center;
-      }
-
-      .brandBall {
-        display: inline-block;
-        font-size: 2rem;
-        line-height: 1;
-        animation: havenRoll 3.4s ease-in-out infinite;
-        transform-origin: center;
-        filter: drop-shadow(0 4px 8px rgba(45, 29, 15, 0.14));
-      }
-
-      @keyframes havenRoll {
-        0%, 100% {
-          transform: translateX(0) rotate(0deg);
-        }
-        25% {
-          transform: translateX(2px) rotate(90deg);
-        }
-        50% {
-          transform: translateX(0) rotate(180deg);
-        }
-        75% {
-          transform: translateX(-2px) rotate(270deg);
-        }
-      }
-
-      .navTabs {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 7px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.56);
-        border: 1px solid var(--line);
-      }
-
-      .navTabs a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 126px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        text-decoration: none;
-        color: var(--muted);
-        font-weight: 700;
-      }
-
-      .navTabs a.active {
-        background: var(--ink);
-        color: #fff8ef;
+      .hero,
+      .card {
+        padding: 26px 24px;
       }
 
       .hero {
-        padding: 28px 24px;
         margin-bottom: 18px;
       }
 
@@ -135,81 +68,36 @@
 
       h1 {
         margin: 16px 0 10px;
-        font-size: clamp(2.5rem, 6vw, 4.8rem);
+        font-size: clamp(2.6rem, 6vw, 5rem);
         line-height: 0.94;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 1.55rem;
       }
 
       p {
         color: var(--muted);
-        line-height: 1.6;
+        line-height: 1.65;
+      }
+
+      .lede {
+        max-width: 860px;
+        font-size: 1.08rem;
       }
 
       .grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
+        margin-bottom: 18px;
       }
 
-      .stack {
+      .split {
         display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
-      }
-
-      .card {
-        padding: 22px;
-      }
-
-      .card h2 {
-        margin: 0 0 10px;
-      }
-
-      .formGrid {
-        display: grid;
-        gap: 12px;
-      }
-
-      label {
-        display: grid;
-        gap: 6px;
-        font-weight: 700;
-      }
-
-      input {
-        width: 100%;
-        padding: 14px 15px;
-        border-radius: 16px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.72);
-        font: inherit;
-      }
-
-      .buttonRow {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 14px;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 13px 18px;
-        border-radius: 999px;
-        border: 1px solid transparent;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .button.primary {
-        background: var(--ink);
-        color: #fff9f2;
-      }
-
-      .button.secondary {
-        background: rgba(255, 255, 255, 0.62);
-        color: var(--ink);
-        border-color: var(--line);
       }
 
       .miniList {
@@ -221,487 +109,124 @@
       }
 
       .miniList li {
-        padding: 12px;
+        padding: 13px 14px;
         border-radius: 16px;
-        background: rgba(255,255,255,0.62);
+        background: rgba(255, 255, 255, 0.62);
         border: 1px solid var(--line);
       }
 
-      .statusCard {
-        display: grid;
-        gap: 12px;
-        margin-bottom: 16px;
-      }
-
-      .statusRow {
-        padding: 12px;
-        border-radius: 16px;
-        background: rgba(255,255,255,0.62);
-        border: 1px solid var(--line);
-      }
-
-      .statusLabel {
+      .miniList strong {
         display: block;
-        font-size: 0.82rem;
-        font-weight: 700;
-        color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
         margin-bottom: 4px;
+        color: var(--ink);
       }
 
-      .statusValue {
-        font-size: 1rem;
+      .ctaRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
       }
 
-      .helperText {
-        font-size: 0.92rem;
-        color: var(--muted);
-      }
-
-      .panelLabel {
+      .button {
         display: inline-flex;
-        margin-bottom: 8px;
-        padding: 6px 10px;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 18px;
         border-radius: 999px;
-        background: rgba(24, 79, 71, 0.08);
-        color: var(--accent-2);
-        font-size: 0.78rem;
+        text-decoration: none;
         font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
+        border: 1px solid transparent;
       }
 
-      .message {
-        margin-top: 12px;
-        padding: 12px 14px;
-        border-radius: 16px;
+      .button.primary {
+        background: var(--ink);
+        color: #fff8ef;
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, 0.64);
+        color: var(--ink);
+        border-color: var(--line);
+      }
+
+      .callout {
+        margin-top: 18px;
+        padding: 16px 18px;
+        border-radius: 20px;
         border: 1px solid var(--line);
-        background: rgba(255,255,255,0.62);
-        color: var(--muted);
+        background: rgba(255, 255, 255, 0.62);
       }
 
-      .message.error {
-        color: var(--accent);
-        border-color: rgba(180, 76, 33, 0.25);
-        background: rgba(180, 76, 33, 0.08);
-      }
-
-      .message.success {
-        color: var(--accent-2);
-        border-color: rgba(24, 79, 71, 0.2);
-        background: rgba(24, 79, 71, 0.08);
-      }
-
-      .hidden {
-        display: none !important;
+      .callout strong {
+        color: var(--ink);
       }
 
       @media (max-width: 900px) {
-        .grid {
+        .grid,
+        .split {
           grid-template-columns: 1fr;
         }
       }
     </style>
-    <link rel="stylesheet" href="./shared-shell.css">
-    <script defer src="./shared-shell.js"></script>
   </head>
   <body>
     <main>
-      <div class="topbar">
-        <div class="brand">
-          <div class="brandMark" aria-hidden="true">
-            <span class="brandBall" aria-hidden="true">⚽</span>
-          </div>
-          <div>
-            <strong>HavenIntel</strong>
-            <div style="color:var(--muted); font-size:0.92rem;">Member access and match brief flow</div>
-          </div>
-        </div>
-        <nav class="navTabs">
-          <a href="./index.html">Home</a>
-          <a class="active" href="./account.html">Account</a>
-          <a href="./checkout.html">Checkout</a>
-          <a href="./dashboard.html">Dashboard</a>
-          <a href="./admin.html">Admin</a>
-          <a href="./past.html">Past Matches</a>
-        </nav>
-      </div>
-
       <section class="panel hero">
-        <div class="eyebrow">Member Access</div>
-        <h1>Private pre-match football intelligence starts with one member account.</h1>
-        <p>
-          Create a HavenIntel account to manage your email address, package access, release history, and upcoming match briefs.
+        <span class="eyebrow">Member Access Preview</span>
+        <h1>Private member access is not publicly open yet.</h1>
+        <p class="lede">
+          HavenIntel publishes private football match briefs before kickoff, then tracks
+          finished results publicly after full time. The public board, insights archive,
+          and past-match proof pages are open now. The private member account layer is
+          not open at this time.
         </p>
+        <div class="callout">
+          <strong>No fake certainty.</strong> The public side of HavenIntel is open for
+          reading and review, but private member onboarding, release delivery, and access
+          controls are not being opened publicly yet.
+        </div>
+        <div class="ctaRow">
+          <a class="button primary" href="./index.html#board">View Today's Board</a>
+          <a class="button secondary" href="./index.html#pricing">See Pricing</a>
+          <a class="button secondary" href="./past.html">Review Past Results</a>
+        </div>
       </section>
 
-      <section class="grid">
-        <div class="stack">
-          <article class="panel card">
-            <div class="panelLabel">Create Account</div>
-            <h2 id="accountTitle">For new members</h2>
-            <p>
-              Open your HavenIntel account once, then use it to manage package access, release delivery, and your private match brief schedule.
-            </p>
-            <div class="formGrid">
-              <label>
-                Name
-                <input id="nameInput" type="text" placeholder="Your name">
-              </label>
-              <label>
-                Email address
-                <input id="emailInput" type="email" placeholder="you@example.com">
-              </label>
-              <label>
-                Password
-                <input id="passwordInput" type="password" placeholder="Create a password">
-              </label>
-            </div>
-            <p class="helperText" id="accountHelper">Create your member account first, then continue to pricing and package access.</p>
-            <div class="buttonRow">
-              <a class="button primary" href="./checkout.html" id="accountPrimaryAction">Create Account</a>
-              <a class="button secondary" href="./index.html#pricing">See Pricing</a>
-            </div>
-            <div class="message hidden" id="activationMessage"></div>
-            <div class="buttonRow hidden" id="activationActions">
-              <a class="button primary" href="./welcome-email.html" id="welcomeEmailLink">Preview Welcome Email</a>
-              <a class="button secondary" href="./verify-email.html" id="activationLink">Open Activation Link</a>
-              <button class="button secondary" type="button" id="resendActivationButton">Refresh Welcome Link</button>
-            </div>
-          </article>
-
-          <article class="panel card">
-            <div class="panelLabel">Sign In</div>
-            <h2>For returning members</h2>
-            <p>
-              Sign in with your HavenIntel email address to view your package access, dashboard, and upcoming match briefs.
-            </p>
-            <div class="formGrid">
-              <label>
-                Email address
-                <input id="signInEmailInput" type="email" placeholder="you@example.com">
-              </label>
-              <label>
-                Password
-                <input id="signInPasswordInput" type="password" placeholder="Enter your password">
-              </label>
-            </div>
-            <div class="buttonRow">
-              <a class="button primary" href="./dashboard.html" id="signInAction">Sign In</a>
-              <a class="button secondary" href="./dashboard.html" id="dashboardPreviewAction">Account Dashboard</a>
-              <button class="button secondary hidden" type="button" id="signOutButton">Sign Out</button>
-            </div>
-            <div class="message hidden" id="signInMessage"></div>
-          </article>
-        </div>
-
-        <aside class="panel card">
-          <h2>Account overview</h2>
-          <div class="statusCard" id="accountStatusCard">
-            <div class="statusRow">
-              <span class="statusLabel">Session</span>
-              <div class="statusValue" id="sessionStatus">Signed out</div>
-            </div>
-            <div class="statusRow">
-              <span class="statusLabel">Member email</span>
-              <div class="statusValue" id="sessionEmail">No email saved yet</div>
-            </div>
-            <div class="statusRow">
-              <span class="statusLabel">Email verification</span>
-              <div class="statusValue" id="emailVerificationStatus">No confirmation pending</div>
-            </div>
-            <div class="statusRow">
-              <span class="statusLabel">Welcome email</span>
-              <div class="statusValue" id="welcomeEmailStatus">No welcome email queued</div>
-            </div>
-          </div>
-          <h2>Privacy reassurance</h2>
+      <section class="split">
+        <article class="panel card">
+          <h2>What is open now</h2>
+          <ul class="miniList">
+            <li>
+              <strong>Live Board</strong>
+              Public match tracking, release-state movement, and slate visibility.
+            </li>
+            <li>
+              <strong>Past Matches</strong>
+              Finished match archive with result checks, notes, and public accountability.
+            </li>
+            <li>
+              <strong>Insights</strong>
+              Match previews, recaps, and editorial football analysis.
+            </li>
+            <li>
+              <strong>Public View</strong>
+              Open football questions and public opinion tracking.
+            </li>
+          </ul>
+        </article>
+        <article class="panel card">
+          <h2>Private layer status</h2>
           <p>
-            HavenIntel uses your member email to manage account access, delivery history, and the release window for private match briefs. Public pages do not expose your private package access.
+            This page is a public notice only. HavenIntel is not opening private member
+            accounts, release delivery, dashboard access, or package unlocks at this time.
           </p>
-          <h2>What the account unlocks</h2>
-          <ul class="miniList">
-            <li><strong>1.</strong> Package access saved to one member profile.</li>
-            <li><strong>2.</strong> Release-window delivery to your email address.</li>
-            <li><strong>3.</strong> Account dashboard with upcoming brief status.</li>
-            <li><strong>4.</strong> Private match brief visibility before full time.</li>
-          </ul>
-          <h2>Member rules</h2>
-          <ul class="miniList">
-            <li><strong>1.</strong> User creates account with valid email.</li>
-            <li><strong>2.</strong> User unlocks a HavenIntel package from the access page.</li>
-            <li><strong>3.</strong> Access is saved to the member profile.</li>
-            <li><strong>4.</strong> Match brief is sent to the member email address.</li>
-            <li><strong>5.</strong> Match brief is released 6 hours or less before kickoff.</li>
-          </ul>
-        </aside>
+          <p>
+            Until that changes, the public board, archive, insights pages, and public
+            opinion layer remain the full visitor experience.
+          </p>
+        </article>
       </section>
     </main>
-    <script>
-      const MEMBER_STATE_KEY = "havenintel-member-state-v1";
-      const DEFAULT_MEMBER_STATE = {
-        signedIn: false,
-        accountCreated: false,
-        name: "",
-        email: "",
-        password: "",
-        passwordSet: false,
-        emailVerified: false,
-        welcomeEmailQueuedAt: "",
-        activationToken: "",
-        packages: {
-          edgePack: false,
-          scorePack: false,
-          edgeMultiples: false,
-          scoreMultiples: false
-        },
-        deliveries: {},
-        watchStatuses: {
-          "manual-canada-bosnia": "Confirmed"
-        }
-      };
-
-      function readState() {
-        try {
-          const parsedState = JSON.parse(localStorage.getItem(MEMBER_STATE_KEY) || "{}");
-          const legacyVerified = parsedState.accountCreated && typeof parsedState.emailVerified === "undefined";
-          return {
-            ...DEFAULT_MEMBER_STATE,
-            ...parsedState,
-            emailVerified: legacyVerified ? true : Boolean(parsedState.emailVerified),
-            packages: {
-              ...DEFAULT_MEMBER_STATE.packages,
-              ...(parsedState.packages || {})
-            },
-            deliveries: {
-              ...DEFAULT_MEMBER_STATE.deliveries,
-              ...(parsedState.deliveries || {})
-            },
-            watchStatuses: {
-              ...DEFAULT_MEMBER_STATE.watchStatuses,
-              ...(parsedState.watchStatuses || {})
-            }
-          };
-        } catch {
-          return structuredClone(DEFAULT_MEMBER_STATE);
-        }
-      }
-
-      function writeState(state) {
-        localStorage.setItem(MEMBER_STATE_KEY, JSON.stringify(state));
-      }
-
-      const nameInput = document.getElementById("nameInput");
-      const emailInput = document.getElementById("emailInput");
-      const passwordInput = document.getElementById("passwordInput");
-      const signInEmailInput = document.getElementById("signInEmailInput");
-      const signInPasswordInput = document.getElementById("signInPasswordInput");
-      const continueLink = document.getElementById("accountPrimaryAction");
-      const signInAction = document.getElementById("signInAction");
-      const dashboardPreviewAction = document.getElementById("dashboardPreviewAction");
-      const signOutButton = document.getElementById("signOutButton");
-      const accountTitle = document.getElementById("accountTitle");
-      const accountHelper = document.getElementById("accountHelper");
-      const sessionStatus = document.getElementById("sessionStatus");
-      const sessionEmail = document.getElementById("sessionEmail");
-      const emailVerificationStatus = document.getElementById("emailVerificationStatus");
-      const welcomeEmailStatus = document.getElementById("welcomeEmailStatus");
-      const signInMessage = document.getElementById("signInMessage");
-      const activationMessage = document.getElementById("activationMessage");
-      const activationActions = document.getElementById("activationActions");
-      const welcomeEmailLink = document.getElementById("welcomeEmailLink");
-      const activationLink = document.getElementById("activationLink");
-      const resendActivationButton = document.getElementById("resendActivationButton");
-
-      function setSignInMessage(text, isError = false) {
-        if (!text) {
-          signInMessage.textContent = "";
-          signInMessage.className = "message hidden";
-          return;
-        }
-
-        signInMessage.textContent = text;
-        signInMessage.className = isError ? "message error" : "message";
-      }
-
-      function setActivationMessage(text, variant = "success") {
-        if (!text) {
-          activationMessage.textContent = "";
-          activationMessage.className = "message hidden";
-          return;
-        }
-
-        activationMessage.textContent = text;
-        activationMessage.className = variant === "error" ? "message error" : "message success";
-      }
-
-      function queueActivation(state) {
-        const token = (window.crypto && typeof window.crypto.randomUUID === "function")
-          ? window.crypto.randomUUID()
-          : `haven-${Date.now()}`;
-        return {
-          ...state,
-          signedIn: false,
-          emailVerified: false,
-          welcomeEmailQueuedAt: new Date().toISOString(),
-          activationToken: token
-        };
-      }
-
-      function formatQueuedTime(value) {
-        if (!value) {
-          return "No welcome email queued";
-        }
-
-        const stamp = new Date(value);
-        if (Number.isNaN(stamp.getTime())) {
-          return "Queued just now";
-        }
-
-        return `Queued ${stamp.toLocaleString()}`;
-      }
-
-      function renderAccountState() {
-        const savedState = readState();
-        nameInput.value = savedState.name || "";
-        emailInput.value = savedState.email || "";
-        passwordInput.value = "";
-        signInEmailInput.value = savedState.email || "";
-        signInPasswordInput.value = "";
-
-        sessionStatus.textContent = savedState.signedIn
-          ? "Signed in"
-          : savedState.accountCreated
-            ? "Awaiting sign-in"
-            : "Signed out";
-        sessionEmail.textContent = savedState.email || "No email saved yet";
-        emailVerificationStatus.textContent = !savedState.accountCreated
-          ? "No confirmation pending"
-          : savedState.emailVerified
-            ? "Verified"
-            : "Pending confirmation";
-        welcomeEmailStatus.textContent = savedState.accountCreated
-          ? formatQueuedTime(savedState.welcomeEmailQueuedAt)
-          : "No welcome email queued";
-        accountTitle.textContent = savedState.signedIn
-          ? "Account active"
-          : savedState.accountCreated && !savedState.emailVerified
-            ? "Confirm your email"
-            : "For new members";
-        continueLink.textContent = savedState.signedIn ? "Continue to Access" : "Create Account";
-        dashboardPreviewAction.textContent = savedState.signedIn ? "Open Account Dashboard" : "Account Dashboard";
-        accountHelper.textContent = savedState.signedIn
-          ? "Your member session is active. Package access and upcoming match briefs will follow this email address."
-          : savedState.accountCreated && !savedState.emailVerified
-            ? "Your HavenIntel account is created, but member access stays locked until you confirm the welcome email link."
-          : "Create your member account first, then continue to pricing and package access.";
-        signOutButton.classList.toggle("hidden", !savedState.signedIn);
-
-        const pendingVerification = savedState.accountCreated && !savedState.emailVerified && savedState.activationToken;
-        activationActions.classList.toggle("hidden", !pendingVerification);
-        if (pendingVerification) {
-          welcomeEmailLink.href = `./welcome-email.html?token=${encodeURIComponent(savedState.activationToken)}`;
-          activationLink.href = `./verify-email.html?token=${encodeURIComponent(savedState.activationToken)}`;
-          setActivationMessage("Your welcome email is ready. Review it first, then use the activation link to confirm this account before signing in.");
-        } else {
-          welcomeEmailLink.href = "./welcome-email.html";
-          activationLink.href = "./verify-email.html";
-          setActivationMessage(savedState.emailVerified ? "Email confirmed. Your HavenIntel account can now sign in normally." : "");
-        }
-      }
-
-      continueLink.addEventListener("click", (event) => {
-        event.preventDefault();
-        const state = readState();
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        const password = passwordInput.value;
-
-        if (!name || !email || !password) {
-          setSignInMessage("Enter your name, email address, and password to create your HavenIntel account.", true);
-          return;
-        }
-
-        const nextState = queueActivation({
-          ...state,
-          accountCreated: true,
-          name,
-          email,
-          password,
-          passwordSet: Boolean(password),
-          packages: state.packages || {},
-          deliveries: state.deliveries || {},
-          releaseContent: state.releaseContent || {}
-        });
-        writeState(nextState);
-        setSignInMessage("");
-        renderAccountState();
-      });
-
-      signInAction.addEventListener("click", (event) => {
-        event.preventDefault();
-        const state = readState();
-        const email = signInEmailInput.value.trim();
-        const password = signInPasswordInput.value;
-
-        if (!state.accountCreated) {
-          setSignInMessage("Create your HavenIntel account first before signing in.", true);
-          return;
-        }
-
-        if (!email || !password) {
-          setSignInMessage("Enter your email address and password to sign in.", true);
-          return;
-        }
-
-        if (email !== state.email || password !== state.password) {
-          setSignInMessage("The email address or password does not match this HavenIntel account.", true);
-          return;
-        }
-
-        if (!state.emailVerified) {
-          setSignInMessage("Check your welcome email and activate your HavenIntel account before signing in.", true);
-          renderAccountState();
-          return;
-        }
-
-        writeState({
-          ...state,
-          signedIn: true
-        });
-        setSignInMessage("");
-        window.location.href = signInAction.href;
-      });
-
-      signOutButton.addEventListener("click", () => {
-        const state = readState();
-        writeState({
-          ...state,
-          signedIn: false
-        });
-        setSignInMessage("");
-        renderAccountState();
-      });
-
-      resendActivationButton.addEventListener("click", () => {
-        const state = readState();
-        if (!state.accountCreated) {
-          setActivationMessage("Create your HavenIntel account first before preparing a welcome email.", "error");
-          return;
-        }
-
-        if (state.emailVerified) {
-          setActivationMessage("This HavenIntel account is already verified.");
-          return;
-        }
-
-        const refreshedState = queueActivation(state);
-        writeState(refreshedState);
-        renderAccountState();
-      });
-
-      renderAccountState();
-    </script>
   </body>
 </html>

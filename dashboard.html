@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HavenIntel | Dashboard</title>
+    <title>HavenIntel | Dashboard Preview</title>
     <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js?v=20260615-2"></script>
     <style>
       :root {
         color-scheme: light;
         --bg: #efe4d3;
-        --panel: rgba(255, 250, 243, 0.9);
+        --panel: rgba(255, 250, 243, 0.92);
         --ink: #1c1713;
         --muted: #6f655d;
         --line: rgba(118, 98, 81, 0.18);
@@ -31,7 +33,7 @@
       }
 
       main {
-        max-width: 1220px;
+        max-width: 1180px;
         margin: 0 auto;
         padding: 24px 18px 72px;
       }
@@ -43,73 +45,12 @@
         box-shadow: var(--shadow);
       }
 
-      .topbar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        margin-bottom: 18px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .brandMark {
-        width: 48px;
-        height: 48px;
-        display: grid;
-        place-items: center;
-      }
-
-      .brandBall {
-        display: inline-block;
-        font-size: 2rem;
-        line-height: 1;
-        animation: havenRoll 3.4s ease-in-out infinite;
-        transform-origin: center;
-        filter: drop-shadow(0 4px 8px rgba(45, 29, 15, 0.14));
-      }
-
-      @keyframes havenRoll {
-        0%, 100% { transform: translateX(0) rotate(0deg); }
-        25% { transform: translateX(2px) rotate(90deg); }
-        50% { transform: translateX(0) rotate(180deg); }
-        75% { transform: translateX(-2px) rotate(270deg); }
-      }
-
-      .navTabs {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 7px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.56);
-        border: 1px solid var(--line);
-      }
-
-      .navTabs a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 126px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        text-decoration: none;
-        color: var(--muted);
-        font-weight: 700;
-      }
-
-      .navTabs a.active {
-        background: var(--ink);
-        color: #fff8ef;
+      .hero,
+      .card {
+        padding: 26px 24px;
       }
 
       .hero {
-        padding: 28px 24px;
         margin-bottom: 18px;
       }
 
@@ -127,184 +68,30 @@
 
       h1 {
         margin: 16px 0 10px;
-        font-size: clamp(2.5rem, 6vw, 4.8rem);
+        font-size: clamp(2.6rem, 6vw, 5rem);
         line-height: 0.94;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 1.5rem;
       }
 
       p {
         color: var(--muted);
-        line-height: 1.6;
+        line-height: 1.65;
       }
 
-      .statsGrid,
-      .dashboardGrid,
-      .releaseGrid {
-        display: grid;
-        gap: 18px;
+      .lede {
+        max-width: 860px;
+        font-size: 1.08rem;
       }
 
-      .statsGrid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        margin-bottom: 18px;
-      }
-
-      .statCard,
-      .dashCard {
-        padding: 20px;
-      }
-
-      .previewCard {
-        display: grid;
-        gap: 8px;
-        align-content: start;
-      }
-
-      .previewLabel {
-        display: inline-flex;
-        width: fit-content;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(28, 23, 19, 0.08);
-        color: var(--ink);
-        font-size: 0.76rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-
-      .statCard strong {
-        display: block;
-        font-size: 1.8rem;
-        margin-bottom: 4px;
-      }
-
-      .dashboardGrid {
-        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-        margin-bottom: 18px;
-      }
-
-      .dashCard h2 {
-        margin: 0 0 10px;
-      }
-
-      .list {
-        display: grid;
-        gap: 10px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .list li,
-      .releaseItem,
-      .timelineItem,
-      .accessItem {
-        padding: 14px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.62);
-        border: 1px solid var(--line);
-      }
-
-      .releaseGrid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .releaseItemTop {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        margin-bottom: 10px;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        padding: 5px 10px;
-        border-radius: 999px;
-        background: rgba(24, 79, 71, 0.1);
-        color: var(--accent-2);
-        font-size: 0.82rem;
-        font-weight: 700;
-      }
-
-      .pill.locked {
-        background: rgba(28, 23, 19, 0.08);
-        color: var(--ink);
-      }
-
-      .meta {
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-
-      .stack {
-        display: grid;
-        gap: 12px;
-      }
-
-      .releaseLine {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 12px 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .releaseLine:first-of-type {
-        border-top: 0;
-        padding-top: 0;
-      }
-
-      .miniPill {
-        display: inline-flex;
-        align-items: center;
-        padding: 4px 8px;
-        border-radius: 999px;
-        font-size: 0.76rem;
-        font-weight: 700;
-        background: rgba(24, 79, 71, 0.1);
-        color: var(--accent-2);
-      }
-
-      .miniPill.locked {
-        background: rgba(28, 23, 19, 0.08);
-        color: var(--ink);
-      }
-
-      .miniPill.scheduled {
-        background: rgba(180, 76, 33, 0.1);
-        color: var(--accent);
-      }
-
-      .miniPill.ready {
-        background: rgba(180, 76, 33, 0.1);
-        color: var(--accent);
-      }
-
-      .miniPill.sent {
-        background: rgba(24, 79, 71, 0.1);
-        color: var(--accent-2);
-      }
-
-      .miniPill.pending {
-        background: rgba(109, 113, 108, 0.1);
-        color: var(--muted);
-      }
-
-      .miniPill.finished {
-        background: rgba(24, 79, 71, 0.1);
-        color: var(--accent-2);
-      }
-
-      .buttonRow {
+      .ctaRow {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 14px;
+        margin-top: 18px;
       }
 
       .button {
@@ -313,704 +100,179 @@
         justify-content: center;
         padding: 13px 18px;
         border-radius: 999px;
-        border: 1px solid transparent;
         text-decoration: none;
         font-weight: 700;
+        border: 1px solid transparent;
       }
 
       .button.primary {
         background: var(--ink);
-        color: #fff9f2;
+        color: #fff8ef;
       }
 
       .button.secondary {
-        background: rgba(255,255,255,0.62);
+        background: rgba(255, 255, 255, 0.64);
+        color: var(--ink);
         border-color: var(--line);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .miniLabel {
+        display: inline-flex;
+        width: fit-content;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(24, 79, 71, 0.1);
+        color: var(--accent-2);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .previewList {
+        display: grid;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .previewList li {
+        padding: 13px 14px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid var(--line);
+      }
+
+      .previewList strong {
+        display: block;
+        margin-bottom: 4px;
         color: var(--ink);
       }
 
-      .controlsRow {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 16px;
+      .strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
       }
 
-      .hidden {
-        display: none !important;
+      .strip .card {
+        min-height: 170px;
       }
 
-      @media (max-width: 980px) {
-        .statsGrid,
-        .dashboardGrid,
-        .releaseGrid {
+      @media (max-width: 900px) {
+        .grid,
+        .strip {
           grid-template-columns: 1fr;
         }
       }
     </style>
-    <link rel="stylesheet" href="./shared-shell.css">
-    <script defer src="./shared-shell.js"></script>
   </head>
   <body>
     <main>
-      <div class="topbar">
-        <div class="brand">
-          <div class="brandMark" aria-hidden="true">
-            <span class="brandBall" aria-hidden="true">⚽</span>
-          </div>
-          <div>
-            <strong>HavenIntel</strong>
-            <div style="color:var(--muted); font-size:0.92rem;">Private pre-match football intelligence</div>
-          </div>
-        </div>
-        <nav class="navTabs">
-          <a href="./index.html">Home</a>
-          <a href="./account.html">Account</a>
-          <a href="./checkout.html">Checkout</a>
-          <a class="active" href="./dashboard.html">Dashboard</a>
-          <a href="./admin.html">Admin</a>
-          <a href="./history.html">History</a>
-          <a href="./past.html">Past Matches</a>
-        </nav>
-      </div>
-
       <section class="panel hero">
-        <div class="eyebrow">Member Dashboard</div>
-        <h1 id="dashboardTitle">Your private pre-match releases, delivery windows, and access status.</h1>
-        <p id="dashboardCopy">
-          HavenIntel publishes private football match briefs before kickoff, then tracks finished results publicly after full time. This member dashboard holds the private side of that cycle.
+        <span class="eyebrow">Dashboard Preview</span>
+        <h1>The member dashboard is being prepared, but private access is not publicly open yet.</h1>
+        <p class="lede">
+          The future HavenIntel dashboard will hold private match brief delivery windows,
+          package access, and release history. For soft launch, the public side remains the
+          live board, insights archive, public view, and finished-match proof trail.
         </p>
-        <div class="controlsRow">
-          <a class="button primary" href="./checkout.html" id="viewPackagesButton">View Packages</a>
-          <a class="button secondary" href="./account.html" id="signInActionButton">Sign In</a>
-          <a class="button secondary" href="./account.html" id="createAccountButton">Create Account</a>
-          <button class="button secondary hidden" type="button" id="signOutButton">Sign Out</button>
+        <div class="ctaRow">
+          <a class="button primary" href="./index.html#pricing">See Pricing</a>
+          <a class="button secondary" href="./index.html#board">View Today's Board</a>
+          <a class="button secondary" href="./insights.html">Read Latest Insights</a>
         </div>
       </section>
 
-      <section class="statsGrid" id="statsGrid"></section>
+      <section class="strip">
+        <article class="panel card">
+          <span class="miniLabel">Upcoming Delivery</span>
+          <h2>Private release timing</h2>
+          <p>
+            Future members will see the final release window for each unlocked match brief
+            inside the dashboard once the private layer opens.
+          </p>
+        </article>
+        <article class="panel card">
+          <span class="miniLabel">Package Access</span>
+          <h2>Private unlocks</h2>
+          <p>
+            Match Brief and Score-Range Brief access will appear here once the account and
+            package system goes live beyond internal testing.
+          </p>
+        </article>
+        <article class="panel card">
+          <span class="miniLabel">Brief Window</span>
+          <h2>Pre-kickoff delivery</h2>
+          <p>
+            HavenIntel releases are built around the final pre-kickoff window. That timing
+            layer is not publicly open yet.
+          </p>
+        </article>
+        <article class="panel card">
+          <span class="miniLabel">Release History</span>
+          <h2>Private read history</h2>
+          <p>
+            Private member history will sit alongside the public archive later. For now,
+            the public archive remains the proof layer.
+          </p>
+        </article>
+      </section>
 
-      <section class="dashboardGrid">
-        <article class="panel dashCard">
-          <h2>Upcoming Delivery</h2>
-          <div class="list" id="deliveryList"></div>
+      <section class="grid">
+        <article class="panel card">
+          <h2>What the dashboard will eventually show</h2>
+          <ul class="previewList">
+            <li>
+              <strong>Upcoming deliveries</strong>
+              The next private match brief windows tied to kickoff timing.
+            </li>
+            <li>
+              <strong>Package status</strong>
+              Active Match Brief and Score-Range Brief access.
+            </li>
+            <li>
+              <strong>Release history</strong>
+              Sent match briefs and closed private windows.
+            </li>
+            <li>
+              <strong>Email delivery confirmation</strong>
+              Delivery status once the private mail layer is opened properly.
+            </li>
+          </ul>
         </article>
 
-        <aside class="panel dashCard">
-          <h2>Account & Access</h2>
-          <p>
-            HavenIntel match briefs are only visible to unlocked packages, and each release is sent to the member email once it enters the final pre-kickoff window.
-          </p>
-          <div class="stack" id="accountStatusList"></div>
-          <div class="stack" id="memberEmailList"></div>
-          <div class="buttonRow">
-            <a class="button primary" href="./account.html">Manage Account</a>
-            <a class="button secondary" href="./checkout.html">View Packages</a>
-          </div>
-        </aside>
-      </section>
-
-      <section class="panel dashCard" style="margin-bottom:18px;">
-        <h2>My Releases</h2>
-        <p class="meta">Each match is split by package so members can see exactly what they have unlocked before the email match brief is sent.</p>
-        <div class="releaseGrid" id="releaseGrid"></div>
-      </section>
-
-      <section class="panel dashCard">
-        <h2>Past Orders</h2>
-        <ul class="list" id="ordersList"></ul>
+        <article class="panel card">
+          <h2>What stays public now</h2>
+          <ul class="previewList">
+            <li>
+              <strong>Live Board</strong>
+              Watched matches, confirmed selections, released states, and finished results.
+            </li>
+            <li>
+              <strong>Past Matches</strong>
+              Public tracking of what held, what missed, and what changed after full time.
+            </li>
+            <li>
+              <strong>Insights</strong>
+              Match previews, archive reviews, and editorial football coverage.
+            </li>
+            <li>
+              <strong>Public View</strong>
+              Open football questions for visitors without entering the private flow.
+            </li>
+          </ul>
+        </article>
       </section>
     </main>
-    <script>
-      const MEMBER_STATE_KEY = "havenintel-member-state-v1";
-      const DELIVERY_WINDOW = "6 hours or less before kickoff";
-      const DEFAULT_STATE = {
-        name: "",
-        email: "",
-        signedIn: false,
-        accountCreated: false,
-        emailVerified: false,
-        welcomeEmailQueuedAt: "",
-        activationToken: "",
-        packages: {
-          edgePack: false,
-          scorePack: false,
-          edgeMultiples: false,
-          scoreMultiples: false
-        },
-        deliveries: {},
-        watchStatuses: {
-          "manual-canada-bosnia": "Confirmed"
-        },
-        releaseContent: {}
-      };
-
-      const PACKAGE_COPY = {
-        edgePack: {
-          name: "HavenIntel Match Brief",
-          price: "US$49",
-          short: "Match Brief"
-        },
-        scorePack: {
-          name: "HavenIntel Score-Range Brief",
-          price: "US$19",
-          short: "Score-Range Brief"
-        },
-        edgeMultiples: {
-          name: "HavenIntel 3-Match Brief Bundle",
-          price: "US$129",
-          short: "3-Match Bundle"
-        },
-        scoreMultiples: {
-          name: "HavenIntel 3-Score-Range Bundle",
-          price: "US$49",
-          short: "3-Score Bundle"
-        }
-      };
-
-      const RELEASES = [
-        {
-          key: "canadaBosnia",
-          matchId: "manual-canada-bosnia",
-          title: "Canada vs Bosnia",
-          competition: "World Cup",
-          kickoff: "Sat, Jun 13, 3:00 AM GMT+8",
-          edge: "Canada",
-          score: "1-0 or 2-0"
-        },
-        {
-          key: "mexicoSouthAfrica",
-          matchId: "5001993",
-          title: "Mexico vs South Africa",
-          competition: "World Cup",
-          kickoff: "Fri, Jun 12, 3:00 AM GMT+8",
-          edge: "Mexico",
-          score: "1-0 or 2-0"
-        },
-        {
-          key: "koreaCzech",
-          matchId: "5058661",
-          title: "Korea Republic vs Czech Republic",
-          competition: "World Cup",
-          kickoff: "Fri, Jun 12, 10:00 AM GMT+8",
-          edge: "Korea Republic",
-          score: "1-1 or 0-0"
-        }
-      ];
-
-      const RELEASE_DEFAULTS = {
-        canadaBosnia: {
-          edgePick: "Canada",
-          scorePick: "1-0 or 2-0",
-          notes: "Intelligence note: Under 2.5. Handicap read: Canada -0.5. Read strength: medium."
-        },
-        mexicoSouthAfrica: {
-          edgePick: "Mexico",
-          scorePick: "1-0 or 2-0",
-          notes: "Intelligence note: Under 2.25. Handicap read: South Africa +1.25. Read strength: high."
-        },
-        koreaCzech: {
-          edgePick: "Korea Republic",
-          scorePick: "1-1 or 0-0",
-          notes: "Intelligence note: Under 2.25. Handicap read: Korea Republic 0. Read strength: low."
-        }
-      };
-
-      function readState() {
-        try {
-          const parsedState = JSON.parse(localStorage.getItem(MEMBER_STATE_KEY) || "{}");
-          const legacyVerified = parsedState.accountCreated && typeof parsedState.emailVerified === "undefined";
-          const mergedReleaseContent = {
-            ...DEFAULT_STATE.releaseContent,
-            ...(parsedState.releaseContent || {})
-          };
-
-          for (const [key, defaults] of Object.entries(RELEASE_DEFAULTS)) {
-            mergedReleaseContent[key] = {
-              ...defaults,
-              ...(mergedReleaseContent[key] || {})
-            };
-          }
-
-          return {
-            ...DEFAULT_STATE,
-            ...parsedState,
-            emailVerified: legacyVerified ? true : Boolean(parsedState.emailVerified),
-            packages: {
-              ...DEFAULT_STATE.packages,
-              ...(parsedState.packages || {})
-            },
-            deliveries: {
-              ...DEFAULT_STATE.deliveries,
-              ...(parsedState.deliveries || {})
-            },
-            watchStatuses: {
-              ...DEFAULT_STATE.watchStatuses,
-              ...(parsedState.watchStatuses || {})
-            },
-            releaseContent: mergedReleaseContent
-          };
-        } catch {
-          return structuredClone(DEFAULT_STATE);
-        }
-      }
-
-      function writeState(state) {
-        localStorage.setItem(MEMBER_STATE_KEY, JSON.stringify(state));
-      }
-
-      async function readRuntimeState() {
-        try {
-          const response = await fetch("./data/runtime-state.json");
-          if (!response.ok) {
-            return {};
-          }
-          return await response.json();
-        } catch {
-          return {};
-        }
-      }
-
-      function normalizeDeliveryStatus(value) {
-        return ["Pending", "Ready", "Sent"].includes(value) ? value : "Pending";
-      }
-
-      function isFinishedRelease(release, runtimeState) {
-        return runtimeState?.[release.matchId]?.status === "Full Time";
-      }
-
-      function canSeePrivatePick(state, release, runtimeState, packageKey) {
-        if (!state.signedIn || !state.packages[packageKey]) {
-          return false;
-        }
-
-        if (isFinishedRelease(release, runtimeState)) {
-          return false;
-        }
-
-        const status = normalizeDeliveryStatus(state.deliveries?.[release.key]);
-        return status === "Ready" || status === "Sent";
-      }
-
-      function packageCount(packages) {
-        return Object.values(packages).filter(Boolean).length;
-      }
-
-      function releaseContentFor(state, key) {
-        return {
-          edgePick: "",
-          scorePick: "",
-          notes: "",
-          readyAt: "",
-          sentAt: "",
-          ...(state.releaseContent?.[key] || {})
-        };
-      }
-
-      function ownedMatchReleaseCount(state, runtimeState) {
-        return RELEASES.reduce((count, release) => {
-          return count
-            + Number(canSeePrivatePick(state, release, runtimeState, "edgePack"))
-            + Number(canSeePrivatePick(state, release, runtimeState, "scorePack"));
-        }, 0);
-      }
-
-      function upcomingDeliveryCount(state, runtimeState) {
-        return RELEASES.reduce((count, release) => {
-          if (isFinishedRelease(release, runtimeState)) {
-            return count;
-          }
-          const status = normalizeDeliveryStatus(state.deliveries[release.key]);
-          if (!state.packages.edgePack && !state.packages.scorePack) {
-            return count;
-          }
-          return count + Number(status === "Pending" || status === "Ready");
-        }, 0);
-      }
-
-      function renderStats(state, runtimeState) {
-        const statsGrid = document.getElementById("statsGrid");
-        if (!state.signedIn || !state.emailVerified) {
-          const pendingVerification = state.accountCreated && !state.emailVerified;
-          statsGrid.innerHTML = `
-            <article class="panel statCard previewCard">
-              <span class="previewLabel">${pendingVerification ? "Email Pending" : "Locked Preview"}</span>
-              <strong>${pendingVerification ? "Activation Required" : "Upcoming Delivery"}</strong>
-              <span class="meta">${
-                pendingVerification
-                  ? "Confirm your welcome-email link before release windows, email timing, and match brief dates can appear here."
-                  : "Sign in to view release windows, email timing, and upcoming match brief dates."
-              }</span>
-            </article>
-            <article class="panel statCard previewCard">
-              <span class="previewLabel">Locked Preview</span>
-              <strong>My Releases</strong>
-              <span class="meta">Your unlocked match briefs and score-range briefs appear here once account access is fully active.</span>
-            </article>
-            <article class="panel statCard previewCard">
-              <span class="previewLabel">Locked Preview</span>
-              <strong>Package Access</strong>
-              <span class="meta">Buy or activate a package to unlock the private member layer before full time.</span>
-            </article>
-            <article class="panel statCard previewCard">
-              <span class="previewLabel">Public Layer</span>
-              <strong>Archive Record</strong>
-              <span class="meta">Finished results stay visible publicly after full time, even while member brief access stays private before kickoff.</span>
-            </article>
-          `;
-          return;
-        }
-        const activePackages = packageCount(state.packages);
-        const unlockedMatchReleases = ownedMatchReleaseCount(state, runtimeState);
-        const scheduledDeliveries = upcomingDeliveryCount(state, runtimeState);
-        const ownedBundles = Number(state.packages.edgeMultiples) + Number(state.packages.scoreMultiples);
-        statsGrid.innerHTML = `
-          <article class="panel statCard">
-            <strong>${activePackages}</strong>
-            <span class="meta">Packages active on this account</span>
-          </article>
-          <article class="panel statCard">
-            <strong>${scheduledDeliveries}</strong>
-            <span class="meta">Upcoming email deliveries</span>
-          </article>
-          <article class="panel statCard">
-            <strong>${unlockedMatchReleases}</strong>
-            <span class="meta">Current match briefs unlocked</span>
-          </article>
-          <article class="panel statCard">
-            <strong>${ownedBundles}</strong>
-            <span class="meta">Multiples bundles owned</span>
-          </article>
-        `;
-      }
-
-      function renderDeliveries(state, runtimeState) {
-        const deliveryList = document.getElementById("deliveryList");
-        if (!state.signedIn || !state.emailVerified) {
-          const pendingVerification = state.accountCreated && !state.emailVerified;
-          deliveryList.innerHTML = `
-            <div class="timelineItem">
-              <strong>${pendingVerification ? "Welcome email confirmation still required" : "Upcoming delivery stays private until sign-in"}</strong>
-              <div class="meta">${
-                pendingVerification
-                  ? "Your account exists, but HavenIntel still waits for email confirmation before this panel can show release windows, email timing, and private match brief scheduling."
-                  : "Once your account is active, this panel shows release windows, email timing, and which match brief is next."
-              }</div>
-            </div>
-            <div class="timelineItem">
-              <strong>What appears here</strong>
-              <div class="meta">Match name, package type, release status, and whether the brief is still locked or already visible inside your member dashboard.</div>
-            </div>
-          `;
-          return;
-        }
-        const deliveryItems = RELEASES
-          .filter(() => state.packages.edgePack || state.packages.scorePack)
-          .map((release) => {
-            const ownedPackages = [
-              state.packages.edgePack ? PACKAGE_COPY.edgePack.short : null,
-              state.packages.scorePack ? PACKAGE_COPY.scorePack.short : null
-            ].filter(Boolean).join(" + ");
-            const finished = isFinishedRelease(release, runtimeState);
-            const status = finished ? "Finished" : normalizeDeliveryStatus(state.deliveries[release.key]);
-            const content = releaseContentFor(state, release.key);
-            const privateVisible = canSeePrivatePick(state, release, runtimeState, "edgePack") || canSeePrivatePick(state, release, runtimeState, "scorePack");
-            return `
-              <div class="timelineItem">
-                <div class="releaseItemTop">
-                  <strong>${release.title}</strong>
-                  <span class="miniPill ${status.toLowerCase()}">${status}</span>
-                </div>
-                <div class="meta">${release.competition} • ${ownedPackages}</div>
-                <div class="meta">${finished ? "Match finished. Public proof is now tracked in Past Matches." : `Release window: ${DELIVERY_WINDOW}`}</div>
-                <div class="meta">Member visibility: ${
-                  finished
-                    ? "Private match brief closed. Result now belongs to the public archive."
-                    : privateVisible
-                      ? "Unlocked inside dashboard"
-                      : "Locked until release window"
-                }</div>
-                <div class="meta">Ready at: ${content.readyAt || "-"} • Sent at: ${content.sentAt || "-"}</div>
-              </div>
-            `;
-          });
-
-        if (!deliveryItems.length) {
-          deliveryList.innerHTML = `
-            <div class="timelineItem">
-              <strong>No scheduled deliveries yet</strong>
-              <div class="meta">Unlock a package to activate the next HavenIntel release window.</div>
-            </div>
-          `;
-          return;
-        }
-
-        deliveryList.innerHTML = deliveryItems.join("");
-      }
-
-      function renderEmail(state) {
-        const accountStatusList = document.getElementById("accountStatusList");
-        const memberEmailList = document.getElementById("memberEmailList");
-        const activePackageCount = Object.keys(PACKAGE_COPY).filter((key) => state.packages[key]).length;
-        const pendingReleaseCount = Object.keys(state.deliveries || {}).filter((key) => normalizeDeliveryStatus(state.deliveries[key]) === "Pending" || normalizeDeliveryStatus(state.deliveries[key]) === "Ready").length;
-        const fullyActive = state.signedIn && state.emailVerified;
-
-        accountStatusList.innerHTML = `
-          <div class="accessItem">
-            <strong>Account status</strong>
-            <div class="meta">${
-              fullyActive
-                ? "Signed in"
-                : state.accountCreated && !state.emailVerified
-                  ? "Email confirmation pending"
-                  : "Signed out"
-            }</div>
-          </div>
-          <div class="accessItem">
-            <strong>Email verification</strong>
-            <div class="meta">${state.emailVerified ? "Verified" : state.accountCreated ? "Pending confirmation" : "Not started"}</div>
-          </div>
-          <div class="accessItem">
-            <strong>Package status</strong>
-            <div class="meta">${activePackageCount ? `${activePackageCount} active package${activePackageCount > 1 ? "s" : ""}` : "No active package yet"}</div>
-          </div>
-          <div class="accessItem">
-            <strong>Release status</strong>
-            <div class="meta">${fullyActive && activePackageCount ? `${pendingReleaseCount} pending or ready release window${pendingReleaseCount === 1 ? "" : "s"}` : "Release pending once account and package are active"}</div>
-          </div>
-        `;
-
-        if (!fullyActive) {
-          const pendingVerification = state.accountCreated && !state.emailVerified;
-          memberEmailList.innerHTML = `
-            <div class="accessItem">
-              <strong>Package Access</strong>
-              <div class="meta">Buy or activate a package to unlock private match briefs and score-range briefs.</div>
-            </div>
-            <div class="accessItem">
-              <strong>Member Email</strong>
-              <div class="meta">${
-                pendingVerification
-                  ? `${state.email || "Your saved member email"} is waiting for confirmation before private access opens.`
-                  : "Create an account to attach access to your delivery address."
-              }</div>
-            </div>
-            <div class="accessItem">
-              <strong>Release Window</strong>
-              <div class="meta">Match briefs are sent ${DELIVERY_WINDOW}.</div>
-            </div>
-          `;
-          return;
-        }
-        memberEmailList.innerHTML = `
-          <div class="accessItem">
-            <strong>Primary email</strong>
-            <div class="meta">${state.email || "No email saved yet"}</div>
-          </div>
-          <div class="accessItem">
-            <strong>Member name</strong>
-            <div class="meta">${state.name || "No name saved yet"}</div>
-          </div>
-          <div class="accessItem">
-            <strong>Delivery rule</strong>
-            <div class="meta">Release sent ${DELIVERY_WINDOW}</div>
-          </div>
-          <div class="accessItem">
-            <strong>Package access</strong>
-            <div class="meta">${Object.entries(PACKAGE_COPY).filter(([key]) => state.packages[key]).map(([, value]) => value.name).join(" • ") || "No package purchased yet"}</div>
-          </div>
-        `;
-      }
-
-      function renderReleases(state, runtimeState) {
-        const releaseGrid = document.getElementById("releaseGrid");
-        if (!state.signedIn || !state.emailVerified) {
-          const pendingVerification = state.accountCreated && !state.emailVerified;
-          releaseGrid.innerHTML = `
-            <article class="releaseItem">
-              <div class="releaseItemTop">
-                <strong>${pendingVerification ? "Email confirmation required" : "Member sign-in required"}</strong>
-                <span class="pill locked">Locked</span>
-              </div>
-              <div class="meta">${
-                pendingVerification
-                  ? "Your HavenIntel account is created, but private pre-match access stays locked until the welcome-email link is confirmed."
-                  : "Create or sign in to a HavenIntel account before private pre-match access is shown here."
-              }</div>
-              <div class="meta" style="margin-top:10px;">This area later holds your Match Brief, Score-Range Brief, and bundle visibility before the release window opens.</div>
-              <div class="buttonRow">
-                <a class="button primary" href="./account.html">${pendingVerification ? "Confirm Account" : "Open Account"}</a>
-                <a class="button secondary" href="./checkout.html">View Packages</a>
-              </div>
-            </article>
-          `;
-          return;
-        }
-        const items = RELEASES.map((release) => ({
-          title: release.title,
-          unlocked: state.packages.edgePack || state.packages.scorePack,
-          finished: isFinishedRelease(release, runtimeState),
-          competition: release.competition,
-          deliveryStatus: normalizeDeliveryStatus(state.deliveries[release.key]),
-          notes: releaseContentFor(state, release.key).notes,
-          lines: [
-            {
-              label: "HavenIntel Match Brief",
-              value: canSeePrivatePick(state, release, runtimeState, "edgePack")
-                ? (releaseContentFor(state, release.key).edgePick || release.edge)
-                : state.packages.edgePack
-                  ? (isFinishedRelease(release, runtimeState) ? "Moved to public proof after full time" : "Locked until release window")
-                  : "Private until purchased",
-              unlocked: canSeePrivatePick(state, release, runtimeState, "edgePack")
-            },
-            {
-              label: "HavenIntel Score-Range Brief",
-              value: canSeePrivatePick(state, release, runtimeState, "scorePack")
-                ? (releaseContentFor(state, release.key).scorePick || release.score)
-                : state.packages.scorePack
-                  ? (isFinishedRelease(release, runtimeState) ? "Moved to public proof after full time" : "Locked until release window")
-                  : "Private until purchased",
-              unlocked: canSeePrivatePick(state, release, runtimeState, "scorePack")
-            }
-          ]
-        })).concat([
-          {
-            title: "HavenIntel 3-Match Brief Bundle",
-            unlocked: state.packages.edgeMultiples,
-            competition: "Bundle Access",
-            deliveryStatus: state.packages.edgeMultiples ? "Active" : "Locked",
-            lines: [
-              {
-                label: "Bundle",
-                value: state.packages.edgeMultiples ? "3 full match briefs unlocked" : "Private until purchased",
-                unlocked: state.packages.edgeMultiples
-              }
-            ]
-          },
-          {
-            title: "HavenIntel 3-Score-Range Bundle",
-            unlocked: state.packages.scoreMultiples,
-            competition: "Bundle Access",
-            deliveryStatus: state.packages.scoreMultiples ? "Active" : "Locked",
-            lines: [
-              {
-                label: "Bundle",
-                value: state.packages.scoreMultiples ? "3 score-range briefs unlocked" : "Private until purchased",
-                unlocked: state.packages.scoreMultiples
-              }
-            ]
-          }
-        ]);
-
-        releaseGrid.innerHTML = items.map((item) => `
-          <article class="releaseItem">
-            <div class="releaseItemTop">
-              <strong>${item.title}</strong>
-              <span class="pill${item.unlocked ? "" : " locked"}">${
-                item.finished ? "Finished" : item.unlocked ? "Owned" : "Locked"
-              }</span>
-            </div>
-            <div class="meta">${item.competition}${item.deliveryStatus ? ` • Status: ${item.deliveryStatus}` : ""}${item.finished ? " • Public proof active" : ""}</div>
-            <div style="margin-top:10px;">
-              ${item.lines.map((line) => `
-                <div class="releaseLine">
-                  <div>
-                    <strong>${line.label}</strong>
-                    <div class="meta">${line.value}</div>
-                  </div>
-                  <span class="miniPill${
-                    item.finished ? " finished" : line.unlocked ? "" : " locked"
-                  }">${
-                    item.finished ? "Public proof" : line.unlocked ? "Visible" : "Private"
-                  }</span>
-                </div>
-              `).join("")}
-            </div>
-            ${item.notes && !item.finished ? `<div class="meta" style="margin-top:10px;">Release note: ${item.notes.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>` : ""}
-          </article>
-        `).join("");
-      }
-
-      function renderOrders(state) {
-        const ordersList = document.getElementById("ordersList");
-        if (!state.signedIn || !state.emailVerified) {
-          ordersList.innerHTML = `
-            <li>
-              <strong>Package history preview</strong>
-              <div class="meta">Your purchased match briefs and bundles will appear here once access is active.</div>
-            </li>
-          `;
-          return;
-        }
-        const orders = [
-          state.packages.edgePack ? [PACKAGE_COPY.edgePack.name, `${PACKAGE_COPY.edgePack.price} • Current single-release access active`] : null,
-          state.packages.scorePack ? [PACKAGE_COPY.scorePack.name, `${PACKAGE_COPY.scorePack.price} • Current score-release access active`] : null,
-          state.packages.edgeMultiples ? [PACKAGE_COPY.edgeMultiples.name, `${PACKAGE_COPY.edgeMultiples.price} • 3-release bundle active`] : null,
-          state.packages.scoreMultiples ? [PACKAGE_COPY.scoreMultiples.name, `${PACKAGE_COPY.scoreMultiples.price} • 3-release bundle active`] : null
-        ].filter(Boolean);
-
-        if (!orders.length) {
-          ordersList.innerHTML = `
-            <li>
-              <strong>No orders yet</strong>
-              <div class="meta">Your package history will appear here after checkout.</div>
-            </li>
-          `;
-          return;
-        }
-
-        ordersList.innerHTML = orders.map(([title, meta]) => `
-          <li>
-            <strong>${title}</strong>
-            <div class="meta">${meta}</div>
-          </li>
-        `).join("");
-      }
-
-      async function renderDashboard() {
-        const state = readState();
-        const runtimeState = await readRuntimeState();
-        const signInActionButton = document.getElementById("signInActionButton");
-        const createAccountButton = document.getElementById("createAccountButton");
-        const viewPackagesButton = document.getElementById("viewPackagesButton");
-        const fullyActive = state.signedIn && state.emailVerified;
-        const pendingVerification = state.accountCreated && !state.emailVerified;
-        document.getElementById("dashboardTitle").textContent = fullyActive
-          ? "Your private pre-match releases, delivery windows, and access status."
-          : pendingVerification
-            ? "Confirm your email to unlock your private HavenIntel dashboard."
-            : "Sign in to unlock your private pre-match HavenIntel dashboard.";
-        document.getElementById("dashboardCopy").textContent = fullyActive
-          ? "HavenIntel publishes private football match briefs before kickoff, then tracks finished results publicly after full time. This member view holds the private side of that cycle."
-          : pendingVerification
-            ? "Your HavenIntel account has been created, but private member access stays locked until you confirm the welcome-email link. Once confirmed, your release windows and package access will open here."
-            : "This dashboard holds the private side of HavenIntel. Sign in first to unlock pre-match member access before results move to the public archive.";
-        document.getElementById("signOutButton").classList.toggle("hidden", !fullyActive);
-        signInActionButton.classList.toggle("hidden", fullyActive);
-        createAccountButton.classList.toggle("hidden", fullyActive);
-        signInActionButton.textContent = pendingVerification ? "Confirm Account" : "Sign In";
-        signInActionButton.href = pendingVerification ? "./account.html" : "./account.html";
-        document.querySelector('.dashboardGrid .button.primary').textContent = state.signedIn ? "Manage Account" : "Sign In";
-        document.querySelector('.dashboardGrid .button.primary').href = "./account.html";
-        document.querySelector('.dashboardGrid .button.secondary').textContent = "View Packages";
-        document.querySelector('.dashboardGrid .button.secondary').href = "./checkout.html";
-        renderStats(state, runtimeState);
-        renderDeliveries(state, runtimeState);
-        renderEmail(state);
-        renderReleases(state, runtimeState);
-        renderOrders(state);
-      }
-
-      document.getElementById("signOutButton").addEventListener("click", () => {
-        const state = readState();
-        writeState({
-          ...state,
-          signedIn: false
-        });
-        renderDashboard();
-      });
-
-      renderDashboard();
-    </script>
   </body>
 </html>

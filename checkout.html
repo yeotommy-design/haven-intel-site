@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HavenIntel | Access</title>
+    <title>HavenIntel | Access Preview</title>
     <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="./shared-shell.css">
+    <script defer src="./shared-shell.js?v=20260615-2"></script>
     <style>
       :root {
         color-scheme: light;
         --bg: #efe4d3;
-        --panel: rgba(255, 250, 243, 0.9);
+        --panel: rgba(255, 250, 243, 0.92);
         --ink: #1c1713;
         --muted: #6f655d;
         --line: rgba(118, 98, 81, 0.18);
         --accent: #b44c21;
+        --accent-2: #184f47;
         --shadow: 0 24px 60px rgba(45, 29, 15, 0.1);
       }
 
@@ -42,47 +45,14 @@
         box-shadow: var(--shadow);
       }
 
-      .topbar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        margin-bottom: 18px;
+      .hero,
+      .card,
+      .notice {
+        padding: 26px 24px;
       }
 
-      .navTabs {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 7px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.56);
-        border: 1px solid var(--line);
-      }
-
-      .navTabs a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 126px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        text-decoration: none;
-        color: var(--muted);
-        font-weight: 700;
-      }
-
-      .navTabs a.active {
-        background: var(--ink);
-        color: #fff8ef;
-      }
-
-      .hero, .card {
-        padding: 24px;
-      }
-
-      .hero {
+      .hero,
+      .notice {
         margin-bottom: 18px;
       }
 
@@ -100,13 +70,23 @@
 
       h1 {
         margin: 16px 0 10px;
-        font-size: clamp(2.5rem, 6vw, 4.8rem);
+        font-size: clamp(2.6rem, 6vw, 5rem);
         line-height: 0.94;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 1.45rem;
       }
 
       p {
         color: var(--muted);
-        line-height: 1.6;
+        line-height: 1.65;
+      }
+
+      .lede {
+        max-width: 860px;
+        font-size: 1.08rem;
       }
 
       .grid {
@@ -116,8 +96,27 @@
       }
 
       .price {
-        font-size: 2.8rem;
         margin: 8px 0 12px;
+        font-size: 3rem;
+        line-height: 1;
+      }
+
+      .subline {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .bestFor {
+        display: inline-flex;
+        margin-bottom: 12px;
+        padding: 7px 11px;
+        border-radius: 999px;
+        background: rgba(24, 79, 71, 0.1);
+        color: var(--accent-2);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
       }
 
       .list {
@@ -129,17 +128,25 @@
       }
 
       .list li {
-        padding: 12px;
+        padding: 12px 13px;
         border-radius: 16px;
-        background: rgba(255,255,255,0.62);
+        background: rgba(255, 255, 255, 0.62);
         border: 1px solid var(--line);
       }
 
-      .buttonRow {
+      .carry {
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .ctaRow {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 14px;
+        margin-top: 18px;
       }
 
       .button {
@@ -148,494 +155,120 @@
         justify-content: center;
         padding: 13px 18px;
         border-radius: 999px;
-        border: 1px solid transparent;
         text-decoration: none;
         font-weight: 700;
+        border: 1px solid transparent;
       }
 
       .button.primary {
         background: var(--ink);
-        color: #fff9f2;
+        color: #fff8ef;
       }
 
       .button.secondary {
-        background: rgba(255,255,255,0.62);
-        border-color: var(--line);
+        background: rgba(255, 255, 255, 0.64);
         color: var(--ink);
+        border-color: var(--line);
       }
 
-      .gateNotice {
-        margin-bottom: 18px;
-        padding: 18px 20px;
-      }
-
-      .summaryCard {
-        margin-bottom: 18px;
-        padding: 22px 24px;
-      }
-
-      .summaryGrid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px 18px;
-        margin-top: 16px;
-      }
-
-      .summaryItem {
-        padding: 14px;
-        border-radius: 16px;
-        background: rgba(255,255,255,0.62);
-        border: 1px solid var(--line);
-      }
-
-      .summaryItem strong {
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      .compareCard {
-        margin-bottom: 18px;
-        padding: 22px 24px;
-      }
-
-      .compareGrid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .compareItem {
-        padding: 14px;
-        border-radius: 16px;
-        background: rgba(255,255,255,0.62);
-        border: 1px solid var(--line);
-      }
-
-      .compareItem strong {
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      .bestFor {
-        display: inline-flex;
-        margin: 12px 0 0;
-        padding: 7px 11px;
-        border-radius: 999px;
-        background: rgba(24, 79, 71, 0.1);
-        color: #184f47;
-        font-size: 0.82rem;
-        font-weight: 700;
-      }
-
-      .carryNote {
-        margin-top: 12px;
-        padding: 12px 14px;
-        border-radius: 16px;
-        background: rgba(255,255,255,0.62);
-        border: 1px solid var(--line);
-      }
-
-      .hidden {
-        display: none !important;
+      .notice strong {
+        color: var(--ink);
       }
 
       @media (max-width: 900px) {
         .grid {
           grid-template-columns: 1fr;
         }
-
-        .summaryGrid {
-          grid-template-columns: 1fr;
-        }
-
-        .compareGrid {
-          grid-template-columns: 1fr;
-        }
       }
     </style>
-    <link rel="stylesheet" href="./shared-shell.css">
-    <script defer src="./shared-shell.js"></script>
   </head>
   <body>
     <main>
-      <div class="topbar">
-        <div>
-          <strong>HavenIntel</strong>
-          <div style="color:var(--muted); font-size:0.92rem;">Private access selection</div>
-        </div>
-        <nav class="navTabs">
-          <a href="./index.html">Home</a>
-          <a href="./account.html">Account</a>
-          <a class="active" href="./checkout.html">Access</a>
-          <a href="./dashboard.html">Dashboard</a>
-          <a href="./admin.html">Admin</a>
-          <a href="./past.html">Past Matches</a>
-        </nav>
-      </div>
-
       <section class="panel hero">
-        <div class="eyebrow">Access</div>
-        <h1>Choose your package. Receive your match brief during the release window.</h1>
+        <span class="eyebrow">Access Preview</span>
+        <h1>Package structure is visible. Private delivery is not publicly open yet.</h1>
+        <p class="lede">
+          HavenIntel is keeping the package ladder visible so visitors can understand the
+          structure of the publication. Private member access, package activation, and
+          match brief delivery are still being held back during soft launch.
+        </p>
+        <div class="ctaRow">
+          <a class="button primary" href="./index.html#pricing">See Pricing</a>
+          <a class="button secondary" href="./index.html#board">View Today's Board</a>
+          <a class="button secondary" href="./past.html">Review Past Results</a>
+        </div>
+      </section>
+
+      <section class="panel notice">
         <p>
-          Choose one match brief, one score-range brief, or a bundle for multiple releases. Each release is sent by email during the final pre-kickoff window.
+          <strong>Soft-launch note.</strong> This page is informational only. It does not
+          currently open a public purchase flow, request-access form, payment step, or
+          package unlock. The public side of HavenIntel stays focused on live board
+          visibility, insights, and finished-match accountability until the private layer
+          is ready.
         </p>
-        <p>
-          <strong>No fake certainty.</strong> Every match carries uncertainty. HavenIntel reads structure, pressure, and score range, then reviews the result after full time.
-        </p>
-      </section>
-
-      <section class="panel gateNotice" id="checkoutGate">
-        <strong id="checkoutGateTitle">Member account required</strong>
-        <p id="checkoutGateCopy" style="margin:8px 0 0;">
-          Sign in first so package access can be attached to a member email before access is granted.
-        </p>
-      </section>
-
-      <section class="panel summaryCard" id="orderSummary">
-        <div class="eyebrow">Order Summary</div>
-        <h2 style="margin:14px 0 0;">Selected package</h2>
-        <div class="summaryGrid">
-          <div class="summaryItem">
-            <strong>Selected Package</strong>
-            <div id="summaryPackage">HavenIntel Match Brief</div>
-          </div>
-          <div class="summaryItem">
-            <strong>Price</strong>
-            <div id="summaryPrice">US$49</div>
-          </div>
-          <div class="summaryItem">
-            <strong>Delivery</strong>
-            <div id="summaryDelivery">Email release before kickoff</div>
-          </div>
-          <div class="summaryItem">
-            <strong>Email Confirmation</strong>
-            <div id="summaryEmail">Sign in to attach a member email</div>
-          </div>
-          <div class="summaryItem">
-            <strong>Member Access</strong>
-            <div id="summaryAccess">Saved to member dashboard</div>
-          </div>
-          <div class="summaryItem">
-            <strong>Archive</strong>
-            <div id="summaryArchive">Result tracked publicly after full time</div>
-          </div>
-          <div class="summaryItem">
-            <strong>Who it is for</strong>
-            <div id="summaryWho">Best for one match. One full private match brief.</div>
-          </div>
-        </div>
-        <div class="buttonRow">
-          <a class="button primary" href="./account.html" id="summaryPrimaryAction">Request Access</a>
-          <a class="button secondary" href="./dashboard.html">Open Account Dashboard</a>
-        </div>
-      </section>
-
-      <section class="panel compareCard">
-        <div class="eyebrow">Package Comparison</div>
-        <h2 style="margin:14px 0 0;">Pick the package that fits how much coverage you want.</h2>
-        <div class="compareGrid">
-          <div class="compareItem">
-            <strong>Best for one match</strong>
-            <div>HavenIntel Match Brief</div>
-            <p>One full match analysis with side, shape, goal-range, and score-range coverage.</p>
-          </div>
-          <div class="compareItem">
-            <strong>Best lower-cost add-on</strong>
-            <div>HavenIntel Score-Range Brief</div>
-            <p>One score-focused release for members who want a tighter specialist angle.</p>
-          </div>
-          <div class="compareItem">
-            <strong>Best for repeat members</strong>
-            <div>HavenIntel 3-Match Brief Bundle</div>
-            <p>Three full match briefs for broader slate coverage across multiple releases.</p>
-          </div>
-          <div class="compareItem">
-            <strong>Best compact bundle</strong>
-            <div>HavenIntel 3-Score-Range Bundle</div>
-            <p>Three score-focused releases in one lower-cost grouped package.</p>
-          </div>
-        </div>
-        <div class="carryNote">
-          <strong>Carry-forward rule</strong>
-          <div>If a 3-match bundle is active and fewer than 3 matches are released that day, the unused release carries forward to the next available slate.</div>
-        </div>
       </section>
 
       <section class="grid">
-        <article class="panel card" data-package="edgePack">
-          <div class="eyebrow">Main Offer</div>
-          <h2 style="margin:14px 0 0;">HavenIntel Match Brief</h2>
+        <article class="panel card">
+          <span class="bestFor">Best for one match</span>
+          <h2>HavenIntel Match Brief</h2>
           <div class="price">US$49</div>
-          <p class="helperText">One full private match brief for a single selected match.</p>
-          <div class="bestFor">Best for one match</div>
+          <p class="subline">One full private match analysis.</p>
           <ul class="list">
-            <li>One selected match release</li>
-            <li>Match shape analysis</li>
-            <li>Side strength read</li>
-            <li>Goal range view</li>
-            <li>Score-range thinking</li>
+            <li>Match outcome read</li>
+            <li>Goal-range view</li>
+            <li>Handicap margin pressure</li>
+            <li>Correct score-range analysis</li>
             <li>Public archive tracking after full time</li>
           </ul>
-          <div class="buttonRow">
-            <a class="button primary" href="./checkout.html">Select Match Brief</a>
-            <a class="button secondary" href="./dashboard.html">Open Account Dashboard</a>
+        </article>
+
+        <article class="panel card">
+          <span class="bestFor">Best lower-cost add-on</span>
+          <h2>HavenIntel Score-Range Brief</h2>
+          <div class="price">US$19</div>
+          <p class="subline">One score-focused private release.</p>
+          <ul class="list">
+            <li>Narrower score-range view</li>
+            <li>Finishing-path emphasis</li>
+            <li>Compact companion to the Match Brief</li>
+            <li>Public archive review after full time</li>
+          </ul>
+        </article>
+
+        <article class="panel card">
+          <span class="bestFor">Best for repeat members</span>
+          <h2>HavenIntel 3-Match Brief Bundle</h2>
+          <div class="price">US$129</div>
+          <p class="subline">Three full private match releases.</p>
+          <ul class="list">
+            <li>Three separate Match Brief releases</li>
+            <li>Built for a fuller daily slate</li>
+            <li>Archive tracking remains public after full time</li>
+          </ul>
+          <div class="carry">
+            Includes 3 match releases. If fewer than 3 matches are released that day,
+            unused releases carry forward to the next available slate.
           </div>
         </article>
 
-        <article class="panel card" data-package="scorePack">
-          <div class="eyebrow">Add-On</div>
-          <h2 style="margin:14px 0 0;">HavenIntel Score-Range Brief</h2>
-          <div class="price">US$19</div>
-          <p class="helperText">One score-focused private release for a selected match.</p>
-          <div class="bestFor">Best lower-cost add-on</div>
-          <ul class="list">
-            <li>One selected match release</li>
-            <li>Goal range view</li>
-            <li>Score-range thinking</li>
-            <li>Built for a tighter specialist angle</li>
-            <li>Public archive tracking after full time</li>
-          </ul>
-          <div class="buttonRow">
-            <a class="button primary" href="./checkout.html">Select Score-Range Brief</a>
-          </div>
-        </article>
-        <article class="panel card" data-package="edgeMultiples">
-          <div class="eyebrow">Multiples</div>
-          <h2 style="margin:14px 0 0;">HavenIntel 3-Match Brief Bundle</h2>
-          <div class="price">US$129</div>
-          <p class="helperText">Three full private match briefs for members who want broader slate coverage.</p>
-          <div class="bestFor">Best for repeat members</div>
-          <ul class="list">
-            <li>3 full match releases</li>
-            <li>Match shape analysis, side strength read, goal range view, and score-range thinking across all included matches</li>
-            <li>Built for repeat buyers</li>
-            <li>Unused releases carry forward if fewer than 3 matches are released that day</li>
-            <li>Public archive tracking after full time</li>
-          </ul>
-          <div class="buttonRow">
-            <a class="button primary" href="./checkout.html">Select 3-Match Bundle</a>
-          </div>
-        </article>
-        <article class="panel card" data-package="scoreMultiples">
-          <div class="eyebrow">Multiples</div>
-          <h2 style="margin:14px 0 0;">HavenIntel 3-Score-Range Bundle</h2>
+        <article class="panel card">
+          <span class="bestFor">Best compact bundle</span>
+          <h2>HavenIntel 3-Score-Range Bundle</h2>
           <div class="price">US$49</div>
-          <p class="helperText">Three score-focused releases in one compact bundle.</p>
-          <div class="bestFor">Best compact bundle</div>
+          <p class="subline">Three score-focused private releases.</p>
           <ul class="list">
-            <li>3 score-focused releases</li>
-            <li>Goal range view and score-range thinking across multiple matches</li>
-            <li>Built for grouped specialist buying</li>
-            <li>Unused releases carry forward if fewer than 3 matches are released that day</li>
-            <li>Public archive tracking after full time</li>
+            <li>Three Score-Range Brief releases</li>
+            <li>Built for readers who want a narrower layer</li>
+            <li>Public archive review remains visible after full time</li>
           </ul>
-          <div class="buttonRow">
-            <a class="button primary" href="./checkout.html">Select 3-Score Bundle</a>
+          <div class="carry">
+            If the daily slate is shorter than 3 releases, the remaining release count
+            carries forward to the next available slate.
           </div>
         </article>
       </section>
     </main>
-    <script>
-      const MEMBER_STATE_KEY = "havenintel-member-state-v1";
-      const DEFAULT_MEMBER_STATE = {
-        signedIn: false,
-        accountCreated: false,
-        name: "",
-        email: "",
-        emailVerified: false,
-        welcomeEmailQueuedAt: "",
-        activationToken: "",
-        packages: {
-          edgePack: false,
-          scorePack: false,
-          edgeMultiples: false,
-          scoreMultiples: false
-        },
-        deliveries: {},
-        watchStatuses: {
-          "manual-canada-bosnia": "Confirmed"
-        }
-      };
-
-      const PACKAGE_SUMMARY = {
-        edgePack: {
-          name: "HavenIntel Match Brief",
-          price: "US$49",
-          delivery: "Email release before kickoff",
-          access: "Saved to member dashboard",
-          archive: "Result tracked publicly after full time",
-          who: "Best for one match. One full private match brief."
-        },
-        scorePack: {
-          name: "HavenIntel Score-Range Brief",
-          price: "US$19",
-          delivery: "Email release before kickoff",
-          access: "Saved to member dashboard",
-          archive: "Result tracked publicly after full time",
-          who: "Best lower-cost add-on. One score-focused private release."
-        },
-        edgeMultiples: {
-          name: "HavenIntel 3-Match Brief Bundle",
-          price: "US$129",
-          delivery: "Each release sent during the match window",
-          access: "Saved to member dashboard",
-          archive: "Each result tracked publicly after full time",
-          who: "Best for repeat members. Three full match briefs with carry-forward if the slate is short."
-        },
-        scoreMultiples: {
-          name: "HavenIntel 3-Score-Range Bundle",
-          price: "US$49",
-          delivery: "Each release sent during the match window",
-          access: "Saved to member dashboard",
-          archive: "Each result tracked publicly after full time",
-          who: "Best compact bundle. Three score-focused releases with carry-forward if the slate is short."
-        }
-      };
-
-      let selectedPackageKey = "edgePack";
-
-      function readState() {
-        try {
-          const parsedState = JSON.parse(localStorage.getItem(MEMBER_STATE_KEY) || "{}");
-          const legacyVerified = parsedState.accountCreated && typeof parsedState.emailVerified === "undefined";
-          return {
-            ...DEFAULT_MEMBER_STATE,
-            ...parsedState,
-            emailVerified: legacyVerified ? true : Boolean(parsedState.emailVerified),
-            packages: {
-              ...DEFAULT_MEMBER_STATE.packages,
-              ...(parsedState.packages || {})
-            },
-            deliveries: {
-              ...DEFAULT_MEMBER_STATE.deliveries,
-              ...(parsedState.deliveries || {})
-            },
-            watchStatuses: {
-              ...DEFAULT_MEMBER_STATE.watchStatuses,
-              ...(parsedState.watchStatuses || {})
-            }
-          };
-        } catch {
-          return structuredClone(DEFAULT_MEMBER_STATE);
-        }
-      }
-
-      function writeState(state) {
-        localStorage.setItem(MEMBER_STATE_KEY, JSON.stringify(state));
-      }
-
-      function renderOrderSummary() {
-        const summary = PACKAGE_SUMMARY[selectedPackageKey];
-        const state = readState();
-        document.getElementById("summaryPackage").textContent = summary.name;
-        document.getElementById("summaryPrice").textContent = summary.price;
-        document.getElementById("summaryDelivery").textContent = summary.delivery;
-        document.getElementById("summaryEmail").textContent = state.signedIn && state.emailVerified
-          ? (state.email || "Member email ready")
-          : state.accountCreated && !state.emailVerified
-            ? "Confirm your email before package access"
-            : "Sign in to attach a member email";
-        document.getElementById("summaryAccess").textContent = summary.access;
-        document.getElementById("summaryArchive").textContent = summary.archive;
-        document.getElementById("summaryWho").textContent = summary.who;
-      }
-
-      function renderCheckoutState() {
-        const state = readState();
-        const isSignedIn = Boolean(state.signedIn);
-        const fullyActive = Boolean(state.signedIn && state.emailVerified);
-        const pendingVerification = Boolean(state.accountCreated && !state.emailVerified);
-        const gateTitle = document.getElementById("checkoutGateTitle");
-        const gateCopy = document.getElementById("checkoutGateCopy");
-        const summaryPrimaryAction = document.getElementById("summaryPrimaryAction");
-
-        gateTitle.textContent = fullyActive
-          ? "Signed in member session"
-          : pendingVerification
-            ? "Email confirmation required"
-            : "Member account required";
-        gateCopy.textContent = fullyActive
-          ? `Packages will be attached to ${state.email || "your member email"} after selection.`
-          : pendingVerification
-            ? `Confirm ${state.email || "your member email"} first so HavenIntel can attach package access to a verified delivery address.`
-            : "Sign in first so package access can be attached to a member email before access is granted.";
-
-        document.querySelectorAll('[data-package]').forEach((card) => {
-          const primaryButton = card.querySelector('.button.primary');
-          if (!primaryButton) {
-            return;
-          }
-
-          primaryButton.href = "./checkout.html";
-        });
-
-        if (fullyActive) {
-          summaryPrimaryAction.textContent = "Request Access";
-          summaryPrimaryAction.href = "./dashboard.html";
-        } else if (pendingVerification) {
-          summaryPrimaryAction.textContent = "Confirm Email First";
-          summaryPrimaryAction.href = "./welcome-email.html";
-        } else {
-          summaryPrimaryAction.textContent = "Sign In to Request Access";
-          summaryPrimaryAction.href = "./account.html";
-        }
-      }
-
-      document.querySelectorAll('[data-package]').forEach((card) => {
-        const packageKey = card.getAttribute('data-package');
-        const button = card.querySelector('.button.primary');
-        if (!button) {
-          return;
-        }
-
-        button.addEventListener("click", (event) => {
-          event.preventDefault();
-          selectedPackageKey = packageKey;
-          renderOrderSummary();
-          document.getElementById("orderSummary").scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-      });
-
-      document.getElementById("summaryPrimaryAction").addEventListener("click", (event) => {
-        event.preventDefault();
-        const state = readState();
-
-        if (!state.signedIn) {
-          window.location.href = "./account.html";
-          return;
-        }
-
-        if (!state.emailVerified) {
-          window.location.href = "./welcome-email.html";
-          return;
-        }
-
-        state.accountCreated = true;
-        if (!state.email) {
-          window.location.href = "./account.html";
-          return;
-        }
-        state.packages = {
-          edgePack: Boolean(state.packages?.edgePack),
-          scorePack: Boolean(state.packages?.scorePack),
-          edgeMultiples: Boolean(state.packages?.edgeMultiples),
-          scoreMultiples: Boolean(state.packages?.scoreMultiples),
-          ...(state.packages || {})
-        };
-        state.deliveries = {
-          canadaBosnia: "Pending",
-          mexicoSouthAfrica: "Pending",
-          koreaCzech: "Pending",
-          ...(state.deliveries || {})
-        };
-        state.packages[selectedPackageKey] = true;
-        writeState(state);
-        window.location.href = "./dashboard.html";
-      });
-
-      renderOrderSummary();
-      renderCheckoutState();
-    </script>
   </body>
 </html>
