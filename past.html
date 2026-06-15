@@ -758,10 +758,10 @@
         const summaryGrid = document.getElementById("summaryGrid");
         if (items.length === 0) {
           summaryGrid.innerHTML = `
-            <div class="summaryStat"><strong>Archive not graded yet</strong><span>First finished match pending</span></div>
-            <div class="summaryStat"><strong>Outcome review opens later</strong><span>Winner reads will be tracked once results settle</span></div>
-            <div class="summaryStat"><strong>Specialist layers follow</strong><span>Margin, goal-range, and score-range reviews appear once results are archived</span></div>
-            <div class="summaryStat"><strong>Public proof stays visible</strong><span>Every finished match remains in the archive after review</span></div>
+            <div class="summaryStat"><strong>How grading works</strong><span>Each archived match will show the original read, the final score, and the post-match review.</span></div>
+            <div class="summaryStat"><strong>Outcome review</strong><span>Shows whether the main side read held up.</span></div>
+            <div class="summaryStat"><strong>Range review</strong><span>Shows how the goal-range and score-range ideas performed.</span></div>
+            <div class="summaryStat"><strong>Archive record</strong><span>Every completed tracked match stays visible here after review.</span></div>
           `;
           return;
         }
@@ -787,38 +787,38 @@
         if (items.length === 0) {
           heroWinnerRate.innerHTML = `
             <strong>Archive building</strong>
-            <span>Proof starts once results settle</span>
-            <span>Finished matches appear here once the first result is logged.</span>
+            <span>First result pending</span>
+            <span>The first completed tracked match will appear here after full time.</span>
           `;
 
           heroOutcomeRate.innerHTML = `
-            <strong>Outcome review pending</strong>
-            <span>Winner reads</span>
-            <span>Outcome grading starts with the first archived match.</span>
+            <strong>Original read</strong>
+            <span>Winner and match view</span>
+            <span>Each record will keep the original football case visible.</span>
           `;
 
           heroHandicapRate.innerHTML = `
-            <strong>Margin review pending</strong>
-            <span>Margin reads</span>
-            <span>Margin grading is shown once a finished sample exists.</span>
+            <strong>Final score</strong>
+            <span>What actually happened</span>
+            <span>The settled scoreline is shown beside the original read.</span>
           `;
 
           heroTotalRate.innerHTML = `
-            <strong>Goal-range review pending</strong>
-            <span>Goal-range reads</span>
-            <span>Goal-range grading appears after archived full-time results.</span>
+            <strong>Post-match review</strong>
+            <span>What held and what missed</span>
+            <span>The review explains whether the match followed the brief.</span>
           `;
 
           heroScoreRate.innerHTML = `
-            <strong>Score-range review pending</strong>
-            <span>Score-range reads</span>
-            <span>Score-range grading appears after archived full-time results.</span>
+            <strong>How grading works</strong>
+            <span>Layer by layer</span>
+            <span>Outcome and range notes are added once the match is complete.</span>
           `;
 
           heroFeatureRate.innerHTML = `
-            <strong>Proof builds match by match</strong>
-            <div class="heroFeatureTitle">Winning Team Analysis Percentage</div>
-            <div class="heroFeatureCopy">The archive records outcome reads only after finished matches are reviewed. No empty percentage is shown before a real sample exists.</div>
+            <strong>Archive building</strong>
+            <div class="heroFeatureTitle">First result pending</div>
+            <div class="heroFeatureCopy">The first completed tracked match will appear here after full time. Each record will show the original read, final score, and post-match review.</div>
           `;
           return;
         }
@@ -997,7 +997,8 @@
         if (items.length === 0) {
           matches.innerHTML = `
             <article class="emptyState">
-              The public proof archive is building. Once a match is marked <strong>Full Time</strong> on <a href="./index.html">Active Matches</a>, it will move here automatically with outcome, margin, goal-range, and score-range review notes.
+              <strong>Archive building.</strong><br>
+              The first completed tracked match will appear here after full time. Each record will show the original read, final score, and post-match review.
             </article>
           `;
           return;
