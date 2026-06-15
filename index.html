@@ -1890,7 +1890,7 @@
           return true;
         }
 
-        const staleGraceWindowMs = 18 * 60 * 60 * 1000;
+        const staleGraceWindowMs = 4 * 60 * 60 * 1000;
         return kickoffTime >= Date.now() - staleGraceWindowMs;
       }
 
