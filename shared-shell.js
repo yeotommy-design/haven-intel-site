@@ -128,9 +128,10 @@
     </div>
     <div class="siteFooterBottom">
       <p class="siteFooterNote">
-        HavenIntel publishes football analysis and match tracking. It does not guarantee outcomes or certainty.
+        HavenIntel publishes football analysis for informational and editorial purposes only. It does not guarantee outcomes and should not be treated as financial advice or betting instruction.
       </p>
       <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;">
+        <span class="siteFooterPill">21 years & above where age-restricted access applies</span>
         <span class="siteFooterPill">Release window: final 6 hours before kickoff</span>
         <span class="siteFooterPill">Multiples may carry forward if the daily slate is short</span>
       </div>
