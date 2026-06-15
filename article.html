@@ -63,6 +63,32 @@
       .lede { font-size:1.18rem; color:var(--ink); line-height:1.65; }
       .section { margin-top: 28px; }
       .section h2 { margin:0 0 10px; font-size:1.55rem; }
+      .legalPanel {
+        margin-top: 24px;
+        padding: 18px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.74);
+      }
+      .legalPanel h2 {
+        margin: 0 0 10px;
+        font-size: 1.3rem;
+      }
+      .legalPanel p {
+        margin: 0 0 12px;
+        font-size: 0.98rem;
+        line-height: 1.7;
+      }
+      .legalList {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+      .legalList li {
+        line-height: 1.6;
+      }
       .tagRow { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
       .tag { display:inline-flex; padding:5px 10px; border-radius:999px; background:rgba(24,79,71,0.1); color:var(--accent-2); font-size:.82rem; font-weight:700; }
       .footerCta { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
@@ -79,7 +105,7 @@
       }
     </style>
     <link rel="stylesheet" href="./shared-shell.css">
-    <script defer src="./shared-shell.js?v=20260615-2"></script>
+    <script defer src="./shared-shell.js?v=20260615-4"></script>
   </head>
   <body>
     <main>
@@ -168,6 +194,19 @@
             </div>
           ` : ""}
           <p class="lede">${article.hero}</p>
+          <section class="legalPanel" aria-label="Responsible use and legal clarity">
+            <div class="eyebrow">Responsible Use</div>
+            <h2>Analysis only. Not certainty, advice, or betting instruction.</h2>
+            <p>
+              HavenIntel publishes football analysis for informational purposes. Outcome, margin, score-range, handicap, and total language should be read as structured opinion, not as a promise or directive.
+            </p>
+            <ul class="legalList">
+              <li>No guaranteed results or assured returns are offered.</li>
+              <li>Nothing here is financial advice, investment advice, or wagering instruction.</li>
+              <li>This content is intended for adults only where age restrictions or local rules apply.</li>
+              <li>Readers remain responsible for complying with the laws and regulations in their own region.</li>
+            </ul>
+          </section>
           ${(article.sections || []).map((section) => `
             <section class="section">
               <h2>${section.heading}</h2>
@@ -198,6 +237,8 @@
             </div>
             <div class="buttonRow">
               <a class="button" href="./insights.html">Back to Insights</a>
+              <a class="button secondary" href="./disclaimer.html">Read Disclaimer</a>
+              <a class="button secondary" href="./responsible-use.html">Responsible Use</a>
             </div>
           </div>
         `;
