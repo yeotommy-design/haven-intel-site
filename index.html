@@ -1489,20 +1489,6 @@
         </div>
       </section>
 
-      <section class="archivePreviewSection">
-        <div class="pricingHeader">
-          <div class="eyebrow">Public Archive Proof</div>
-          <h2>Finished matches stay visible after full time.</h2>
-          <p>
-            Finished matches move here after full time, with public result tracking and notes on what held, what missed, and what changed.
-          </p>
-        </div>
-        <div class="archivePreviewGrid">
-          <div class="archiveStatStack" id="archivePreviewStats"></div>
-          <div class="archiveList" id="archivePreviewList"></div>
-        </div>
-      </section>
-
       <section class="pricingSection" id="pricing">
         <div class="pricingHeader">
           <div class="eyebrow">Pricing</div>
@@ -2246,88 +2232,6 @@
         }
       }
 
-      function renderArchivePreview(details, storedState) {
-        const statsRoot = document.getElementById("archivePreviewStats");
-        const listRoot = document.getElementById("archivePreviewList");
-        if (!statsRoot || !listRoot) {
-          return;
-        }
-
-        const matchesWithState = details
-          .map((detail) => ({ detail, state: getSavedState(detail, storedState) }));
-
-        const finishedMatches = matchesWithState
-          .filter((item) => isPastMatch(item.state))
-          .sort((a, b) => {
-            const aTime = a.detail.match.kickoffAt ? new Date(a.detail.match.kickoffAt).getTime() : 0;
-            const bTime = b.detail.match.kickoffAt ? new Date(b.detail.match.kickoffAt).getTime() : 0;
-            return bTime - aTime;
-          });
-
-        const upcomingMatches = matchesWithState
-          .filter((item) => isBoardVisible(item.detail, item.state))
-          .sort((a, b) => {
-            const aTime = a.detail.match.kickoffAt ? new Date(a.detail.match.kickoffAt).getTime() : Number.MAX_SAFE_INTEGER;
-            const bTime = b.detail.match.kickoffAt ? new Date(b.detail.match.kickoffAt).getTime() : Number.MAX_SAFE_INTEGER;
-            return aTime - bTime;
-          });
-
-        const gradedWinnerPredictions = finishedMatches.filter((item) => ["Hit", "Miss"].includes(predictionCheck(item.detail, item.state).winnerHit));
-        const winnerHits = gradedWinnerPredictions.filter((item) => predictionCheck(item.detail, item.state).winnerHit === "Hit").length;
-        const winnerPercentage = gradedWinnerPredictions.length
-          ? Math.round((winnerHits / gradedWinnerPredictions.length) * 100)
-          : 0;
-
-        statsRoot.innerHTML = `
-          <article class="proofCard archiveStatCard">
-            <strong>${winnerPercentage}%</strong>
-            <div class="archiveStatTitle">Winning Team Analysis Percentage</div>
-            <span>${winnerHits}/${gradedWinnerPredictions.length || 0} outcome reads landed in the archive sample.</span>
-            <span>${finishedMatches.length} finished matches tracked publicly.</span>
-          </article>
-          <a class="button primary" href="./past.html">Open Full Archive</a>
-        `;
-
-        if (upcomingMatches.length === 0) {
-          listRoot.innerHTML = `
-            <article class="proofCard archiveMiniCard">
-              <h3>No upcoming matches loaded.</h3>
-              <div class="archiveMiniNotes">Once the next slate is scheduled, the next two upcoming match previews will appear here automatically.</div>
-            </article>
-          `;
-          return;
-        }
-
-        listRoot.innerHTML = upcomingMatches.slice(0, 2).map(({ detail, state }) => {
-          const releaseState = detail.releaseState || detail.match.releaseState || "Preliminary";
-          return `
-            <article class="proofCard archiveMiniCard">
-              <div class="archiveMiniTop">
-                <div>
-                  <div class="eyebrow">${detail.match.competitionName}</div>
-                  <h3>${detail.match.homeTeam.name} vs ${detail.match.awayTeam.name}</h3>
-                  <div class="archiveMiniMeta">${toMatchDate(detail.match.kickoffAt)}</div>
-                </div>
-                <div class="archiveScore">${releaseState}</div>
-              </div>
-              <div class="analysisGrid">
-                <div class="analysisItem">
-                  <strong>Outcome Read</strong>
-                  <div>${detail.summary?.likelyWinner || "Analysis pending"}</div>
-                </div>
-                <div class="analysisItem">
-                  <strong>Match Status</strong>
-                  <div>${state.status || "Not Started"}</div>
-                </div>
-              </div>
-              <div class="archiveMiniNotes">
-                Kickoff: ${detail.match.kickoffAt ? toLocalKickoff(detail.match.kickoffAt) : "Kickoff pending"}. Public board stays visible now, while the private match brief remains held for the release window.
-              </div>
-            </article>
-          `;
-        }).join("");
-      }
-
       async function loadMatchDetails() {
         const response = await fetch("./data/analysis/all-analysis.slate.json", { cache: "no-store" });
         const slate = await response.json();
@@ -2362,7 +2266,6 @@
         renderInsights(insights);
         renderRelease(details, storedState);
         renderBoard(details, storedState, memberState);
-        renderArchivePreview(details, storedState);
       }
 
       document.getElementById("matchesToggleButton")?.addEventListener("click", () => {
