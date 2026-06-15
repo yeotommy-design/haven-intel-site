@@ -238,6 +238,33 @@
         font-size: 1.05rem;
       }
 
+      .boardStatusStrip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0 0 18px;
+      }
+
+      .boardStatusItem {
+        padding: 16px 18px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.68);
+        border: 1px solid var(--line);
+      }
+
+      .boardStatusItem strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.98rem;
+      }
+
+      .boardStatusItem span,
+      .boardStatusItem a {
+        color: var(--muted);
+        line-height: 1.55;
+        text-decoration: none;
+      }
+
       .summaryLead {
         margin: 0 0 16px;
         color: var(--muted);
@@ -1332,9 +1359,14 @@
         .summaryGrid {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
+
+        .boardStatusStrip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
       }
 
       @media (max-width: 820px) {
+        .boardStatusStrip,
         .summaryGrid,
         .analysisGrid {
           grid-template-columns: 1fr;
@@ -1482,6 +1514,8 @@
             <div class="summaryGrid" id="summaryGrid"></div>
           </aside>
         </div>
+
+        <section class="boardStatusStrip" id="boardStatusStrip" aria-label="Board status"></section>
 
         <section class="legendCard">
           <div class="eyebrow">Status Legend</div>
@@ -1800,6 +1834,19 @@
         }).format(date);
       }
 
+      function formatSingaporeDateTime(value = Date.now()) {
+        const date = value instanceof Date ? value : new Date(value);
+        return new Intl.DateTimeFormat("en-SG", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+          timeZone: "Asia/Singapore"
+        }).format(date).replace(" at ", ", ") + " SGT";
+      }
+
       function matchResultLabel(homeScore, awayScore, homeTeam, awayTeam) {
         if (homeScore === "" || awayScore === "") {
           return "Pending";
@@ -1905,6 +1952,55 @@
           { value: totals.live, label: "Live Now" },
           { value: totals.finished, label: "Finished" }
         ];
+      }
+
+      function renderBoardStatus(matchesWithState, boardVisibleMatches, memberState) {
+        const statusRoot = document.getElementById("boardStatusStrip");
+        if (!statusRoot) {
+          return;
+        }
+
+        const liveCount = matchesWithState.filter((item) => item.state.status === "Live").length;
+        const confirmedCount = matchesWithState.filter((item) => {
+          const status = watchStatus(item.detail, item.state, memberState);
+          return status === "Confirmed" || status === "Released";
+        }).length;
+
+        let slateStatus = "No confirmed releases yet.";
+        if (liveCount > 0) {
+          slateStatus = `${liveCount} match${liveCount === 1 ? "" : "es"} live now.`;
+        } else if (confirmedCount > 0) {
+          slateStatus = `${confirmedCount} confirmed match${confirmedCount === 1 ? "" : "es"} on the board.`;
+        } else if (boardVisibleMatches.length > 0) {
+          slateStatus = `${boardVisibleMatches.length} watched fixture${boardVisibleMatches.length === 1 ? "" : "s"} on standby.`;
+        }
+
+        const nextUpcoming = boardVisibleMatches
+          .filter((item) => item.detail.match.kickoffAt)
+          .sort((a, b) => new Date(a.detail.match.kickoffAt).getTime() - new Date(b.detail.match.kickoffAt).getTime())[0];
+
+        const nextUpdateWindow = nextUpcoming
+          ? `Before the next kickoff: ${toLocalKickoff(nextUpcoming.detail.match.kickoffAt)}.`
+          : "When the next watched fixture is selected.";
+
+        statusRoot.innerHTML = `
+          <article class="boardStatusItem">
+            <strong>Current slate</strong>
+            <span>${slateStatus}</span>
+          </article>
+          <article class="boardStatusItem">
+            <strong>Last updated</strong>
+            <span>${formatSingaporeDateTime()}</span>
+          </article>
+          <article class="boardStatusItem">
+            <strong>Next expected update window</strong>
+            <span>${nextUpdateWindow}</span>
+          </article>
+          <article class="boardStatusItem">
+            <strong>Need the finished record?</strong>
+            <a href="./past.html">See Public Archive</a>
+          </article>
+        `;
       }
 
       function isPastMatch(state) {
@@ -2262,6 +2358,7 @@
         const summaryMatches = allMatchesWithState.filter((item) => isBoardVisible(item.detail, item.state) || isPastMatch(item.state));
 
         renderSummary(summaryMatches, memberState);
+        renderBoardStatus(matchesWithState, boardVisibleMatches, memberState);
 
         const needsToggle = matchesWithState.length > DEFAULT_VISIBLE_MATCHES;
         if (toggleRow && toggleButton) {
@@ -2272,7 +2369,8 @@
         if (matchesWithState.length === 0) {
           matches.innerHTML = `
             <article class="emptyState">
-              Every tracked match is currently in <strong>Past Matches</strong>. Open <a href="./past.html">Past Matches</a> to review actual scores and settled results.
+              <strong>Current slate: No confirmed releases yet.</strong><br>
+              Watched fixtures will appear here once selected. You can still review completed matches in <a href="./past.html">Past Matches</a>.
             </article>
           `;
           return;
