@@ -28,7 +28,6 @@ copy_data_file() {
 
 PUBLIC_PATHS=(
   "_headers"
-  "_redirects"
   "404.html"
   "robots.txt"
   "sitemap.xml"
@@ -46,6 +45,7 @@ PUBLIC_PATHS=(
   "refund-policy.html"
   "disclaimer.html"
   "responsible-use.html"
+  "functions"
 )
 
 for path in "${PUBLIC_PATHS[@]}"; do
