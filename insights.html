@@ -77,6 +77,9 @@
         <p>
           Match thinking, editorially expanded.
         </p>
+        <div class="chipRow">
+          <a class="chip" href="./article.html?slug=havenintel-public-sample-match-brief">View Public Sample Brief</a>
+        </div>
         <div class="chipRow" id="chipRow"></div>
       </section>
 
@@ -91,6 +94,11 @@
             <div class="bucketCard"><strong>Slate Watch</strong><span>Previews the upcoming match slate.</span></div>
           </div>
           <div class="growthRow">
+            <div class="growthCard">
+              <strong>Public sample brief</strong>
+              <p>See the product in full, including the pre-match sections and the review layer after the result.</p>
+              <a class="button" href="./article.html?slug=havenintel-public-sample-match-brief">Open Sample Brief</a>
+            </div>
             <div class="growthCard">
               <strong>Related archived matches</strong>
               <p>Each recap can send readers straight into the finished match archive and public result trail.</p>
@@ -115,6 +123,7 @@
     <script>
       function displayCategory(article) {
         const category = String(article.category || "");
+        if (category === "Sample Brief") return "Public Sample";
         if (category === "Post-Match Review") return "Archive Review";
         if (category === "Evergreen") return "Method Notes";
         if (category === "Daily Insight") return "Method Notes";
@@ -142,6 +151,9 @@
         const response = await fetch("./data/insights/articles.json", { cache: "no-store" });
         const data = await response.json();
         const articles = [...(data.articles || [])].sort((a, b) => {
+          const aSample = a.featuredSample ? 1 : 0;
+          const bSample = b.featuredSample ? 1 : 0;
+          if (aSample !== bSample) return bSample - aSample;
           const dateDiff = new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0);
           if (dateDiff !== 0) return dateDiff;
           return String(b.title || "").localeCompare(String(a.title || ""));

@@ -94,6 +94,7 @@
     <script>
       function displayCategory(article) {
         const category = String(article.category || "");
+        if (category === "Sample Brief") return "Public Sample";
         if (category === "Post-Match Review") return "Archive Review";
         if (category === "Evergreen") return "Method Notes";
         if (category === "Daily Insight") return "Method Notes";

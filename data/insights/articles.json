@@ -1,6 +1,81 @@
 {
   "articles": [
     {
+      "slug": "havenintel-public-sample-match-brief",
+      "title": "Public sample match brief: Brazil vs Morocco, from pre-match read to post-match review",
+      "category": "Sample Brief",
+      "competition": "World Cup",
+      "publishedAt": "2026-06-15",
+      "excerpt": "A public sample of the HavenIntel product, showing the full brief texture: match context, team strength, pressure points, expected shape, goal range, score-range thinking, and the review after the final whistle.",
+      "readingTime": "9 min read",
+      "author": "HavenIntel Desk",
+      "featuredSample": true,
+      "venue": {
+        "country": "United States",
+        "state": "New Jersey",
+        "stadium": "MetLife Stadium"
+      },
+      "hero": "This public sample shows what a HavenIntel match brief is meant to feel like in practice. The fixture is Brazil vs Morocco, a finished World Cup match that ended 1-1. That gives us the useful combination of pre-match structure and post-match accountability. The point is not to pretend the read was perfect. The point is to let visitors see the actual product texture, the level of football detail, and the way the final review sits beside the original case once the match is done.",
+      "sections": [
+        {
+          "heading": "Match context",
+          "paragraphs": [
+            "Brazil came into this fixture carrying the louder badge, the broader tournament expectation, and the natural burden that follows every opening World Cup appearance. Morocco, though, were never decorative opposition. Their recent tournament history had already shown enough structure, emotional discipline, and defensive commitment to turn this into a proper examination rather than a staged favorite spot.",
+            "That made the match more interesting than a surface talent comparison. Brazil did not only have to prove they were better. They had to prove they could impose their own rhythm against an opponent with a very clear idea of how to keep the game compact and uncomfortable."
+          ]
+        },
+        {
+          "heading": "Team strength",
+          "paragraphs": [
+            "Brazil still held the stronger overall talent base. Even with absences around the squad, they owned the deeper attacking pool, the greater one-versus-one quality, and the more natural route to controlling decisive moments if the match opened up. On pure ceiling, they remained the side more capable of turning a narrow game into a winning one.",
+            "Morocco's strength sat in a different place. They did not need to match Brazil player for player. Their edge came from organization, collective discipline, and a back line comfortable defending long stretches without panicking. That matters in tournament football because a well-drilled underdog often survives long enough to make the favorite solve a real tactical problem rather than simply wait for quality to arrive."
+          ]
+        },
+        {
+          "heading": "Pressure points",
+          "paragraphs": [
+            "The main pressure point on Brazil was expectation. They were the side expected to own the ball, create the cleaner chances, and avoid emotional drift if the game stayed level longer than planned. When a favorite enters under that kind of pressure, the risk is not only defensive exposure. It is impatience. Forced attacks and rushed final passes can flatten an otherwise superior performance.",
+            "For Morocco, the pressure point was concentration. Their route into the match depended on protecting central spaces, staying honest against wide pressure, and keeping the game alive long enough for Brazil to feel the scoreboard weight. If that structure cracked too early, the entire underdog path could collapse quickly."
+          ]
+        },
+        {
+          "heading": "Expected match shape",
+          "paragraphs": [
+            "The pre-match expectation leaned toward a controlled Brazil territorial advantage against a Morocco side happy to defend in organized phases and choose transition moments carefully. That usually produces a game where the favorite has more of the ball and more field position, but not always the kind of free-running chance volume casual viewers expect.",
+            "The shape also suggested that the first goal would carry extra weight. If Brazil scored first, the evening could tilt into game management and gradually expanding pressure. If Morocco held the line deep enough into the match, the emotional burden would begin to shift back toward Brazil, and the underdog route would become more believable with every passing phase."
+          ]
+        },
+        {
+          "heading": "Goal range",
+          "paragraphs": [
+            "The safer goal-range view sat in the lower-to-middle band rather than a track meet. Morocco's structure was strong enough to resist the idea of a casual Brazil runaway, and Brazil's own absences lowered the chance of a fully fluent attacking display from the first whistle.",
+            "That did not mean a dead game. It meant a match more likely to live in controlled tension, where two or three key sequences could define the whole scoring picture instead of a constant flood of open exchanges."
+          ]
+        },
+        {
+          "heading": "Score-range thinking",
+          "paragraphs": [
+            "From a scoreline perspective, the pre-match logic pointed more naturally toward something like 1-0, 2-0, or 2-1 Brazil than toward a statement blowout. The favorite edge still belonged to Brazil, but the margin case looked weaker than the winner case because Morocco had enough structure to keep the game inside a manageable frame.",
+            "That kind of distinction matters in a real brief. A side can be the right team to prefer without automatically becoming the right team to trust for a wide margin. The sample is useful precisely because it shows the difference between side confidence and scoreboard confidence."
+          ]
+        },
+        {
+          "heading": "Post-match review",
+          "paragraphs": [
+            "The final score was 1-1, which means the side read on Brazil did not land, but the lower-volatility shape of the match held up better than a dramatic favorite script would have. Morocco succeeded in keeping the game emotionally alive and structurally compact enough to deny Brazil the kind of smooth control a stronger team usually wants.",
+            "That is the accountability layer visitors need to see. The review is not written to protect the original opinion. It is written to test it. In this case, the favorite call missed, but the reasons for caution around game texture were real. Morocco kept the match inside a narrow frame, and Brazil never turned superiority into a decisive scoreboard edge."
+          ]
+        }
+      ],
+      "tags": [
+        "Brazil",
+        "Morocco",
+        "World Cup",
+        "Sample Brief",
+        "Post-Match Review"
+      ]
+    },
+    {
       "slug": "spain-vs-cape-verde-match-brief-june-2026",
       "title": "Spain vs Cape Verde: control, width, and the question of how hard Spain can press the edge",
       "category": "Match Preview",

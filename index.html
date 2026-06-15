@@ -1362,7 +1362,7 @@
       }
     </style>
     <link rel="stylesheet" href="./shared-shell.css">
-    <script defer src="./shared-shell.js?v=20260615-3"></script>
+    <script defer src="./shared-shell.js?v=20260615-4"></script>
     <script defer src="./public-view.js"></script>
   </head>
   <body>
@@ -1380,6 +1380,7 @@
           <div class="eyebrow" id="memberStatusBadge" style="margin-bottom:16px;">Public Preview</div>
           <div class="heroActions">
             <a class="button primary" href="#board">View Today&apos;s Board</a>
+            <a class="button secondary" href="./article.html?slug=havenintel-public-sample-match-brief">View Sample Brief</a>
             <a class="button secondary" href="#pricing" id="heroAccountButton">See Pricing</a>
             <a class="button secondary" href="./insights.html" id="heroDashboardButton">Read Latest Insights</a>
             <a class="button secondary" href="./past.html">Review Past Results</a>
@@ -1514,6 +1515,7 @@
             </ul>
             <div class="heroActions">
               <span class="button primary" aria-disabled="true">Opening Soon</span>
+              <a class="button secondary" href="./article.html?slug=havenintel-public-sample-match-brief">View Sample Brief</a>
               <a class="button secondary" href="./past.html">See Archive</a>
               <a class="button secondary" href="./insights.html">Read Method</a>
             </div>
@@ -2086,7 +2088,16 @@
           return;
         }
 
+        const insightLabel = (article) => article.category === "Sample Brief" ? "Public Sample" : article.category;
+
         const prioritizedArticles = [...articles].sort((a, b) => {
+          const aSample = a.featuredSample ? 1 : 0;
+          const bSample = b.featuredSample ? 1 : 0;
+
+          if (aSample !== bSample) {
+            return bSample - aSample;
+          }
+
           const aTime = new Date(a.publishedAt || 0).getTime();
           const bTime = new Date(b.publishedAt || 0).getTime();
 
@@ -2102,7 +2113,7 @@
         insightsGrid.innerHTML = prioritizedArticles.slice(0, 3).map((article) => `
           <article class="proofCard insightCard">
             <div class="insightTop">
-              <div class="eyebrow">${article.category}</div>
+              <div class="eyebrow">${insightLabel(article)}</div>
               <div class="insightDate">Published ${formatPublishedDate(article.publishedAt)}</div>
             </div>
             <h3><a href="./article.html?slug=${encodeURIComponent(article.slug)}" style="text-decoration:none;">${article.title}</a></h3>
