@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HavenIntel | Past Matches</title>
-    <meta name="description" content="Review finished HavenIntel matches, public result tracking, and archive notes on what held, what missed, and what changed after full time.">
+    <meta name="description" content="Review completed HavenIntel matches, final scores, and archive notes on what held, what missed, and what changed.">
     <style>
       :root {
         color-scheme: light;
@@ -389,7 +389,7 @@
       }
     </style>
     <link rel="stylesheet" href="./shared-shell.css">
-    <script defer src="./shared-shell.js?v=20260615-2"></script>
+    <script defer src="./shared-shell.js?v=20260615-3"></script>
   </head>
   <body>
     <main>
@@ -397,15 +397,15 @@
         <div class="heroMain">
           <div class="eyebrow">ProjectHaven Archive</div>
           <h1>Past Matches</h1>
-          <p class="heroCopy">Finished matches move here after full time, with public result tracking and notes on what held, what missed, and what changed.</p>
-          <p class="heroCopy"><strong>No fake certainty.</strong> Every match carries uncertainty. HavenIntel reads structure, pressure, and score range, then reviews the result after full time.</p>
+          <p class="heroCopy">Completed matches land here with the final score, the outcome grade, and notes on what held up under match conditions.</p>
+          <p class="heroCopy"><strong>No fake certainty.</strong> The archive exists to test the read, not to rewrite it after the whistle.</p>
           <p class="sampleNote">Records are shown with sample size. Larger archives give a clearer picture over time.</p>
         </div>
         <div class="heroBottom">
           <div class="heroStats" id="heroStats">
             <div class="heroStat" id="heroWinnerRate">
               <strong>Archive building</strong>
-              <span>Proof starts after full time</span>
+              <span>Proof starts once matches settle</span>
               <span>Finished matches appear here once the first result is logged.</span>
             </div>
             <div class="heroStat" id="heroOutcomeRate">
@@ -421,18 +421,18 @@
             <div class="heroStat" id="heroTotalRate">
               <strong>Goal-range review pending</strong>
               <span>Goal-range reads</span>
-              <span>Goal-range grading appears after archived full-time results.</span>
+              <span>Goal-range grading appears once completed results are logged.</span>
             </div>
             <div class="heroStat" id="heroScoreRate">
               <strong>Score-range review pending</strong>
               <span>Score-range reads</span>
-              <span>Score-range grading appears after archived full-time results.</span>
+              <span>Score-range grading appears once completed results are logged.</span>
             </div>
           </div>
           <aside class="heroFeature" id="heroFeatureRate">
             <strong>Proof builds match by match</strong>
             <div class="heroFeatureTitle">Winning Team Analysis Percentage</div>
-            <div class="heroFeatureCopy">The archive records outcome reads only after finished matches are reviewed. No empty percentage is shown before a real sample exists.</div>
+            <div class="heroFeatureCopy">The archive records outcome reads only after matches are reviewed. No empty percentage is shown before a real sample exists.</div>
           </aside>
         </div>
       </section>
@@ -759,7 +759,7 @@
         if (items.length === 0) {
           summaryGrid.innerHTML = `
             <div class="summaryStat"><strong>Archive not graded yet</strong><span>First finished match pending</span></div>
-            <div class="summaryStat"><strong>Outcome review opens later</strong><span>Winner reads will be tracked after full time</span></div>
+            <div class="summaryStat"><strong>Outcome review opens later</strong><span>Winner reads will be tracked once results settle</span></div>
             <div class="summaryStat"><strong>Specialist layers follow</strong><span>Margin, goal-range, and score-range reviews appear once results are archived</span></div>
             <div class="summaryStat"><strong>Public proof stays visible</strong><span>Every finished match remains in the archive after review</span></div>
           `;
@@ -787,7 +787,7 @@
         if (items.length === 0) {
           heroWinnerRate.innerHTML = `
             <strong>Archive building</strong>
-            <span>Proof starts after full time</span>
+            <span>Proof starts once results settle</span>
             <span>Finished matches appear here once the first result is logged.</span>
           `;
 

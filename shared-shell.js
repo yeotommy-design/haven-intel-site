@@ -73,7 +73,7 @@
       </div>
       <div class="brandText">
         <strong>HavenIntel</strong>
-        <span>Private pre-match football intelligence. Public post-match accountability.</span>
+        <span>Private match intelligence with a visible public record.</span>
       </div>
     </div>
     <nav class="navTabs" aria-label="Primary navigation">
@@ -103,9 +103,9 @@
     <div class="siteFooterGrid">
       <div class="siteFooterBrand">
         <div class="siteFooterPill">HavenIntel</div>
-        <strong>Private football match briefs with public archive tracking.</strong>
+        <strong>Private match briefs with a visible public record.</strong>
         <p class="siteFooterCopy">
-          Calm pre-match football analysis, followed by public post-match accountability.
+          Calm football analysis, published selectively and reviewed openly.
         </p>
       </div>
       ${footerLinkGroups.map((group) => `
@@ -122,7 +122,7 @@
         HavenIntel publishes football analysis and match tracking. It does not guarantee outcomes or certainty.
       </p>
       <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;">
-        <span class="siteFooterPill">Release window: 6 hours or less before kickoff</span>
+        <span class="siteFooterPill">Release window: final 6 hours before kickoff</span>
         <span class="siteFooterPill">Multiples may carry forward if the daily slate is short</span>
       </div>
     </div>
