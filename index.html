@@ -1639,7 +1639,11 @@
         "manual-coquimbo-unido-ohiggins": "Confirmed",
         "manual-qatar-switzerland": "Confirmed",
         "manual-colo-colo-cobresal": "Confirmed",
-        "manual-brazil-morocco": "Confirmed"
+        "manual-brazil-morocco": "Confirmed",
+        "manual-spain-cape-verde": "Confirmed",
+        "manual-belgium-egypt": "Tentative",
+        "manual-saudi-arabia-uruguay": "Confirmed",
+        "manual-iran-new-zealand": "Confirmed"
       };
       let showAllMatches = false;
       let runtimeState = {};
@@ -1650,8 +1654,8 @@
           return {
             ...parsedState,
             watchStatuses: {
-              ...DEFAULT_WATCH_STATUSES,
-              ...(parsedState.watchStatuses || {})
+              ...(parsedState.watchStatuses || {}),
+              ...DEFAULT_WATCH_STATUSES
             }
           };
         } catch {
@@ -2203,7 +2207,18 @@
             return aTime - bTime;
           });
 
-        const matchesWithState = allMatchesWithState.filter((item) => isBoardVisible(item.detail, item.state));
+        const boardVisibleMatches = allMatchesWithState.filter((item) => isBoardVisible(item.detail, item.state));
+        const hasConfirmedSlate = boardVisibleMatches.some((item) => {
+          const status = watchStatus(item.detail, item.state, memberState);
+          return status === "Confirmed" || status === "Released" || item.state.status === "Live";
+        });
+
+        const matchesWithState = hasConfirmedSlate
+          ? boardVisibleMatches.filter((item) => {
+              const status = watchStatus(item.detail, item.state, memberState);
+              return status === "Confirmed" || status === "Released" || item.state.status === "Live";
+            })
+          : boardVisibleMatches;
         const summaryMatches = allMatchesWithState.filter((item) => isBoardVisible(item.detail, item.state) || isPastMatch(item.state));
 
         renderSummary(summaryMatches, memberState);
