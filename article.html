@@ -100,10 +100,27 @@
         return category;
       }
 
+      function formatPublishedDate(value) {
+        if (!value) {
+          return "Date pending";
+        }
+
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return value;
+        }
+
+        return new Intl.DateTimeFormat(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        }).format(date);
+      }
+
       async function main() {
         const params = new URLSearchParams(window.location.search);
         const slug = params.get("slug");
-        const response = await fetch("./data/insights/articles.json");
+        const response = await fetch("./data/insights/articles.json", { cache: "no-store" });
         const data = await response.json();
         const article = (data.articles || []).find((item) => item.slug === slug) || data.articles?.[0];
 
@@ -123,7 +140,7 @@
           <h1>${article.title}</h1>
           <div class="metaRow">
             <span>${article.competition}</span>
-            <span>Published Date: ${article.publishedAt}</span>
+            <span>Published ${formatPublishedDate(article.publishedAt)}</span>
             <span>${article.readingTime}</span>
             <span>${article.author}</span>
           </div>
@@ -173,9 +190,9 @@
                 <a class="button secondary" href="./index.html#board">Open Live Board</a>
               </div>
               <div class="relatedCard">
-                <strong>Related package</strong>
-                <p>View HavenIntel access options for match briefs, score-range briefs, and bundles.</p>
-                <a class="button secondary" href="./checkout.html">View Packages</a>
+                <strong>Related public view</strong>
+                <p>Follow open tournament questions and public sentiment without entering any private member flow.</p>
+                <a class="button secondary" href="./public-view.html">Open Public View</a>
               </div>
             </div>
             <div class="buttonRow">

@@ -102,9 +102,9 @@
               <a class="button" href="./index.html#board">Open Live Board</a>
             </div>
             <div class="growthCard">
-              <strong>Related package</strong>
-              <p>Method notes and previews can connect naturally to the Match Brief and Score-Range Brief access path.</p>
-              <a class="button" href="./checkout.html">View Packages</a>
+              <strong>Related public view</strong>
+              <p>Follow open tournament questions and public sentiment without entering any private member flow.</p>
+              <a class="button" href="./public-view.html">Open Public View</a>
             </div>
           </div>
         </section>
@@ -121,8 +121,25 @@
         return category;
       }
 
+      function formatPublishedDate(value) {
+        if (!value) {
+          return "Date pending";
+        }
+
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return value;
+        }
+
+        return new Intl.DateTimeFormat(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        }).format(date);
+      }
+
       async function main() {
-        const response = await fetch("./data/insights/articles.json");
+        const response = await fetch("./data/insights/articles.json", { cache: "no-store" });
         const data = await response.json();
         const articles = [...(data.articles || [])].sort((a, b) => {
           const dateDiff = new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0);
@@ -141,7 +158,7 @@
               <div class="articleMeta">
                 <span>${displayCategory(article)}</span>
                 <span>${article.competition}</span>
-                <span>Published Date: ${article.publishedAt}</span>
+                <span>Published ${formatPublishedDate(article.publishedAt)}</span>
                 <span>${article.readingTime}</span>
               </div>
               <h2><a href="./article.html?slug=${encodeURIComponent(article.slug)}" style="text-decoration:none;">${article.title}</a></h2>

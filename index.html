@@ -1677,7 +1677,7 @@
 
       async function loadInsights() {
         try {
-          const response = await fetch("./data/insights/articles.json");
+          const response = await fetch("./data/insights/articles.json", { cache: "no-store" });
           if (!response.ok) {
             return [];
           }
@@ -1690,7 +1690,7 @@
 
       async function loadWatchlistSchedule() {
         try {
-          const response = await fetch("./data/watchlist-schedule.json");
+          const response = await fetch("./data/watchlist-schedule.json", { cache: "no-store" });
           if (!response.ok) {
             return {};
           }
@@ -1710,7 +1710,7 @@
 
       async function readRuntimeState() {
         try {
-          const response = await fetch("./data/runtime-state.json");
+          const response = await fetch("./data/runtime-state.json", { cache: "no-store" });
           if (!response.ok) {
             return {};
           }
@@ -1756,6 +1756,23 @@
 
         return new Intl.DateTimeFormat(undefined, {
           weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        }).format(date);
+      }
+
+      function formatPublishedDate(value) {
+        if (!value) {
+          return "Date pending";
+        }
+
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return value;
+        }
+
+        return new Intl.DateTimeFormat(undefined, {
           year: "numeric",
           month: "long",
           day: "numeric"
@@ -1867,6 +1884,24 @@
 
       function isPastMatch(state) {
         return state.status === "Full Time";
+      }
+
+      function isBoardVisible(detail, state) {
+        if (isPastMatch(state)) {
+          return false;
+        }
+
+        if (state.status === "Live") {
+          return true;
+        }
+
+        const kickoffTime = detail.match.kickoffAt ? new Date(detail.match.kickoffAt).getTime() : Number.NaN;
+        if (Number.isNaN(kickoffTime)) {
+          return true;
+        }
+
+        const staleGraceWindowMs = 18 * 60 * 60 * 1000;
+        return kickoffTime >= Date.now() - staleGraceWindowMs;
       }
 
       function renderSummary(matchesWithState, memberState) {
@@ -2074,7 +2109,7 @@
           <article class="proofCard insightCard">
             <div class="insightTop">
               <div class="eyebrow">${article.category}</div>
-              <div class="insightDate">Published ${article.publishedAt}</div>
+              <div class="insightDate">Published ${formatPublishedDate(article.publishedAt)}</div>
             </div>
             <h3><a href="./article.html?slug=${encodeURIComponent(article.slug)}" style="text-decoration:none;">${article.title}</a></h3>
             <div class="insightMeta">${article.competition} • ${article.readingTime}</div>
@@ -2178,9 +2213,10 @@
             return aTime - bTime;
           });
 
-        const matchesWithState = allMatchesWithState.filter((item) => !isPastMatch(item.state));
+        const matchesWithState = allMatchesWithState.filter((item) => isBoardVisible(item.detail, item.state));
+        const summaryMatches = allMatchesWithState.filter((item) => isBoardVisible(item.detail, item.state) || isPastMatch(item.state));
 
-        renderSummary(allMatchesWithState, memberState);
+        renderSummary(summaryMatches, memberState);
 
         const needsToggle = matchesWithState.length > DEFAULT_VISIBLE_MATCHES;
         if (toggleRow && toggleButton) {
@@ -2225,7 +2261,7 @@
           });
 
         const upcomingMatches = matchesWithState
-          .filter((item) => !isPastMatch(item.state))
+          .filter((item) => isBoardVisible(item.detail, item.state))
           .sort((a, b) => {
             const aTime = a.detail.match.kickoffAt ? new Date(a.detail.match.kickoffAt).getTime() : Number.MAX_SAFE_INTEGER;
             const bTime = b.detail.match.kickoffAt ? new Date(b.detail.match.kickoffAt).getTime() : Number.MAX_SAFE_INTEGER;
@@ -2289,7 +2325,7 @@
       }
 
       async function loadMatchDetails() {
-        const response = await fetch("./data/analysis/all-analysis.slate.json");
+        const response = await fetch("./data/analysis/all-analysis.slate.json", { cache: "no-store" });
         const slate = await response.json();
         const scheduleMap = await loadWatchlistSchedule();
         const details = await Promise.all(
@@ -2299,7 +2335,7 @@
             }
 
             const path = match.outputPath.replace("/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/", "./");
-            const detailResponse = await fetch(path);
+            const detailResponse = await fetch(path, { cache: "no-store" });
             const detail = await detailResponse.json();
             return mergeScheduledDetail(detail, scheduleMap);
           })

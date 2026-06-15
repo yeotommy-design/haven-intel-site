@@ -89,5 +89,19 @@
     "homeScore": "2",
     "awayScore": "0",
     "notes": "Australia beat Turkey 2-0."
+  },
+  "manual-germany-curacao": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "7",
+    "awayScore": "1",
+    "notes": "Germany beat Curacao 7-1."
+  },
+  "manual-holland-japan": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "2",
+    "notes": "Holland drew Japan 2-2."
   }
 }

@@ -25,12 +25,11 @@
   const adminAuth = window.HavenIntelAdminAuth;
   const adminSignedIn = Boolean(adminAuth?.isAuthenticated?.());
 
-  const internalLinks = [
-    { label: "Admin Login", href: "./admin-login.html" }
-  ];
+  const internalLinks = [];
 
   if (adminSignedIn) {
     internalLinks.push(
+      { label: "Admin Login", href: "./admin-login.html" },
       { label: "Release Admin", href: "./admin.html" },
       { label: "Delivery History", href: "./history.html" },
       { label: "Article Studio", href: "./article-studio.html" },
@@ -61,10 +60,10 @@
         { label: "Responsible Use", href: "./responsible-use.html" }
       ]
     },
-    {
+    ...(internalLinks.length ? [{
       title: "Internal",
       links: internalLinks
-    }
+    }] : [])
   ];
 
   topbar.innerHTML = `

@@ -17,7 +17,6 @@
     "manual-australia-turkey",
     "manual-germany-curacao",
     "manual-holland-japan",
-    "manual-ivory-coast-ecuador",
     "manual-sweden-tunisia",
     "manual-spain-cape-verde",
     "manual-belgium-egypt",
@@ -232,129 +231,197 @@
     {
       "matchId": "manual-germany-curacao",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-14T03:05:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
         "match": {
           "id": "manual-germany-curacao",
-          "competitionName": "Manual Watchlist",
+          "competitionName": "World Cup",
           "homeTeam": { "id": "germany", "name": "Germany" },
           "awayTeam": { "id": "curacao", "name": "Curacao" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Germany",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Germany -3.5",
+          "totalLean": "Over 4.0 / 4.5",
+          "correctScoreLean": "3-0",
+          "correctScoreLeans": ["3-0", "4-0"]
+        },
+        "notes": [
+          "Germany carry the deeper squad, the stronger tournament baseline, and the cleaner control profile here.",
+          "Curacao would need a near-perfect defensive night to keep this inside a narrow margin for long.",
+          "The stronger HavenIntel read is Germany controlling both territory and tempo rather than simply edging the result."
+        ]
       }
     },
     {
       "matchId": "manual-holland-japan",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-14T03:05:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
         "match": {
           "id": "manual-holland-japan",
-          "competitionName": "Manual Watchlist",
+          "competitionName": "World Cup",
           "homeTeam": { "id": "holland", "name": "Holland" },
           "awayTeam": { "id": "japan", "name": "Japan" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
-      }
-    },
-    {
-      "matchId": "manual-ivory-coast-ecuador",
-      "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
-        "match": {
-          "id": "manual-ivory-coast-ecuador",
-          "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "ivory-coast", "name": "Ivory Coast" },
-          "awayTeam": { "id": "ecuador", "name": "Ecuador" },
-          "kickoffAt": null
+        "summary": {
+          "likelyWinner": "Holland",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Holland -0.25",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-1"]
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "notes": [
+          "Holland still hold the steadier tournament profile, but this is not a wide-gap matchup.",
+          "Japan bring enough discipline and structure to make the Dutch work for control over long stretches.",
+          "That balance keeps the read on Holland, while also keeping the margin and total more contained."
+        ]
       }
     },
     {
       "matchId": "manual-sweden-tunisia",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-14T03:05:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
         "match": {
           "id": "manual-sweden-tunisia",
-          "competitionName": "Manual Watchlist",
+          "competitionName": "World Cup",
           "homeTeam": { "id": "sweden", "name": "Sweden" },
           "awayTeam": { "id": "tunisia", "name": "Tunisia" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Sweden",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Sweden -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-0"]
+        },
+        "notes": [
+          "Sweden look a touch more settled in their match management and overall defensive shape.",
+          "Tunisia can make the game awkward, but they still project more as a side resisting than dictating.",
+          "That supports a Sweden edge with a lower-scoring match profile."
+        ]
       }
     },
     {
       "matchId": "manual-spain-cape-verde",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-15T08:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-spain-cape-verde",
-          "competitionName": "Manual Watchlist",
+          "competitionName": "World Cup",
           "homeTeam": { "id": "spain", "name": "Spain" },
           "awayTeam": { "id": "cape-verde", "name": "Cape Verde" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Spain",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Spain -2",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "3-0",
+          "correctScoreLeans": ["3-0", "2-0"]
+        },
+        "notes": [
+          "Spain still carry the cleaner technical control, the deeper squad, and the stronger tournament baseline even with Lamine Yamal and Nico Williams managed carefully around kickoff.",
+          "Cape Verde can make the game awkward in transitions, but the broader shape still points toward Spain owning territory and chance volume for long stretches.",
+          "That keeps the stronger read on Spain by margin rather than only by result, with the score-range more likely to land around a controlled multi-goal win."
+        ]
       }
     },
     {
       "matchId": "manual-belgium-egypt",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-15T08:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-belgium-egypt",
-          "competitionName": "Manual Watchlist",
+          "competitionName": "World Cup",
           "homeTeam": { "id": "belgium", "name": "Belgium" },
           "awayTeam": { "id": "egypt", "name": "Egypt" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Belgium",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Belgium -0.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-1",
+          "correctScoreLeans": ["2-1", "1-0"]
+        },
+        "notes": [
+          "Belgium still look like the more complete side through midfield control and attacking depth, even if the group no longer feels like a simple walkover phase for them.",
+          "Egypt have enough proven quality around Mohamed Salah to keep the game live, and they do not arrive with the kind of absences that would force a passive low-ceiling approach.",
+          "That balance supports a Belgium edge, but more as a managed one-goal type of read than a runaway, with both sides capable of shaping the scoreline."
+        ]
       }
     },
     {
       "matchId": "manual-saudi-arabia-uruguay",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-15T08:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-saudi-arabia-uruguay",
-          "competitionName": "Manual Watchlist",
+          "competitionName": "World Cup",
           "homeTeam": { "id": "saudi-arabia", "name": "Saudi Arabia" },
           "awayTeam": { "id": "uruguay", "name": "Uruguay" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Uruguay",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Uruguay -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-1",
+          "correctScoreLeans": ["0-1", "0-2"]
+        },
+        "notes": [
+          "Uruguay still bring the stronger individual ceiling through players like Federico Valverde, but injuries in the back line and disrupted travel make this less clean than it would normally look on paper.",
+          "Saudi Arabia should still have enough energy and defensive commitment to keep the game tight if Uruguay start slowly or struggle to settle after the logistical disruption.",
+          "That keeps the lean on Uruguay, but in a lower-scoring and more workmanlike frame rather than an open or comfortable margin read."
+        ]
       }
     },
     {
       "matchId": "manual-iran-new-zealand",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-15T08:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-iran-new-zealand",
-          "competitionName": "Manual Watchlist",
+          "competitionName": "World Cup",
           "homeTeam": { "id": "iran", "name": "Iran" },
           "awayTeam": { "id": "new-zealand", "name": "New Zealand" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Iran",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Iran -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "1-1"]
+        },
+        "notes": [
+          "Iran still hold the stronger senior-level attacking reference points through Mehdi Taremi and a more seasoned tournament spine, even with preparation disrupted around arrival and off-field tension.",
+          "New Zealand can make the match stubborn and direct, and this feels more like a game of discipline and second balls than one of sustained technical dominance.",
+          "That supports an Iran edge, but with the total and margin both staying contained unless the game opens unexpectedly after the first goal."
+        ]
       }
     },
     {

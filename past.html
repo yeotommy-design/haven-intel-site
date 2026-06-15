@@ -460,7 +460,7 @@
 
       async function readRuntimeState() {
         try {
-          const response = await fetch("./data/runtime-state.json");
+          const response = await fetch("./data/runtime-state.json", { cache: "no-store" });
           if (!response.ok) {
             return {};
           }
@@ -472,7 +472,7 @@
 
       async function loadWatchlistSchedule() {
         try {
-          const response = await fetch("./data/watchlist-schedule.json");
+          const response = await fetch("./data/watchlist-schedule.json", { cache: "no-store" });
           if (!response.ok) {
             return {};
           }
@@ -952,7 +952,7 @@
       }
 
       async function loadMatchDetails() {
-        const response = await fetch("./data/analysis/all-analysis.slate.json");
+        const response = await fetch("./data/analysis/all-analysis.slate.json", { cache: "no-store" });
         const slate = await response.json();
         const scheduleMap = await loadWatchlistSchedule();
         return Promise.all(
@@ -961,7 +961,7 @@
               return mergeScheduledDetail(match.inlineDetail, scheduleMap);
             }
             const path = match.outputPath.replace("/Users/tommyyeo/Desktop/VerseIntel.nosync/ProjectHaven/", "./");
-            const detailResponse = await fetch(path);
+            const detailResponse = await fetch(path, { cache: "no-store" });
             const detail = await detailResponse.json();
             return mergeScheduledDetail(detail, scheduleMap);
           })
