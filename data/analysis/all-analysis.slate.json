@@ -443,8 +443,8 @@
     {
       "matchId": "manual-iraq-norway",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-16T14:15:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-iraq-norway",
           "competitionName": "Manual Watchlist",
@@ -452,15 +452,27 @@
           "awayTeam": { "id": "norway", "name": "Norway" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Norway",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Norway -1.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": ["0-2", "0-3"]
+        },
+        "notes": [
+          "Norway bring the stronger attacking ceiling, with Haaland and Odegaard giving them far more ways to force decisive moments.",
+          "Iraq can still make the game physical and stubborn, but their likeliest path is resistance rather than sustained control.",
+          "That keeps the board read on Norway by margin, with the match more likely to open once the favorite finds the first breakthrough."
+        ]
       }
     },
     {
       "matchId": "manual-argentina-algeria",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-16T14:15:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-argentina-algeria",
           "competitionName": "Manual Watchlist",
@@ -468,8 +480,20 @@
           "awayTeam": { "id": "algeria", "name": "Algeria" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Argentina",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Argentina -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-0"]
+        },
+        "notes": [
+          "Argentina still carry the stronger tournament spine and the calmer match-management profile, which matters in a group-stage opener.",
+          "Algeria have enough discipline and transition threat to keep the match tighter than the raw talent gap might suggest.",
+          "That shapes this more as a controlled Argentina win than a wide or chaotic scoreline, with the lower-goal frame still the cleaner fit."
+        ]
       }
     },
     {
