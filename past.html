@@ -398,8 +398,8 @@
           <div class="eyebrow">HavenIntel Archive</div>
           <h1>Past Matches</h1>
           <p class="heroCopy">Completed matches land here with the final score, the outcome grade, and notes on what held up under match conditions.</p>
-          <p class="heroCopy"><strong>No fake certainty.</strong> The archive exists to test the read, not to rewrite it after the whistle.</p>
-          <p class="sampleNote">Records are shown with sample size. Larger archives give a clearer picture over time.</p>
+          <p class="heroCopy"><strong>Public record, not hindsight editing.</strong> The archive shows the original read beside the final result after the whistle.</p>
+          <p class="sampleNote">All records are shown with sample size. A larger archive gives a steadier picture over time.</p>
         </div>
         <div class="heroBottom">
           <div class="heroStats" id="heroStats">
@@ -430,7 +430,7 @@
             </div>
           </div>
           <aside class="heroFeature" id="heroFeatureRate">
-            <strong>Proof builds match by match</strong>
+            <strong>Archive record</strong>
             <div class="heroFeatureTitle">Early archive snapshot</div>
             <div class="heroFeatureCopy">The archive records outcome reads only after matches are reviewed. The point is to keep the record visible, not to dress a small sample up as certainty.</div>
           </aside>
@@ -770,8 +770,8 @@
         const scoreHits = items.filter((item) => item.prediction.scoreHit === "Hit").length;
         summaryGrid.innerHTML = `
           <div class="summaryStat"><strong>${items.length}</strong><span>Finished Matches</span></div>
-          <div class="summaryStat"><strong>${winnerHits}</strong><span>Outcome Reads Landed</span></div>
-          <div class="summaryStat"><strong>${scoreHits}</strong><span>Score-Range Reads Landed</span></div>
+          <div class="summaryStat"><strong>${winnerHits}</strong><span>Outcome Reads Matched</span></div>
+          <div class="summaryStat"><strong>${scoreHits}</strong><span>Score-Range Reads Matched</span></div>
           <div class="summaryStat"><strong>${items.filter((item) => item.state.notes).length}</strong><span>Matches With Notes</span></div>
         `;
       }
@@ -838,40 +838,40 @@
         const gradedScorePredictions = items.filter((item) => ["Hit", "Miss"].includes(item.prediction.scoreHit));
         const scoreHits = gradedScorePredictions.filter((item) => item.prediction.scoreHit === "Hit").length;
 
-        heroWinnerRate.innerHTML = `
+          heroWinnerRate.innerHTML = `
           <strong>${items.length}</strong>
-          <span>Early Archive Record</span>
+          <span>Archive sample</span>
           <span>${items.length} finished matches tracked</span>
         `;
 
         heroOutcomeRate.innerHTML = `
           <strong>${winnerHits}/${gradedWinnerPredictions.length || 0}</strong>
-          <span>Outcome Reads</span>
-          <span>Winner reads landed</span>
+          <span>Outcome reviews</span>
+          <span>Winner reads matched the result</span>
         `;
 
         heroHandicapRate.innerHTML = `
           <strong>${handicapHits}/${gradedHandicapPredictions.length || 0}</strong>
-          <span>Margin Reads</span>
-          <span>Handicap reads landed</span>
+          <span>Margin reviews</span>
+          <span>Handicap reads matched the result</span>
         `;
 
         heroTotalRate.innerHTML = `
           <strong>${totalHits}/${gradedTotalPredictions.length || 0}</strong>
-          <span>Goal-Range Reads</span>
-          <span>Over/under reads landed</span>
+          <span>Goal-range reviews</span>
+          <span>Over/under reads matched the result</span>
         `;
 
         heroScoreRate.innerHTML = `
           <strong>${scoreHits}/${gradedScorePredictions.length || 0}</strong>
-          <span>Score-Range Reads</span>
-          <span>Matches where at least 1 score pick landed</span>
+          <span>Score-range reviews</span>
+          <span>Matches where at least one score lean matched</span>
         `;
 
         heroFeatureRate.innerHTML = `
           <strong>${winnerPercentage}%</strong>
-          <div class="heroFeatureTitle">Outcome read rate in this early sample</div>
-          <div class="heroFeatureCopy">${winnerHits}/${gradedWinnerPredictions.length || 0} outcome reads landed so far. This is an early archive snapshot, not a final picture of long-run performance.</div>
+          <div class="heroFeatureTitle">Outcome match rate in this early sample</div>
+          <div class="heroFeatureCopy">${winnerHits}/${gradedWinnerPredictions.length || 0} outcome reads matched so far. This is an early archive snapshot, not a final picture of long-run performance.</div>
         `;
       }
 
