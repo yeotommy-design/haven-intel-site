@@ -431,8 +431,8 @@
           </div>
           <aside class="heroFeature" id="heroFeatureRate">
             <strong>Proof builds match by match</strong>
-            <div class="heroFeatureTitle">Winning Team Analysis Percentage</div>
-            <div class="heroFeatureCopy">The archive records outcome reads only after matches are reviewed. No empty percentage is shown before a real sample exists.</div>
+            <div class="heroFeatureTitle">Early archive snapshot</div>
+            <div class="heroFeatureCopy">The archive records outcome reads only after matches are reviewed. The point is to keep the record visible, not to dress a small sample up as certainty.</div>
           </aside>
         </div>
       </section>
@@ -870,8 +870,8 @@
 
         heroFeatureRate.innerHTML = `
           <strong>${winnerPercentage}%</strong>
-          <div class="heroFeatureTitle">Winning Team Analysis Percentage</div>
-          <div class="heroFeatureCopy">${winnerHits}/${gradedWinnerPredictions.length || 0} outcome reads landed in the archive sample.</div>
+          <div class="heroFeatureTitle">Outcome read rate in this early sample</div>
+          <div class="heroFeatureCopy">${winnerHits}/${gradedWinnerPredictions.length || 0} outcome reads landed so far. This is an early archive snapshot, not a final picture of long-run performance.</div>
         `;
       }
 
