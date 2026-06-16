@@ -103,5 +103,26 @@
     "homeScore": "2",
     "awayScore": "2",
     "notes": "Holland drew Japan 2-2."
+  },
+  "manual-spain-cape-verde": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "0",
+    "notes": "Spain drew Cape Verde 0-0."
+  },
+  "manual-saudi-arabia-uruguay": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "Saudi Arabia drew Uruguay 1-1."
+  },
+  "manual-iran-new-zealand": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "2",
+    "notes": "Iran drew New Zealand 2-2."
   }
 }
