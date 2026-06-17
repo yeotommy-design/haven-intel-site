@@ -124,5 +124,19 @@
     "homeScore": "2",
     "awayScore": "2",
     "notes": "Iran drew New Zealand 2-2."
+  },
+  "manual-iraq-norway": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "4",
+    "notes": "Norway beat Iraq 4-1."
+  },
+  "manual-argentina-algeria": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "0",
+    "notes": "Argentina beat Algeria 3-0."
   }
 }
