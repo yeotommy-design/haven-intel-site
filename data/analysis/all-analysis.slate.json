@@ -515,8 +515,8 @@
     {
       "matchId": "manual-portugal-congo-dr",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-17T16:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-portugal-congo-dr",
           "competitionName": "Manual Watchlist",
@@ -524,15 +524,27 @@
           "awayTeam": { "id": "congo-dr", "name": "Congo DR" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Portugal",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Portugal -1.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-0",
+          "correctScoreLeans": ["2-0", "3-0"]
+        },
+        "notes": [
+          "Portugal still hold the strongest all-round quality edge in this batch, with more control, more tournament experience, and more match-winning depth.",
+          "Congo DR have enough athleticism to make spells of the game awkward, but their likeliest route is resistance rather than sustained authority.",
+          "That keeps the board read on Portugal by margin, with the scoreline more likely to widen if the favorite settles early."
+        ]
       }
     },
     {
       "matchId": "manual-england-croatia",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-17T16:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-england-croatia",
           "competitionName": "Manual Watchlist",
@@ -540,8 +552,20 @@
           "awayTeam": { "id": "croatia", "name": "Croatia" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "England",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "England -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-0"]
+        },
+        "notes": [
+          "England still begin with the stronger side profile, but Croatia bring enough tournament maturity and midfield control to keep the opener serious.",
+          "This feels more like a tactical and measured match than one that opens wide early.",
+          "That keeps the cleaner board read on England and the lower-goal frame, with the scoreline more likely to stay controlled than expansive."
+        ]
       }
     },
     {
@@ -563,8 +587,8 @@
     {
       "matchId": "manual-uzbekistan-colombia",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-17T16:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-uzbekistan-colombia",
           "competitionName": "Manual Watchlist",
@@ -572,8 +596,20 @@
           "awayTeam": { "id": "colombia", "name": "Colombia" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "Colombia",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Colombia -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-1",
+          "correctScoreLeans": ["0-1", "0-2"]
+        },
+        "notes": [
+          "Colombia still look like the stronger football side through attacking ceiling and broader top-level experience.",
+          "Uzbekistan's discipline can still keep the match narrower than the raw quality gap suggests, especially in the opening phase.",
+          "That makes this a cleaner Colombia control read than a glamour scoreline spot, with the lower-goal frame still the better fit."
+        ]
       }
     }
   ]
