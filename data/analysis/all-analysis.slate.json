@@ -585,6 +585,62 @@
       }
     },
     {
+      "matchId": "manual-switzerland-bosnia-herzegovina",
+      "inlineDetail": {
+        "generatedAt": "2026-06-18T17:05:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-switzerland-bosnia-herzegovina",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "switzerland", "name": "Switzerland" },
+          "awayTeam": { "id": "bosnia-herzegovina", "name": "Bosnia and Herzegovina" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Switzerland",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Switzerland -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "1-1"]
+        },
+        "notes": [
+          "Switzerland still look slightly more reliable through control and tournament calm, even if the match shape projects as tight rather than open.",
+          "Bosnia and Herzegovina have enough resilience to make this a grind, especially if the game stays level deep into the first hour.",
+          "That keeps the cleaner board read on Switzerland and the lower-goal frame, with the scoreline more likely to stay narrow than expansive."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-canada-qatar",
+      "inlineDetail": {
+        "generatedAt": "2026-06-18T17:05:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-canada-qatar",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "canada", "name": "Canada" },
+          "awayTeam": { "id": "qatar", "name": "Qatar" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Canada",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Canada -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-0"]
+        },
+        "notes": [
+          "Canada gave the stronger football impression in the opener, and the return of Alphonso Davies raises the attacking ceiling at the right moment.",
+          "Qatar showed resilience against Switzerland, but they still project more as a side trying to contain than one likely to drive the game.",
+          "That keeps the cleaner board read on Canada, with the more believable path being controlled pressure rather than a wild scoreline."
+        ]
+      }
+    },
+    {
       "matchId": "manual-uzbekistan-colombia",
       "inlineDetail": {
         "generatedAt": "2026-06-17T16:45:00.000Z",
