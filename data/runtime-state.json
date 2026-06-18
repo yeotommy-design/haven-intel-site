@@ -138,5 +138,26 @@
     "homeScore": "3",
     "awayScore": "0",
     "notes": "Argentina beat Algeria 3-0."
+  },
+  "manual-portugal-congo-dr": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "Portugal drew Congo DR 1-1."
+  },
+  "manual-england-croatia": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "4",
+    "awayScore": "2",
+    "notes": "England beat Croatia 4-2."
+  },
+  "manual-uzbekistan-colombia": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "3",
+    "notes": "Colombia beat Uzbekistan 3-1."
   }
 }
