@@ -444,11 +444,16 @@
 
       <section class="summaryGrid" id="summaryGrid"></section>
       <section id="matches" class="matches"></section>
+      <div class="toggleRow" id="matchesToggleRow" hidden>
+        <button class="button secondary" id="matchesToggleButton" type="button">View More Matches</button>
+      </div>
     </main>
 
     <script>
       const STORAGE_KEY = "projecthaven-match-tracker-v1";
+      const DEFAULT_VISIBLE_MATCHES = 9;
       let runtimeState = {};
+      let showAllMatches = false;
 
       function readStoredState() {
         try {
@@ -1019,7 +1024,12 @@
         renderHeroRates(items);
 
         const matches = document.getElementById("matches");
+        const toggleRow = document.getElementById("matchesToggleRow");
+        const toggleButton = document.getElementById("matchesToggleButton");
         if (items.length === 0) {
+          if (toggleRow) {
+            toggleRow.hidden = true;
+          }
           matches.innerHTML = `
             <article class="emptyState">
               <strong>Archive building.</strong><br>
@@ -1029,7 +1039,17 @@
           return;
         }
 
-        for (const item of items) {
+        const needsToggle = items.length > DEFAULT_VISIBLE_MATCHES;
+        if (toggleRow && toggleButton) {
+          toggleRow.hidden = !needsToggle;
+          toggleButton.textContent = showAllMatches ? "Show Fewer Matches" : "View More Matches";
+        }
+
+        const visibleItems = showAllMatches
+          ? items
+          : items.slice(0, DEFAULT_VISIBLE_MATCHES);
+
+        for (const item of visibleItems) {
           matches.appendChild(createPastCard(item.detail, item.state, item.prediction));
         }
 
@@ -1042,6 +1062,13 @@
           });
         });
       }
+
+      document.getElementById("matchesToggleButton")?.addEventListener("click", () => {
+        showAllMatches = !showAllMatches;
+        main().catch((error) => {
+          document.getElementById("matches").innerHTML = `<article class="emptyState">${error.message}</article>`;
+        });
+      });
 
       main().catch((error) => {
         document.getElementById("matches").innerHTML = `<article class="emptyState">${error.message}</article>`;
