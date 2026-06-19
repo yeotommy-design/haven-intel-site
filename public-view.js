@@ -182,6 +182,105 @@
     }
   ];
 
+  const FEATURED_PREVIEW_IDS = [
+    "manual-usa-australia",
+    "manual-brazil-haiti",
+    "manual-turkiye-paraguay"
+  ];
+
+  let featuredPreviewPromise = null;
+
+  function formatKickoff(value) {
+    if (!value) {
+      return "Kickoff time to be confirmed";
+    }
+
+    try {
+      return new Intl.DateTimeFormat("en-SG", {
+        weekday: "short",
+        day: "numeric",
+        month: "short",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+        timeZone: "Asia/Singapore"
+      }).format(new Date(value)) + " GMT+8";
+    } catch {
+      return "Kickoff time to be confirmed";
+    }
+  }
+
+  function buildFeaturedPreviewFallback() {
+    return [
+      {
+        id: "manual-usa-australia",
+        competitionName: "World Cup",
+        homeTeam: "USA",
+        awayTeam: "Australia",
+        kickoffLabel: "Tonight",
+        scoreLean: "1-0"
+      },
+      {
+        id: "manual-brazil-haiti",
+        competitionName: "World Cup",
+        homeTeam: "Brazil",
+        awayTeam: "Haiti",
+        kickoffLabel: "Tonight",
+        scoreLean: "3-0"
+      },
+      {
+        id: "manual-turkiye-paraguay",
+        competitionName: "World Cup",
+        homeTeam: "Turkiye",
+        awayTeam: "Paraguay",
+        kickoffLabel: "Tonight",
+        scoreLean: "1-0"
+      }
+    ];
+  }
+
+  async function loadFeaturedPreviewMatches() {
+    if (!featuredPreviewPromise) {
+      featuredPreviewPromise = (async () => {
+        try {
+          const [scheduleResponse, analysisResponse] = await Promise.all([
+            fetch("./data/watchlist-schedule.json", { cache: "no-store" }),
+            fetch("./data/analysis/all-analysis.slate.json", { cache: "no-store" })
+          ]);
+
+          if (!scheduleResponse.ok || !analysisResponse.ok) {
+            throw new Error("preview data unavailable");
+          }
+
+          const scheduleMap = await scheduleResponse.json();
+          const analysis = await analysisResponse.json();
+          const matches = (analysis.matches || [])
+            .filter((entry) => FEATURED_PREVIEW_IDS.includes(String(entry.matchId)))
+            .map((entry) => {
+              const detail = entry.inlineDetail || {};
+              const match = detail.match || {};
+              const schedule = scheduleMap[String(entry.matchId)] || {};
+              return {
+                id: String(entry.matchId),
+                competitionName: schedule.competitionName || match.competitionName || "World Cup",
+                homeTeam: match.homeTeam?.name || "Home",
+                awayTeam: match.awayTeam?.name || "Away",
+                kickoffLabel: formatKickoff(schedule.kickoffAt || match.kickoffAt),
+                scoreLean: detail.summary?.correctScoreLean || "TBC"
+              };
+            })
+            .sort((a, b) => FEATURED_PREVIEW_IDS.indexOf(a.id) - FEATURED_PREVIEW_IDS.indexOf(b.id));
+
+          return matches.length ? matches : buildFeaturedPreviewFallback();
+        } catch {
+          return buildFeaturedPreviewFallback();
+        }
+      })();
+    }
+
+    return featuredPreviewPromise;
+  }
+
   function readVotes() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -298,35 +397,50 @@
     });
   }
 
-  function renderFeatured() {
+  async function renderFeatured() {
     const root = document.querySelector("[data-public-view-featured]");
     if (!root) return;
-    const featuredPoll = getPoll(root.getAttribute("data-poll-id")) || POLLS[0];
-    const voteState = readVotes();
+    const previewMatches = await loadFeaturedPreviewMatches();
     root.innerHTML = `
       <div class="pricingHeader">
-        <div class="eyebrow">HavenIntel Public View</div>
-        <h2>Open football questions for the public, tracked as the tournament unfolds.</h2>
+        <div class="eyebrow">Free Soft-Launch Preview</div>
+        <h2>See the next 3 HavenIntel score calls before the full member system opens.</h2>
         <p>
-          A public opinion layer built around major tournament questions. No odds, no betting prompts, just open football sentiment with one vote per device.
+          This public preview shows how HavenIntel formats a live slate in simple terms: the match, the kickoff window, and the current score lean for the next confirmed releases.
         </p>
       </div>
       <div class="publicViewFeatureGrid">
-        ${renderPollCard(featuredPoll, voteState, true)}
-        <aside class="proofCard publicViewInfoCard">
-          <h3>How it works</h3>
-          <p>Each question is open to all visitors. Vote once on your device, reveal the public split, and follow how the tournament mood changes over time.</p>
-          <div class="publicViewMiniList">
-            <span>Public access</span>
-            <span>1 vote per device</span>
-            <span>World Cup format</span>
-            <span>No odds shown</span>
+        <article class="proofCard publicViewCard compact">
+          <div class="publicViewCardTop">
+            <div class="eyebrow">Prediction Score</div>
+            <h3>Next 3 confirmed preview matches</h3>
+            <p>These are free soft-launch score leans only. Full match breakdowns still live on the board, in insights, and in the archive after full time.</p>
           </div>
-          <a class="button primary" href="./public-view.html">Open Public View</a>
+          <div class="releaseBulletin">
+            ${previewMatches.map((match) => `
+              <div class="releaseLine">
+                <div>
+                  <strong>${match.homeTeam} vs ${match.awayTeam}</strong>
+                  <div class="releaseLineMeta">${match.competitionName} · ${match.kickoffLabel}</div>
+                </div>
+                <div class="releasePick">${match.scoreLean}</div>
+              </div>
+            `).join("")}
+          </div>
+        </article>
+        <aside class="proofCard publicViewInfoCard">
+          <h3>How this preview works</h3>
+          <p>During soft launch, HavenIntel can show a small public sample before kickoff without opening payments, email delivery, or the full member flow.</p>
+          <div class="publicViewMiniList">
+            <span>Free preview</span>
+            <span>No payment collected</span>
+            <span>3 score leans shown</span>
+            <span>Public archive stays visible</span>
+          </div>
+          <a class="button primary" href="./index.html#board">Check Live Board</a>
         </aside>
       </div>
     `;
-    bindVoteButtons(root);
   }
 
   function renderPage() {
