@@ -218,7 +218,7 @@
         homeTeam: "USA",
         awayTeam: "Australia",
         kickoffLabel: "Tonight",
-        scoreLean: "1-0"
+        winnerLean: "USA"
       },
       {
         id: "manual-brazil-haiti",
@@ -226,7 +226,7 @@
         homeTeam: "Brazil",
         awayTeam: "Haiti",
         kickoffLabel: "Tonight",
-        scoreLean: "3-0"
+        winnerLean: "Brazil"
       },
       {
         id: "manual-turkiye-paraguay",
@@ -234,7 +234,7 @@
         homeTeam: "Turkiye",
         awayTeam: "Paraguay",
         kickoffLabel: "Tonight",
-        scoreLean: "1-0"
+        winnerLean: "Turkiye"
       }
     ];
   }
@@ -266,7 +266,7 @@
                 homeTeam: match.homeTeam?.name || "Home",
                 awayTeam: match.awayTeam?.name || "Away",
                 kickoffLabel: formatKickoff(schedule.kickoffAt || match.kickoffAt),
-                scoreLean: detail.summary?.correctScoreLean || "TBC"
+                winnerLean: detail.summary?.likelyWinner || "TBC"
               };
             })
             .sort((a, b) => FEATURED_PREVIEW_IDS.indexOf(a.id) - FEATURED_PREVIEW_IDS.indexOf(b.id));
@@ -404,17 +404,17 @@
     root.innerHTML = `
       <div class="pricingHeader">
         <div class="eyebrow">Free Soft-Launch Preview</div>
-        <h2>See the next 3 HavenIntel score calls before the full member system opens.</h2>
+        <h2>See the next 3 HavenIntel winning-team leans before the full member system opens.</h2>
         <p>
-          This public preview shows how HavenIntel formats a live slate in simple terms: the match, the kickoff window, and the current score lean for the next confirmed releases.
+          This public preview shows how HavenIntel formats a live slate in simple terms: the match, the kickoff window, and the current team lean for the next confirmed releases.
         </p>
       </div>
       <div class="publicViewFeatureGrid">
         <article class="proofCard publicViewCard compact">
           <div class="publicViewCardTop">
-            <div class="eyebrow">Prediction Score</div>
+            <div class="eyebrow">Winning Team Preview</div>
             <h3>Next 3 confirmed preview matches</h3>
-            <p>These are free soft-launch score leans only. Full match breakdowns still live on the board, in insights, and in the archive after full time.</p>
+            <p>These are free soft-launch winner leans only. Full match breakdowns still live on the board, in insights, and in the archive after full time.</p>
           </div>
           <div class="releaseBulletin">
             ${previewMatches.map((match) => `
@@ -423,7 +423,7 @@
                   <strong>${match.homeTeam} vs ${match.awayTeam}</strong>
                   <div class="releaseLineMeta">${match.competitionName} · ${match.kickoffLabel}</div>
                 </div>
-                <div class="releasePick">${match.scoreLean}</div>
+                <div class="releasePick">${match.winnerLean}</div>
               </div>
             `).join("")}
           </div>
@@ -434,7 +434,7 @@
           <div class="publicViewMiniList">
             <span>Free preview</span>
             <span>No payment collected</span>
-            <span>3 score leans shown</span>
+            <span>3 winner leans shown</span>
             <span>Public archive stays visible</span>
           </div>
           <a class="button primary" href="./index.html#board">Check Live Board</a>
