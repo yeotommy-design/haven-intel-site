@@ -29,7 +29,11 @@
     "manual-portugal-congo-dr",
     "manual-england-croatia",
     "manual-ghana-panama",
-    "manual-uzbekistan-colombia"
+    "manual-uzbekistan-colombia",
+    "manual-usa-australia",
+    "manual-scotland-morocco",
+    "manual-brazil-haiti",
+    "manual-turkiye-paraguay"
   ],
   "matches": [
     {
@@ -665,6 +669,106 @@
           "Colombia still look like the stronger football side through attacking ceiling and broader top-level experience.",
           "Uzbekistan's discipline can still keep the match narrower than the raw quality gap suggests, especially in the opening phase.",
           "That makes this a cleaner Colombia control read than a glamour scoreline spot, with the lower-goal frame still the better fit."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-usa-australia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-19T11:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-usa-australia",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "usa", "name": "USA" },
+          "awayTeam": { "id": "australia", "name": "Australia" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "USA",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "USA -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-1"]
+        },
+        "notes": [
+          "The United States still hold the stronger overall profile, but Australia are physical, organized, and capable of making the match far more combative than comfortable.",
+          "The fitness picture around Christian Pulisic adds a note of caution, which is one reason this reads better as a controlled win than a runaway.",
+          "That keeps the board lean on the USA, with the scoreline still more likely to stay serious than expansive."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-scotland-morocco",
+      "inlineDetail": {
+        "generatedAt": "2026-06-19T11:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "match": {
+          "id": "manual-scotland-morocco",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "scotland", "name": "Scotland" },
+          "awayTeam": { "id": "morocco", "name": "Morocco" },
+          "kickoffAt": null
+        },
+        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
+        "notes": ["Tracking only. Prediction will be added later."]
+      }
+    },
+    {
+      "matchId": "manual-brazil-haiti",
+      "inlineDetail": {
+        "generatedAt": "2026-06-19T11:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-brazil-haiti",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "brazil", "name": "Brazil" },
+          "awayTeam": { "id": "haiti", "name": "Haiti" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Brazil",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Brazil -1.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "3-0",
+          "correctScoreLeans": ["3-0", "2-0"]
+        },
+        "notes": [
+          "Brazil still own the biggest quality gap of the four, with far more control, talent, and chance volume expected over the ninety minutes.",
+          "There are minor fitness-management notes around key names, but not enough to shift the basic football shape of the match.",
+          "That keeps the board read clearly on Brazil by margin, with the match more likely to widen once the favorite breaks through."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-turkiye-paraguay",
+      "inlineDetail": {
+        "generatedAt": "2026-06-19T11:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-turkiye-paraguay",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "turkiye", "name": "Turkiye" },
+          "awayTeam": { "id": "paraguay", "name": "Paraguay" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Turkiye",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Turkiye -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-0"]
+        },
+        "notes": [
+          "Turkiye still look like the steadier rebound side, with enough attacking quality to punish Paraguay if the finishing is cleaner than it was in the opener.",
+          "Paraguay were hit hard by the USA and now come in needing to recover both emotionally and structurally.",
+          "That keeps the cleaner board read on Turkiye, with the lower-goal frame still looking more believable than a loose high-scoring match."
         ]
       }
     }
