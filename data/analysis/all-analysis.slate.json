@@ -675,7 +675,7 @@
     {
       "matchId": "manual-usa-australia",
       "inlineDetail": {
-        "generatedAt": "2026-06-19T11:45:00.000Z",
+        "generatedAt": "2026-06-19T12:20:00.000Z",
         "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-usa-australia",
@@ -689,14 +689,14 @@
           "likelyOutcome": "home",
           "confidence": "medium",
           "handicapLean": "USA -0.5",
-          "totalLean": "Under 2.5",
-          "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-1"]
+          "totalLean": "Over 2.0 / 2.5",
+          "correctScoreLean": "2-1",
+          "correctScoreLeans": ["2-1", "1-0"]
         },
         "notes": [
           "The United States still hold the stronger overall profile, but Australia are physical, organized, and capable of making the match far more combative than comfortable.",
-          "The fitness picture around Christian Pulisic adds a note of caution, which is one reason this reads better as a controlled win than a runaway.",
-          "That keeps the board lean on the USA, with the scoreline still more likely to stay serious than expansive."
+          "The fitness picture around Christian Pulisic still adds a note of caution, but the market shape now reads a touch more open than the earlier lower-event version.",
+          "That keeps the board lean on the USA, with a narrow home win still the likeliest outcome but a 2-1 script now feeling stronger than a plain 1-0."
         ]
       }
     },
@@ -719,7 +719,7 @@
     {
       "matchId": "manual-brazil-haiti",
       "inlineDetail": {
-        "generatedAt": "2026-06-19T11:45:00.000Z",
+        "generatedAt": "2026-06-19T12:20:00.000Z",
         "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
         "match": {
           "id": "manual-brazil-haiti",
@@ -733,14 +733,14 @@
           "likelyOutcome": "home",
           "confidence": "high",
           "handicapLean": "Brazil -1.5",
-          "totalLean": "Over 2.5",
-          "correctScoreLean": "3-0",
-          "correctScoreLeans": ["3-0", "2-0"]
+          "totalLean": "Under 3.5",
+          "correctScoreLean": "2-0",
+          "correctScoreLeans": ["2-0", "3-0"]
         },
         "notes": [
           "Brazil still own the biggest quality gap of the four, with far more control, talent, and chance volume expected over the ninety minutes.",
-          "There are minor fitness-management notes around key names, but not enough to shift the basic football shape of the match.",
-          "That keeps the board read clearly on Brazil by margin, with the match more likely to widen once the favorite breaks through."
+          "There are still minor fitness-management notes around key names, and the market tone now looks slightly more controlled on the total than the earlier blowout version.",
+          "That keeps the board read clearly on Brazil by margin, but with 2-0 now reading as the cleaner anchor scoreline over 3-0."
         ]
       }
     },
