@@ -117,10 +117,16 @@
           </div>
         </section>
         <div class="articleGrid" id="articleGrid"></div>
+        <div class="toggleRow" id="articlesToggleRow" hidden>
+          <button class="button secondary" id="articlesToggleButton" type="button">View More Articles</button>
+        </div>
       </section>
     </main>
 
     <script>
+      const DEFAULT_VISIBLE_ARTICLES = 9;
+      let showAllArticles = false;
+
       function displayCategory(article) {
         const category = String(article.category || "");
         if (category === "Sample Brief") return "Public Sample";
@@ -164,7 +170,20 @@
           .map((category) => `<span class="chip">${category}</span>`)
           .join("");
 
-        document.getElementById("articleGrid").innerHTML = articles
+        const toggleRow = document.getElementById("articlesToggleRow");
+        const toggleButton = document.getElementById("articlesToggleButton");
+        const needsToggle = articles.length > DEFAULT_VISIBLE_ARTICLES;
+
+        if (toggleRow && toggleButton) {
+          toggleRow.hidden = !needsToggle;
+          toggleButton.textContent = showAllArticles ? "Show Fewer Articles" : "View More Articles";
+        }
+
+        const visibleArticles = showAllArticles
+          ? articles
+          : articles.slice(0, DEFAULT_VISIBLE_ARTICLES);
+
+        document.getElementById("articleGrid").innerHTML = visibleArticles
           .map((article) => `
             <article class="articleCard">
               <div class="articleMeta">
@@ -182,6 +201,13 @@
           `)
           .join("");
       }
+
+      document.getElementById("articlesToggleButton")?.addEventListener("click", () => {
+        showAllArticles = !showAllArticles;
+        main().catch(() => {
+          document.getElementById("articleGrid").innerHTML = `<article class="articleCard"><strong>Unable to load insights right now.</strong></article>`;
+        });
+      });
 
       main().catch(() => {
         document.getElementById("articleGrid").innerHTML = `<article class="articleCard"><strong>Unable to load insights right now.</strong></article>`;
