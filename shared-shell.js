@@ -18,8 +18,7 @@
     { label: "Pricing", shortLabel: "Pricing", href: "./index.html#pricing", active: current === "index.html" && hash === "#pricing", hashLink: true },
     { label: "Insights", shortLabel: "Insights", href: "./insights.html", active: current === "insights.html" || current === "article.html" },
     { label: "Live Board", shortLabel: "Live", href: "./index.html#board", active: current === "index.html" && hash === "#board", hashLink: true },
-    { label: "Past Matches", shortLabel: "Archive", href: "./past.html", active: current === "past.html" },
-    { label: "Public View", shortLabel: "Public", href: "./public-view.html", active: current === "public-view.html" }
+    { label: "Past Matches", shortLabel: "Archive", href: "./past.html", active: current === "past.html" }
   ];
 
   const adminAuth = window.HavenIntelAdminAuth;
@@ -45,8 +44,7 @@
         { label: "Pricing", href: "./index.html#pricing" },
         { label: "Insights", href: "./insights.html" },
         { label: "Live Board", href: "./index.html#board" },
-        { label: "Past Matches", href: "./past.html" },
-        { label: "Public View", href: "./public-view.html" }
+        { label: "Past Matches", href: "./past.html" }
       ]
     },
     {

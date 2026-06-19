@@ -35,7 +35,6 @@ PUBLIC_PATHS=(
   "past.html"
   "insights.html"
   "article.html"
-  "public-view.html"
   "public-view.js"
   "shared-shell.css"
   "shared-shell.js"

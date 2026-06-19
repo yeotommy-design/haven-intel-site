@@ -11,6 +11,8 @@ const BLOCKED_PATHS = new Set([
   "/dashboard.html",
   "/account",
   "/account.html",
+  "/public-view",
+  "/public-view.html",
   "/checkout",
   "/checkout.html",
   "/verify-email",
