@@ -159,5 +159,19 @@
     "homeScore": "1",
     "awayScore": "3",
     "notes": "Colombia beat Uzbekistan 3-1."
+  },
+  "manual-switzerland-bosnia-herzegovina": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "4",
+    "awayScore": "1",
+    "notes": "Switzerland beat Bosnia and Herzegovina 4-1."
+  },
+  "manual-canada-qatar": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "6",
+    "awayScore": "0",
+    "notes": "Canada beat Qatar 6-0."
   }
 }
