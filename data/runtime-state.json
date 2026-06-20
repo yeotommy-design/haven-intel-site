@@ -160,6 +160,27 @@
     "awayScore": "3",
     "notes": "Colombia beat Uzbekistan 3-1."
   },
+  "manual-usa-australia": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "0",
+    "notes": "USA beat Australia 2-0."
+  },
+  "manual-brazil-haiti": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "0",
+    "notes": "Brazil beat Haiti 3-0."
+  },
+  "manual-turkiye-paraguay": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "1",
+    "notes": "Paraguay beat Turkiye 1-0."
+  },
   "manual-switzerland-bosnia-herzegovina": {
     "status": "Full Time",
     "minute": "90",
