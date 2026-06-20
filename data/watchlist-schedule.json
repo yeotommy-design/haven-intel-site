@@ -110,5 +110,17 @@
   "manual-uzbekistan-colombia": {
     "kickoffAt": "2026-06-18T03:00:00.000Z",
     "competitionName": "World Cup"
+  },
+  "manual-germany-cote-divoire": {
+    "kickoffAt": "2026-06-20T20:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-ecuador-curacao": {
+    "kickoffAt": "2026-06-21T00:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-tunisia-japan": {
+    "kickoffAt": "2026-06-21T04:00:00.000Z",
+    "competitionName": "World Cup"
   }
 }

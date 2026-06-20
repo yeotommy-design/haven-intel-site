@@ -33,7 +33,10 @@
     "manual-usa-australia",
     "manual-scotland-morocco",
     "manual-brazil-haiti",
-    "manual-turkiye-paraguay"
+    "manual-turkiye-paraguay",
+    "manual-germany-cote-divoire",
+    "manual-ecuador-curacao",
+    "manual-tunisia-japan"
   ],
   "matches": [
     {
@@ -769,6 +772,90 @@
           "Turkiye still look like the steadier rebound side, with enough attacking quality to punish Paraguay if the finishing is cleaner than it was in the opener.",
           "Paraguay were hit hard by the USA and now come in needing to recover both emotionally and structurally.",
           "That keeps the cleaner board read on Turkiye, with the lower-goal frame still looking more believable than a loose high-scoring match."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-germany-cote-divoire",
+      "inlineDetail": {
+        "generatedAt": "2026-06-20T07:20:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-germany-cote-divoire",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "germany", "name": "Germany" },
+          "awayTeam": { "id": "cote-divoire", "name": "Cote d'Ivoire" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Germany",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Germany -1.0",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-1",
+          "correctScoreLeans": ["2-1", "2-0"]
+        },
+        "notes": [
+          "Germany still carry the stronger tournament baseline and the cleaner route to controlling long stretches of the match.",
+          "Cote d'Ivoire look dangerous enough to resist a lazy favorite read, especially if Germany leave space behind the first press.",
+          "That keeps Germany as the side lean, but in a more serious game than the Curacao result might tempt people to assume."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-ecuador-curacao",
+      "inlineDetail": {
+        "generatedAt": "2026-06-20T07:20:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-ecuador-curacao",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "ecuador", "name": "Ecuador" },
+          "awayTeam": { "id": "curacao", "name": "Curacao" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Ecuador",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Ecuador -1.0",
+          "totalLean": "Under 3.0",
+          "correctScoreLean": "2-0",
+          "correctScoreLeans": ["2-0", "3-0"]
+        },
+        "notes": [
+          "Ecuador arrive in the cleanest must-win spot of the four, with far more control and structure expected across the ninety minutes.",
+          "Curacao still look like the weakest side left in this set after the Germany defeat, even if pride should make them harder to break than the raw narrative suggests.",
+          "That keeps Ecuador as the clearest board confirmation, with a controlled win-to-nil frame still reading better than a loose shootout."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-tunisia-japan",
+      "inlineDetail": {
+        "generatedAt": "2026-06-20T07:20:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-tunisia-japan",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "tunisia", "name": "Tunisia" },
+          "awayTeam": { "id": "japan", "name": "Japan" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Japan",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Japan -0.5",
+          "totalLean": "Over 2.0",
+          "correctScoreLean": "1-2",
+          "correctScoreLeans": ["1-2", "0-1"]
+        },
+        "notes": [
+          "Japan look like the steadier football side after the Holland draw, with a cleaner balance between structure and chance creation.",
+          "Tunisia still feel emotionally and tactically unstable after the Sweden loss, which makes them vulnerable if Japan settle first.",
+          "That keeps the stronger read on Japan, with the match carrying more scoring potential than the tighter Netherlands-Sweden game."
         ]
       }
     }
