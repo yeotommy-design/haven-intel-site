@@ -122,5 +122,21 @@
   "manual-tunisia-japan": {
     "kickoffAt": "2026-06-21T04:00:00.000Z",
     "competitionName": "World Cup"
+  },
+  "manual-spain-saudi-arabia": {
+    "kickoffAt": "2026-06-21T15:59:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-belgium-iran": {
+    "kickoffAt": "2026-06-21T19:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-uruguay-cape-verde": {
+    "kickoffAt": "2026-06-21T22:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-new-zealand-egypt": {
+    "kickoffAt": "2026-06-22T01:00:00.000Z",
+    "competitionName": "World Cup"
   }
 }

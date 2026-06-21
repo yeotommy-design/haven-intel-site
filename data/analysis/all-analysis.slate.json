@@ -36,7 +36,11 @@
     "manual-turkiye-paraguay",
     "manual-germany-cote-divoire",
     "manual-ecuador-curacao",
-    "manual-tunisia-japan"
+    "manual-tunisia-japan",
+    "manual-spain-saudi-arabia",
+    "manual-belgium-iran",
+    "manual-uruguay-cape-verde",
+    "manual-new-zealand-egypt"
   ],
   "matches": [
     {
@@ -856,6 +860,118 @@
           "Japan look like the steadier football side after the Holland draw, with a cleaner balance between structure and chance creation.",
           "Tunisia still feel emotionally and tactically unstable after the Sweden loss, which makes them vulnerable if Japan settle first.",
           "That keeps the stronger read on Japan, with the match carrying more scoring potential than the tighter Netherlands-Sweden game."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-spain-saudi-arabia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-21T07:40:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-spain-saudi-arabia",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "spain", "name": "Spain" },
+          "awayTeam": { "id": "saudi-arabia", "name": "Saudi Arabia" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Spain",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Spain -1.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "3-0",
+          "correctScoreLeans": ["3-0", "2-0"]
+        },
+        "notes": [
+          "Spain still own the cleanest control profile on this slate, and the Cape Verde draw reads more like a finishing failure than a collapse in authority.",
+          "Saudi Arabia can still make the evening uncomfortable if the favorite wastes early pressure, but they are unlikely to own enough of the ball to dictate the match.",
+          "That keeps the stronger read on Spain, with the main question sitting in margin and finishing rather than in the basic winner layer."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-belgium-iran",
+      "inlineDetail": {
+        "generatedAt": "2026-06-21T07:40:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-belgium-iran",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "belgium", "name": "Belgium" },
+          "awayTeam": { "id": "iran", "name": "Iran" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Belgium",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Belgium -0.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-1",
+          "correctScoreLeans": ["2-1", "1-0"]
+        },
+        "notes": [
+          "Belgium still bring the higher individual ceiling and more routes to decisive attacking moments, which keeps them in front on the basic side read.",
+          "Iran are resilient enough to make the favorite work, especially if Belgium fail to turn early control into a first goal.",
+          "That leaves Belgium as the right lean, but in the shakiest favorite spot of the four confirmed matches."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-uruguay-cape-verde",
+      "inlineDetail": {
+        "generatedAt": "2026-06-21T07:40:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-uruguay-cape-verde",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "uruguay", "name": "Uruguay" },
+          "awayTeam": { "id": "cape-verde", "name": "Cape Verde" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Uruguay",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Uruguay -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-0"]
+        },
+        "notes": [
+          "Uruguay still look more mature and better placed to control the larger emotional phases of the match.",
+          "Cape Verde earned real respect with the Spain result and now look capable of keeping another stronger side uncomfortable for long stretches.",
+          "That keeps Uruguay as the side lean, but with more caution around margin than the headline price might suggest."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-new-zealand-egypt",
+      "inlineDetail": {
+        "generatedAt": "2026-06-21T07:40:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-new-zealand-egypt",
+          "competitionName": "Manual Watchlist",
+          "homeTeam": { "id": "new-zealand", "name": "New Zealand" },
+          "awayTeam": { "id": "egypt", "name": "Egypt" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Egypt",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Egypt -0.5",
+          "totalLean": "Over 2.0",
+          "correctScoreLean": "1-2",
+          "correctScoreLeans": ["1-2", "0-1"]
+        },
+        "notes": [
+          "Egypt look more balanced and more reliable across the full ninety minutes, especially in the defensive structure that New Zealand struggled to maintain against Iran.",
+          "New Zealand still bring enough energy and willingness to stop the match from feeling passive, but that same openness can leave transition spaces behind them.",
+          "That keeps Egypt as the cleaner lean, with the football shape slightly stronger now than it looked on the first pass."
         ]
       }
     }
