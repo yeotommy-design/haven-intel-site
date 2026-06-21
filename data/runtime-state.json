@@ -181,6 +181,27 @@
     "awayScore": "1",
     "notes": "Paraguay beat Turkiye 1-0."
   },
+  "manual-germany-cote-divoire": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "1",
+    "notes": "Germany beat Cote d'Ivoire 2-1."
+  },
+  "manual-ecuador-curacao": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "0",
+    "notes": "Ecuador drew Curacao 0-0."
+  },
+  "manual-tunisia-japan": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "4",
+    "notes": "Japan beat Tunisia 4-0."
+  },
   "manual-switzerland-bosnia-herzegovina": {
     "status": "Full Time",
     "minute": "90",
