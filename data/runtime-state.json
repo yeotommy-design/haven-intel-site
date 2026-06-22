@@ -202,6 +202,34 @@
     "awayScore": "4",
     "notes": "Japan beat Tunisia 4-0."
   },
+  "manual-spain-saudi-arabia": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "4",
+    "awayScore": "0",
+    "notes": "Spain beat Saudi Arabia 4-0."
+  },
+  "manual-belgium-iran": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "0",
+    "notes": "Belgium drew Iran 0-0."
+  },
+  "manual-uruguay-cape-verde": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "2",
+    "notes": "Uruguay drew Cape Verde 2-2."
+  },
+  "manual-new-zealand-egypt": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "3",
+    "notes": "Egypt beat New Zealand 3-1."
+  },
   "manual-switzerland-bosnia-herzegovina": {
     "status": "Full Time",
     "minute": "90",
