@@ -63,20 +63,20 @@
     "kickoffAt": "2026-06-16T01:00:00.000Z",
     "competitionName": "World Cup"
   },
-  "manual-france-senegal": {
-    "kickoffAt": "2026-06-16T19:00:00.000Z",
+  "manual-argentina-austria": {
+    "kickoffAt": "2026-06-22T17:00:00.000Z",
     "competitionName": "World Cup"
   },
-  "manual-iraq-norway": {
-    "kickoffAt": "2026-06-16T22:00:00.000Z",
+  "manual-france-iraq": {
+    "kickoffAt": "2026-06-22T21:00:00.000Z",
     "competitionName": "World Cup"
   },
-  "manual-argentina-algeria": {
-    "kickoffAt": "2026-06-17T01:00:00.000Z",
+  "manual-norway-senegal": {
+    "kickoffAt": "2026-06-23T00:00:00.000Z",
     "competitionName": "World Cup"
   },
-  "manual-austria-jordan": {
-    "kickoffAt": "2026-06-17T04:00:00.000Z",
+  "manual-jordan-algeria": {
+    "kickoffAt": "2026-06-23T03:00:00.000Z",
     "competitionName": "World Cup"
   },
   "manual-portugal-congo-dr": {

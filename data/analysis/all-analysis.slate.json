@@ -22,10 +22,10 @@
     "manual-belgium-egypt",
     "manual-saudi-arabia-uruguay",
     "manual-iran-new-zealand",
-    "manual-france-senegal",
-    "manual-iraq-norway",
-    "manual-argentina-algeria",
-    "manual-austria-jordan",
+    "manual-argentina-austria",
+    "manual-france-iraq",
+    "manual-norway-senegal",
+    "manual-jordan-algeria",
     "manual-portugal-congo-dr",
     "manual-england-croatia",
     "manual-ghana-panama",
@@ -436,91 +436,115 @@
       }
     },
     {
-      "matchId": "manual-france-senegal",
+      "matchId": "manual-argentina-austria",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-22T04:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
         "match": {
-          "id": "manual-france-senegal",
-          "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "france", "name": "France" },
-          "awayTeam": { "id": "senegal", "name": "Senegal" },
-          "kickoffAt": null
-        },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
-      }
-    },
-    {
-      "matchId": "manual-iraq-norway",
-      "inlineDetail": {
-        "generatedAt": "2026-06-16T14:15:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
-        "match": {
-          "id": "manual-iraq-norway",
-          "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "iraq", "name": "Iraq" },
-          "awayTeam": { "id": "norway", "name": "Norway" },
-          "kickoffAt": null
-        },
-        "summary": {
-          "likelyWinner": "Norway",
-          "likelyOutcome": "away",
-          "confidence": "high",
-          "handicapLean": "Norway -1.5",
-          "totalLean": "Over 2.5",
-          "correctScoreLean": "0-2",
-          "correctScoreLeans": ["0-2", "0-3"]
-        },
-        "notes": [
-          "Norway bring the stronger attacking ceiling, with Haaland and Odegaard giving them far more ways to force decisive moments.",
-          "Iraq can still make the game physical and stubborn, but their likeliest path is resistance rather than sustained control.",
-          "That keeps the board read on Norway by margin, with the match more likely to open once the favorite finds the first breakthrough."
-        ]
-      }
-    },
-    {
-      "matchId": "manual-argentina-algeria",
-      "inlineDetail": {
-        "generatedAt": "2026-06-16T14:15:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
-        "match": {
-          "id": "manual-argentina-algeria",
-          "competitionName": "Manual Watchlist",
+          "id": "manual-argentina-austria",
+          "competitionName": "World Cup",
           "homeTeam": { "id": "argentina", "name": "Argentina" },
-          "awayTeam": { "id": "algeria", "name": "Algeria" },
+          "awayTeam": { "id": "austria", "name": "Austria" },
           "kickoffAt": null
         },
         "summary": {
           "likelyWinner": "Argentina",
           "likelyOutcome": "home",
-          "confidence": "medium",
-          "handicapLean": "Argentina -0.5",
-          "totalLean": "Under 2.5",
+          "confidence": "high",
+          "handicapLean": "Argentina -0.75",
+          "totalLean": "Under 2.75",
           "correctScoreLean": "1-0",
           "correctScoreLeans": ["1-0", "2-0"]
         },
         "notes": [
-          "Argentina still carry the stronger tournament spine and the calmer match-management profile, which matters in a group-stage opener.",
-          "Algeria have enough discipline and transition threat to keep the match tighter than the raw talent gap might suggest.",
-          "That shapes this more as a controlled Argentina win than a wide or chaotic scoreline, with the lower-goal frame still the cleaner fit."
+          "Argentina still bring the stronger tournament spine, more attacking solutions, and the cleaner match-winning route.",
+          "Austria are structured enough to keep the game tighter than the surface name gap suggests, which keeps the draw risk visible for long stretches.",
+          "That leaves Argentina as the side lean, but in a controlled match shape rather than a carefree margin script."
         ]
       }
     },
     {
-      "matchId": "manual-austria-jordan",
+      "matchId": "manual-france-iraq",
       "inlineDetail": {
-        "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "generatedAt": "2026-06-22T04:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
         "match": {
-          "id": "manual-austria-jordan",
-          "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "austria", "name": "Austria" },
-          "awayTeam": { "id": "jordan", "name": "Jordan" },
+          "id": "manual-france-iraq",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "france", "name": "France" },
+          "awayTeam": { "id": "iraq", "name": "Iraq" },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": "France",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "France -2.25",
+          "totalLean": "Over 2.75",
+          "correctScoreLean": "3-0",
+          "correctScoreLeans": ["3-0", "4-0"]
+        },
+        "notes": [
+          "France remain the clearest favorite on the slate through superior depth, control, and repeated attacking pressure.",
+          "Iraq's likeliest route is to stay compact and delay the match from opening, but the quality gap still points more to margin than to genuine side uncertainty.",
+          "That keeps the board read on France strongly intact, with the real question sitting in how wide the separation becomes."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-norway-senegal",
+      "inlineDetail": {
+        "generatedAt": "2026-06-22T04:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-norway-senegal",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "norway", "name": "Norway" },
+          "awayTeam": { "id": "senegal", "name": "Senegal" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Norway",
+          "likelyOutcome": "home",
+          "confidence": "low",
+          "handicapLean": "Senegal +0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": ["1-1", "1-0"]
+        },
+        "notes": [
+          "Norway still hold the narrower side edge through the cleaner attacking ceiling and the stronger chance of one decisive sequence.",
+          "Senegal are exactly the type of opponent who can keep the match physically balanced and emotionally unresolved for long stretches.",
+          "That keeps Norway as the lean, but with the draw risk staying central and the safer market posture leaning toward protection rather than aggression."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-jordan-algeria",
+      "inlineDetail": {
+        "generatedAt": "2026-06-22T04:30:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-jordan-algeria",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "jordan", "name": "Jordan" },
+          "awayTeam": { "id": "algeria", "name": "Algeria" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Algeria",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Algeria -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-1",
+          "correctScoreLeans": ["0-1", "1-1"]
+        },
+        "notes": [
+          "Algeria still look slightly cleaner in the quiet control phases and more likely to create the better-quality openings.",
+          "Jordan can keep the match stubborn and low-event, which keeps the draw alive longer than a surface favorite tag might suggest.",
+          "That leaves Algeria as the lean, but in a compact match shape where margin and comfort should both be treated carefully."
+        ]
       }
     },
     {
