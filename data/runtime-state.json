@@ -243,5 +243,33 @@
     "homeScore": "6",
     "awayScore": "0",
     "notes": "Canada beat Qatar 6-0."
+  },
+  "manual-argentina-austria": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "0",
+    "notes": "Argentina beat Austria 2-0."
+  },
+  "manual-france-iraq": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "0",
+    "notes": "France beat Iraq 3-0."
+  },
+  "manual-norway-senegal": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "2",
+    "notes": "Norway beat Senegal 3-2."
+  },
+  "manual-jordan-algeria": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "2",
+    "notes": "Algeria beat Jordan 2-1."
   }
 }
