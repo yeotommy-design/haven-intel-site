@@ -26,6 +26,10 @@
     "manual-france-iraq",
     "manual-norway-senegal",
     "manual-jordan-algeria",
+    "manual-portugal-uzbekistan",
+    "manual-england-ghana",
+    "manual-panama-croatia",
+    "manual-colombia-congo-dr",
     "manual-portugal-congo-dr",
     "manual-england-croatia",
     "manual-ghana-panama",
@@ -544,6 +548,118 @@
           "Algeria still look slightly cleaner in the quiet control phases and more likely to create the better-quality openings.",
           "Jordan can keep the match stubborn and low-event, which keeps the draw alive longer than a surface favorite tag might suggest.",
           "That leaves Algeria as the lean, but in a compact match shape where margin and comfort should both be treated carefully."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-portugal-uzbekistan",
+      "inlineDetail": {
+        "generatedAt": "2026-06-23T06:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-portugal-uzbekistan",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "portugal", "name": "Portugal" },
+          "awayTeam": { "id": "uzbekistan", "name": "Uzbekistan" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Portugal",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Portugal -2.5",
+          "totalLean": "Under 3.5",
+          "correctScoreLean": "2-0",
+          "correctScoreLeans": ["2-0", "3-0"]
+        },
+        "notes": [
+          "Portugal still own the strongest side profile on this slate, with more depth, more control, and a clearer route to repeated attacking pressure.",
+          "Uzbekistan can still keep the shape compact for stretches, which is why the read feels more controlled than chaotic.",
+          "That keeps Portugal as the cleanest side lean, with the total still pointing more toward a professional win than an open shootout."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-england-ghana",
+      "inlineDetail": {
+        "generatedAt": "2026-06-23T06:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-england-ghana",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "england", "name": "England" },
+          "awayTeam": { "id": "ghana", "name": "Ghana" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "England",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "England -1.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-0",
+          "correctScoreLeans": ["2-0", "3-1"]
+        },
+        "notes": [
+          "England still rate as the stronger side through the broader attacking ceiling and the better chance of controlling the important phases.",
+          "Ghana are live enough to keep the draw warning visible, especially if England do not impose the game quickly.",
+          "That keeps England as the lean, but not as one of the selected public-confirmation spots for now."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-panama-croatia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-23T06:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-panama-croatia",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "panama", "name": "Panama" },
+          "awayTeam": { "id": "croatia", "name": "Croatia" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Croatia",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Croatia -1",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": ["0-2", "1-2"]
+        },
+        "notes": [
+          "Croatia still look like the stronger football side, with the clearer route to control and the better chance of creating the higher-quality openings.",
+          "Panama remain stubborn enough to keep the match awkward if Croatia are slow to settle, so this is not a carefree favorite spot.",
+          "That still leaves Croatia as the selected lean, with a narrower margin script preferred over a runaway scoreline."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-colombia-congo-dr",
+      "inlineDetail": {
+        "generatedAt": "2026-06-23T06:00:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-colombia-congo-dr",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "colombia", "name": "Colombia" },
+          "awayTeam": { "id": "congo-dr", "name": "Democratic Rep Congo" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Colombia",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Colombia -0.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-1",
+          "correctScoreLeans": ["2-1", "2-0"]
+        },
+        "notes": [
+          "Colombia still bring the cleaner attacking route and the stronger chance of turning control into enough serious chances.",
+          "Democratic Rep Congo deserve more respect than a passive underdog tag, especially after showing resistance against stronger opposition earlier in the tournament.",
+          "That keeps Colombia as a selected confirmed side, but with enough resistance expected to stop this from feeling fully comfortable."
         ]
       }
     },
