@@ -185,7 +185,8 @@
   const FEATURED_PREVIEW_IDS = [
     "manual-bosnia-herzegovina-qatar",
     "manual-scotland-brazil",
-    "manual-morocco-haiti"
+    "manual-morocco-haiti",
+    "manual-czech-republic-mexico"
   ];
 
   let featuredPreviewPromise = null;
@@ -235,6 +236,14 @@
         awayTeam: "Haiti",
         kickoffLabel: "Tonight",
         winnerLean: "Morocco"
+      },
+      {
+        id: "manual-czech-republic-mexico",
+        competitionName: "World Cup",
+        homeTeam: "Czech Republic",
+        awayTeam: "Mexico",
+        kickoffLabel: "Tonight",
+        winnerLean: "Draw"
       }
     ];
   }
@@ -404,17 +413,17 @@
     root.innerHTML = `
       <div class="pricingHeader">
         <div class="eyebrow">Free Soft-Launch Preview</div>
-        <h2>See the next 3 HavenIntel winning-team leans before the full member system opens.</h2>
+        <h2>See the next 4 HavenIntel preview calls before the full member system opens.</h2>
         <p>
-          This public preview shows the selected soft-launch matches, the kickoff window, and the current winner lean for the next confirmed releases.
+          This public preview shows the selected soft-launch matches, the kickoff window, and the current lead call for the next confirmed releases.
         </p>
       </div>
       <div class="publicViewFeatureGrid">
         <article class="proofCard publicViewCard compact">
           <div class="publicViewCardTop">
-            <div class="eyebrow">Winning Team Preview</div>
-            <h3>Next 3 confirmed preview matches</h3>
-            <p>These are free soft-launch winner leans only. Full match breakdowns still live on the board, in insights, and in the archive after full time.</p>
+            <div class="eyebrow">Preview Calls</div>
+            <h3>Next 4 confirmed preview matches</h3>
+            <p>These are free soft-launch preview calls only. Full match breakdowns still live on the board, in insights, and in the archive after full time.</p>
           </div>
           <div class="releaseBulletin">
             ${previewMatches.map((match) => `
@@ -434,7 +443,7 @@
           <div class="publicViewMiniList">
             <span>Free preview</span>
             <span>No payment collected</span>
-            <span>3 winner leans shown</span>
+            <span>4 preview calls shown</span>
             <span>Public archive stays visible</span>
           </div>
           <a class="button primary" href="./index.html#board">Check Live Board</a>
