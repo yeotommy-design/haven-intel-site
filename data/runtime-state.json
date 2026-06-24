@@ -271,5 +271,26 @@
     "homeScore": "1",
     "awayScore": "2",
     "notes": "Algeria beat Jordan 2-1."
+  },
+  "manual-portugal-uzbekistan": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "5",
+    "awayScore": "0",
+    "notes": "Portugal beat Uzbekistan 5-0."
+  },
+  "manual-panama-croatia": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "1",
+    "notes": "Croatia beat Panama 1-0."
+  },
+  "manual-colombia-congo-dr": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "0",
+    "notes": "Colombia beat Democratic Rep Congo 1-0."
   }
 }
