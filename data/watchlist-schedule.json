@@ -95,6 +95,22 @@
     "kickoffAt": "2026-06-24T02:00:00.000Z",
     "competitionName": "World Cup"
   },
+  "manual-bosnia-herzegovina-qatar": {
+    "kickoffAt": "2026-06-24T19:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-scotland-brazil": {
+    "kickoffAt": "2026-06-24T22:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-morocco-haiti": {
+    "kickoffAt": "2026-06-24T22:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-czech-republic-mexico": {
+    "kickoffAt": "2026-06-25T01:00:00.000Z",
+    "competitionName": "World Cup"
+  },
   "manual-portugal-congo-dr": {
     "kickoffAt": "2026-06-17T17:00:00.000Z",
     "competitionName": "World Cup"

@@ -30,6 +30,10 @@
     "manual-england-ghana",
     "manual-panama-croatia",
     "manual-colombia-congo-dr",
+    "manual-bosnia-herzegovina-qatar",
+    "manual-scotland-brazil",
+    "manual-morocco-haiti",
+    "manual-czech-republic-mexico",
     "manual-portugal-congo-dr",
     "manual-england-croatia",
     "manual-ghana-panama",
@@ -660,6 +664,118 @@
           "Colombia still bring the cleaner attacking route and the stronger chance of turning control into enough serious chances.",
           "Democratic Rep Congo deserve more respect than a passive underdog tag, especially after showing resistance against stronger opposition earlier in the tournament.",
           "That keeps Colombia as a selected confirmed side, but with enough resistance expected to stop this from feeling fully comfortable."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-bosnia-herzegovina-qatar",
+      "inlineDetail": {
+        "generatedAt": "2026-06-24T06:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-bosnia-herzegovina-qatar",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "bosnia-herzegovina", "name": "Bosnia and Herzegovina" },
+          "awayTeam": { "id": "qatar", "name": "Qatar" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Bosnia and Herzegovina",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Bosnia and Herzegovina -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "1-1"]
+        },
+        "notes": [
+          "Bosnia and Herzegovina still look like the slightly better side in a match expected to stay lower-event and narrower on the scoreboard.",
+          "Qatar can keep the game compact enough to hold the draw inside the conversation if the first breakthrough is delayed.",
+          "That keeps Bosnia and Herzegovina as the lean, but in a patient and controlled match shape rather than a wide margin script."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-scotland-brazil",
+      "inlineDetail": {
+        "generatedAt": "2026-06-24T06:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-scotland-brazil",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "scotland", "name": "Scotland" },
+          "awayTeam": { "id": "brazil", "name": "Brazil" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Brazil",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Brazil -1.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": ["0-2", "1-3"]
+        },
+        "notes": [
+          "Brazil still carry the strongest overall football edge in this match through the higher attacking ceiling and the cleaner route to control.",
+          "Scotland can compete honestly, but they still look more likely to spend the night managing pressure than dictating the bigger moments.",
+          "That keeps Brazil as the clearest side call on the slate, with enough attacking weight to support a multi-goal winning path."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-morocco-haiti",
+      "inlineDetail": {
+        "generatedAt": "2026-06-24T06:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-morocco-haiti",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "morocco", "name": "Morocco" },
+          "awayTeam": { "id": "haiti", "name": "Haiti" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Morocco",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Morocco -1",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "2-0"]
+        },
+        "notes": [
+          "Morocco still look structurally cleaner and more likely to dictate the better phases of the match.",
+          "Haiti can stay stubborn enough to keep the game from becoming loose, which is why the scoreline frame still reads more measured than explosive.",
+          "That keeps Morocco as a confirmed side lean, with control and patience still looking more likely than a wild total."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-czech-republic-mexico",
+      "inlineDetail": {
+        "generatedAt": "2026-06-24T06:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-czech-republic-mexico",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "czech-republic", "name": "Czech Republic" },
+          "awayTeam": { "id": "mexico", "name": "Mexico" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Mexico 0",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": ["1-1", "0-0"]
+        },
+        "notes": [
+          "This still reads like the biggest draw-danger match of the six, with neither side owning a clean enough edge to force a comfortable winner call.",
+          "The lower total profile naturally keeps narrower score paths alive and strengthens the case for a split result.",
+          "That leaves the cleanest board read on the draw, with the score-range centered on 1-1 or 0-0."
         ]
       }
     },

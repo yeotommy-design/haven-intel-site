@@ -183,9 +183,9 @@
   ];
 
   const FEATURED_PREVIEW_IDS = [
-    "manual-portugal-uzbekistan",
-    "manual-panama-croatia",
-    "manual-colombia-congo-dr"
+    "manual-bosnia-herzegovina-qatar",
+    "manual-scotland-brazil",
+    "manual-morocco-haiti"
   ];
 
   let featuredPreviewPromise = null;
@@ -213,28 +213,28 @@
   function buildFeaturedPreviewFallback() {
     return [
       {
-        id: "manual-portugal-uzbekistan",
+        id: "manual-bosnia-herzegovina-qatar",
         competitionName: "World Cup",
-        homeTeam: "Portugal",
-        awayTeam: "Uzbekistan",
+        homeTeam: "Bosnia and Herzegovina",
+        awayTeam: "Qatar",
         kickoffLabel: "Tonight",
-        winnerLean: "Portugal"
+        winnerLean: "Bosnia and Herzegovina"
       },
       {
-        id: "manual-panama-croatia",
+        id: "manual-scotland-brazil",
         competitionName: "World Cup",
-        homeTeam: "Panama",
-        awayTeam: "Croatia",
+        homeTeam: "Scotland",
+        awayTeam: "Brazil",
         kickoffLabel: "Tonight",
-        winnerLean: "Croatia"
+        winnerLean: "Brazil"
       },
       {
-        id: "manual-colombia-congo-dr",
+        id: "manual-morocco-haiti",
         competitionName: "World Cup",
-        homeTeam: "Colombia",
-        awayTeam: "Congo DR",
+        homeTeam: "Morocco",
+        awayTeam: "Haiti",
         kickoffLabel: "Tonight",
-        winnerLean: "Colombia"
+        winnerLean: "Morocco"
       }
     ];
   }
@@ -400,29 +400,32 @@
   async function renderFeatured() {
     const root = document.querySelector("[data-public-view-featured]");
     if (!root) return;
+    const previewMatches = await loadFeaturedPreviewMatches();
     root.innerHTML = `
       <div class="pricingHeader">
         <div class="eyebrow">Free Soft-Launch Preview</div>
-        <h2>See when the next HavenIntel match analysis is being prepared before the full member system opens.</h2>
+        <h2>See the next 3 HavenIntel winning-team leans before the full member system opens.</h2>
         <p>
-          This public preview shows when the next slate is being worked on in public before the final confirmed releases are posted.
+          This public preview shows the selected soft-launch matches, the kickoff window, and the current winner lean for the next confirmed releases.
         </p>
       </div>
       <div class="publicViewFeatureGrid">
         <article class="proofCard publicViewCard compact">
           <div class="publicViewCardTop">
-            <div class="eyebrow">Analysis Status</div>
-            <h3>Analysis coming soon</h3>
-            <p>Tonight's shortlist is being reviewed. Final match reads will only appear after the odds check and slate confirmation are complete.</p>
+            <div class="eyebrow">Winning Team Preview</div>
+            <h3>Next 3 confirmed preview matches</h3>
+            <p>These are free soft-launch winner leans only. Full match breakdowns still live on the board, in insights, and in the archive after full time.</p>
           </div>
           <div class="releaseBulletin">
-            <div class="releaseLine">
-              <div>
-                <strong>Analysis Coming Soon</strong>
-                <div class="releaseLineMeta">Shortlist review in progress · Final confirmed matches will appear after the evening odds check.</div>
+            ${previewMatches.map((match) => `
+              <div class="releaseLine">
+                <div>
+                  <strong>${match.homeTeam} vs ${match.awayTeam}</strong>
+                  <div class="releaseLineMeta">${match.competitionName} · ${match.kickoffLabel}</div>
+                </div>
+                <div class="releasePick">${match.winnerLean}</div>
               </div>
-              <div class="releasePick">Pending</div>
-            </div>
+            `).join("")}
           </div>
         </article>
         <aside class="proofCard publicViewInfoCard">
@@ -431,7 +434,7 @@
           <div class="publicViewMiniList">
             <span>Free preview</span>
             <span>No payment collected</span>
-            <span>Analysis updated after review</span>
+            <span>3 winner leans shown</span>
             <span>Public archive stays visible</span>
           </div>
           <a class="button primary" href="./index.html#board">Check Live Board</a>
