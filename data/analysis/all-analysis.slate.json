@@ -34,6 +34,8 @@
     "manual-scotland-brazil",
     "manual-morocco-haiti",
     "manual-czech-republic-mexico",
+    "manual-switzerland-canada",
+    "manual-south-africa-korea-republic",
     "manual-portugal-congo-dr",
     "manual-england-croatia",
     "manual-ghana-panama",
@@ -776,6 +778,62 @@
           "This still reads like the biggest draw-danger match of the six, with neither side owning a clean enough edge to force a comfortable winner call.",
           "The lower total profile naturally keeps narrower score paths alive and strengthens the case for a split result.",
           "That leaves the cleanest board read on the draw, with the score-range centered on 1-1 or 0-0."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-switzerland-canada",
+      "inlineDetail": {
+        "generatedAt": "2026-06-24T06:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-switzerland-canada",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "switzerland", "name": "Switzerland" },
+          "awayTeam": { "id": "canada", "name": "Canada" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Switzerland",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Canada +0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": ["1-1", "1-0"]
+        },
+        "notes": [
+          "Switzerland still looked like the slightly cleaner side in a match expected to stay tight and tactically measured.",
+          "Canada had enough fight to keep the game competitive, which is why the safer market posture still protected against a straightforward Swiss margin call.",
+          "That left Switzerland as the lean, but inside a narrow score frame where the draw stayed very real."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-south-africa-korea-republic",
+      "inlineDetail": {
+        "generatedAt": "2026-06-24T06:45:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "match": {
+          "id": "manual-south-africa-korea-republic",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "south-africa", "name": "South Africa" },
+          "awayTeam": { "id": "korea-republic", "name": "Korea Republic" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Korea Republic",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Korea Republic -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-1",
+          "correctScoreLeans": ["0-1", "1-1"]
+        },
+        "notes": [
+          "Korea Republic still looked like the side with the cleaner football route and the better chance of controlling the important phases.",
+          "South Africa had enough resistance to keep the draw in view and stop the match from feeling fully comfortable for the favorite.",
+          "That kept Korea Republic as the lean, though in a narrower and more fragile match shape than the stronger confirmed picks."
         ]
       }
     },

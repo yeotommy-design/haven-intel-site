@@ -409,32 +409,29 @@
   async function renderFeatured() {
     const root = document.querySelector("[data-public-view-featured]");
     if (!root) return;
-    const previewMatches = await loadFeaturedPreviewMatches();
     root.innerHTML = `
       <div class="pricingHeader">
         <div class="eyebrow">Free Soft-Launch Preview</div>
-        <h2>See the next 4 HavenIntel preview calls before the full member system opens.</h2>
+        <h2>See when the next HavenIntel match analysis is being prepared before the full member system opens.</h2>
         <p>
-          This public preview shows the selected soft-launch matches, the kickoff window, and the current lead call for the next confirmed releases.
+          This public preview shows when the next slate is being worked on in public before the final confirmed releases are posted.
         </p>
       </div>
       <div class="publicViewFeatureGrid">
         <article class="proofCard publicViewCard compact">
           <div class="publicViewCardTop">
-            <div class="eyebrow">Preview Calls</div>
-            <h3>Next 4 confirmed preview matches</h3>
-            <p>These are free soft-launch preview calls only. Full match breakdowns still live on the board, in insights, and in the archive after full time.</p>
+            <div class="eyebrow">Analysis Status</div>
+            <h3>Analysis coming soon</h3>
+            <p>Tonight's shortlist is being reviewed. Final match reads will only appear after the odds check and slate confirmation are complete.</p>
           </div>
           <div class="releaseBulletin">
-            ${previewMatches.map((match) => `
-              <div class="releaseLine">
-                <div>
-                  <strong>${match.homeTeam} vs ${match.awayTeam}</strong>
-                  <div class="releaseLineMeta">${match.competitionName} · ${match.kickoffLabel}</div>
-                </div>
-                <div class="releasePick">${match.winnerLean}</div>
+            <div class="releaseLine">
+              <div>
+                <strong>Analysis Coming Soon</strong>
+                <div class="releaseLineMeta">Shortlist review in progress · Final confirmed matches will appear after the evening odds check.</div>
               </div>
-            `).join("")}
+              <div class="releasePick">Pending</div>
+            </div>
           </div>
         </article>
         <aside class="proofCard publicViewInfoCard">
@@ -443,7 +440,7 @@
           <div class="publicViewMiniList">
             <span>Free preview</span>
             <span>No payment collected</span>
-            <span>4 preview calls shown</span>
+            <span>Analysis updated after review</span>
             <span>Public archive stays visible</span>
           </div>
           <a class="button primary" href="./index.html#board">Check Live Board</a>

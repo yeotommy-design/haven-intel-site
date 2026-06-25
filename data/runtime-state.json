@@ -292,5 +292,47 @@
     "homeScore": "1",
     "awayScore": "0",
     "notes": "Colombia beat Democratic Rep Congo 1-0."
+  },
+  "manual-switzerland-canada": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "1",
+    "notes": "Switzerland beat Canada 2-1."
+  },
+  "manual-bosnia-herzegovina-qatar": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "1",
+    "notes": "Bosnia and Herzegovina beat Qatar 3-1."
+  },
+  "manual-scotland-brazil": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "3",
+    "notes": "Brazil beat Scotland 3-0."
+  },
+  "manual-morocco-haiti": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "4",
+    "awayScore": "2",
+    "notes": "Morocco beat Haiti 4-2."
+  },
+  "manual-south-africa-korea-republic": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "0",
+    "notes": "South Africa beat Korea Republic 1-0."
+  },
+  "manual-czech-republic-mexico": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "3",
+    "notes": "Mexico beat Czech Republic 3-0."
   }
 }

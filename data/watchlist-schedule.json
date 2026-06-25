@@ -111,6 +111,14 @@
     "kickoffAt": "2026-06-25T01:00:00.000Z",
     "competitionName": "World Cup"
   },
+  "manual-switzerland-canada": {
+    "kickoffAt": "2026-06-24T19:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-south-africa-korea-republic": {
+    "kickoffAt": "2026-06-25T01:00:00.000Z",
+    "competitionName": "World Cup"
+  },
   "manual-portugal-congo-dr": {
     "kickoffAt": "2026-06-17T17:00:00.000Z",
     "competitionName": "World Cup"
