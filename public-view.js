@@ -183,10 +183,12 @@
   ];
 
   const FEATURED_PREVIEW_IDS = [
-    "manual-bosnia-herzegovina-qatar",
-    "manual-scotland-brazil",
-    "manual-morocco-haiti",
-    "manual-czech-republic-mexico"
+    "manual-curacao-cote-divoire",
+    "manual-ecuador-germany",
+    "manual-tunisia-netherlands",
+    "manual-japan-sweden",
+    "manual-paraguay-australia",
+    "manual-turkiye-usa"
   ];
 
   let featuredPreviewPromise = null;
@@ -214,34 +216,50 @@
   function buildFeaturedPreviewFallback() {
     return [
       {
-        id: "manual-bosnia-herzegovina-qatar",
+        id: "manual-curacao-cote-divoire",
         competitionName: "World Cup",
-        homeTeam: "Bosnia and Herzegovina",
-        awayTeam: "Qatar",
+        homeTeam: "Curacao",
+        awayTeam: "Cote d'Ivoire",
         kickoffLabel: "Tonight",
-        winnerLean: "Bosnia and Herzegovina"
+        winnerLean: "Cote d'Ivoire"
       },
       {
-        id: "manual-scotland-brazil",
+        id: "manual-ecuador-germany",
         competitionName: "World Cup",
-        homeTeam: "Scotland",
-        awayTeam: "Brazil",
+        homeTeam: "Ecuador",
+        awayTeam: "Germany",
         kickoffLabel: "Tonight",
-        winnerLean: "Brazil"
+        winnerLean: "Germany"
       },
       {
-        id: "manual-morocco-haiti",
+        id: "manual-tunisia-netherlands",
         competitionName: "World Cup",
-        homeTeam: "Morocco",
-        awayTeam: "Haiti",
+        homeTeam: "Tunisia",
+        awayTeam: "Netherlands",
         kickoffLabel: "Tonight",
-        winnerLean: "Morocco"
+        winnerLean: "Netherlands"
       },
       {
-        id: "manual-czech-republic-mexico",
+        id: "manual-japan-sweden",
         competitionName: "World Cup",
-        homeTeam: "Czech Republic",
-        awayTeam: "Mexico",
+        homeTeam: "Japan",
+        awayTeam: "Sweden",
+        kickoffLabel: "Tonight",
+        winnerLean: "Japan"
+      },
+      {
+        id: "manual-paraguay-australia",
+        competitionName: "World Cup",
+        homeTeam: "Paraguay",
+        awayTeam: "Australia",
+        kickoffLabel: "Tonight",
+        winnerLean: "Draw"
+      },
+      {
+        id: "manual-turkiye-usa",
+        competitionName: "World Cup",
+        homeTeam: "Turkiye",
+        awayTeam: "USA",
         kickoffLabel: "Tonight",
         winnerLean: "Draw"
       }
@@ -409,38 +427,41 @@
   async function renderFeatured() {
     const root = document.querySelector("[data-public-view-featured]");
     if (!root) return;
+    const featuredMatches = await loadFeaturedPreviewMatches();
     root.innerHTML = `
       <div class="pricingHeader">
         <div class="eyebrow">Free Soft-Launch Preview</div>
-        <h2>See when the next HavenIntel match analysis is being prepared before the full member system opens.</h2>
+        <h2>See tonight's confirmed HavenIntel winner leans before the full member system opens.</h2>
         <p>
-          This public preview shows when the next slate is being worked on in public before the final confirmed releases are posted.
+          This public preview shows tonight's confirmed soft-launch slate, the kickoff window, and the current public-facing winner lean for each selected release.
         </p>
       </div>
       <div class="publicViewFeatureGrid">
         <article class="proofCard publicViewCard compact">
           <div class="publicViewCardTop">
-            <div class="eyebrow">Analysis Status</div>
-            <h3>Analysis coming soon</h3>
-            <p>Tonight's shortlist is being reviewed. Final match reads will only appear after the odds check and slate confirmation are complete.</p>
+            <div class="eyebrow">Winning Team Preview</div>
+            <h3>Tonight's ${featuredMatches.length} confirmed preview matches</h3>
+            <p>These are free soft-launch winner leans only. Full match breakdowns still live on the board, in insights, and in the archive after full time.</p>
           </div>
           <div class="releaseBulletin">
-            <div class="releaseLine">
-              <div>
-                <strong>Analysis Coming Soon</strong>
-                <div class="releaseLineMeta">Shortlist review in progress · Final confirmed matches will appear after the evening odds check.</div>
+            ${featuredMatches.map((match) => `
+              <div class="releaseLine">
+                <div>
+                  <strong>${match.homeTeam} vs ${match.awayTeam}</strong>
+                  <div class="releaseLineMeta">${match.competitionName} · ${match.kickoffLabel}</div>
+                </div>
+                <div class="releasePick">${match.winnerLean}</div>
               </div>
-              <div class="releasePick">Pending</div>
-            </div>
+            `).join("")}
           </div>
         </article>
         <aside class="proofCard publicViewInfoCard">
           <h3>How this preview works</h3>
-          <p>During soft launch, HavenIntel can show a small public sample before kickoff without opening payments, email delivery, or the full member flow.</p>
+          <p>During soft launch, HavenIntel can show a small confirmed sample before kickoff without opening payments, email delivery, or the full member flow.</p>
           <div class="publicViewMiniList">
             <span>Free preview</span>
             <span>No payment collected</span>
-            <span>Analysis updated after review</span>
+            <span>${featuredMatches.length} confirmed leans shown</span>
             <span>Public archive stays visible</span>
           </div>
           <a class="button primary" href="./index.html#board">Check Live Board</a>

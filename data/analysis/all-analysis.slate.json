@@ -50,7 +50,13 @@
     "manual-spain-saudi-arabia",
     "manual-belgium-iran",
     "manual-uruguay-cape-verde",
-    "manual-new-zealand-egypt"
+    "manual-new-zealand-egypt",
+    "manual-curacao-cote-divoire",
+    "manual-ecuador-germany",
+    "manual-tunisia-netherlands",
+    "manual-japan-sweden",
+    "manual-paraguay-australia",
+    "manual-turkiye-usa"
   ],
   "matches": [
     {
@@ -1286,6 +1292,174 @@
           "Egypt look more balanced and more reliable across the full ninety minutes, especially in the defensive structure that New Zealand struggled to maintain against Iran.",
           "New Zealand still bring enough energy and willingness to stop the match from feeling passive, but that same openness can leave transition spaces behind them.",
           "That keeps Egypt as the cleaner lean, with the football shape slightly stronger now than it looked on the first pass."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-curacao-cote-divoire",
+      "inlineDetail": {
+        "generatedAt": "2026-06-25T06:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "match": {
+          "id": "manual-curacao-cote-divoire",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "curacao", "name": "Curacao" },
+          "awayTeam": { "id": "cote-divoire", "name": "Cote d'Ivoire" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Cote d'Ivoire",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Cote d'Ivoire -1.0",
+          "totalLean": "Under 3.0",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": ["0-2", "0-1"]
+        },
+        "notes": [
+          "Curacao have spent too much of this tournament defending long spells, while Cote d'Ivoire still project as the side with the cleaner route to field control and territory.",
+          "The stronger read sits with the Ivory Coast, but the scoring pattern still looks more professional than explosive.",
+          "Top score-range view: 0-2 or 0-1 to Cote d'Ivoire."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-ecuador-germany",
+      "inlineDetail": {
+        "generatedAt": "2026-06-25T06:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "match": {
+          "id": "manual-ecuador-germany",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "ecuador", "name": "Ecuador" },
+          "awayTeam": { "id": "germany", "name": "Germany" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Germany",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Germany -0.25",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-2",
+          "correctScoreLeans": ["1-2", "0-1"]
+        },
+        "notes": [
+          "Ecuador bring urgency and real draw resistance, but Germany still rate stronger in the overall side-quality and game-management layer.",
+          "This is one of the slate's more serious draw warnings, so the safer board posture is a smaller Germany edge rather than a heavy favorite stance.",
+          "Top score-range view: 1-2 or 0-1 to Germany."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-tunisia-netherlands",
+      "inlineDetail": {
+        "generatedAt": "2026-06-25T06:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "match": {
+          "id": "manual-tunisia-netherlands",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "tunisia", "name": "Tunisia" },
+          "awayTeam": { "id": "netherlands", "name": "Netherlands" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Netherlands",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Netherlands -1.0",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": ["0-2", "1-3"]
+        },
+        "notes": [
+          "Netherlands still look like the more complete football side, with stronger control patterns and the cleaner attacking ceiling.",
+          "Tunisia can stay physical and disruptive, but the Dutch side still own the clearer path to both territory and better chances.",
+          "Top score-range view: 0-2 or 1-3 to the Netherlands."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-japan-sweden",
+      "inlineDetail": {
+        "generatedAt": "2026-06-25T06:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "match": {
+          "id": "manual-japan-sweden",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "japan", "name": "Japan" },
+          "awayTeam": { "id": "sweden", "name": "Sweden" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Japan",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Japan -0.5",
+          "totalLean": "Over 2.0",
+          "correctScoreLean": "2-1",
+          "correctScoreLeans": ["2-1", "1-0"]
+        },
+        "notes": [
+          "Japan still arrive as the steadier football side, with better rhythm, cleaner structure, and fewer loose phases than Sweden have shown.",
+          "Sweden remain live enough to make the match uncomfortable, which keeps the draw flag in view even with Japan still holding the stronger lean.",
+          "Top score-range view: 2-1 or 1-0 to Japan."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-paraguay-australia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-25T06:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "match": {
+          "id": "manual-paraguay-australia",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "paraguay", "name": "Paraguay" },
+          "awayTeam": { "id": "australia", "name": "Australia" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Australia +0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": ["1-1", "0-0"]
+        },
+        "notes": [
+          "This is the strongest draw warning on the slate, with Australia in the more comfortable position and Paraguay missing a key creative piece in Miguel Almiron.",
+          "Everything about the market shape and likely match incentives points toward a cagey, low-event game rather than a full commitment to one side.",
+          "Top score-range view: 1-1 or 0-0."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-turkiye-usa",
+      "inlineDetail": {
+        "generatedAt": "2026-06-25T06:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "match": {
+          "id": "manual-turkiye-usa",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "turkiye", "name": "Turkiye" },
+          "awayTeam": { "id": "usa", "name": "USA" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Turkiye +0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": ["1-1", "0-0"]
+        },
+        "notes": [
+          "USA still own the higher raw ceiling, but the group position and rotation-risk layer make this a much shakier winner call than the badge names alone suggest.",
+          "Turkiye are strong enough to turn the match tactical and stubborn, which makes the draw line more honest than forcing a narrow USA win.",
+          "Top score-range view: 1-1 or 0-0."
         ]
       }
     }

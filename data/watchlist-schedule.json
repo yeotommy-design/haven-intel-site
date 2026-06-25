@@ -178,5 +178,29 @@
   "manual-new-zealand-egypt": {
     "kickoffAt": "2026-06-22T01:00:00.000Z",
     "competitionName": "World Cup"
+  },
+  "manual-curacao-cote-divoire": {
+    "kickoffAt": "2026-06-25T20:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-ecuador-germany": {
+    "kickoffAt": "2026-06-25T20:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-tunisia-netherlands": {
+    "kickoffAt": "2026-06-25T23:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-japan-sweden": {
+    "kickoffAt": "2026-06-25T23:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-paraguay-australia": {
+    "kickoffAt": "2026-06-26T02:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-turkiye-usa": {
+    "kickoffAt": "2026-06-26T02:00:00.000Z",
+    "competitionName": "World Cup"
   }
 }
