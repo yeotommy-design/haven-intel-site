@@ -270,17 +270,19 @@
     if (!featuredPreviewPromise) {
       featuredPreviewPromise = (async () => {
         try {
-          const [scheduleResponse, analysisResponse] = await Promise.all([
+          const [scheduleResponse, analysisResponse, runtimeResponse] = await Promise.all([
             fetch("./data/watchlist-schedule.json", { cache: "no-store" }),
-            fetch("./data/analysis/all-analysis.slate.json", { cache: "no-store" })
+            fetch("./data/analysis/all-analysis.slate.json", { cache: "no-store" }),
+            fetch("./data/runtime-state.json", { cache: "no-store" })
           ]);
 
-          if (!scheduleResponse.ok || !analysisResponse.ok) {
+          if (!scheduleResponse.ok || !analysisResponse.ok || !runtimeResponse.ok) {
             throw new Error("preview data unavailable");
           }
 
           const scheduleMap = await scheduleResponse.json();
           const analysis = await analysisResponse.json();
+          const runtimeState = await runtimeResponse.json();
           const matches = (analysis.matches || [])
             .filter((entry) => FEATURED_PREVIEW_IDS.includes(String(entry.matchId)))
             .map((entry) => {
@@ -297,6 +299,10 @@
               };
             })
             .sort((a, b) => FEATURED_PREVIEW_IDS.indexOf(a.id) - FEATURED_PREVIEW_IDS.indexOf(b.id));
+
+          if (matches.length && matches.every((match) => runtimeState?.[match.id]?.status === "Full Time")) {
+            return [];
+          }
 
           return matches.length ? matches : buildFeaturedPreviewFallback();
         } catch {
@@ -428,6 +434,48 @@
     const root = document.querySelector("[data-public-view-featured]");
     if (!root) return;
     const featuredMatches = await loadFeaturedPreviewMatches();
+    if (!featuredMatches.length) {
+      root.innerHTML = `
+        <div class="pricingHeader">
+          <div class="eyebrow">Free Soft-Launch Preview</div>
+          <h2>See when the next HavenIntel match analysis is being prepared before the full member system opens.</h2>
+          <p>
+            This public preview shows when the next slate is being worked on in public before the final confirmed releases are posted.
+          </p>
+        </div>
+        <div class="publicViewFeatureGrid">
+          <article class="proofCard publicViewCard compact">
+            <div class="publicViewCardTop">
+              <div class="eyebrow">Analysis Status</div>
+              <h3>Analysis coming soon</h3>
+              <p>Tonight's shortlist is being reviewed. Final match reads will only appear after the odds check and slate confirmation are complete.</p>
+            </div>
+            <div class="releaseBulletin">
+              <div class="releaseLine">
+                <div>
+                  <strong>Analysis Coming Soon</strong>
+                  <div class="releaseLineMeta">Shortlist review in progress · Final confirmed matches will appear after the evening odds check.</div>
+                </div>
+                <div class="releasePick">Pending</div>
+              </div>
+            </div>
+          </article>
+          <aside class="proofCard publicViewInfoCard">
+            <h3>How this preview works</h3>
+            <p>During soft launch, HavenIntel can show a small public sample before kickoff without opening payments, email delivery, or the full member flow.</p>
+            <div class="publicViewMiniList">
+              <span>Free preview</span>
+              <span>No payment collected</span>
+              <span>Analysis updated after review</span>
+              <span>Public archive stays visible</span>
+            </div>
+            <a class="button primary" href="./index.html#board">Check Live Board</a>
+          </aside>
+        </div>
+      `;
+      return;
+    }
+
     root.innerHTML = `
       <div class="pricingHeader">
         <div class="eyebrow">Free Soft-Launch Preview</div>
