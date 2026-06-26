@@ -183,12 +183,10 @@
   ];
 
   const FEATURED_PREVIEW_IDS = [
-    "manual-curacao-cote-divoire",
-    "manual-ecuador-germany",
-    "manual-tunisia-netherlands",
-    "manual-japan-sweden",
-    "manual-paraguay-australia",
-    "manual-turkiye-usa"
+    "manual-senegal-iraq",
+    "manual-uruguay-spain",
+    "manual-cape-verde-saudi-arabia",
+    "manual-new-zealand-belgium"
   ];
 
   let featuredPreviewPromise = null;
@@ -216,52 +214,36 @@
   function buildFeaturedPreviewFallback() {
     return [
       {
-        id: "manual-curacao-cote-divoire",
+        id: "manual-senegal-iraq",
         competitionName: "World Cup",
-        homeTeam: "Curacao",
-        awayTeam: "Cote d'Ivoire",
+        homeTeam: "Senegal",
+        awayTeam: "Iraq",
         kickoffLabel: "Tonight",
-        winnerLean: "Cote d'Ivoire"
+        winnerLean: "Senegal"
       },
       {
-        id: "manual-ecuador-germany",
+        id: "manual-uruguay-spain",
         competitionName: "World Cup",
-        homeTeam: "Ecuador",
-        awayTeam: "Germany",
+        homeTeam: "Uruguay",
+        awayTeam: "Spain",
         kickoffLabel: "Tonight",
-        winnerLean: "Germany"
+        winnerLean: "Spain"
       },
       {
-        id: "manual-tunisia-netherlands",
+        id: "manual-cape-verde-saudi-arabia",
         competitionName: "World Cup",
-        homeTeam: "Tunisia",
-        awayTeam: "Netherlands",
-        kickoffLabel: "Tonight",
-        winnerLean: "Netherlands"
-      },
-      {
-        id: "manual-japan-sweden",
-        competitionName: "World Cup",
-        homeTeam: "Japan",
-        awayTeam: "Sweden",
-        kickoffLabel: "Tonight",
-        winnerLean: "Japan"
-      },
-      {
-        id: "manual-paraguay-australia",
-        competitionName: "World Cup",
-        homeTeam: "Paraguay",
-        awayTeam: "Australia",
+        homeTeam: "Cape Verde",
+        awayTeam: "Saudi Arabia",
         kickoffLabel: "Tonight",
         winnerLean: "Draw"
       },
       {
-        id: "manual-turkiye-usa",
+        id: "manual-new-zealand-belgium",
         competitionName: "World Cup",
-        homeTeam: "Turkiye",
-        awayTeam: "USA",
+        homeTeam: "New Zealand",
+        awayTeam: "Belgium",
         kickoffLabel: "Tonight",
-        winnerLean: "Draw"
+        winnerLean: "Belgium"
       }
     ];
   }

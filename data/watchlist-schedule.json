@@ -202,5 +202,21 @@
   "manual-turkiye-usa": {
     "kickoffAt": "2026-06-26T02:00:00.000Z",
     "competitionName": "World Cup"
+  },
+  "manual-senegal-iraq": {
+    "kickoffAt": "2026-06-26T19:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-uruguay-spain": {
+    "kickoffAt": "2026-06-27T00:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-cape-verde-saudi-arabia": {
+    "kickoffAt": "2026-06-27T00:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-new-zealand-belgium": {
+    "kickoffAt": "2026-06-27T03:00:00.000Z",
+    "competitionName": "World Cup"
   }
 }

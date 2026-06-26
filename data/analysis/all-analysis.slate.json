@@ -56,7 +56,11 @@
     "manual-tunisia-netherlands",
     "manual-japan-sweden",
     "manual-paraguay-australia",
-    "manual-turkiye-usa"
+    "manual-turkiye-usa",
+    "manual-senegal-iraq",
+    "manual-uruguay-spain",
+    "manual-cape-verde-saudi-arabia",
+    "manual-new-zealand-belgium"
   ],
   "matches": [
     {
@@ -1460,6 +1464,118 @@
           "USA still own the higher raw ceiling, but the group position and rotation-risk layer make this a much shakier winner call than the badge names alone suggest.",
           "Turkiye are strong enough to turn the match tactical and stubborn, which makes the draw line more honest than forcing a narrow USA win.",
           "Top score-range view: 1-1 or 0-0."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-senegal-iraq",
+      "inlineDetail": {
+        "generatedAt": "2026-06-26T12:35:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-senegal-iraq",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "senegal", "name": "Senegal" },
+          "awayTeam": { "id": "iraq", "name": "Iraq" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Senegal",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Senegal -0.5",
+          "totalLean": "Over 2.0",
+          "correctScoreLean": "2-1",
+          "correctScoreLeans": ["2-1", "2-0"]
+        },
+        "notes": [
+          "Senegal still look like the stronger athletic and transition side, and this sets up like a must-respond night rather than a soft technical game.",
+          "Iraq can still keep the scoreline honest for stretches, but the broader quality and pressure profile still lean toward Senegal.",
+          "Top score-range view: 2-1 or 2-0 to Senegal."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-uruguay-spain",
+      "inlineDetail": {
+        "generatedAt": "2026-06-26T12:35:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-uruguay-spain",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "uruguay", "name": "Uruguay" },
+          "awayTeam": { "id": "spain", "name": "Spain" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Spain",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Spain -0.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "1-2",
+          "correctScoreLeans": ["1-2", "0-2"]
+        },
+        "notes": [
+          "Spain still carry the cleaner control profile and should own more of the calmer possession phases.",
+          "Uruguay are dangerous enough to keep this from becoming a carefree favorite spot, but Spain still look more likely to shape the right attacking sequences.",
+          "Top score-range view: 1-2 or 0-2 to Spain."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-cape-verde-saudi-arabia",
+      "inlineDetail": {
+        "generatedAt": "2026-06-26T12:35:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-cape-verde-saudi-arabia",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "cape-verde", "name": "Cape Verde" },
+          "awayTeam": { "id": "saudi-arabia", "name": "Saudi Arabia" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Cape Verde +0.25",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": ["1-1", "0-0"]
+        },
+        "notes": [
+          "This remains one of the slate's biggest draw warnings, with both teams more likely to protect the wrong mistake than to fully commit early.",
+          "Cape Verde have already shown they can make stronger teams uncomfortable, while Saudi Arabia still look more fragile than forceful.",
+          "Top score-range view: 1-1 or 0-0."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-new-zealand-belgium",
+      "inlineDetail": {
+        "generatedAt": "2026-06-26T12:35:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-new-zealand-belgium",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "new-zealand", "name": "New Zealand" },
+          "awayTeam": { "id": "belgium", "name": "Belgium" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Belgium",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Belgium -1.0",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": ["0-2", "1-3"]
+        },
+        "notes": [
+          "Belgium still own the bigger raw quality edge and look like the side most likely to turn repeated attacking pressure into separation.",
+          "New Zealand can stay lively, but the deeper talent spread should eventually tell if Belgium stay serious in the match.",
+          "Top score-range view: 0-2 or 1-3 to Belgium."
         ]
       }
     }
