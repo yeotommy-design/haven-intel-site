@@ -376,5 +376,33 @@
     "homeScore": "3",
     "awayScore": "2",
     "notes": "Turkiye beat USA 3-2."
+  },
+  "manual-senegal-iraq": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "5",
+    "awayScore": "0",
+    "notes": "Senegal beat Iraq 5-0."
+  },
+  "manual-uruguay-spain": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "1",
+    "notes": "Spain beat Uruguay 1-0."
+  },
+  "manual-cape-verde-saudi-arabia": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "0",
+    "notes": "Cape Verde drew Saudi Arabia 0-0."
+  },
+  "manual-new-zealand-belgium": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "5",
+    "notes": "Belgium beat New Zealand 5-1."
   }
 }
