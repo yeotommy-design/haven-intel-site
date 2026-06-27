@@ -218,5 +218,29 @@
   "manual-new-zealand-belgium": {
     "kickoffAt": "2026-06-27T03:00:00.000Z",
     "competitionName": "World Cup"
+  },
+  "manual-croatia-ghana": {
+    "kickoffAt": "2026-06-27T21:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-panama-england": {
+    "kickoffAt": "2026-06-27T21:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-colombia-portugal": {
+    "kickoffAt": "2026-06-28T00:30:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-dr-congo-uzbekistan": {
+    "kickoffAt": "2026-06-28T00:30:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-algeria-austria": {
+    "kickoffAt": "2026-06-28T03:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-jordan-argentina": {
+    "kickoffAt": "2026-06-28T03:00:00.000Z",
+    "competitionName": "World Cup"
   }
 }

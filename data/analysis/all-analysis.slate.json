@@ -60,7 +60,13 @@
     "manual-senegal-iraq",
     "manual-uruguay-spain",
     "manual-cape-verde-saudi-arabia",
-    "manual-new-zealand-belgium"
+    "manual-new-zealand-belgium",
+    "manual-croatia-ghana",
+    "manual-panama-england",
+    "manual-colombia-portugal",
+    "manual-dr-congo-uzbekistan",
+    "manual-algeria-austria",
+    "manual-jordan-argentina"
   ],
   "matches": [
     {
@@ -1576,6 +1582,174 @@
           "Belgium still own the bigger raw quality edge and look like the side most likely to turn repeated attacking pressure into separation.",
           "New Zealand can stay lively, but the deeper talent spread should eventually tell if Belgium stay serious in the match.",
           "Top score-range view: 0-2 or 1-3 to Belgium."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-croatia-ghana",
+      "inlineDetail": {
+        "generatedAt": "2026-06-27T05:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-croatia-ghana",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "croatia", "name": "Croatia" },
+          "awayTeam": { "id": "ghana", "name": "Ghana" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Croatia",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Croatia -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "1-1"]
+        },
+        "notes": [
+          "Croatia still look like the calmer and slightly cleaner football side in a game that may stay narrow for long stretches.",
+          "Ghana have enough athletic resistance to keep the draw alive, which is why the side lean stays smaller than the headline names might suggest.",
+          "Top score-range view: 1-0 or 1-1."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-panama-england",
+      "inlineDetail": {
+        "generatedAt": "2026-06-27T05:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-panama-england",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "panama", "name": "Panama" },
+          "awayTeam": { "id": "england", "name": "England" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "England",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "England -1.0",
+          "totalLean": "Under 3.0",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": ["0-2", "0-1"]
+        },
+        "notes": [
+          "England still own the strongest overall side edge on this slate, even if Panama's low-block resistance can keep the scoreline measured.",
+          "This still looks more like controlled English pressure than a loose or chaotic match script.",
+          "Top score-range view: 0-2 or 0-1 to England."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-colombia-portugal",
+      "inlineDetail": {
+        "generatedAt": "2026-06-27T05:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-colombia-portugal",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "colombia", "name": "Colombia" },
+          "awayTeam": { "id": "portugal", "name": "Portugal" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Colombia +0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": ["1-1", "0-0"]
+        },
+        "notes": [
+          "This feels more like a top-spot management match than a clean winner match, with the draw still the most natural football answer.",
+          "Portugal carry the stronger roster on paper, but Colombia's discipline and control can keep the match compressed.",
+          "Top score-range view: 1-1 or 0-0."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-dr-congo-uzbekistan",
+      "inlineDetail": {
+        "generatedAt": "2026-06-27T05:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-dr-congo-uzbekistan",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "dr-congo", "name": "Democratic Rep Congo" },
+          "awayTeam": { "id": "uzbekistan", "name": "Uzbekistan" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Democratic Rep Congo",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Democratic Rep Congo -0.25",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": ["1-0", "1-1"]
+        },
+        "notes": [
+          "DR Congo still hold the narrower side edge, but this feels more like a one-goal game than a full separation spot.",
+          "Uzbekistan are organized enough to keep the match stubborn and the draw relevant for long stretches.",
+          "Top score-range view: 1-0 or 1-1."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-algeria-austria",
+      "inlineDetail": {
+        "generatedAt": "2026-06-27T05:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-algeria-austria",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "algeria", "name": "Algeria" },
+          "awayTeam": { "id": "austria", "name": "Austria" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Austria +0.25",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": ["1-1", "0-0"]
+        },
+        "notes": [
+          "This is one of the slate's clearest draw-profile matches, with both game incentives and tactical shape pointing toward compression.",
+          "Austria still feel marginally safer in protection terms, but not enough to overturn the split as the cleaner match read.",
+          "Top score-range view: 1-1 or 0-0."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-jordan-argentina",
+      "inlineDetail": {
+        "generatedAt": "2026-06-27T05:10:00.000Z",
+        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "match": {
+          "id": "manual-jordan-argentina",
+          "competitionName": "World Cup",
+          "homeTeam": { "id": "jordan", "name": "Jordan" },
+          "awayTeam": { "id": "argentina", "name": "Argentina" },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Argentina",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Argentina -1.0",
+          "totalLean": "Under 3.0",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": ["0-2", "0-1"]
+        },
+        "notes": [
+          "Argentina still own the larger quality edge even with rotation, and the bigger question here is margin rather than direction.",
+          "Jordan's best path is discipline and patience, which can keep the scoreline measured without really changing the stronger side read.",
+          "Top score-range view: 0-2 or 0-1 to Argentina."
         ]
       }
     }
