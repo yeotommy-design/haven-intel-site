@@ -183,10 +183,11 @@
   ];
 
   const FEATURED_PREVIEW_IDS = [
-    "manual-senegal-iraq",
-    "manual-uruguay-spain",
-    "manual-cape-verde-saudi-arabia",
-    "manual-new-zealand-belgium"
+    "manual-croatia-ghana",
+    "manual-panama-england",
+    "manual-colombia-portugal",
+    "manual-dr-congo-uzbekistan",
+    "manual-algeria-austria"
   ];
 
   let featuredPreviewPromise = null;
@@ -214,36 +215,44 @@
   function buildFeaturedPreviewFallback() {
     return [
       {
-        id: "manual-senegal-iraq",
+        id: "manual-croatia-ghana",
         competitionName: "World Cup",
-        homeTeam: "Senegal",
-        awayTeam: "Iraq",
+        homeTeam: "Croatia",
+        awayTeam: "Ghana",
         kickoffLabel: "Tonight",
-        winnerLean: "Senegal"
+        winnerLean: "Croatia"
       },
       {
-        id: "manual-uruguay-spain",
+        id: "manual-panama-england",
         competitionName: "World Cup",
-        homeTeam: "Uruguay",
-        awayTeam: "Spain",
+        homeTeam: "Panama",
+        awayTeam: "England",
         kickoffLabel: "Tonight",
-        winnerLean: "Spain"
+        winnerLean: "England"
       },
       {
-        id: "manual-cape-verde-saudi-arabia",
+        id: "manual-colombia-portugal",
         competitionName: "World Cup",
-        homeTeam: "Cape Verde",
-        awayTeam: "Saudi Arabia",
+        homeTeam: "Colombia",
+        awayTeam: "Portugal",
         kickoffLabel: "Tonight",
         winnerLean: "Draw"
       },
       {
-        id: "manual-new-zealand-belgium",
+        id: "manual-dr-congo-uzbekistan",
         competitionName: "World Cup",
-        homeTeam: "New Zealand",
-        awayTeam: "Belgium",
+        homeTeam: "Democratic Rep Congo",
+        awayTeam: "Uzbekistan",
         kickoffLabel: "Tonight",
-        winnerLean: "Belgium"
+        winnerLean: "Democratic Rep Congo"
+      },
+      {
+        id: "manual-algeria-austria",
+        competitionName: "World Cup",
+        homeTeam: "Algeria",
+        awayTeam: "Austria",
+        kickoffLabel: "Tonight",
+        winnerLean: "Draw"
       }
     ];
   }
