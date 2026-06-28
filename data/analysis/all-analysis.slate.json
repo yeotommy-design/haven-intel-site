@@ -66,7 +66,12 @@
     "manual-colombia-portugal",
     "manual-dr-congo-uzbekistan",
     "manual-algeria-austria",
-    "manual-jordan-argentina"
+    "manual-jordan-argentina",
+    "manual-south-africa-canada",
+    "manual-qingdao-west-coast-zhejiang-professional",
+    "manual-cobresal-antofagasta",
+    "manual-huachipato-temuco",
+    "manual-la-serena-cobreloa"
   ],
   "matches": [
     {
@@ -79,7 +84,10 @@
         "handicapLean": "Portugal -1.5",
         "totalLean": "Under 3",
         "correctScoreLean": "2-0",
-        "correctScoreLeans": ["2-0", "1-0"]
+        "correctScoreLeans": [
+          "2-0",
+          "1-0"
+        ]
       }
     },
     {
@@ -92,7 +100,10 @@
         "handicapLean": "England -2",
         "totalLean": "Under 3",
         "correctScoreLean": "2-0",
-        "correctScoreLeans": ["2-0", "3-0"]
+        "correctScoreLeans": [
+          "2-0",
+          "3-0"
+        ]
       }
     },
     {
@@ -105,7 +116,10 @@
         "handicapLean": "South Africa +1.25",
         "totalLean": "Under 2.25",
         "correctScoreLean": "1-0",
-        "correctScoreLeans": ["1-0", "2-0"]
+        "correctScoreLeans": [
+          "1-0",
+          "2-0"
+        ]
       }
     },
     {
@@ -118,163 +132,401 @@
         "handicapLean": "Korea Republic 0",
         "totalLean": "Under 2.25",
         "correctScoreLean": "1-1",
-        "correctScoreLeans": ["1-1", "0-0"]
+        "correctScoreLeans": [
+          "1-1",
+          "0-0"
+        ]
       }
     },
     {
       "matchId": "manual-canada-bosnia",
       "inlineDetail": {
         "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-canada-bosnia",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "canada", "name": "Canada" },
-          "awayTeam": { "id": "bosnia", "name": "Bosnia" },
+          "homeTeam": {
+            "id": "canada",
+            "name": "Canada"
+          },
+          "awayTeam": {
+            "id": "bosnia",
+            "name": "Bosnia"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Canada", "likelyOutcome": "home", "confidence": "medium", "handicapLean": "Canada -0.5", "totalLean": "Under 2.5", "correctScoreLean": "1-0", "correctScoreLeans": ["1-0", "2-0"] },
-        "notes": ["Current market shape favors Canada without projecting a runaway margin.", "Goal-range read stays on the lower side, pointing more toward control than chaos.", "Top score-range view: 1-0 or 2-0."]
+        "summary": {
+          "likelyWinner": "Canada",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Canada -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
+        },
+        "notes": [
+          "Current market shape favors Canada without projecting a runaway margin.",
+          "Goal-range read stays on the lower side, pointing more toward control than chaos.",
+          "Top score-range view: 1-0 or 2-0."
+        ]
       }
     },
     {
       "matchId": "manual-audax-italiano-la-serena",
       "inlineDetail": {
         "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-audax-italiano-la-serena",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "audax-italiano", "name": "Audax Italiano" },
-          "awayTeam": { "id": "la-serena", "name": "La Serena" },
+          "homeTeam": {
+            "id": "audax-italiano",
+            "name": "Audax Italiano"
+          },
+          "awayTeam": {
+            "id": "la-serena",
+            "name": "La Serena"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Audax Italiano", "likelyOutcome": "home", "confidence": "medium", "handicapLean": "Audax Italiano -0.5", "totalLean": "Over 2.5", "correctScoreLean": "2-1", "correctScoreLeans": ["2-1", "2-0"] },
-        "notes": ["Current market shape puts Audax Italiano on top without pricing the match as a complete one-sided breakaway.", "The matchup profile still looks more open than compact, with both recent form and market framing leaning toward a higher-event game.", "Top score-range view: 2-1 or 2-0 to Audax Italiano."]
+        "summary": {
+          "likelyWinner": "Audax Italiano",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Audax Italiano -0.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-1",
+          "correctScoreLeans": [
+            "2-1",
+            "2-0"
+          ]
+        },
+        "notes": [
+          "Current market shape puts Audax Italiano on top without pricing the match as a complete one-sided breakaway.",
+          "The matchup profile still looks more open than compact, with both recent form and market framing leaning toward a higher-event game.",
+          "Top score-range view: 2-1 or 2-0 to Audax Italiano."
+        ]
       }
     },
     {
       "matchId": "manual-coquimbo-unido-ohiggins",
       "inlineDetail": {
         "generatedAt": "2026-06-13T09:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-coquimbo-unido-ohiggins",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "coquimbo-unido", "name": "Coquimbo Unido" },
-          "awayTeam": { "id": "ohiggins", "name": "O'Higgins" },
+          "homeTeam": {
+            "id": "coquimbo-unido",
+            "name": "Coquimbo Unido"
+          },
+          "awayTeam": {
+            "id": "ohiggins",
+            "name": "O'Higgins"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Coquimbo Unido", "likelyOutcome": "home", "confidence": "low", "handicapLean": "Coquimbo Unido 0", "totalLean": "Under 2.25", "correctScoreLean": "1-0", "correctScoreLeans": ["1-0", "1-1"] },
-        "notes": ["The latest shape gives Coquimbo Unido a slight edge, but the margin still looks narrow enough to keep the match in the balance for long spells.", "Goal-range pressure still points lower, with the game reading more like a controlled domestic contest than a wide-open exchange.", "Top score-range view: 1-0 or 1-1, with the home side still holding the stronger overall lean."]
+        "summary": {
+          "likelyWinner": "Coquimbo Unido",
+          "likelyOutcome": "home",
+          "confidence": "low",
+          "handicapLean": "Coquimbo Unido 0",
+          "totalLean": "Under 2.25",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": [
+            "1-0",
+            "1-1"
+          ]
+        },
+        "notes": [
+          "The latest shape gives Coquimbo Unido a slight edge, but the margin still looks narrow enough to keep the match in the balance for long spells.",
+          "Goal-range pressure still points lower, with the game reading more like a controlled domestic contest than a wide-open exchange.",
+          "Top score-range view: 1-0 or 1-1, with the home side still holding the stronger overall lean."
+        ]
       }
     },
     {
       "matchId": "manual-colo-colo-cobresal",
       "inlineDetail": {
         "generatedAt": "2026-06-13T13:20:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-colo-colo-cobresal",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "colo-colo", "name": "Colo Colo" },
-          "awayTeam": { "id": "cobresal", "name": "Cobresal" },
+          "homeTeam": {
+            "id": "colo-colo",
+            "name": "Colo Colo"
+          },
+          "awayTeam": {
+            "id": "cobresal",
+            "name": "Cobresal"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Colo Colo", "likelyOutcome": "home", "confidence": "high", "handicapLean": "Colo Colo -1.25", "totalLean": "Over 2.5", "correctScoreLean": "2-0", "correctScoreLeans": ["2-0", "3-0"] },
-        "notes": ["This is the strongest side separation on the current slate, with Colo Colo priced like the clearest favorite of the group.", "The matchup profile still supports a home team that should spend longer stretches in control and create the better attacking flow.", "Top score-range view: 2-0 or 3-0 to Colo Colo."]
+        "summary": {
+          "likelyWinner": "Colo Colo",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Colo Colo -1.25",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-0",
+          "correctScoreLeans": [
+            "2-0",
+            "3-0"
+          ]
+        },
+        "notes": [
+          "This is the strongest side separation on the current slate, with Colo Colo priced like the clearest favorite of the group.",
+          "The matchup profile still supports a home team that should spend longer stretches in control and create the better attacking flow.",
+          "Top score-range view: 2-0 or 3-0 to Colo Colo."
+        ]
       }
     },
     {
       "matchId": "manual-usa-paraguay",
       "inlineDetail": {
         "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-usa-paraguay",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "usa", "name": "USA" },
-          "awayTeam": { "id": "paraguay", "name": "Paraguay" },
+          "homeTeam": {
+            "id": "usa",
+            "name": "USA"
+          },
+          "awayTeam": {
+            "id": "paraguay",
+            "name": "Paraguay"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "USA", "likelyOutcome": "home", "confidence": "low", "handicapLean": "USA -0.5", "totalLean": "Under 2.5", "correctScoreLean": "1-0", "correctScoreLeans": ["1-0", "2-0"] },
-        "notes": ["The latest World Cup board still makes USA the side to beat, but only by a narrow margin rather than a dominant pricing gap.", "Total pricing continues to lean lower, pointing more toward control and game-state management than a wide-open scoring pattern.", "Top score-range view: 1-0 or 2-0 to USA."]
+        "summary": {
+          "likelyWinner": "USA",
+          "likelyOutcome": "home",
+          "confidence": "low",
+          "handicapLean": "USA -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
+        },
+        "notes": [
+          "The latest World Cup board still makes USA the side to beat, but only by a narrow margin rather than a dominant pricing gap.",
+          "Total pricing continues to lean lower, pointing more toward control and game-state management than a wide-open scoring pattern.",
+          "Top score-range view: 1-0 or 2-0 to USA."
+        ]
       }
     },
     {
       "matchId": "manual-qatar-switzerland",
       "inlineDetail": {
         "generatedAt": "2026-06-13T09:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-qatar-switzerland",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "qatar", "name": "Qatar" },
-          "awayTeam": { "id": "switzerland", "name": "Switzerland" },
+          "homeTeam": {
+            "id": "qatar",
+            "name": "Qatar"
+          },
+          "awayTeam": {
+            "id": "switzerland",
+            "name": "Switzerland"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Switzerland", "likelyOutcome": "away", "confidence": "high", "handicapLean": "Switzerland -1.75", "totalLean": "Under 2.5", "correctScoreLean": "0-2", "correctScoreLeans": ["0-2", "0-1"] },
-        "notes": ["Switzerland now sit in a firmer favorite position than the earlier softer read suggested, with the side edge looking more decisive.", "Even with that stronger side split, the totals picture still leans controlled rather than chaotic.", "Top score-range view: 0-2 or 0-1 to Switzerland."]
+        "summary": {
+          "likelyWinner": "Switzerland",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Switzerland -1.75",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-2",
+          "correctScoreLeans": [
+            "0-2",
+            "0-1"
+          ]
+        },
+        "notes": [
+          "Switzerland now sit in a firmer favorite position than the earlier softer read suggested, with the side edge looking more decisive.",
+          "Even with that stronger side split, the totals picture still leans controlled rather than chaotic.",
+          "Top score-range view: 0-2 or 0-1 to Switzerland."
+        ]
       }
     },
     {
       "matchId": "manual-brazil-morocco",
       "inlineDetail": {
         "generatedAt": "2026-06-13T09:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-brazil-morocco",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "brazil", "name": "Brazil" },
-          "awayTeam": { "id": "morocco", "name": "Morocco" },
+          "homeTeam": {
+            "id": "brazil",
+            "name": "Brazil"
+          },
+          "awayTeam": {
+            "id": "morocco",
+            "name": "Morocco"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Brazil", "likelyOutcome": "home", "confidence": "medium", "handicapLean": "Brazil -0.75", "totalLean": "Under 2.5", "correctScoreLean": "1-0", "correctScoreLeans": ["1-0", "2-0"] },
-        "notes": ["Brazil still look like the stronger side, but the market read continues to frame the match as more controlled than explosive.", "Morocco remain competitive enough to keep the margin view measured rather than runaway.", "Top score-range view: 1-0 or 2-0 to Brazil."]
+        "summary": {
+          "likelyWinner": "Brazil",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "Brazil -0.75",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
+        },
+        "notes": [
+          "Brazil still look like the stronger side, but the market read continues to frame the match as more controlled than explosive.",
+          "Morocco remain competitive enough to keep the margin view measured rather than runaway.",
+          "Top score-range view: 1-0 or 2-0 to Brazil."
+        ]
       }
     },
     {
       "matchId": "manual-haiti-scotland",
       "inlineDetail": {
         "generatedAt": "2026-06-13T09:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-haiti-scotland",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "haiti", "name": "Haiti" },
-          "awayTeam": { "id": "scotland", "name": "Scotland" },
+          "homeTeam": {
+            "id": "haiti",
+            "name": "Haiti"
+          },
+          "awayTeam": {
+            "id": "scotland",
+            "name": "Scotland"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Scotland", "likelyOutcome": "away", "confidence": "medium", "handicapLean": "Scotland -0.75", "totalLean": "Under 2.5", "correctScoreLean": "0-1", "correctScoreLeans": ["0-1", "0-2"] },
-        "notes": ["Scotland remain the stronger side on the overall pre-match read, but the margin still looks more controlled than runaway.", "The total picture now leans lower again, pointing more toward game management than a wide-open exchange.", "Top score-range view: 0-1 or 0-2 to Scotland."]
+        "summary": {
+          "likelyWinner": "Scotland",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Scotland -0.75",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-1",
+          "correctScoreLeans": [
+            "0-1",
+            "0-2"
+          ]
+        },
+        "notes": [
+          "Scotland remain the stronger side on the overall pre-match read, but the margin still looks more controlled than runaway.",
+          "The total picture now leans lower again, pointing more toward game management than a wide-open exchange.",
+          "Top score-range view: 0-1 or 0-2 to Scotland."
+        ]
       }
     },
     {
       "matchId": "manual-australia-turkey",
       "inlineDetail": {
         "generatedAt": "2026-06-14T02:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-australia-turkey",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "australia", "name": "Australia" },
-          "awayTeam": { "id": "turkey", "name": "Turkey" },
+          "homeTeam": {
+            "id": "australia",
+            "name": "Australia"
+          },
+          "awayTeam": {
+            "id": "turkey",
+            "name": "Turkey"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": "Turkey", "likelyOutcome": "away", "confidence": "medium", "handicapLean": "Turkey -0.25", "totalLean": "Under 2.5", "correctScoreLean": "0-1", "correctScoreLeans": ["0-1", "1-1"] },
-        "notes": ["Turkey hold the stronger overall side read, but the match still looks tight enough to avoid an overly aggressive margin stance.", "The total shape stays on the lower side, which fits a more tactical opener than a free-flowing game.", "Top score-range view: 0-1 or 1-1, with Turkey still holding the edge."]
+        "summary": {
+          "likelyWinner": "Turkey",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Turkey -0.25",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-1",
+          "correctScoreLeans": [
+            "0-1",
+            "1-1"
+          ]
+        },
+        "notes": [
+          "Turkey hold the stronger overall side read, but the match still looks tight enough to avoid an overly aggressive margin stance.",
+          "The total shape stays on the lower side, which fits a more tactical opener than a free-flowing game.",
+          "Top score-range view: 0-1 or 1-1, with Turkey still holding the edge."
+        ]
       }
     },
     {
       "matchId": "manual-germany-curacao",
       "inlineDetail": {
         "generatedAt": "2026-06-14T03:05:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-germany-curacao",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "germany", "name": "Germany" },
-          "awayTeam": { "id": "curacao", "name": "Curacao" },
+          "homeTeam": {
+            "id": "germany",
+            "name": "Germany"
+          },
+          "awayTeam": {
+            "id": "curacao",
+            "name": "Curacao"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -284,7 +536,10 @@
           "handicapLean": "Germany -3.5",
           "totalLean": "Over 4.0 / 4.5",
           "correctScoreLean": "3-0",
-          "correctScoreLeans": ["3-0", "4-0"]
+          "correctScoreLeans": [
+            "3-0",
+            "4-0"
+          ]
         },
         "notes": [
           "Germany carry the deeper squad, the stronger tournament baseline, and the cleaner control profile here.",
@@ -297,12 +552,22 @@
       "matchId": "manual-holland-japan",
       "inlineDetail": {
         "generatedAt": "2026-06-14T03:05:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-holland-japan",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "holland", "name": "Holland" },
-          "awayTeam": { "id": "japan", "name": "Japan" },
+          "homeTeam": {
+            "id": "holland",
+            "name": "Holland"
+          },
+          "awayTeam": {
+            "id": "japan",
+            "name": "Japan"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -312,7 +577,10 @@
           "handicapLean": "Holland -0.25",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-1"]
+          "correctScoreLeans": [
+            "1-0",
+            "2-1"
+          ]
         },
         "notes": [
           "Holland still hold the steadier tournament profile, but this is not a wide-gap matchup.",
@@ -325,12 +593,22 @@
       "matchId": "manual-sweden-tunisia",
       "inlineDetail": {
         "generatedAt": "2026-06-14T03:05:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-sweden-tunisia",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "sweden", "name": "Sweden" },
-          "awayTeam": { "id": "tunisia", "name": "Tunisia" },
+          "homeTeam": {
+            "id": "sweden",
+            "name": "Sweden"
+          },
+          "awayTeam": {
+            "id": "tunisia",
+            "name": "Tunisia"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -340,7 +618,10 @@
           "handicapLean": "Sweden -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-0"]
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
         },
         "notes": [
           "Sweden look a touch more settled in their match management and overall defensive shape.",
@@ -353,12 +634,22 @@
       "matchId": "manual-spain-cape-verde",
       "inlineDetail": {
         "generatedAt": "2026-06-15T08:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-spain-cape-verde",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "spain", "name": "Spain" },
-          "awayTeam": { "id": "cape-verde", "name": "Cape Verde" },
+          "homeTeam": {
+            "id": "spain",
+            "name": "Spain"
+          },
+          "awayTeam": {
+            "id": "cape-verde",
+            "name": "Cape Verde"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -368,7 +659,10 @@
           "handicapLean": "Spain -2",
           "totalLean": "Over 2.5",
           "correctScoreLean": "3-0",
-          "correctScoreLeans": ["3-0", "2-0"]
+          "correctScoreLeans": [
+            "3-0",
+            "2-0"
+          ]
         },
         "notes": [
           "Spain still carry the cleaner technical control, the deeper squad, and the stronger tournament baseline even with Lamine Yamal and Nico Williams managed carefully around kickoff.",
@@ -381,12 +675,22 @@
       "matchId": "manual-belgium-egypt",
       "inlineDetail": {
         "generatedAt": "2026-06-15T08:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-belgium-egypt",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "belgium", "name": "Belgium" },
-          "awayTeam": { "id": "egypt", "name": "Egypt" },
+          "homeTeam": {
+            "id": "belgium",
+            "name": "Belgium"
+          },
+          "awayTeam": {
+            "id": "egypt",
+            "name": "Egypt"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -396,7 +700,10 @@
           "handicapLean": "Belgium -0.5",
           "totalLean": "Over 2.5",
           "correctScoreLean": "2-1",
-          "correctScoreLeans": ["2-1", "1-0"]
+          "correctScoreLeans": [
+            "2-1",
+            "1-0"
+          ]
         },
         "notes": [
           "Belgium still look like the more complete side through midfield control and attacking depth, even if the group no longer feels like a simple walkover phase for them.",
@@ -409,12 +716,22 @@
       "matchId": "manual-saudi-arabia-uruguay",
       "inlineDetail": {
         "generatedAt": "2026-06-15T08:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-saudi-arabia-uruguay",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "saudi-arabia", "name": "Saudi Arabia" },
-          "awayTeam": { "id": "uruguay", "name": "Uruguay" },
+          "homeTeam": {
+            "id": "saudi-arabia",
+            "name": "Saudi Arabia"
+          },
+          "awayTeam": {
+            "id": "uruguay",
+            "name": "Uruguay"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -424,7 +741,10 @@
           "handicapLean": "Uruguay -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "0-1",
-          "correctScoreLeans": ["0-1", "0-2"]
+          "correctScoreLeans": [
+            "0-1",
+            "0-2"
+          ]
         },
         "notes": [
           "Uruguay still bring the stronger individual ceiling through players like Federico Valverde, but injuries in the back line and disrupted travel make this less clean than it would normally look on paper.",
@@ -437,12 +757,22 @@
       "matchId": "manual-iran-new-zealand",
       "inlineDetail": {
         "generatedAt": "2026-06-15T08:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-iran-new-zealand",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "iran", "name": "Iran" },
-          "awayTeam": { "id": "new-zealand", "name": "New Zealand" },
+          "homeTeam": {
+            "id": "iran",
+            "name": "Iran"
+          },
+          "awayTeam": {
+            "id": "new-zealand",
+            "name": "New Zealand"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -452,7 +782,10 @@
           "handicapLean": "Iran -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "1-1"]
+          "correctScoreLeans": [
+            "1-0",
+            "1-1"
+          ]
         },
         "notes": [
           "Iran still hold the stronger senior-level attacking reference points through Mehdi Taremi and a more seasoned tournament spine, even with preparation disrupted around arrival and off-field tension.",
@@ -465,12 +798,22 @@
       "matchId": "manual-argentina-austria",
       "inlineDetail": {
         "generatedAt": "2026-06-22T04:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-argentina-austria",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "argentina", "name": "Argentina" },
-          "awayTeam": { "id": "austria", "name": "Austria" },
+          "homeTeam": {
+            "id": "argentina",
+            "name": "Argentina"
+          },
+          "awayTeam": {
+            "id": "austria",
+            "name": "Austria"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -480,7 +823,10 @@
           "handicapLean": "Argentina -0.75",
           "totalLean": "Under 2.75",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-0"]
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
         },
         "notes": [
           "Argentina still bring the stronger tournament spine, more attacking solutions, and the cleaner match-winning route.",
@@ -493,12 +839,22 @@
       "matchId": "manual-france-iraq",
       "inlineDetail": {
         "generatedAt": "2026-06-22T04:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-france-iraq",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "france", "name": "France" },
-          "awayTeam": { "id": "iraq", "name": "Iraq" },
+          "homeTeam": {
+            "id": "france",
+            "name": "France"
+          },
+          "awayTeam": {
+            "id": "iraq",
+            "name": "Iraq"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -508,7 +864,10 @@
           "handicapLean": "France -2.25",
           "totalLean": "Over 2.75",
           "correctScoreLean": "3-0",
-          "correctScoreLeans": ["3-0", "4-0"]
+          "correctScoreLeans": [
+            "3-0",
+            "4-0"
+          ]
         },
         "notes": [
           "France remain the clearest favorite on the slate through superior depth, control, and repeated attacking pressure.",
@@ -521,12 +880,22 @@
       "matchId": "manual-norway-senegal",
       "inlineDetail": {
         "generatedAt": "2026-06-22T04:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-norway-senegal",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "norway", "name": "Norway" },
-          "awayTeam": { "id": "senegal", "name": "Senegal" },
+          "homeTeam": {
+            "id": "norway",
+            "name": "Norway"
+          },
+          "awayTeam": {
+            "id": "senegal",
+            "name": "Senegal"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -536,7 +905,10 @@
           "handicapLean": "Senegal +0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-1",
-          "correctScoreLeans": ["1-1", "1-0"]
+          "correctScoreLeans": [
+            "1-1",
+            "1-0"
+          ]
         },
         "notes": [
           "Norway still hold the narrower side edge through the cleaner attacking ceiling and the stronger chance of one decisive sequence.",
@@ -549,12 +921,22 @@
       "matchId": "manual-jordan-algeria",
       "inlineDetail": {
         "generatedAt": "2026-06-22T04:30:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-jordan-algeria",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "jordan", "name": "Jordan" },
-          "awayTeam": { "id": "algeria", "name": "Algeria" },
+          "homeTeam": {
+            "id": "jordan",
+            "name": "Jordan"
+          },
+          "awayTeam": {
+            "id": "algeria",
+            "name": "Algeria"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -564,7 +946,10 @@
           "handicapLean": "Algeria -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "0-1",
-          "correctScoreLeans": ["0-1", "1-1"]
+          "correctScoreLeans": [
+            "0-1",
+            "1-1"
+          ]
         },
         "notes": [
           "Algeria still look slightly cleaner in the quiet control phases and more likely to create the better-quality openings.",
@@ -577,12 +962,22 @@
       "matchId": "manual-portugal-uzbekistan",
       "inlineDetail": {
         "generatedAt": "2026-06-23T06:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-portugal-uzbekistan",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "portugal", "name": "Portugal" },
-          "awayTeam": { "id": "uzbekistan", "name": "Uzbekistan" },
+          "homeTeam": {
+            "id": "portugal",
+            "name": "Portugal"
+          },
+          "awayTeam": {
+            "id": "uzbekistan",
+            "name": "Uzbekistan"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -592,7 +987,10 @@
           "handicapLean": "Portugal -2.5",
           "totalLean": "Under 3.5",
           "correctScoreLean": "2-0",
-          "correctScoreLeans": ["2-0", "3-0"]
+          "correctScoreLeans": [
+            "2-0",
+            "3-0"
+          ]
         },
         "notes": [
           "Portugal still own the strongest side profile on this slate, with more depth, more control, and a clearer route to repeated attacking pressure.",
@@ -605,12 +1003,22 @@
       "matchId": "manual-england-ghana",
       "inlineDetail": {
         "generatedAt": "2026-06-23T06:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-england-ghana",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "england", "name": "England" },
-          "awayTeam": { "id": "ghana", "name": "Ghana" },
+          "homeTeam": {
+            "id": "england",
+            "name": "England"
+          },
+          "awayTeam": {
+            "id": "ghana",
+            "name": "Ghana"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -620,7 +1028,10 @@
           "handicapLean": "England -1.5",
           "totalLean": "Over 2.5",
           "correctScoreLean": "2-0",
-          "correctScoreLeans": ["2-0", "3-1"]
+          "correctScoreLeans": [
+            "2-0",
+            "3-1"
+          ]
         },
         "notes": [
           "England still rate as the stronger side through the broader attacking ceiling and the better chance of controlling the important phases.",
@@ -633,12 +1044,22 @@
       "matchId": "manual-panama-croatia",
       "inlineDetail": {
         "generatedAt": "2026-06-23T06:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-panama-croatia",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "panama", "name": "Panama" },
-          "awayTeam": { "id": "croatia", "name": "Croatia" },
+          "homeTeam": {
+            "id": "panama",
+            "name": "Panama"
+          },
+          "awayTeam": {
+            "id": "croatia",
+            "name": "Croatia"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -648,7 +1069,10 @@
           "handicapLean": "Croatia -1",
           "totalLean": "Over 2.5",
           "correctScoreLean": "0-2",
-          "correctScoreLeans": ["0-2", "1-2"]
+          "correctScoreLeans": [
+            "0-2",
+            "1-2"
+          ]
         },
         "notes": [
           "Croatia still look like the stronger football side, with the clearer route to control and the better chance of creating the higher-quality openings.",
@@ -661,12 +1085,22 @@
       "matchId": "manual-colombia-congo-dr",
       "inlineDetail": {
         "generatedAt": "2026-06-23T06:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-colombia-congo-dr",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "colombia", "name": "Colombia" },
-          "awayTeam": { "id": "congo-dr", "name": "Democratic Rep Congo" },
+          "homeTeam": {
+            "id": "colombia",
+            "name": "Colombia"
+          },
+          "awayTeam": {
+            "id": "congo-dr",
+            "name": "Democratic Rep Congo"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -676,7 +1110,10 @@
           "handicapLean": "Colombia -0.5",
           "totalLean": "Over 2.5",
           "correctScoreLean": "2-1",
-          "correctScoreLeans": ["2-1", "2-0"]
+          "correctScoreLeans": [
+            "2-1",
+            "2-0"
+          ]
         },
         "notes": [
           "Colombia still bring the cleaner attacking route and the stronger chance of turning control into enough serious chances.",
@@ -689,12 +1126,22 @@
       "matchId": "manual-bosnia-herzegovina-qatar",
       "inlineDetail": {
         "generatedAt": "2026-06-24T06:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-bosnia-herzegovina-qatar",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "bosnia-herzegovina", "name": "Bosnia and Herzegovina" },
-          "awayTeam": { "id": "qatar", "name": "Qatar" },
+          "homeTeam": {
+            "id": "bosnia-herzegovina",
+            "name": "Bosnia and Herzegovina"
+          },
+          "awayTeam": {
+            "id": "qatar",
+            "name": "Qatar"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -704,7 +1151,10 @@
           "handicapLean": "Bosnia and Herzegovina -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "1-1"]
+          "correctScoreLeans": [
+            "1-0",
+            "1-1"
+          ]
         },
         "notes": [
           "Bosnia and Herzegovina still look like the slightly better side in a match expected to stay lower-event and narrower on the scoreboard.",
@@ -717,12 +1167,22 @@
       "matchId": "manual-scotland-brazil",
       "inlineDetail": {
         "generatedAt": "2026-06-24T06:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-scotland-brazil",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "scotland", "name": "Scotland" },
-          "awayTeam": { "id": "brazil", "name": "Brazil" },
+          "homeTeam": {
+            "id": "scotland",
+            "name": "Scotland"
+          },
+          "awayTeam": {
+            "id": "brazil",
+            "name": "Brazil"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -732,7 +1192,10 @@
           "handicapLean": "Brazil -1.5",
           "totalLean": "Over 2.5",
           "correctScoreLean": "0-2",
-          "correctScoreLeans": ["0-2", "1-3"]
+          "correctScoreLeans": [
+            "0-2",
+            "1-3"
+          ]
         },
         "notes": [
           "Brazil still carry the strongest overall football edge in this match through the higher attacking ceiling and the cleaner route to control.",
@@ -745,12 +1208,22 @@
       "matchId": "manual-morocco-haiti",
       "inlineDetail": {
         "generatedAt": "2026-06-24T06:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-morocco-haiti",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "morocco", "name": "Morocco" },
-          "awayTeam": { "id": "haiti", "name": "Haiti" },
+          "homeTeam": {
+            "id": "morocco",
+            "name": "Morocco"
+          },
+          "awayTeam": {
+            "id": "haiti",
+            "name": "Haiti"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -760,7 +1233,10 @@
           "handicapLean": "Morocco -1",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-0"]
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
         },
         "notes": [
           "Morocco still look structurally cleaner and more likely to dictate the better phases of the match.",
@@ -773,12 +1249,22 @@
       "matchId": "manual-czech-republic-mexico",
       "inlineDetail": {
         "generatedAt": "2026-06-24T06:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-czech-republic-mexico",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "czech-republic", "name": "Czech Republic" },
-          "awayTeam": { "id": "mexico", "name": "Mexico" },
+          "homeTeam": {
+            "id": "czech-republic",
+            "name": "Czech Republic"
+          },
+          "awayTeam": {
+            "id": "mexico",
+            "name": "Mexico"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -788,7 +1274,10 @@
           "handicapLean": "Mexico 0",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-1",
-          "correctScoreLeans": ["1-1", "0-0"]
+          "correctScoreLeans": [
+            "1-1",
+            "0-0"
+          ]
         },
         "notes": [
           "This still reads like the biggest draw-danger match of the six, with neither side owning a clean enough edge to force a comfortable winner call.",
@@ -801,12 +1290,22 @@
       "matchId": "manual-switzerland-canada",
       "inlineDetail": {
         "generatedAt": "2026-06-24T06:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-switzerland-canada",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "switzerland", "name": "Switzerland" },
-          "awayTeam": { "id": "canada", "name": "Canada" },
+          "homeTeam": {
+            "id": "switzerland",
+            "name": "Switzerland"
+          },
+          "awayTeam": {
+            "id": "canada",
+            "name": "Canada"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -816,7 +1315,10 @@
           "handicapLean": "Canada +0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-1",
-          "correctScoreLeans": ["1-1", "1-0"]
+          "correctScoreLeans": [
+            "1-1",
+            "1-0"
+          ]
         },
         "notes": [
           "Switzerland still looked like the slightly cleaner side in a match expected to stay tight and tactically measured.",
@@ -829,12 +1331,22 @@
       "matchId": "manual-south-africa-korea-republic",
       "inlineDetail": {
         "generatedAt": "2026-06-24T06:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "market-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
         "match": {
           "id": "manual-south-africa-korea-republic",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "south-africa", "name": "South Africa" },
-          "awayTeam": { "id": "korea-republic", "name": "Korea Republic" },
+          "homeTeam": {
+            "id": "south-africa",
+            "name": "South Africa"
+          },
+          "awayTeam": {
+            "id": "korea-republic",
+            "name": "Korea Republic"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -844,7 +1356,10 @@
           "handicapLean": "Korea Republic -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "0-1",
-          "correctScoreLeans": ["0-1", "1-1"]
+          "correctScoreLeans": [
+            "0-1",
+            "1-1"
+          ]
         },
         "notes": [
           "Korea Republic still looked like the side with the cleaner football route and the better chance of controlling the important phases.",
@@ -857,12 +1372,22 @@
       "matchId": "manual-portugal-congo-dr",
       "inlineDetail": {
         "generatedAt": "2026-06-17T16:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-portugal-congo-dr",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "portugal", "name": "Portugal" },
-          "awayTeam": { "id": "congo-dr", "name": "Congo DR" },
+          "homeTeam": {
+            "id": "portugal",
+            "name": "Portugal"
+          },
+          "awayTeam": {
+            "id": "congo-dr",
+            "name": "Congo DR"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -872,7 +1397,10 @@
           "handicapLean": "Portugal -1.5",
           "totalLean": "Over 2.5",
           "correctScoreLean": "2-0",
-          "correctScoreLeans": ["2-0", "3-0"]
+          "correctScoreLeans": [
+            "2-0",
+            "3-0"
+          ]
         },
         "notes": [
           "Portugal still hold the strongest all-round quality edge in this batch, with more control, more tournament experience, and more match-winning depth.",
@@ -885,12 +1413,22 @@
       "matchId": "manual-england-croatia",
       "inlineDetail": {
         "generatedAt": "2026-06-17T16:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-england-croatia",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "england", "name": "England" },
-          "awayTeam": { "id": "croatia", "name": "Croatia" },
+          "homeTeam": {
+            "id": "england",
+            "name": "England"
+          },
+          "awayTeam": {
+            "id": "croatia",
+            "name": "Croatia"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -900,7 +1438,10 @@
           "handicapLean": "England -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-0"]
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
         },
         "notes": [
           "England still begin with the stronger side profile, but Croatia bring enough tournament maturity and midfield control to keep the opener serious.",
@@ -913,28 +1454,57 @@
       "matchId": "manual-ghana-panama",
       "inlineDetail": {
         "generatedAt": "2026-06-11T04:00:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "tracking-only"
+        },
         "match": {
           "id": "manual-ghana-panama",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "ghana", "name": "Ghana" },
-          "awayTeam": { "id": "panama", "name": "Panama" },
+          "homeTeam": {
+            "id": "ghana",
+            "name": "Ghana"
+          },
+          "awayTeam": {
+            "id": "panama",
+            "name": "Panama"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": null,
+          "likelyOutcome": null,
+          "confidence": null,
+          "handicapLean": null,
+          "totalLean": null,
+          "correctScoreLean": null
+        },
+        "notes": [
+          "Tracking only. Prediction will be added later."
+        ]
       }
     },
     {
       "matchId": "manual-switzerland-bosnia-herzegovina",
       "inlineDetail": {
         "generatedAt": "2026-06-18T17:05:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-switzerland-bosnia-herzegovina",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "switzerland", "name": "Switzerland" },
-          "awayTeam": { "id": "bosnia-herzegovina", "name": "Bosnia and Herzegovina" },
+          "homeTeam": {
+            "id": "switzerland",
+            "name": "Switzerland"
+          },
+          "awayTeam": {
+            "id": "bosnia-herzegovina",
+            "name": "Bosnia and Herzegovina"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -944,7 +1514,10 @@
           "handicapLean": "Switzerland -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "1-1"]
+          "correctScoreLeans": [
+            "1-0",
+            "1-1"
+          ]
         },
         "notes": [
           "Switzerland still look slightly more reliable through control and tournament calm, even if the match shape projects as tight rather than open.",
@@ -957,12 +1530,22 @@
       "matchId": "manual-canada-qatar",
       "inlineDetail": {
         "generatedAt": "2026-06-18T17:05:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-canada-qatar",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "canada", "name": "Canada" },
-          "awayTeam": { "id": "qatar", "name": "Qatar" },
+          "homeTeam": {
+            "id": "canada",
+            "name": "Canada"
+          },
+          "awayTeam": {
+            "id": "qatar",
+            "name": "Qatar"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -972,7 +1555,10 @@
           "handicapLean": "Canada -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-0"]
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
         },
         "notes": [
           "Canada gave the stronger football impression in the opener, and the return of Alphonso Davies raises the attacking ceiling at the right moment.",
@@ -985,12 +1571,22 @@
       "matchId": "manual-uzbekistan-colombia",
       "inlineDetail": {
         "generatedAt": "2026-06-17T16:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-uzbekistan-colombia",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "uzbekistan", "name": "Uzbekistan" },
-          "awayTeam": { "id": "colombia", "name": "Colombia" },
+          "homeTeam": {
+            "id": "uzbekistan",
+            "name": "Uzbekistan"
+          },
+          "awayTeam": {
+            "id": "colombia",
+            "name": "Colombia"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1000,7 +1596,10 @@
           "handicapLean": "Colombia -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "0-1",
-          "correctScoreLeans": ["0-1", "0-2"]
+          "correctScoreLeans": [
+            "0-1",
+            "0-2"
+          ]
         },
         "notes": [
           "Colombia still look like the stronger football side through attacking ceiling and broader top-level experience.",
@@ -1013,12 +1612,22 @@
       "matchId": "manual-usa-australia",
       "inlineDetail": {
         "generatedAt": "2026-06-19T12:20:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-usa-australia",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "usa", "name": "USA" },
-          "awayTeam": { "id": "australia", "name": "Australia" },
+          "homeTeam": {
+            "id": "usa",
+            "name": "USA"
+          },
+          "awayTeam": {
+            "id": "australia",
+            "name": "Australia"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1028,7 +1637,10 @@
           "handicapLean": "USA -0.5",
           "totalLean": "Over 2.0 / 2.5",
           "correctScoreLean": "2-1",
-          "correctScoreLeans": ["2-1", "1-0"]
+          "correctScoreLeans": [
+            "2-1",
+            "1-0"
+          ]
         },
         "notes": [
           "The United States still hold the stronger overall profile, but Australia are physical, organized, and capable of making the match far more combative than comfortable.",
@@ -1041,28 +1653,57 @@
       "matchId": "manual-scotland-morocco",
       "inlineDetail": {
         "generatedAt": "2026-06-19T11:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "tracking-only" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "tracking-only"
+        },
         "match": {
           "id": "manual-scotland-morocco",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "scotland", "name": "Scotland" },
-          "awayTeam": { "id": "morocco", "name": "Morocco" },
+          "homeTeam": {
+            "id": "scotland",
+            "name": "Scotland"
+          },
+          "awayTeam": {
+            "id": "morocco",
+            "name": "Morocco"
+          },
           "kickoffAt": null
         },
-        "summary": { "likelyWinner": null, "likelyOutcome": null, "confidence": null, "handicapLean": null, "totalLean": null, "correctScoreLean": null },
-        "notes": ["Tracking only. Prediction will be added later."]
+        "summary": {
+          "likelyWinner": null,
+          "likelyOutcome": null,
+          "confidence": null,
+          "handicapLean": null,
+          "totalLean": null,
+          "correctScoreLean": null
+        },
+        "notes": [
+          "Tracking only. Prediction will be added later."
+        ]
       }
     },
     {
       "matchId": "manual-brazil-haiti",
       "inlineDetail": {
         "generatedAt": "2026-06-19T12:20:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-brazil-haiti",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "brazil", "name": "Brazil" },
-          "awayTeam": { "id": "haiti", "name": "Haiti" },
+          "homeTeam": {
+            "id": "brazil",
+            "name": "Brazil"
+          },
+          "awayTeam": {
+            "id": "haiti",
+            "name": "Haiti"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1072,7 +1713,10 @@
           "handicapLean": "Brazil -1.5",
           "totalLean": "Under 3.5",
           "correctScoreLean": "2-0",
-          "correctScoreLeans": ["2-0", "3-0"]
+          "correctScoreLeans": [
+            "2-0",
+            "3-0"
+          ]
         },
         "notes": [
           "Brazil still own the biggest quality gap of the four, with far more control, talent, and chance volume expected over the ninety minutes.",
@@ -1085,12 +1729,22 @@
       "matchId": "manual-turkiye-paraguay",
       "inlineDetail": {
         "generatedAt": "2026-06-19T11:45:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-turkiye-paraguay",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "turkiye", "name": "Turkiye" },
-          "awayTeam": { "id": "paraguay", "name": "Paraguay" },
+          "homeTeam": {
+            "id": "turkiye",
+            "name": "Turkiye"
+          },
+          "awayTeam": {
+            "id": "paraguay",
+            "name": "Paraguay"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1100,7 +1754,10 @@
           "handicapLean": "Turkiye -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-0"]
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
         },
         "notes": [
           "Turkiye still look like the steadier rebound side, with enough attacking quality to punish Paraguay if the finishing is cleaner than it was in the opener.",
@@ -1113,12 +1770,22 @@
       "matchId": "manual-germany-cote-divoire",
       "inlineDetail": {
         "generatedAt": "2026-06-20T07:20:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-germany-cote-divoire",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "germany", "name": "Germany" },
-          "awayTeam": { "id": "cote-divoire", "name": "Cote d'Ivoire" },
+          "homeTeam": {
+            "id": "germany",
+            "name": "Germany"
+          },
+          "awayTeam": {
+            "id": "cote-divoire",
+            "name": "Cote d'Ivoire"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1128,7 +1795,10 @@
           "handicapLean": "Germany -1.0",
           "totalLean": "Over 2.5",
           "correctScoreLean": "2-1",
-          "correctScoreLeans": ["2-1", "2-0"]
+          "correctScoreLeans": [
+            "2-1",
+            "2-0"
+          ]
         },
         "notes": [
           "Germany still carry the stronger tournament baseline and the cleaner route to controlling long stretches of the match.",
@@ -1141,12 +1811,22 @@
       "matchId": "manual-ecuador-curacao",
       "inlineDetail": {
         "generatedAt": "2026-06-20T07:20:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-ecuador-curacao",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "ecuador", "name": "Ecuador" },
-          "awayTeam": { "id": "curacao", "name": "Curacao" },
+          "homeTeam": {
+            "id": "ecuador",
+            "name": "Ecuador"
+          },
+          "awayTeam": {
+            "id": "curacao",
+            "name": "Curacao"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1156,7 +1836,10 @@
           "handicapLean": "Ecuador -1.0",
           "totalLean": "Under 3.0",
           "correctScoreLean": "2-0",
-          "correctScoreLeans": ["2-0", "3-0"]
+          "correctScoreLeans": [
+            "2-0",
+            "3-0"
+          ]
         },
         "notes": [
           "Ecuador arrive in the cleanest must-win spot of the four, with far more control and structure expected across the ninety minutes.",
@@ -1169,12 +1852,22 @@
       "matchId": "manual-tunisia-japan",
       "inlineDetail": {
         "generatedAt": "2026-06-20T07:20:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-tunisia-japan",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "tunisia", "name": "Tunisia" },
-          "awayTeam": { "id": "japan", "name": "Japan" },
+          "homeTeam": {
+            "id": "tunisia",
+            "name": "Tunisia"
+          },
+          "awayTeam": {
+            "id": "japan",
+            "name": "Japan"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1184,7 +1877,10 @@
           "handicapLean": "Japan -0.5",
           "totalLean": "Over 2.0",
           "correctScoreLean": "1-2",
-          "correctScoreLeans": ["1-2", "0-1"]
+          "correctScoreLeans": [
+            "1-2",
+            "0-1"
+          ]
         },
         "notes": [
           "Japan look like the steadier football side after the Holland draw, with a cleaner balance between structure and chance creation.",
@@ -1197,12 +1893,22 @@
       "matchId": "manual-spain-saudi-arabia",
       "inlineDetail": {
         "generatedAt": "2026-06-21T07:40:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-spain-saudi-arabia",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "spain", "name": "Spain" },
-          "awayTeam": { "id": "saudi-arabia", "name": "Saudi Arabia" },
+          "homeTeam": {
+            "id": "spain",
+            "name": "Spain"
+          },
+          "awayTeam": {
+            "id": "saudi-arabia",
+            "name": "Saudi Arabia"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1212,7 +1918,10 @@
           "handicapLean": "Spain -1.5",
           "totalLean": "Over 2.5",
           "correctScoreLean": "3-0",
-          "correctScoreLeans": ["3-0", "2-0"]
+          "correctScoreLeans": [
+            "3-0",
+            "2-0"
+          ]
         },
         "notes": [
           "Spain still own the cleanest control profile on this slate, and the Cape Verde draw reads more like a finishing failure than a collapse in authority.",
@@ -1225,12 +1934,22 @@
       "matchId": "manual-belgium-iran",
       "inlineDetail": {
         "generatedAt": "2026-06-21T07:40:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-belgium-iran",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "belgium", "name": "Belgium" },
-          "awayTeam": { "id": "iran", "name": "Iran" },
+          "homeTeam": {
+            "id": "belgium",
+            "name": "Belgium"
+          },
+          "awayTeam": {
+            "id": "iran",
+            "name": "Iran"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1240,7 +1959,10 @@
           "handicapLean": "Belgium -0.5",
           "totalLean": "Over 2.5",
           "correctScoreLean": "2-1",
-          "correctScoreLeans": ["2-1", "1-0"]
+          "correctScoreLeans": [
+            "2-1",
+            "1-0"
+          ]
         },
         "notes": [
           "Belgium still bring the higher individual ceiling and more routes to decisive attacking moments, which keeps them in front on the basic side read.",
@@ -1253,12 +1975,22 @@
       "matchId": "manual-uruguay-cape-verde",
       "inlineDetail": {
         "generatedAt": "2026-06-21T07:40:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-uruguay-cape-verde",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "uruguay", "name": "Uruguay" },
-          "awayTeam": { "id": "cape-verde", "name": "Cape Verde" },
+          "homeTeam": {
+            "id": "uruguay",
+            "name": "Uruguay"
+          },
+          "awayTeam": {
+            "id": "cape-verde",
+            "name": "Cape Verde"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1268,7 +2000,10 @@
           "handicapLean": "Uruguay -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "2-0"]
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
         },
         "notes": [
           "Uruguay still look more mature and better placed to control the larger emotional phases of the match.",
@@ -1281,12 +2016,22 @@
       "matchId": "manual-new-zealand-egypt",
       "inlineDetail": {
         "generatedAt": "2026-06-21T07:40:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-new-zealand-egypt",
           "competitionName": "Manual Watchlist",
-          "homeTeam": { "id": "new-zealand", "name": "New Zealand" },
-          "awayTeam": { "id": "egypt", "name": "Egypt" },
+          "homeTeam": {
+            "id": "new-zealand",
+            "name": "New Zealand"
+          },
+          "awayTeam": {
+            "id": "egypt",
+            "name": "Egypt"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1296,7 +2041,10 @@
           "handicapLean": "Egypt -0.5",
           "totalLean": "Over 2.0",
           "correctScoreLean": "1-2",
-          "correctScoreLeans": ["1-2", "0-1"]
+          "correctScoreLeans": [
+            "1-2",
+            "0-1"
+          ]
         },
         "notes": [
           "Egypt look more balanced and more reliable across the full ninety minutes, especially in the defensive structure that New Zealand struggled to maintain against Iran.",
@@ -1309,12 +2057,22 @@
       "matchId": "manual-curacao-cote-divoire",
       "inlineDetail": {
         "generatedAt": "2026-06-25T06:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "odds-and-context-read"
+        },
         "match": {
           "id": "manual-curacao-cote-divoire",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "curacao", "name": "Curacao" },
-          "awayTeam": { "id": "cote-divoire", "name": "Cote d'Ivoire" },
+          "homeTeam": {
+            "id": "curacao",
+            "name": "Curacao"
+          },
+          "awayTeam": {
+            "id": "cote-divoire",
+            "name": "Cote d'Ivoire"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1324,7 +2082,10 @@
           "handicapLean": "Cote d'Ivoire -1.0",
           "totalLean": "Under 3.0",
           "correctScoreLean": "0-2",
-          "correctScoreLeans": ["0-2", "0-1"]
+          "correctScoreLeans": [
+            "0-2",
+            "0-1"
+          ]
         },
         "notes": [
           "Curacao have spent too much of this tournament defending long spells, while Cote d'Ivoire still project as the side with the cleaner route to field control and territory.",
@@ -1337,12 +2098,22 @@
       "matchId": "manual-ecuador-germany",
       "inlineDetail": {
         "generatedAt": "2026-06-25T06:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "odds-and-context-read"
+        },
         "match": {
           "id": "manual-ecuador-germany",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "ecuador", "name": "Ecuador" },
-          "awayTeam": { "id": "germany", "name": "Germany" },
+          "homeTeam": {
+            "id": "ecuador",
+            "name": "Ecuador"
+          },
+          "awayTeam": {
+            "id": "germany",
+            "name": "Germany"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1352,7 +2123,10 @@
           "handicapLean": "Germany -0.25",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-2",
-          "correctScoreLeans": ["1-2", "0-1"]
+          "correctScoreLeans": [
+            "1-2",
+            "0-1"
+          ]
         },
         "notes": [
           "Ecuador bring urgency and real draw resistance, but Germany still rate stronger in the overall side-quality and game-management layer.",
@@ -1365,12 +2139,22 @@
       "matchId": "manual-tunisia-netherlands",
       "inlineDetail": {
         "generatedAt": "2026-06-25T06:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "odds-and-context-read"
+        },
         "match": {
           "id": "manual-tunisia-netherlands",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "tunisia", "name": "Tunisia" },
-          "awayTeam": { "id": "netherlands", "name": "Netherlands" },
+          "homeTeam": {
+            "id": "tunisia",
+            "name": "Tunisia"
+          },
+          "awayTeam": {
+            "id": "netherlands",
+            "name": "Netherlands"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1380,7 +2164,10 @@
           "handicapLean": "Netherlands -1.0",
           "totalLean": "Over 2.5",
           "correctScoreLean": "0-2",
-          "correctScoreLeans": ["0-2", "1-3"]
+          "correctScoreLeans": [
+            "0-2",
+            "1-3"
+          ]
         },
         "notes": [
           "Netherlands still look like the more complete football side, with stronger control patterns and the cleaner attacking ceiling.",
@@ -1393,12 +2180,22 @@
       "matchId": "manual-japan-sweden",
       "inlineDetail": {
         "generatedAt": "2026-06-25T06:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "odds-and-context-read"
+        },
         "match": {
           "id": "manual-japan-sweden",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "japan", "name": "Japan" },
-          "awayTeam": { "id": "sweden", "name": "Sweden" },
+          "homeTeam": {
+            "id": "japan",
+            "name": "Japan"
+          },
+          "awayTeam": {
+            "id": "sweden",
+            "name": "Sweden"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1408,7 +2205,10 @@
           "handicapLean": "Japan -0.5",
           "totalLean": "Over 2.0",
           "correctScoreLean": "2-1",
-          "correctScoreLeans": ["2-1", "1-0"]
+          "correctScoreLeans": [
+            "2-1",
+            "1-0"
+          ]
         },
         "notes": [
           "Japan still arrive as the steadier football side, with better rhythm, cleaner structure, and fewer loose phases than Sweden have shown.",
@@ -1421,12 +2221,22 @@
       "matchId": "manual-paraguay-australia",
       "inlineDetail": {
         "generatedAt": "2026-06-25T06:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "odds-and-context-read"
+        },
         "match": {
           "id": "manual-paraguay-australia",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "paraguay", "name": "Paraguay" },
-          "awayTeam": { "id": "australia", "name": "Australia" },
+          "homeTeam": {
+            "id": "paraguay",
+            "name": "Paraguay"
+          },
+          "awayTeam": {
+            "id": "australia",
+            "name": "Australia"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1436,7 +2246,10 @@
           "handicapLean": "Australia +0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-1",
-          "correctScoreLeans": ["1-1", "0-0"]
+          "correctScoreLeans": [
+            "1-1",
+            "0-0"
+          ]
         },
         "notes": [
           "This is the strongest draw warning on the slate, with Australia in the more comfortable position and Paraguay missing a key creative piece in Miguel Almiron.",
@@ -1449,12 +2262,22 @@
       "matchId": "manual-turkiye-usa",
       "inlineDetail": {
         "generatedAt": "2026-06-25T06:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "odds-and-context-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "odds-and-context-read"
+        },
         "match": {
           "id": "manual-turkiye-usa",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "turkiye", "name": "Turkiye" },
-          "awayTeam": { "id": "usa", "name": "USA" },
+          "homeTeam": {
+            "id": "turkiye",
+            "name": "Turkiye"
+          },
+          "awayTeam": {
+            "id": "usa",
+            "name": "USA"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1464,7 +2287,10 @@
           "handicapLean": "Turkiye +0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-1",
-          "correctScoreLeans": ["1-1", "0-0"]
+          "correctScoreLeans": [
+            "1-1",
+            "0-0"
+          ]
         },
         "notes": [
           "USA still own the higher raw ceiling, but the group position and rotation-risk layer make this a much shakier winner call than the badge names alone suggest.",
@@ -1477,12 +2303,22 @@
       "matchId": "manual-senegal-iraq",
       "inlineDetail": {
         "generatedAt": "2026-06-26T12:35:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-senegal-iraq",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "senegal", "name": "Senegal" },
-          "awayTeam": { "id": "iraq", "name": "Iraq" },
+          "homeTeam": {
+            "id": "senegal",
+            "name": "Senegal"
+          },
+          "awayTeam": {
+            "id": "iraq",
+            "name": "Iraq"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1492,7 +2328,10 @@
           "handicapLean": "Senegal -0.5",
           "totalLean": "Over 2.0",
           "correctScoreLean": "2-1",
-          "correctScoreLeans": ["2-1", "2-0"]
+          "correctScoreLeans": [
+            "2-1",
+            "2-0"
+          ]
         },
         "notes": [
           "Senegal still look like the stronger athletic and transition side, and this sets up like a must-respond night rather than a soft technical game.",
@@ -1505,12 +2344,22 @@
       "matchId": "manual-uruguay-spain",
       "inlineDetail": {
         "generatedAt": "2026-06-26T12:35:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-uruguay-spain",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "uruguay", "name": "Uruguay" },
-          "awayTeam": { "id": "spain", "name": "Spain" },
+          "homeTeam": {
+            "id": "uruguay",
+            "name": "Uruguay"
+          },
+          "awayTeam": {
+            "id": "spain",
+            "name": "Spain"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1520,7 +2369,10 @@
           "handicapLean": "Spain -0.5",
           "totalLean": "Over 2.5",
           "correctScoreLean": "1-2",
-          "correctScoreLeans": ["1-2", "0-2"]
+          "correctScoreLeans": [
+            "1-2",
+            "0-2"
+          ]
         },
         "notes": [
           "Spain still carry the cleaner control profile and should own more of the calmer possession phases.",
@@ -1533,12 +2385,22 @@
       "matchId": "manual-cape-verde-saudi-arabia",
       "inlineDetail": {
         "generatedAt": "2026-06-26T12:35:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-cape-verde-saudi-arabia",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "cape-verde", "name": "Cape Verde" },
-          "awayTeam": { "id": "saudi-arabia", "name": "Saudi Arabia" },
+          "homeTeam": {
+            "id": "cape-verde",
+            "name": "Cape Verde"
+          },
+          "awayTeam": {
+            "id": "saudi-arabia",
+            "name": "Saudi Arabia"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1548,7 +2410,10 @@
           "handicapLean": "Cape Verde +0.25",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-1",
-          "correctScoreLeans": ["1-1", "0-0"]
+          "correctScoreLeans": [
+            "1-1",
+            "0-0"
+          ]
         },
         "notes": [
           "This remains one of the slate's biggest draw warnings, with both teams more likely to protect the wrong mistake than to fully commit early.",
@@ -1561,12 +2426,22 @@
       "matchId": "manual-new-zealand-belgium",
       "inlineDetail": {
         "generatedAt": "2026-06-26T12:35:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-new-zealand-belgium",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "new-zealand", "name": "New Zealand" },
-          "awayTeam": { "id": "belgium", "name": "Belgium" },
+          "homeTeam": {
+            "id": "new-zealand",
+            "name": "New Zealand"
+          },
+          "awayTeam": {
+            "id": "belgium",
+            "name": "Belgium"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1576,7 +2451,10 @@
           "handicapLean": "Belgium -1.0",
           "totalLean": "Over 2.5",
           "correctScoreLean": "0-2",
-          "correctScoreLeans": ["0-2", "1-3"]
+          "correctScoreLeans": [
+            "0-2",
+            "1-3"
+          ]
         },
         "notes": [
           "Belgium still own the bigger raw quality edge and look like the side most likely to turn repeated attacking pressure into separation.",
@@ -1589,12 +2467,22 @@
       "matchId": "manual-croatia-ghana",
       "inlineDetail": {
         "generatedAt": "2026-06-27T05:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-croatia-ghana",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "croatia", "name": "Croatia" },
-          "awayTeam": { "id": "ghana", "name": "Ghana" },
+          "homeTeam": {
+            "id": "croatia",
+            "name": "Croatia"
+          },
+          "awayTeam": {
+            "id": "ghana",
+            "name": "Ghana"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1604,7 +2492,10 @@
           "handicapLean": "Croatia -0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "1-1"]
+          "correctScoreLeans": [
+            "1-0",
+            "1-1"
+          ]
         },
         "notes": [
           "Croatia still look like the calmer and slightly cleaner football side in a game that may stay narrow for long stretches.",
@@ -1617,12 +2508,22 @@
       "matchId": "manual-panama-england",
       "inlineDetail": {
         "generatedAt": "2026-06-27T05:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-panama-england",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "panama", "name": "Panama" },
-          "awayTeam": { "id": "england", "name": "England" },
+          "homeTeam": {
+            "id": "panama",
+            "name": "Panama"
+          },
+          "awayTeam": {
+            "id": "england",
+            "name": "England"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1632,7 +2533,10 @@
           "handicapLean": "England -1.0",
           "totalLean": "Under 3.0",
           "correctScoreLean": "0-2",
-          "correctScoreLeans": ["0-2", "0-1"]
+          "correctScoreLeans": [
+            "0-2",
+            "0-1"
+          ]
         },
         "notes": [
           "England still own the strongest overall side edge on this slate, even if Panama's low-block resistance can keep the scoreline measured.",
@@ -1645,12 +2549,22 @@
       "matchId": "manual-colombia-portugal",
       "inlineDetail": {
         "generatedAt": "2026-06-27T05:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-colombia-portugal",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "colombia", "name": "Colombia" },
-          "awayTeam": { "id": "portugal", "name": "Portugal" },
+          "homeTeam": {
+            "id": "colombia",
+            "name": "Colombia"
+          },
+          "awayTeam": {
+            "id": "portugal",
+            "name": "Portugal"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1660,7 +2574,10 @@
           "handicapLean": "Colombia +0.5",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-1",
-          "correctScoreLeans": ["1-1", "0-0"]
+          "correctScoreLeans": [
+            "1-1",
+            "0-0"
+          ]
         },
         "notes": [
           "This feels more like a top-spot management match than a clean winner match, with the draw still the most natural football answer.",
@@ -1673,12 +2590,22 @@
       "matchId": "manual-dr-congo-uzbekistan",
       "inlineDetail": {
         "generatedAt": "2026-06-27T05:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-dr-congo-uzbekistan",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "dr-congo", "name": "Democratic Rep Congo" },
-          "awayTeam": { "id": "uzbekistan", "name": "Uzbekistan" },
+          "homeTeam": {
+            "id": "dr-congo",
+            "name": "Democratic Rep Congo"
+          },
+          "awayTeam": {
+            "id": "uzbekistan",
+            "name": "Uzbekistan"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1688,7 +2615,10 @@
           "handicapLean": "Democratic Rep Congo -0.25",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-0",
-          "correctScoreLeans": ["1-0", "1-1"]
+          "correctScoreLeans": [
+            "1-0",
+            "1-1"
+          ]
         },
         "notes": [
           "DR Congo still hold the narrower side edge, but this feels more like a one-goal game than a full separation spot.",
@@ -1701,12 +2631,22 @@
       "matchId": "manual-algeria-austria",
       "inlineDetail": {
         "generatedAt": "2026-06-27T05:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-algeria-austria",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "algeria", "name": "Algeria" },
-          "awayTeam": { "id": "austria", "name": "Austria" },
+          "homeTeam": {
+            "id": "algeria",
+            "name": "Algeria"
+          },
+          "awayTeam": {
+            "id": "austria",
+            "name": "Austria"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1716,7 +2656,10 @@
           "handicapLean": "Austria +0.25",
           "totalLean": "Under 2.5",
           "correctScoreLean": "1-1",
-          "correctScoreLeans": ["1-1", "0-0"]
+          "correctScoreLeans": [
+            "1-1",
+            "0-0"
+          ]
         },
         "notes": [
           "This is one of the slate's clearest draw-profile matches, with both game incentives and tactical shape pointing toward compression.",
@@ -1729,12 +2672,22 @@
       "matchId": "manual-jordan-argentina",
       "inlineDetail": {
         "generatedAt": "2026-06-27T05:10:00.000Z",
-        "source": { "provider": "ProjectHaven", "mode": "manual", "method": "match-read" },
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
         "match": {
           "id": "manual-jordan-argentina",
           "competitionName": "World Cup",
-          "homeTeam": { "id": "jordan", "name": "Jordan" },
-          "awayTeam": { "id": "argentina", "name": "Argentina" },
+          "homeTeam": {
+            "id": "jordan",
+            "name": "Jordan"
+          },
+          "awayTeam": {
+            "id": "argentina",
+            "name": "Argentina"
+          },
           "kickoffAt": null
         },
         "summary": {
@@ -1744,12 +2697,220 @@
           "handicapLean": "Argentina -1.0",
           "totalLean": "Under 3.0",
           "correctScoreLean": "0-2",
-          "correctScoreLeans": ["0-2", "0-1"]
+          "correctScoreLeans": [
+            "0-2",
+            "0-1"
+          ]
         },
         "notes": [
           "Argentina still own the larger quality edge even with rotation, and the bigger question here is margin rather than direction.",
           "Jordan's best path is discipline and patience, which can keep the scoreline measured without really changing the stronger side read.",
           "Top score-range view: 0-2 or 0-1 to Argentina."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-south-africa-canada",
+      "inlineDetail": {
+        "generatedAt": "2026-06-28T06:40:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-south-africa-canada",
+          "competitionName": "World Cup",
+          "homeTeam": {
+            "id": "south-africa",
+            "name": "South Africa"
+          },
+          "awayTeam": {
+            "id": "canada",
+            "name": "Canada"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Canada",
+          "likelyOutcome": "away",
+          "confidence": "high",
+          "handicapLean": "Canada -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-1",
+          "correctScoreLeans": [
+            "0-1",
+            "0-2"
+          ]
+        },
+        "notes": [
+          "Canada still carry the cleaner overall edge because the pace, athletic floor, and broader attacking upside point more naturally in their direction.",
+          "South Africa can still keep the match respectable if they stay disciplined early, but the stronger route still leans toward Canada finding the clearer moments.",
+          "Top score-range view: 0-1 or 0-2 to Canada."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-qingdao-west-coast-zhejiang-professional",
+      "inlineDetail": {
+        "generatedAt": "2026-06-28T06:40:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
+        "match": {
+          "id": "manual-qingdao-west-coast-zhejiang-professional",
+          "competitionName": "China Super League",
+          "homeTeam": {
+            "id": "qingdao-west-coast",
+            "name": "Qingdao West Coast"
+          },
+          "awayTeam": {
+            "id": "zhejiang-professional",
+            "name": "Zhejiang Professional"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Zhejiang Professional",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Zhejiang Professional 0",
+          "totalLean": "Over 2.0 / 2.5",
+          "correctScoreLean": "1-2",
+          "correctScoreLeans": [
+            "1-2",
+            "0-1"
+          ]
+        },
+        "notes": [
+          "Zhejiang Professional still look like the cleaner football side, but this is closer to a working away edge than a free-hit favorite spot.",
+          "Qingdao West Coast have enough at home to keep the scoreline live, which is why the protection angle stays safer than a heavy away handicap.",
+          "Top score-range view: 1-2 or 0-1 to Zhejiang Professional."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-cobresal-antofagasta",
+      "inlineDetail": {
+        "generatedAt": "2026-06-28T06:40:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-cobresal-antofagasta",
+          "competitionName": "Chile Cup",
+          "homeTeam": {
+            "id": "cobresal",
+            "name": "Cobresal"
+          },
+          "awayTeam": {
+            "id": "antofagasta",
+            "name": "CD Antofagasta"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Cobresal",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Cobresal -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
+        },
+        "notes": [
+          "Cobresal still hold the cleaner route because they look more stable across the full match and more likely to create the stronger chances without opening themselves up too much.",
+          "Antofagasta can still resist for long spells, but their better route is containment rather than taking command.",
+          "Top score-range view: 1-0 or 2-0 to Cobresal."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-huachipato-temuco",
+      "inlineDetail": {
+        "generatedAt": "2026-06-28T06:40:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-huachipato-temuco",
+          "competitionName": "Chile Cup",
+          "homeTeam": {
+            "id": "huachipato",
+            "name": "Huachipato"
+          },
+          "awayTeam": {
+            "id": "temuco",
+            "name": "Deportes Temuco"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Huachipato",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Huachipato -0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": [
+            "1-0",
+            "2-0"
+          ]
+        },
+        "notes": [
+          "Huachipato still feel like the cleaner and more reliable team profile, especially if the game stays tactical rather than open.",
+          "Temuco can stay stubborn, but their route is more about disruption than sustained command.",
+          "Top score-range view: 1-0 or 2-0 to Huachipato."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-la-serena-cobreloa",
+      "inlineDetail": {
+        "generatedAt": "2026-06-28T06:40:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "market-read"
+        },
+        "match": {
+          "id": "manual-la-serena-cobreloa",
+          "competitionName": "Chile Cup",
+          "homeTeam": {
+            "id": "la-serena",
+            "name": "La Serena"
+          },
+          "awayTeam": {
+            "id": "cobreloa",
+            "name": "Cobreloa"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "La Serena",
+          "likelyOutcome": "home",
+          "confidence": "medium",
+          "handicapLean": "La Serena -0.25",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-0",
+          "correctScoreLeans": [
+            "1-0",
+            "1-1"
+          ]
+        },
+        "notes": [
+          "La Serena still look slightly more likely to own the useful moments, but this is not wide enough to dismiss the draw risk.",
+          "Cobreloa can keep the match compact, so the better home angle is still a modest one rather than an aggressive spread.",
+          "Top score-range view: 1-0 or 1-1."
         ]
       }
     }

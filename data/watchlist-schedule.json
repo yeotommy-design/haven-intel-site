@@ -242,5 +242,25 @@
   "manual-jordan-argentina": {
     "kickoffAt": "2026-06-28T03:00:00.000Z",
     "competitionName": "World Cup"
+  },
+  "manual-south-africa-canada": {
+    "kickoffAt": "2026-06-28T19:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-qingdao-west-coast-zhejiang-professional": {
+    "kickoffAt": "2026-06-28T10:00:00.000Z",
+    "competitionName": "China Super League"
+  },
+  "manual-cobresal-antofagasta": {
+    "kickoffAt": "2026-06-28T16:30:00.000Z",
+    "competitionName": "Chile Cup"
+  },
+  "manual-huachipato-temuco": {
+    "kickoffAt": "2026-06-28T19:00:00.000Z",
+    "competitionName": "Chile Cup"
+  },
+  "manual-la-serena-cobreloa": {
+    "kickoffAt": "2026-06-28T16:30:00.000Z",
+    "competitionName": "Chile Cup"
   }
 }

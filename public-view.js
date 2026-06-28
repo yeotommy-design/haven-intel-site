@@ -183,11 +183,11 @@
   ];
 
   const FEATURED_PREVIEW_IDS = [
-    "manual-croatia-ghana",
-    "manual-panama-england",
-    "manual-colombia-portugal",
-    "manual-dr-congo-uzbekistan",
-    "manual-algeria-austria"
+    "manual-south-africa-canada",
+    "manual-cobresal-antofagasta",
+    "manual-huachipato-temuco",
+    "manual-qingdao-west-coast-zhejiang-professional",
+    "manual-la-serena-cobreloa"
   ];
 
   let featuredPreviewPromise = null;
@@ -215,44 +215,44 @@
   function buildFeaturedPreviewFallback() {
     return [
       {
-        id: "manual-croatia-ghana",
+        id: "manual-south-africa-canada",
         competitionName: "World Cup",
-        homeTeam: "Croatia",
-        awayTeam: "Ghana",
+        homeTeam: "South Africa",
+        awayTeam: "Canada",
         kickoffLabel: "Tonight",
-        winnerLean: "Croatia"
+        winnerLean: "Canada"
       },
       {
-        id: "manual-panama-england",
-        competitionName: "World Cup",
-        homeTeam: "Panama",
-        awayTeam: "England",
+        id: "manual-cobresal-antofagasta",
+        competitionName: "Chile Cup",
+        homeTeam: "Cobresal",
+        awayTeam: "CD Antofagasta",
         kickoffLabel: "Tonight",
-        winnerLean: "England"
+        winnerLean: "Cobresal"
       },
       {
-        id: "manual-colombia-portugal",
-        competitionName: "World Cup",
-        homeTeam: "Colombia",
-        awayTeam: "Portugal",
+        id: "manual-huachipato-temuco",
+        competitionName: "Chile Cup",
+        homeTeam: "Huachipato",
+        awayTeam: "Deportes Temuco",
         kickoffLabel: "Tonight",
-        winnerLean: "Draw"
+        winnerLean: "Huachipato"
       },
       {
-        id: "manual-dr-congo-uzbekistan",
-        competitionName: "World Cup",
-        homeTeam: "Democratic Rep Congo",
-        awayTeam: "Uzbekistan",
+        id: "manual-qingdao-west-coast-zhejiang-professional",
+        competitionName: "China Super League",
+        homeTeam: "Qingdao West Coast",
+        awayTeam: "Zhejiang Professional",
         kickoffLabel: "Tonight",
-        winnerLean: "Democratic Rep Congo"
+        winnerLean: "Zhejiang Professional"
       },
       {
-        id: "manual-algeria-austria",
-        competitionName: "World Cup",
-        homeTeam: "Algeria",
-        awayTeam: "Austria",
+        id: "manual-la-serena-cobreloa",
+        competitionName: "Chile Cup",
+        homeTeam: "La Serena",
+        awayTeam: "Cobreloa",
         kickoffLabel: "Tonight",
-        winnerLean: "Draw"
+        winnerLean: "La Serena"
       }
     ];
   }
