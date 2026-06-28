@@ -404,5 +404,40 @@
     "homeScore": "1",
     "awayScore": "5",
     "notes": "Belgium beat New Zealand 5-1."
+  },
+  "manual-croatia-ghana": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "1",
+    "notes": "Croatia beat Ghana 2-1."
+  },
+  "manual-panama-england": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "2",
+    "notes": "England beat Panama 2-0."
+  },
+  "manual-colombia-portugal": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "0",
+    "notes": "Colombia drew Portugal 0-0."
+  },
+  "manual-dr-congo-uzbekistan": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "1",
+    "notes": "Democratic Rep Congo beat Uzbekistan 3-1."
+  },
+  "manual-algeria-austria": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "3",
+    "notes": "Algeria drew Austria 3-3."
   }
 }
