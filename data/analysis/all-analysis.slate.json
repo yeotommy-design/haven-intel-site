@@ -71,7 +71,10 @@
     "manual-qingdao-west-coast-zhejiang-professional",
     "manual-cobresal-antofagasta",
     "manual-huachipato-temuco",
-    "manual-la-serena-cobreloa"
+    "manual-la-serena-cobreloa",
+    "manual-brazil-japan",
+    "manual-germany-paraguay",
+    "manual-netherlands-morocco"
   ],
   "matches": [
     {
@@ -2911,6 +2914,129 @@
           "La Serena still look slightly more likely to own the useful moments, but this is not wide enough to dismiss the draw risk.",
           "Cobreloa can keep the match compact, so the better home angle is still a modest one rather than an aggressive spread.",
           "Top score-range view: 1-0 or 1-1."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-brazil-japan",
+      "inlineDetail": {
+        "generatedAt": "2026-06-29T04:20:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-brazil-japan",
+          "competitionName": "World Cup",
+          "homeTeam": {
+            "id": "brazil",
+            "name": "Brazil"
+          },
+          "awayTeam": {
+            "id": "japan",
+            "name": "Japan"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Japan +0.75",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": [
+            "1-1",
+            "0-0"
+          ]
+        },
+        "notes": [
+          "This looks more like a match that can stay level through ninety than one that naturally hands Brazil a clean separation.",
+          "Japan have enough structure and tactical patience to keep the scoreline compressed and force Brazil to solve a serious control problem.",
+          "Top score-range view: 1-1 or 0-0, with extra time very much in play."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-germany-paraguay",
+      "inlineDetail": {
+        "generatedAt": "2026-06-29T04:20:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-germany-paraguay",
+          "competitionName": "World Cup",
+          "homeTeam": {
+            "id": "germany",
+            "name": "Germany"
+          },
+          "awayTeam": {
+            "id": "paraguay",
+            "name": "Paraguay"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Germany",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "Germany -1.0",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "2-0",
+          "correctScoreLeans": [
+            "2-0",
+            "3-1"
+          ]
+        },
+        "notes": [
+          "Germany still hold the clearest favorite profile of the three and the cleanest route to a regulation-time win.",
+          "Paraguay can defend and compete, but the bigger problem is whether they can sustain enough attacking threat to stop Germany taking over the tie.",
+          "Top score-range view: 2-0 or 3-1 to Germany."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-netherlands-morocco",
+      "inlineDetail": {
+        "generatedAt": "2026-06-29T04:20:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-netherlands-morocco",
+          "competitionName": "World Cup",
+          "homeTeam": {
+            "id": "netherlands",
+            "name": "Netherlands"
+          },
+          "awayTeam": {
+            "id": "morocco",
+            "name": "Morocco"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Morocco +0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "1-1",
+          "correctScoreLeans": [
+            "1-1",
+            "0-0"
+          ]
+        },
+        "notes": [
+          "This is the clearest draw-profile match of the three, with both game shape and market tension pointing toward a compressed ninety minutes.",
+          "Morocco have enough discipline and physical resistance to stop the Netherlands from making this feel comfortable or one-directional.",
+          "Top score-range view: 1-1 or 0-0, with extra time strongly live."
         ]
       }
     }

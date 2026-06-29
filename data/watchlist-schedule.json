@@ -262,5 +262,17 @@
   "manual-la-serena-cobreloa": {
     "kickoffAt": "2026-06-28T16:30:00.000Z",
     "competitionName": "Chile Cup"
+  },
+  "manual-brazil-japan": {
+    "kickoffAt": "2026-06-29T17:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-germany-paraguay": {
+    "kickoffAt": "2026-06-29T20:30:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-netherlands-morocco": {
+    "kickoffAt": "2026-06-30T01:00:00.000Z",
+    "competitionName": "World Cup"
   }
 }

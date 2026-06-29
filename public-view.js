@@ -183,11 +183,9 @@
   ];
 
   const FEATURED_PREVIEW_IDS = [
-    "manual-south-africa-canada",
-    "manual-cobresal-antofagasta",
-    "manual-huachipato-temuco",
-    "manual-qingdao-west-coast-zhejiang-professional",
-    "manual-la-serena-cobreloa"
+    "manual-brazil-japan",
+    "manual-germany-paraguay",
+    "manual-netherlands-morocco"
   ];
 
   let featuredPreviewPromise = null;
@@ -215,44 +213,28 @@
   function buildFeaturedPreviewFallback() {
     return [
       {
-        id: "manual-south-africa-canada",
+        id: "manual-brazil-japan",
         competitionName: "World Cup",
-        homeTeam: "South Africa",
-        awayTeam: "Canada",
+        homeTeam: "Brazil",
+        awayTeam: "Japan",
         kickoffLabel: "Tonight",
-        winnerLean: "Canada"
+        winnerLean: "Draw"
       },
       {
-        id: "manual-cobresal-antofagasta",
-        competitionName: "Chile Cup",
-        homeTeam: "Cobresal",
-        awayTeam: "CD Antofagasta",
+        id: "manual-germany-paraguay",
+        competitionName: "World Cup",
+        homeTeam: "Germany",
+        awayTeam: "Paraguay",
         kickoffLabel: "Tonight",
-        winnerLean: "Cobresal"
+        winnerLean: "Germany"
       },
       {
-        id: "manual-huachipato-temuco",
-        competitionName: "Chile Cup",
-        homeTeam: "Huachipato",
-        awayTeam: "Deportes Temuco",
+        id: "manual-netherlands-morocco",
+        competitionName: "World Cup",
+        homeTeam: "Netherlands",
+        awayTeam: "Morocco",
         kickoffLabel: "Tonight",
-        winnerLean: "Huachipato"
-      },
-      {
-        id: "manual-qingdao-west-coast-zhejiang-professional",
-        competitionName: "China Super League",
-        homeTeam: "Qingdao West Coast",
-        awayTeam: "Zhejiang Professional",
-        kickoffLabel: "Tonight",
-        winnerLean: "Zhejiang Professional"
-      },
-      {
-        id: "manual-la-serena-cobreloa",
-        competitionName: "Chile Cup",
-        homeTeam: "La Serena",
-        awayTeam: "Cobreloa",
-        kickoffLabel: "Tonight",
-        winnerLean: "La Serena"
+        winnerLean: "Draw"
       }
     ];
   }
