@@ -439,5 +439,40 @@
     "homeScore": "3",
     "awayScore": "3",
     "notes": "Algeria drew Austria 3-3."
+  },
+  "manual-south-africa-canada": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "2",
+    "notes": "Canada beat South Africa 2-0."
+  },
+  "manual-qingdao-west-coast-zhejiang-professional": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "0",
+    "awayScore": "3",
+    "notes": "Zhejiang Professional beat Qingdao West Coast 3-0."
+  },
+  "manual-cobresal-antofagasta": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "0",
+    "notes": "Cobresal beat CD Antofagasta 1-0."
+  },
+  "manual-huachipato-temuco": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "1",
+    "notes": "Huachipato beat Deportes Temuco 2-1."
+  },
+  "manual-la-serena-cobreloa": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "La Serena drew Cobreloa 1-1."
   }
 }
