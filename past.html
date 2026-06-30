@@ -264,6 +264,18 @@
         font-size: 0.83rem;
       }
 
+      .statusPill.fullTime {
+        border-color: rgba(13, 122, 95, 0.22);
+        background: rgba(13, 122, 95, 0.08);
+        color: var(--accent);
+      }
+
+      .statusPill.ninetyMins {
+        border-color: rgba(180, 118, 32, 0.24);
+        background: rgba(180, 118, 32, 0.12);
+        color: #8c5a12;
+      }
+
       .resultPill {
         border-color: rgba(13, 122, 95, 0.26);
         background: rgba(13, 122, 95, 0.1);
@@ -945,6 +957,7 @@
           typeof state.notes === "string" &&
           /before penalties|before losing on penalties|before extra time|after 90/i.test(state.notes);
         const completionLabel = regulationTimeOnly ? "90 Mins" : "Full Time";
+        const completionClass = regulationTimeOnly ? "ninetyMins" : "fullTime";
         const article = document.createElement("article");
         article.className = "matchCard";
         const review = buildReview(detail, prediction);
@@ -954,7 +967,7 @@
               <div class="eyebrow">${detail.match.competitionName}</div>
               <div class="compactMeta">
                 <div class="datePill">${toMatchDate(detail.match.kickoffAt)}</div>
-                <div class="statusPill">${completionLabel}</div>
+                <div class="statusPill ${completionClass}">${completionLabel}</div>
                 <button class="matchToggle" type="button" aria-expanded="false">Expand</button>
               </div>
             </div>
