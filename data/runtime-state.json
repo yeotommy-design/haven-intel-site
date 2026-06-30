@@ -474,5 +474,26 @@
     "homeScore": "2",
     "awayScore": "1",
     "notes": "La Serena beat Cobreloa 2-1."
+  },
+  "manual-brazil-japan": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "1",
+    "notes": "Brazil beat Japan 2-1."
+  },
+  "manual-germany-paraguay": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "Germany drew Paraguay 1-1 before losing on penalties."
+  },
+  "manual-netherlands-morocco": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "1",
+    "notes": "Netherlands drew Morocco 1-1 before penalties."
   }
 }
