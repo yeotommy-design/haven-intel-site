@@ -941,6 +941,10 @@
       }
 
       function createPastCard(detail, state, prediction) {
+        const regulationTimeOnly =
+          typeof state.notes === "string" &&
+          /before penalties|before losing on penalties|before extra time|after 90/i.test(state.notes);
+        const completionLabel = regulationTimeOnly ? "90 Mins" : "Full Time";
         const article = document.createElement("article");
         article.className = "matchCard";
         const review = buildReview(detail, prediction);
@@ -950,7 +954,7 @@
               <div class="eyebrow">${detail.match.competitionName}</div>
               <div class="compactMeta">
                 <div class="datePill">${toMatchDate(detail.match.kickoffAt)}</div>
-                <div class="statusPill">Full Time</div>
+                <div class="statusPill">${completionLabel}</div>
                 <button class="matchToggle" type="button" aria-expanded="false">Expand</button>
               </div>
             </div>
