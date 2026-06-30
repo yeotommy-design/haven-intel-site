@@ -183,9 +183,9 @@
   ];
 
   const FEATURED_PREVIEW_IDS = [
-    "manual-brazil-japan",
-    "manual-germany-paraguay",
-    "manual-netherlands-morocco"
+    "manual-cote-divoire-norway",
+    "manual-france-sweden",
+    "manual-mexico-ecuador"
   ];
 
   let featuredPreviewPromise = null;
@@ -213,26 +213,26 @@
   function buildFeaturedPreviewFallback() {
     return [
       {
-        id: "manual-brazil-japan",
+        id: "manual-cote-divoire-norway",
         competitionName: "World Cup",
-        homeTeam: "Brazil",
-        awayTeam: "Japan",
+        homeTeam: "Cote d'Ivoire",
+        awayTeam: "Norway",
         kickoffLabel: "Tonight",
-        winnerLean: "Draw"
+        winnerLean: "Norway"
       },
       {
-        id: "manual-germany-paraguay",
+        id: "manual-france-sweden",
         competitionName: "World Cup",
-        homeTeam: "Germany",
-        awayTeam: "Paraguay",
+        homeTeam: "France",
+        awayTeam: "Sweden",
         kickoffLabel: "Tonight",
-        winnerLean: "Germany"
+        winnerLean: "France"
       },
       {
-        id: "manual-netherlands-morocco",
+        id: "manual-mexico-ecuador",
         competitionName: "World Cup",
-        homeTeam: "Netherlands",
-        awayTeam: "Morocco",
+        homeTeam: "Mexico",
+        awayTeam: "Ecuador",
         kickoffLabel: "Tonight",
         winnerLean: "Draw"
       }

@@ -74,7 +74,10 @@
     "manual-la-serena-cobreloa",
     "manual-brazil-japan",
     "manual-germany-paraguay",
-    "manual-netherlands-morocco"
+    "manual-netherlands-morocco",
+    "manual-cote-divoire-norway",
+    "manual-france-sweden",
+    "manual-mexico-ecuador"
   ],
   "matches": [
     {
@@ -3037,6 +3040,129 @@
           "This is the clearest draw-profile match of the three, with both game shape and market tension pointing toward a compressed ninety minutes.",
           "Morocco have enough discipline and physical resistance to stop the Netherlands from making this feel comfortable or one-directional.",
           "Top score-range view: 1-1 or 0-0, with extra time strongly live."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-cote-divoire-norway",
+      "inlineDetail": {
+        "generatedAt": "2026-06-30T04:25:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-cote-divoire-norway",
+          "competitionName": "World Cup",
+          "homeTeam": {
+            "id": "cote-divoire",
+            "name": "Cote d'Ivoire"
+          },
+          "awayTeam": {
+            "id": "norway",
+            "name": "Norway"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Norway",
+          "likelyOutcome": "away",
+          "confidence": "medium",
+          "handicapLean": "Norway 0",
+          "totalLean": "Over 2.0 / 2.5",
+          "correctScoreLean": "1-2",
+          "correctScoreLeans": [
+            "1-1",
+            "1-2"
+          ]
+        },
+        "notes": [
+          "Norway still hold the cleaner overall edge, but this looks more like a competitive knockout tie than a free away win.",
+          "Cote d'Ivoire have enough athletic resistance and transition threat to keep the draw live through long stretches.",
+          "Top score-range view: 1-1 or 1-2, with Norway still the stronger 90-minute side lean."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-france-sweden",
+      "inlineDetail": {
+        "generatedAt": "2026-06-30T04:25:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-france-sweden",
+          "competitionName": "World Cup",
+          "homeTeam": {
+            "id": "france",
+            "name": "France"
+          },
+          "awayTeam": {
+            "id": "sweden",
+            "name": "Sweden"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "France",
+          "likelyOutcome": "home",
+          "confidence": "high",
+          "handicapLean": "France -1.5",
+          "totalLean": "Over 2.5",
+          "correctScoreLean": "3-0",
+          "correctScoreLeans": [
+            "3-0",
+            "2-0"
+          ]
+        },
+        "notes": [
+          "France still sit clearly strongest on the board and remain the cleanest regulation-time winner of this trio.",
+          "Sweden can defend honestly, but they still look more likely to spend the night surviving pressure than reshaping the tie.",
+          "Top score-range view: 3-0 or 2-0 to France."
+        ]
+      }
+    },
+    {
+      "matchId": "manual-mexico-ecuador",
+      "inlineDetail": {
+        "generatedAt": "2026-06-30T04:25:00.000Z",
+        "source": {
+          "provider": "ProjectHaven",
+          "mode": "manual",
+          "method": "match-read"
+        },
+        "match": {
+          "id": "manual-mexico-ecuador",
+          "competitionName": "World Cup",
+          "homeTeam": {
+            "id": "mexico",
+            "name": "Mexico"
+          },
+          "awayTeam": {
+            "id": "ecuador",
+            "name": "Ecuador"
+          },
+          "kickoffAt": null
+        },
+        "summary": {
+          "likelyWinner": "Draw",
+          "likelyOutcome": "draw",
+          "confidence": "medium",
+          "handicapLean": "Ecuador +0.5",
+          "totalLean": "Under 2.5",
+          "correctScoreLean": "0-0",
+          "correctScoreLeans": [
+            "0-0",
+            "1-1"
+          ]
+        },
+        "notes": [
+          "This remains the clearest 90-minute draw profile of the three, with both teams capable of dragging the match into a compressed, cautious shape.",
+          "Mexico may still survive the tie over a longer arc, but the regulation-time football still looks more split than settled.",
+          "Top score-range view: 0-0 or 1-1, with extra time very live."
         ]
       }
     }

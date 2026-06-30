@@ -274,5 +274,17 @@
   "manual-netherlands-morocco": {
     "kickoffAt": "2026-06-30T01:00:00.000Z",
     "competitionName": "World Cup"
+  },
+  "manual-cote-divoire-norway": {
+    "kickoffAt": "2026-06-30T17:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-france-sweden": {
+    "kickoffAt": "2026-06-30T21:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-mexico-ecuador": {
+    "kickoffAt": "2026-07-01T01:00:00.000Z",
+    "competitionName": "World Cup"
   }
 }
