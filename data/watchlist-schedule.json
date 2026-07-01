@@ -286,5 +286,17 @@
   "manual-mexico-ecuador": {
     "kickoffAt": "2026-07-01T01:00:00.000Z",
     "competitionName": "World Cup"
+  },
+  "manual-england-dr-congo": {
+    "kickoffAt": "2026-07-01T15:59:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-belgium-senegal": {
+    "kickoffAt": "2026-07-01T20:00:00.000Z",
+    "competitionName": "World Cup"
+  },
+  "manual-usa-bosnia-herzegovina": {
+    "kickoffAt": "2026-07-02T00:00:00.000Z",
+    "competitionName": "World Cup"
   }
 }
