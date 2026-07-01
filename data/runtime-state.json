@@ -495,5 +495,26 @@
     "homeScore": "1",
     "awayScore": "1",
     "notes": "Netherlands drew Morocco 1-1 before penalties."
+  },
+  "manual-cote-divoire-norway": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "1",
+    "awayScore": "2",
+    "notes": "Norway beat Cote d'Ivoire 2-1."
+  },
+  "manual-france-sweden": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "3",
+    "awayScore": "0",
+    "notes": "France beat Sweden 3-0."
+  },
+  "manual-mexico-ecuador": {
+    "status": "Full Time",
+    "minute": "90",
+    "homeScore": "2",
+    "awayScore": "0",
+    "notes": "Mexico beat Ecuador 2-0."
   }
 }
